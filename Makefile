@@ -186,5 +186,5 @@ gh-pages:
 	cp -rfv build/html/* ./
 	rm -rf $(GH_PAGES_SOURCES) build
 	git add -A
-	git commit -m "Generated gh-pages for `git log master -1 --pretty=short --abbrev-commit`" && git push origin master ; git checkout develop
+	git commit -m "Generated gh-pages for `git log develop -1 --pretty=short --abbrev-commit`" && git push origin master ; git checkout develop
 
