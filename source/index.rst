@@ -3,14 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Virtusize developer docs's documentation!
-====================================================
-
-Contents:
+Virtusize developer docs
+========================
 
 .. toctree::
    :maxdepth: 2
 
+   order-confirmation
 
 
 Indices and tables
