@@ -183,7 +183,7 @@ gh-pages:
 	git checkout develop $(GH_PAGES_SOURCES)
 	git reset HEAD
 	make html
-	mv -fv build/html/* ./
+	cp -rfv build/html/* ./
 	rm -rf $(GH_PAGES_SOURCES) build
 	git add -A
 	git commit -m "Generated gh-pages for `git log master -1 --pretty=short --abbrev-commit`" && git push origin master ; git checkout develop
