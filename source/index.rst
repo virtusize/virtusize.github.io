@@ -11,11 +11,3 @@ Virtusize developer docs
 
    order-confirmation
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
