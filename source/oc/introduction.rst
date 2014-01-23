@@ -38,3 +38,4 @@ After the order confirmation script loads, it will create one ore more tracking
 pixels and insert them into the retailers page. That way the given information
 will get passed on to Virtusize. Our servers will store the order data and
 connect it to the current customer.
+
