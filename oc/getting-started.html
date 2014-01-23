@@ -111,9 +111,9 @@
 <p>To get started you have to include a script into your order confirmation page.
 It is very similar to the integration script you already included on your
 product pages.</p>
-<p>You supply certain information about the order, the line items and the costs of
-the order. Some attributes are required for the purchase history to work
-properly, others are optional.</p>
+<p>You supply certain information about the order and the line items of the order.
+Some attributes are required for the purchase history to work properly, others
+are recommended.</p>
 <p>The basic script you have to include looks like the following:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nb">window</span><span class="p">.</span><span class="nx">vsOrderConfirmation</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">order</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Set details on the order object here …</span>
@@ -136,7 +136,7 @@ properly, others are optional.</p>
 <p>The order is the container holding all the information about this purchase. The
 object is instantiated by the order confirmation script from Virtusize and
 passed as a parameter into the function implemented by the retailer. This is
-the same way the integration script works.</p>
+working the same way as in the integration script.</p>
 <p>Example:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nb">window</span><span class="p">.</span><span class="nx">vsOrderConfirmation</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">order</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Set details on the order object here …</span>
@@ -169,10 +169,10 @@ obtain your API key, please <a class="reference external" href="http://www.virtu
 </div>
 </dd>
 <dt>addItem(item)</dt>
-<dd><p class="first"><strong>item</strong>: <em>Object</em> - Add a single line item to this order. There must be an
-item present, to be able to benefit from the order confirmation script. It
-can be provided in two different ways.</p>
-<p>See <a class="reference internal" href="#label-line-items"><em>Line Items</em></a> for other possibilities and more information.</p>
+<dd><p class="first"><strong>item</strong>: <em>Object</em> - Add a single line item to this order. There must be at
+least one item present, to be able to benefit from the order confirmation
+script. It can be provided as a single item or as an array.</p>
+<p>See <a class="reference internal" href="#label-line-items"><em>Line Items</em></a> for more information.</p>
 <p>Example:</p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">order</span><span class="p">.</span><span class="nx">addItem</span><span class="p">({</span>
     <span class="nx">productId</span><span class="o">:</span> <span class="s1">&#39;external_id_1234&#39;</span><span class="p">,</span>
@@ -188,29 +188,30 @@ can be provided in two different ways.</p>
 </pre></div>
 </div>
 </dd>
+<dt>addItems(items)</dt>
+<dd><p class="first"><strong>items</strong>: <em>Array</em> - Add an array of line item to this order. This is
+a convenience function that can be called instead of calling <tt class="docutils literal"><span class="pre">addItem</span></tt>
+multiple times.</p>
+<p>See <a class="reference internal" href="#label-line-items"><em>Line Items</em></a> for more information.</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">order</span><span class="p">.</span><span class="nx">addItems</span><span class="p">([</span>
+    <span class="p">{</span>
+        <span class="nx">productId</span><span class="o">:</span> <span class="s1">&#39;external_id_1234&#39;</span><span class="p">,</span>
+        <span class="nx">size</span><span class="o">:</span> <span class="s1">&#39;2128&#39;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">productId</span><span class="o">:</span> <span class="s1">&#39;external_id_1235&#39;</span><span class="p">,</span>
+        <span class="nx">size</span><span class="o">:</span> <span class="s1">&#39;3242&#39;</span>
+    <span class="p">},</span>
+<span class="p">]);</span>
+</pre></div>
+</div>
+</dd>
 </dl>
 </div>
 <div class="section" id="recommended-attributes">
 <h3>Recommended attributes<a class="headerlink" href="#recommended-attributes" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
-<dt>setCost(cost)</dt>
-<dd><p class="first"><strong>cost</strong>: <em>Object</em> - The total cost of the order, divided up into different categories like tax,
-shipping and coupon amounts. This is an optional attribute, but required
-for performance based pricing.</p>
-<p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">order</span><span class="p">.</span><span class="nx">setCost</span><span class="p">({</span>
-    <span class="nx">subTotal</span><span class="o">:</span> <span class="mf">106.24</span><span class="p">,</span>
-    <span class="nx">subTotalPlusTax</span><span class="o">:</span> <span class="mf">132.80</span><span class="p">,</span>
-    <span class="nx">subTotalPlusShipping</span><span class="o">:</span> <span class="mf">116.24</span><span class="p">,</span>
-    <span class="nx">total</span><span class="o">:</span> <span class="mf">142.80</span><span class="p">,</span>
-    <span class="nx">taxAmount</span><span class="o">:</span> <span class="mf">26.56</span><span class="p">,</span>
-    <span class="nx">shippingAmount</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="nx">couponAmount</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nx">currency</span><span class="o">:</span> <span class="s1">&#39;EUR&#39;</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-</dd>
 <dt>setRegion(region)</dt>
 <dd><p class="first"><strong>region</strong>: <em>String</em> - The region identifier as defined by ISO 3166-1
 alpha-2. The region id must be the two-letter ISO-3166 country code as
@@ -227,6 +228,8 @@ defined in <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_
 <span id="label-line-items"></span><h2>Line Items<a class="headerlink" href="#line-items" title="Permalink to this headline">¶</a></h2>
 <p>Line items can be added to an order either by individually calling <tt class="docutils literal"><span class="pre">addItem</span></tt> or
 by calling <tt class="docutils literal"><span class="pre">addItems</span></tt> with an array of items.</p>
+<div class="section" id="id1">
+<h3>Required attributes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>productId</dt>
 <dd><p class="first"><em>String</em> - The id of the product. This must match the product id used
@@ -244,10 +247,15 @@ size identifiers used in the product database of Virtusize.</p>
 </pre></div>
 </div>
 </dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h3>Recommended attributes<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
 <dt>sizeAlias</dt>
-<dd><p class="first"><em>String</em> - An optional size alias. This will be used to display the size to
-the customer in a later process, for example while showing him his personal
-purchase history. It should be set, if the retailer uses sizeIds instead of
+<dd><p class="first"><em>String</em> - A size alias that will be used to display the size to the
+customer at a later stage, for example while showing him his personal
+purchase history. It should be set, if the retailer uses size-ids instead of
 human readable sizes as identifiers.</p>
 <p>Example:</p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="s1">&#39;Large&#39;</span>
@@ -255,10 +263,10 @@ human readable sizes as identifiers.</p>
 </div>
 </dd>
 <dt>image</dt>
-<dd><p class="first"><em>String</em> - The URL to a variant specific image of this line item. If
-possible provide a high quality image. This will be used to help the
-customer identify his previous purchases at a later stage in the virtusize
-widget.</p>
+<dd><p class="first"><em>String</em> - The URL to a variant specific image of this line item of the
+color and style the item was ordered by the customer. If possible provide
+a high quality image. This will be used to help the customer identify his
+previous purchases at a later stage in the Virtusize widget.</p>
 <p>Example:</p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="s1">&#39;http://images.retailer.com/products/sku123/black/image_large.jpg&#39;</span>
 </pre></div>
@@ -295,8 +303,8 @@ these values: &#8216;unisex&#8217;, &#8216;male&#8217;, &#8216;female&#8217;</p>
 </div>
 </dd>
 <dt>quantity</dt>
-<dd><p class="first"><em>Integer</em> - The quantitiy of this line item of the given color and size. If
-the customer bought different sizes or colors, a separate item has to be
+<dd><p class="first"><em>Integer</em> - The quantitiy of this line item for the given color and size.
+If the customer bought different sizes or colors, a separate item has to be
 added for each variant.</p>
 <p>Example:</p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="mi">1</span>
@@ -317,6 +325,7 @@ added for each variant.</p>
     <span class="nx">quantity</span><span class="o">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>

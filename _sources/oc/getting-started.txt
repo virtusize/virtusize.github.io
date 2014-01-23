@@ -10,9 +10,9 @@ To get started you have to include a script into your order confirmation page.
 It is very similar to the integration script you already included on your
 product pages.
 
-You supply certain information about the order, the line items and the costs of
-the order. Some attributes are required for the purchase history to work
-properly, others are optional.
+You supply certain information about the order and the line items of the order.
+Some attributes are required for the purchase history to work properly, others
+are recommended.
 
 The basic script you have to include looks like the following::
 
@@ -37,7 +37,7 @@ Order
 The order is the container holding all the information about this purchase. The
 object is instantiated by the order confirmation script from Virtusize and
 passed as a parameter into the function implemented by the retailer. This is
-the same way the integration script works.
+working the same way as in the integration script. 
 
 Example::
     
@@ -73,11 +73,11 @@ setUserId(userId)
         order.setUserId('user-4321');
 
 addItem(item)
-    **item**: *Object* - Add a single line item to this order. There must be an
-    item present, to be able to benefit from the order confirmation script. It
-    can be provided in two different ways.
+    **item**: *Object* - Add a single line item to this order. There must be at
+    least one item present, to be able to benefit from the order confirmation
+    script. It can be provided as a single item or as an array.
 
-    See :ref:`label-line-items` for other possibilities and more information.
+    See :ref:`label-line-items` for more information.
 
     Example::
 
@@ -94,26 +94,29 @@ addItem(item)
         });
 
 
-Recommended attributes
-""""""""""""""""""""""
-setCost(cost)
-    **cost**: *Object* - The total cost of the order, divided up into different categories like tax,
-    shipping and coupon amounts. This is an optional attribute, but required
-    for performance based pricing.
+addItems(items)
+    **items**: *Array* - Add an array of line item to this order. This is
+    a convenience function that can be called instead of calling ``addItem``
+    multiple times.
+
+    See :ref:`label-line-items` for more information.
 
     Example::
 
-        order.setCost({
-            subTotal: 106.24,
-            subTotalPlusTax: 132.80,
-            subTotalPlusShipping: 116.24,
-            total: 142.80,
-            taxAmount: 26.56,
-            shippingAmount: 10,
-            couponAmount: 0,
-            currency: 'EUR'
-        });
+        order.addItems([
+            {
+                productId: 'external_id_1234',
+                size: '2128'
+            },
+            {
+                productId: 'external_id_1235',
+                size: '3242'
+            },
+        ]);
 
+
+Recommended attributes
+""""""""""""""""""""""
 
 setRegion(region)
     **region**: *String* - The region identifier as defined by ISO 3166-1
@@ -126,6 +129,7 @@ setRegion(region)
 
 
 
+
 .. _label-line-items:
 
 Line Items
@@ -134,6 +138,9 @@ Line Items
 Line items can be added to an order either by individually calling ``addItem`` or
 by calling ``addItems`` with an array of items.
 
+
+Required attributes
+"""""""""""""""""""
 
 productId
     *String* - The id of the product. This must match the product id used
@@ -151,10 +158,14 @@ size
 
         '2128'
 
+
+Recommended attributes
+""""""""""""""""""""""
+
 sizeAlias
-    *String* - An optional size alias. This will be used to display the size to
-    the customer in a later process, for example while showing him his personal
-    purchase history. It should be set, if the retailer uses sizeIds instead of
+    *String* - A size alias that will be used to display the size to the
+    customer at a later stage, for example while showing him his personal
+    purchase history. It should be set, if the retailer uses size-ids instead of
     human readable sizes as identifiers.
     
     Example::
@@ -162,10 +173,10 @@ sizeAlias
         'Large'
 
 image
-    *String* - The URL to a variant specific image of this line item. If
-    possible provide a high quality image. This will be used to help the
-    customer identify his previous purchases at a later stage in the virtusize
-    widget.
+    *String* - The URL to a variant specific image of this line item of the
+    color and style the item was ordered by the customer. If possible provide
+    a high quality image. This will be used to help the customer identify his
+    previous purchases at a later stage in the Virtusize widget.
     
     Example::
 
@@ -202,14 +213,13 @@ unitPrice
         99.95
 
 quantity
-    *Integer* - The quantitiy of this line item of the given color and size. If
-    the customer bought different sizes or colors, a separate item has to be
+    *Integer* - The quantitiy of this line item for the given color and size.
+    If the customer bought different sizes or colors, a separate item has to be
     added for each variant.
 
     Example::
 
         1
-
 
 
 Here is a complete line item object::
