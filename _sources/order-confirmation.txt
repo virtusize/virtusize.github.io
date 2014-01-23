@@ -6,7 +6,7 @@ Order confirmation
    :glob:
 
    oc/introduction
-   oc/getting-started
+   oc/order-api
    oc/complete-example
 
 
