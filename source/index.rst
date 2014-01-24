@@ -9,5 +9,6 @@ Virtusize developer docs
 .. toctree::
    :maxdepth: 2
 
+   integration-guide
    order-confirmation
 

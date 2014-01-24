@@ -86,6 +86,7 @@ addItem(item)
             size: '2128',
             sizeAlias: 'Large',
             image: 'http://images.retailer.com/products/sku123/black/image_large.jpg',
+            url: 'http://www.retailer.com/products/123',
             variantId: 'sku_123',
             color: 'black',
             gender: 'unisex',
@@ -182,6 +183,14 @@ image
 
         'http://images.retailer.com/products/sku123/black/image_large.jpg'
 
+url
+    *String* - The canonical URL of this product in the retailers online store.
+    
+    Example::
+
+        'http://www.retailer.com/products/123'
+
+
 variantId
     *String* - An id that uniquely identifies a product variant including color
     and size, usually the SKU.
@@ -229,6 +238,7 @@ Here is a complete line item object::
         size: '2128',
         sizeAlias: 'Large',
         image: 'http://images.retailer.com/products/sku123/black/image_large.jpg',
+        url: 'http://www.retailer.com/products/123',
         variantId: 'sku_123',
         color: 'black',
         gender: 'unisex',
