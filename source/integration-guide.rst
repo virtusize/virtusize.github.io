@@ -5,11 +5,11 @@ Integration guide
    :maxdepth: 2
    :glob:
 
-   ig/introduction
-   ig/overview
-   ig/product-types
-   ig/measurements
-   ig/integration
-   ig/javascript-api
+   integration-guide/introduction
+   integration-guide/overview
+   integration-guide/product-types
+   integration-guide/measurements
+   integration-guide/integration
+   integration-guide/javascript-api
 
 

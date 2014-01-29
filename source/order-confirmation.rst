@@ -5,8 +5,8 @@ Order confirmation
    :maxdepth: 2
    :glob:
 
-   oc/introduction
-   oc/order-api
-   oc/complete-example
+   order-confirmation/introduction
+   order-confirmation/order-api
+   order-confirmation/complete-example
 
 

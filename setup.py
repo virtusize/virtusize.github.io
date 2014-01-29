@@ -11,6 +11,7 @@ setup(
     install_requires=[
         'sphinx',
         'sphinx_rtd_theme',
-        'sphinxcontrib.gist'
+        'sphinxcontrib.gist',
+        'sphinx-intl'
     ]
 )

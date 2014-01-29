@@ -1,0 +1,261 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Virtusize developer docs 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-29 16:18+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/order-confirmation/order-api.rst:4
+msgid "Order API"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:7
+msgid "Getting started"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:9
+msgid ""
+"To get started you have to include a script into your order confirmation "
+"page. It is very similar to the integration script you already included on "
+"your product pages."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:13
+msgid ""
+"You supply certain information about the order and the line items of the "
+"order. Some attributes are required for the purchase history to work "
+"properly, others are recommended."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:17
+msgid "The basic script you have to include looks like the following::"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:35
+msgid "Order"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:37
+msgid ""
+"The order is the container holding all the information about this purchase. "
+"The object is instantiated by the order confirmation script from Virtusize "
+"and passed as a parameter into the function implemented by the retailer. "
+"This is working the same way as in the integration script."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:42
+#: ../../source/order-confirmation/order-api.rst:57
+#: ../../source/order-confirmation/order-api.rst:64
+#: ../../source/order-confirmation/order-api.rst:71
+#: ../../source/order-confirmation/order-api.rst:82
+#: ../../source/order-confirmation/order-api.rst:105
+#: ../../source/order-confirmation/order-api.rst:127
+#: ../../source/order-confirmation/order-api.rst:150
+#: ../../source/order-confirmation/order-api.rst:158
+#: ../../source/order-confirmation/order-api.rst:172
+#: ../../source/order-confirmation/order-api.rst:182
+#: ../../source/order-confirmation/order-api.rst:189
+#: ../../source/order-confirmation/order-api.rst:198
+#: ../../source/order-confirmation/order-api.rst:205
+#: ../../source/order-confirmation/order-api.rst:213
+#: ../../source/order-confirmation/order-api.rst:220
+#: ../../source/order-confirmation/order-api.rst:229
+msgid "Example::"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:50
+#: ../../source/order-confirmation/order-api.rst:144
+msgid "Required attributes"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:59
+msgid "setApiKey(apiKey)"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:53
+msgid ""
+"**apiKey**: *String* - The retailers API key as provided by Virtusize. To "
+"obtain your API key, please `contact our sales team "
+"<http://www.virtusize.com/contact>`_."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:66
+msgid "setOrderId(orderId)"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:62
+msgid "**orderId**: *String* - An id uniquely identifying the order"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:73
+msgid "setUserId(userId)"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:69
+msgid ""
+"**userId**: *String* - An anonymous user id uniquely identifying a customer "
+"of the retailer"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:96
+msgid "addItem(item)"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:76
+msgid ""
+"**item**: *Object* - Add a single line item to this order. There must be at "
+"least one item present, to be able to benefit from the order confirmation "
+"script. It can be provided as a single item or as an array."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:80
+#: ../../source/order-confirmation/order-api.rst:103
+msgid "See :ref:`label-line-items` for more information."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:117
+msgid "addItems(items)"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:99
+msgid ""
+"**items**: *Array* - Add an array of line item to this order. This is a "
+"convenience function that can be called instead of calling ``addItem`` "
+"multiple times."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:120
+#: ../../source/order-confirmation/order-api.rst:164
+msgid "Recommended attributes"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:132
+msgid "setRegion(region)"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:123
+msgid ""
+"**region**: *String* - The region identifier as defined by ISO 3166-1 "
+"alpha-2. The region id must be the two-letter ISO-3166 country code as "
+"defined in http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:137
+msgid "Line Items"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:139
+msgid ""
+"Line items can be added to an order either by individually calling "
+"``addItem`` or by calling ``addItems`` with an array of items."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:152
+msgid "productId"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:147
+msgid ""
+"*String* - The id of the product. This must match the product id used during"
+" integration on the retailers product page."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:161
+msgid "size"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:155
+msgid ""
+"*String* - The size or size id of the purchased item. This must match the "
+"size identifiers used in the product database of Virtusize."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:174
+msgid "sizeAlias"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:167
+msgid ""
+"*String* - A size alias that will be used to display the size to the "
+"customer at a later stage, for example while showing him his personal "
+"purchase history. It should be set, if the retailer uses size-ids instead of"
+" human readable sizes as identifiers."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:184
+msgid "image"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:177
+msgid ""
+"*String* - The URL to a variant specific image of this line item of the "
+"color and style the item was ordered by the customer. If possible provide a "
+"high quality image. This will be used to help the customer identify his "
+"previous purchases at a later stage in the Virtusize widget."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:192
+msgid "url"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:187
+msgid ""
+"*String* - The canonical URL of this product in the retailers online store."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:200
+msgid "variantId"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:195
+msgid ""
+"*String* - An id that uniquely identifies a product variant including color "
+"and size, usually the SKU."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:207
+msgid "color"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:203
+msgid "*String* - The color of ordered garment."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:215
+msgid "gender"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:210
+msgid ""
+"*String* - The gender that this garment is targetting. Must have one of "
+"these values: 'unisex', 'male', 'female'"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:222
+msgid "unitPrice"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:218
+msgid "*Float* - The unit price of this item."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:232
+msgid "quantity"
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:225
+msgid ""
+"*Integer* - The quantitiy of this line item for the given color and size. If"
+" the customer bought different sizes or colors, a separate item has to be "
+"added for each variant."
+msgstr ""
+
+#: ../../source/order-confirmation/order-api.rst:234
+msgid "Here is a complete line item object::"
+msgstr ""
