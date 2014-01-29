@@ -1,0 +1,41 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Virtusize developer docs 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-29 16:18+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/integration-guide/introduction.rst:2
+msgid "Introduction"
+msgstr ""
+
+#: ../../source/integration-guide/introduction.rst:4
+msgid ""
+"Virtusize is a virtual fitting solution that helps retailers to visually "
+"illustrate the size and fit of clothing online."
+msgstr ""
+
+#: ../../source/integration-guide/introduction.rst:7
+msgid ""
+"Virtusize allows customers to compare specific measurements of an item they "
+"are looking to buy with those of a similar item they already own."
+msgstr ""
+
+#: ../../source/integration-guide/introduction.rst:10
+msgid ""
+"Displaying and overlaying silhouettes of both items then allows customers to"
+" easily compare sizes and choose the one that would fit them the best. "
+"Virtusize is accessed through a button located on the product page at the "
+"retailer."
+msgstr ""
+
+#: ../../source/integration-guide/introduction.rst:15
+msgid ""
+"Read more about Virtusize and our solution at http://www.virtusize.com."
+msgstr ""

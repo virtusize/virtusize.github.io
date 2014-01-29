@@ -1,0 +1,42 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Virtusize developer docs 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-29 16:18+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/integration-guide/overview.rst:2
+msgid "Overview"
+msgstr ""
+
+#: ../../source/integration-guide/overview.rst:4
+msgid ""
+"This document covers everything you need to know about integrating "
+"Virtusize. It guides you through the process and provides details about the "
+"supported garment product types as well as the JavaScript API."
+msgstr ""
+
+#: ../../source/integration-guide/overview.rst:8
+msgid "The main steps for a successful integration involve:"
+msgstr ""
+
+#: ../../source/integration-guide/overview.rst:10
+msgid ""
+"Becoming Virtusize customer, obtaining an API key and admin account. In "
+"order to get these, please `contact our sales team "
+"<http://www.virtusize.com/contact>`__"
+msgstr ""
+
+#: ../../source/integration-guide/overview.rst:14
+msgid "Providing garment measurements to Virtusize"
+msgstr ""
+
+#: ../../source/integration-guide/overview.rst:16
+msgid "Integrating the Virtusize button and widget into your shops website"
+msgstr ""

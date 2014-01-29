@@ -185,6 +185,15 @@ gh-pages:
 	make html
 	cp -rfv build/html/* ./
 	rm -rf $(GH_PAGES_SOURCES) build
+	# JAPANESE
+	cd source
+	sphinx-intl build
+	cd ..
+	make -e SPHINXOPTS="-D language='ja'" html
+	mkdir ./ja
+	cp -rfv build/html/* ./ja/
+	rm -rf $(GH_PAGES_SOURCES) build
+	# END JAPANESE
 	git add -A
 	git commit -m "Generated gh-pages for `git log develop -1 --pretty=short --abbrev-commit`" && git push origin master ; git checkout develop
 
