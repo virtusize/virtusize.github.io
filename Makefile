@@ -186,11 +186,9 @@ gh-pages:
 	cp -rfv build/html/* ./
 	rm -rf build
 	# JAPANESE
-	cd source
-	sphinx-intl build
-	cd ..
+	cd source; sphinx-intl build; cd ..
 	make -e SPHINXOPTS="-D language='ja'" html
-	mkdir ./ja
+	if [ ! -d ja ]; then; mkdir ja; fi
 	cp -rfv build/html/* ./ja/
 	rm -rf build
 	# END JAPANESE

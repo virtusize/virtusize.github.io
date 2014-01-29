@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../source/integration-guide/introduction.rst:2
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction ja"
 
 #: ../../source/integration-guide/introduction.rst:4
 msgid ""
