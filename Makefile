@@ -188,7 +188,8 @@ gh-pages:
 	# JAPANESE
 	cd source; sphinx-intl build; cd ..
 	make -e SPHINXOPTS="-D language='ja'" html
-	if [ ! -d ja ]; then; mkdir ja; fi
+	rm -rf ja
+	mkdir ja
 	cp -rfv build/html/* ./ja/
 	rm -rf build
 	# END JAPANESE
