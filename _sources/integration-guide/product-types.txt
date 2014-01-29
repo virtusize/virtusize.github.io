@@ -16,27 +16,6 @@ provided.
 
 A product type is identified by its common English name in camelCase.
 
-List
-----
-.. todo Get the product list in here.
-
-coat
-^^^^
-
-================ ======== ========= =========
-Measurement name Required Min value Max value
-================ ======== ========= =========
-height           yes      46 cm     220 cm
-bust             yes      15 cm     130 cm
-sleeve           yes      15 cm     120 cm
-shoulder         no       15 cm     130 cm
-waist            no       15 cm     130 cm
-hem              no       15 cm     130 cm
-bicep            no        5 cm      80 cm
-================ ======== ========= =========
-
-
-
 
 Product Types API
 -----------------
@@ -112,4 +91,12 @@ minMeasurements
 .. note::
     Note that the "length" measurement is always represented as "height", as
     "length" is ambiguous in JavaScript.
+
+
+List of product types
+---------------------
+
+.. raw:: html
+
+    <div id="product-types-container"></div>
 

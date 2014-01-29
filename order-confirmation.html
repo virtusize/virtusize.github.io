@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Order confirmation &mdash; Virtusize developer docs 1.0 documentation</title>
+  <title>Order confirmation &mdash; Virtusize developer docs 1.1 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'1.0',
+        VERSION:'1.1',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -45,9 +45,9 @@
   
 
   
-    <link rel="top" title="Virtusize developer docs 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Introduction" href="oc/introduction.html"/>
-        <link rel="prev" title="Javascript API" href="ig/javascript-api.html"/> 
+    <link rel="top" title="Virtusize developer docs 1.1 documentation" href="index.html"/>
+        <link rel="next" title="Introduction" href="order-confirmation/introduction.html"/>
+        <link rel="prev" title="Javascript API" href="integration-guide/javascript-api.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -73,18 +73,18 @@
         
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="integration-guide.html">Integration guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ig/introduction.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ig/overview.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ig/product-types.html">Product Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ig/measurements.html">Providing Measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ig/integration.html">Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ig/javascript-api.html">Javascript API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-guide/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-guide/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-guide/product-types.html">Product Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-guide/measurements.html">Providing Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-guide/integration.html">Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-guide/javascript-api.html">Javascript API</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Order confirmation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="oc/introduction.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="oc/order-api.html">Order API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="oc/complete-example.html">Complete example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation/order-api.html">Order API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation/complete-example.html">Complete example</a></li>
 </ul>
 </li>
 </ul>
@@ -118,19 +118,19 @@
 <h1>Order confirmation<a class="headerlink" href="#order-confirmation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="oc/introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="oc/introduction.html#dependencies">Dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="oc/introduction.html#asynchronous-loading">Asynchronous loading</a></li>
-<li class="toctree-l2"><a class="reference internal" href="oc/introduction.html#how-it-works">How it works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-confirmation/introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation/introduction.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation/introduction.html#asynchronous-loading">Asynchronous loading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation/introduction.html#how-it-works">How it works</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="oc/order-api.html">Order API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="oc/order-api.html#getting-started">Getting started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="oc/order-api.html#order">Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="oc/order-api.html#line-items">Line Items</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-confirmation/order-api.html">Order API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation/order-api.html#getting-started">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation/order-api.html#order">Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation/order-api.html#line-items">Line Items</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="oc/complete-example.html">Complete example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="order-confirmation/complete-example.html">Complete example</a></li>
 </ul>
 </div>
 </div>
@@ -140,10 +140,10 @@
   
     <div class="rst-footer-buttons">
       
-        <a href="oc/introduction.html" class="btn btn-neutral float-right" title="Introduction"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="order-confirmation/introduction.html" class="btn btn-neutral float-right" title="Introduction"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="ig/javascript-api.html" class="btn btn-neutral" title="Javascript API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="integration-guide/javascript-api.html" class="btn btn-neutral" title="Javascript API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -162,7 +162,27 @@
     </section>
 
   </div>
-  
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="icon icon-globe"> Switch language</span>
+        <span class="icon icon-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Languages</dt>
+            <dd>
+                <a href="http://developers.virtusize.com/">English</a>
+            </dd>
+            <!-- TODO: comment this in, as soon as Japanese is ready
+            <dd>
+                <a href="http://developers.virtusize.com/ja/">Japanese</a>
+            </dd>
+            -->
+        </dl>
+        <hr/>
+        Developer documentation by <a href="http://www.virtusize.com/">Virtusize</a>.
+    </div>
+</div>
 
 </body>
 </html>
