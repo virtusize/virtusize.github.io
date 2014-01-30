@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+  <loc>http://developers.virtusize.com/</loc>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://developers.virtusize.com/integration-guide.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/integration-guide/introduction.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/integration-guide/overview.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/integration-guide/product-types.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/integration-guide/measurements.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/integration-guide/integration.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/integration-guide/javascript-api.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>http://developers.virtusize.com/order-confirmation.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/order-confirmation/introduction.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/order-confirmation/order-api.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/order-confirmation/complete-example.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+
+</urlset>
