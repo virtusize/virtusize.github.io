@@ -159,6 +159,18 @@ size
 
         '2128'
 
+image
+    *String* - The URL to a variant specific image of this line item of the
+    color and style the item was ordered by the customer. If possible provide
+    a high quality image. This will be used to help the customer identify his
+    previous purchases at a later stage in the Virtusize widget. In case there
+    is no variant specific image available, please provide the default product
+    image.
+    
+    Example::
+
+        'http://images.retailer.com/products/sku123/black/image_large.jpg'
+
 
 Recommended attributes
 """"""""""""""""""""""
@@ -173,23 +185,12 @@ sizeAlias
 
         'Large'
 
-image
-    *String* - The URL to a variant specific image of this line item of the
-    color and style the item was ordered by the customer. If possible provide
-    a high quality image. This will be used to help the customer identify his
-    previous purchases at a later stage in the Virtusize widget.
-    
-    Example::
-
-        'http://images.retailer.com/products/sku123/black/image_large.jpg'
-
 url
     *String* - The canonical URL of this product in the retailers online store.
     
     Example::
 
         'http://www.retailer.com/products/123'
-
 
 variantId
     *String* - An id that uniquely identifies a product variant including color
