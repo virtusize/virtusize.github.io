@@ -85,7 +85,7 @@ addItem(item)
             productId: 'external_id_1234',
             size: '2128',
             sizeAlias: 'Large',
-            image: 'http://images.retailer.com/products/sku123/black/image_large.jpg',
+            imageUrl: 'http://images.retailer.com/products/sku123/black/image_large.jpg',
             url: 'http://www.retailer.com/products/123',
             variantId: 'sku_123',
             color: 'black',
@@ -107,10 +107,12 @@ addItems(items)
         order.addItems([
             {
                 productId: 'external_id_1234',
+                imageUrl: 'http://images.retailer.com/products/sku1234/black/image_large.jpg',
                 size: '2128'
             },
             {
                 productId: 'external_id_1235',
+                imageUrl: 'http://images.retailer.com/products/sku1235/red/image_large.jpg',
                 size: '3242'
             },
         ]);
@@ -159,7 +161,7 @@ size
 
         '2128'
 
-image
+imageUrl
     *String* - The URL to a variant specific image of this line item of the
     color and style the item was ordered by the customer. If possible provide
     a high quality image. This will be used to help the customer identify his
@@ -238,7 +240,7 @@ Here is a complete line item object::
         productId: 'external_id_1234',
         size: '2128',
         sizeAlias: 'Large',
-        image: 'http://images.retailer.com/products/sku123/black/image_large.jpg',
+        imageUrl: 'http://images.retailer.com/products/sku123/black/image_large.jpg',
         url: 'http://www.retailer.com/products/123',
         variantId: 'sku_123',
         color: 'black',

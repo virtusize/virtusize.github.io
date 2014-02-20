@@ -190,7 +190,7 @@ script. It can be provided as a single item or as an array.</p>
     <span class="nx">productId</span><span class="o">:</span> <span class="s1">&#39;external_id_1234&#39;</span><span class="p">,</span>
     <span class="nx">size</span><span class="o">:</span> <span class="s1">&#39;2128&#39;</span><span class="p">,</span>
     <span class="nx">sizeAlias</span><span class="o">:</span> <span class="s1">&#39;Large&#39;</span><span class="p">,</span>
-    <span class="nx">image</span><span class="o">:</span> <span class="s1">&#39;http://images.retailer.com/products/sku123/black/image_large.jpg&#39;</span><span class="p">,</span>
+    <span class="nx">imageUrl</span><span class="o">:</span> <span class="s1">&#39;http://images.retailer.com/products/sku123/black/image_large.jpg&#39;</span><span class="p">,</span>
     <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://www.retailer.com/products/123&#39;</span><span class="p">,</span>
     <span class="nx">variantId</span><span class="o">:</span> <span class="s1">&#39;sku_123&#39;</span><span class="p">,</span>
     <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
@@ -210,10 +210,12 @@ multiple times.</p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">order</span><span class="p">.</span><span class="nx">addItems</span><span class="p">([</span>
     <span class="p">{</span>
         <span class="nx">productId</span><span class="o">:</span> <span class="s1">&#39;external_id_1234&#39;</span><span class="p">,</span>
+        <span class="nx">imageUrl</span><span class="o">:</span> <span class="s1">&#39;http://images.retailer.com/products/sku1234/black/image_large.jpg&#39;</span><span class="p">,</span>
         <span class="nx">size</span><span class="o">:</span> <span class="s1">&#39;2128&#39;</span>
     <span class="p">},</span>
     <span class="p">{</span>
         <span class="nx">productId</span><span class="o">:</span> <span class="s1">&#39;external_id_1235&#39;</span><span class="p">,</span>
+        <span class="nx">imageUrl</span><span class="o">:</span> <span class="s1">&#39;http://images.retailer.com/products/sku1235/red/image_large.jpg&#39;</span><span class="p">,</span>
         <span class="nx">size</span><span class="o">:</span> <span class="s1">&#39;3242&#39;</span>
     <span class="p">},</span>
 <span class="p">]);</span>
@@ -260,7 +262,7 @@ size identifiers used in the product database of Virtusize.</p>
 </pre></div>
 </div>
 </dd>
-<dt>image</dt>
+<dt>imageUrl</dt>
 <dd><p class="first"><em>String</em> - The URL to a variant specific image of this line item of the
 color and style the item was ordered by the customer. If possible provide
 a high quality image. This will be used to help the customer identify his
@@ -339,7 +341,7 @@ added for each variant.</p>
     <span class="nx">productId</span><span class="o">:</span> <span class="s1">&#39;external_id_1234&#39;</span><span class="p">,</span>
     <span class="nx">size</span><span class="o">:</span> <span class="s1">&#39;2128&#39;</span><span class="p">,</span>
     <span class="nx">sizeAlias</span><span class="o">:</span> <span class="s1">&#39;Large&#39;</span><span class="p">,</span>
-    <span class="nx">image</span><span class="o">:</span> <span class="s1">&#39;http://images.retailer.com/products/sku123/black/image_large.jpg&#39;</span><span class="p">,</span>
+    <span class="nx">imageUrl</span><span class="o">:</span> <span class="s1">&#39;http://images.retailer.com/products/sku123/black/image_large.jpg&#39;</span><span class="p">,</span>
     <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://www.retailer.com/products/123&#39;</span><span class="p">,</span>
     <span class="nx">variantId</span><span class="o">:</span> <span class="s1">&#39;sku_123&#39;</span><span class="p">,</span>
     <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
