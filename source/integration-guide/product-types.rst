@@ -6,25 +6,25 @@ Product Types
 About
 -----
 
-We support a range of different types of garments and are always working
-towards more types. This list is the latest up to date list of the
+We support a large range of different types of garments and are continuously working
+towards supporting more types. This list is the latest up-to-date list of the
 supported product types.
 
-Each type has a set of measurements, some measurements are mark as
-required and represent the minimal subset if measurements that must be
+Each type has a set of measurements, some measurements are marked as
+required and represent the minimal subset of measurements that have to be
 provided.
 
-A product type is identified by its common English name in camelCase.
+A product type is identified by it's common English name in camelCase.
 
 
 Product Types API
 -----------------
 
-There are different product types supported by Virtusize, and we are
+There are different product types supported by Virtusize and we are
 always working on implementing more product types. We provide a JSON API
 to get the data about each product type. Each product type has a
 specific set of required measurements and optional measurements. A
-product type is identified by its common English name in camelCase.
+product type is identified by it's common English name in camelCase.
 
 **Examples of product type identifiers:**
 
