@@ -14,7 +14,7 @@ Each type has a set of measurements, some measurements are marked as
 required and represent the minimal subset of measurements that have to be
 provided.
 
-A product type is identified by it's common English name in camelCase.
+A product type is identified by its common English name in camelCase.
 
 
 Product Types API
@@ -24,7 +24,7 @@ There are different product types supported by Virtusize and we are
 always working on implementing more product types. We provide a JSON API
 to get the data about each product type. Each product type has a
 specific set of required measurements and optional measurements. A
-product type is identified by it's common English name in camelCase.
+product type is identified by its common English name in camelCase.
 
 **Examples of product type identifiers:**
 
