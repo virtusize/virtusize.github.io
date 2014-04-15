@@ -80,19 +80,6 @@ case, also accepts an array of functions.
 Make sure the products exist in the Virtusize database and the button
 containers containers exist on your page.
 
-Assisted Integration
---------------------
-
-Assisted integration is similar to our :ref:`label-single-product-integration`,
-but is stripped to the core. This integration is very easy, however it does
-require some work on our end. If you are interested in this integration, please
-`contact us <http://www.virtusize.com/contact>`_.
-
-.. gist:: https://gist.github.com/butschi/5620294
-
-Once you have embedded the integration snippet, contact us and we will
-activate your API key and set up additional parameters.
-
 
 Using a custom button
 ---------------------
