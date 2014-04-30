@@ -7,6 +7,5 @@ Order confirmation
 
    order-confirmation/introduction
    order-confirmation/order-api
-   order-confirmation/complete-example
 
 

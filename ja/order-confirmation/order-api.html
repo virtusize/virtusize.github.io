@@ -48,7 +48,7 @@
   
     <link rel="top" title="Virtusize developer docs 1.1 ドキュメント" href="../index.html"/>
         <link rel="up" title="Order confirmation" href="../order-confirmation.html"/>
-        <link rel="next" title="Complete example" href="complete-example.html"/>
+        <link rel="next" title="Legacy Integration guide" href="../legacy-integration-guide.html"/>
         <link rel="prev" title="Introduction" href="introduction.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -79,14 +79,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/overview.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/product-types.html">Product Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/measurements.html">Providing Measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integration-guide/integration.html">Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integration-guide/javascript-api.html">Javascript API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/integration.html">Integration - Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/advanced.html">Advanced Configuration - JavaScript API</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../order-confirmation.html">Order confirmation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Order API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="complete-example.html">Complete example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy-integration-guide.html">Legacy Integration guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../legacy-integration-guide/legacy-integration.html">Integration v2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legacy-integration-guide/legacy-javascript-api.html">JavaScript API v2</a></li>
 </ul>
 </li>
 </ul>
@@ -118,107 +122,65 @@
           
   <div class="section" id="order-api">
 <h1>Order API<a class="headerlink" href="#order-api" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="section" id="getting-started">
-<h2>Getting started<a class="headerlink" href="#getting-started" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To get started you have to include a script into your order confirmation page.
-It is very similar to the integration script you already included on your
-product pages.</p>
+<div class="section" id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>To get started you have to include the Virtusize integration script into your
+order confirmation page just before the closing <tt class="docutils literal"><span class="pre">&lt;/head&gt;</span></tt>. This is the same
+script that you use on your product pages.</p>
 <p>You supply certain information about the order and the line items of the order.
 Some attributes are required for the purchase history to work properly, others
 are recommended.</p>
-<p>The basic script you have to include looks like the following:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nb">window</span><span class="p">.</span><span class="nx">vsOrderConfirmation</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">order</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Set details on the order object here …</span>
-<span class="p">};</span>
+<p>A complete example looks like the following:</p>
+<div class="highlight-javascript"><div class="highlight"><pre>&lt;!-- Virtusize Integration --&gt;
+&lt;script&gt;
+!function(a,b,c,d,e,f,g){var h,i,j,k;for(a.Virtusize=e,a[e]=a[e]||[],a[e].methods=[&quot;setApiKey&quot;,&quot;setRegion&quot;,&quot;setLanguage&quot;,&quot;setLocale&quot;,&quot;setOverlayColor&quot;,&quot;addWidget&quot;,&quot;ready&quot;,&quot;on&quot;,&quot;setAvailableSizes&quot;,&quot;setSizeAliases&quot;,&quot;addOrder&quot;,&quot;setUserId&quot;],a[e].factory=function(b){return function(){var c;return c=Array.prototype.slice.call(arguments),c.unshift(b),a[e].push(c),a[e]}},k=a[e].methods,i=0,j=k.length;j&gt;i;i++)h=k[i],a[e][h]=a[e].factory(h);a[e].snippetVersion=&quot;3.0.0&quot;,f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src=&quot;https:&quot;===a.location.protocol?&quot;https://&quot;:&quot;http://cdn.&quot;+d,f.id=&quot;vs-integration&quot;,g.parentNode.insertBefore(f,g)}(window,document,&quot;script&quot;,&quot;api.virtusize.com/integration/v3.js&quot;,&quot;vs&quot;);
 
-<span class="cm">/*** Do not change anything below this line!                ***/</span>
-<span class="cm">/*** This will load the Virtusize order confirmation script ***/</span>
-<span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">s</span><span class="p">){</span>
-    <span class="kd">var</span> <span class="nx">fS</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">s</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">sE</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">s</span><span class="p">),</span>
-        <span class="nx">p</span> <span class="o">=</span> <span class="s2">&quot;https:&quot;</span> <span class="o">==</span> <span class="nx">d</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="o">?</span> <span class="s2">&quot;https://&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://cdn.&quot;</span><span class="p">;</span>
-    <span class="nx">sE</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="nx">sE</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">&quot;text/javascript&quot;</span><span class="p">;</span>
-    <span class="nx">sE</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">p</span> <span class="o">+</span> <span class="s2">&quot;api.virtusize.com/order-confirmation/v1.js&quot;</span><span class="p">;</span>
-    <span class="nx">fS</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">sE</span><span class="p">,</span> <span class="nx">fS</span><span class="p">);</span>
-<span class="p">}(</span><span class="nb">document</span><span class="p">,</span> <span class="s2">&quot;script&quot;</span><span class="p">));</span>
+vs.setApiKey(&#39;0000000000000000000000000000000000000000&#39;);
+
+vs.addOrder({
+    orderId: &#39;ORDER_ID&#39;,
+    userId: &#39;USER_ID&#39;,
+    region: &#39;DE&#39;,
+
+    items: [
+        {
+            productId: &#39;PRODUCT_ID&#39;,
+            size: &#39;L&#39;,
+            sizeAlias: &#39;Large&#39;,
+            variantId: &#39;SKU_123&#39;,
+            url: &#39;http://www.retailer.com/products/PRODUCT_ID&#39;,
+            imageUrl: &#39;http://images.retailer.com/products/sku_123/black/image1xl.jpg&#39;,
+            color: &#39;black&#39;,
+            gender: &#39;female&#39;,
+            unitPrice: 99.95,
+            quantity: 1,
+            currency: &#39;EUR&#39;
+        }
+    ]
+});
+&lt;/script&gt;
+&lt;!-- End Virtusize Integration --&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="order">
 <h2>Order<a class="headerlink" href="#order" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The order is the container holding all the information about this purchase. The
-object is instantiated by the order confirmation script from Virtusize and
-passed as a parameter into the function implemented by the retailer. This is
-working the same way as in the integration script.</p>
-<p>Example:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nb">window</span><span class="p">.</span><span class="nx">vsOrderConfirmation</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">order</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Set details on the order object here …</span>
-<span class="p">};</span>
-</pre></div>
-</div>
+<p>An order contains general information about this purchase as well as a list of
+line items.</p>
 <div class="section" id="required-attributes">
 <h3>Required attributes<a class="headerlink" href="#required-attributes" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="docutils">
-<dt>setApiKey(apiKey)</dt>
-<dd><p class="first"><strong>apiKey</strong>: <em>String</em> - The retailers API key as provided by Virtusize. To
-obtain your API key, please <a class="reference external" href="http://www.virtusize.com/contact">contact our sales team</a>.</p>
+<dt>orderId</dt>
+<dd><p class="first"><em>String</em> - An id uniquely identifying the order</p>
 <p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">order</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s1">&#39;0000000000000000000000000000000000000000&#39;</span><span class="p">);</span>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="s1">&#39;ORDER_ID_4321&#39;</span>
 </pre></div>
 </div>
 </dd>
-<dt>setOrderId(orderId)</dt>
-<dd><p class="first"><strong>orderId</strong>: <em>String</em> - An id uniquely identifying the order</p>
+<dt>userId</dt>
+<dd><p class="first"><em>String</em> - An anonymous user id uniquely identifying a customer of the retailer</p>
 <p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">order</span><span class="p">.</span><span class="nx">setOrderId</span><span class="p">(</span><span class="s1">&#39;order-1234&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</dd>
-<dt>setUserId(userId)</dt>
-<dd><p class="first"><strong>userId</strong>: <em>String</em> - An anonymous user id uniquely identifying a customer of the retailer</p>
-<p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">order</span><span class="p">.</span><span class="nx">setUserId</span><span class="p">(</span><span class="s1">&#39;user-4321&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</dd>
-<dt>addItem(item)</dt>
-<dd><p class="first"><strong>item</strong>: <em>Object</em> - Add a single line item to this order. There must be at
-least one item present, to be able to benefit from the order confirmation
-script. It can be provided as a single item or as an array.</p>
-<p>See <a class="reference internal" href="#label-line-items"><em>Line Items</em></a> for more information.</p>
-<p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">order</span><span class="p">.</span><span class="nx">addItem</span><span class="p">({</span>
-    <span class="nx">productId</span><span class="o">:</span> <span class="s1">&#39;external_id_1234&#39;</span><span class="p">,</span>
-    <span class="nx">size</span><span class="o">:</span> <span class="s1">&#39;2128&#39;</span><span class="p">,</span>
-    <span class="nx">sizeAlias</span><span class="o">:</span> <span class="s1">&#39;Large&#39;</span><span class="p">,</span>
-    <span class="nx">imageUrl</span><span class="o">:</span> <span class="s1">&#39;http://images.retailer.com/products/sku123/black/image_large.jpg&#39;</span><span class="p">,</span>
-    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://www.retailer.com/products/123&#39;</span><span class="p">,</span>
-    <span class="nx">variantId</span><span class="o">:</span> <span class="s1">&#39;sku_123&#39;</span><span class="p">,</span>
-    <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
-    <span class="nx">gender</span><span class="o">:</span> <span class="s1">&#39;unisex&#39;</span><span class="p">,</span>
-    <span class="nx">unitPrice</span><span class="o">:</span> <span class="mf">99.95</span><span class="p">,</span>
-    <span class="nx">quantity</span><span class="o">:</span> <span class="mi">1</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-</dd>
-<dt>addItems(items)</dt>
-<dd><p class="first"><strong>items</strong>: <em>Array</em> - Add an array of line item to this order. This is
-a convenience function that can be called instead of calling <tt class="docutils literal"><span class="pre">addItem</span></tt>
-multiple times.</p>
-<p>See <a class="reference internal" href="#label-line-items"><em>Line Items</em></a> for more information.</p>
-<p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">order</span><span class="p">.</span><span class="nx">addItems</span><span class="p">([</span>
-    <span class="p">{</span>
-        <span class="nx">productId</span><span class="o">:</span> <span class="s1">&#39;external_id_1234&#39;</span><span class="p">,</span>
-        <span class="nx">imageUrl</span><span class="o">:</span> <span class="s1">&#39;http://images.retailer.com/products/sku1234/black/image_large.jpg&#39;</span><span class="p">,</span>
-        <span class="nx">size</span><span class="o">:</span> <span class="s1">&#39;2128&#39;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="nx">productId</span><span class="o">:</span> <span class="s1">&#39;external_id_1235&#39;</span><span class="p">,</span>
-        <span class="nx">imageUrl</span><span class="o">:</span> <span class="s1">&#39;http://images.retailer.com/products/sku1235/red/image_large.jpg&#39;</span><span class="p">,</span>
-        <span class="nx">size</span><span class="o">:</span> <span class="s1">&#39;3242&#39;</span>
-    <span class="p">},</span>
-<span class="p">]);</span>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="s1">&#39;USER_ID_1234&#39;</span>
 </pre></div>
 </div>
 </dd>
@@ -227,12 +189,12 @@ multiple times.</p>
 <div class="section" id="recommended-attributes">
 <h3>Recommended attributes<a class="headerlink" href="#recommended-attributes" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="docutils">
-<dt>setRegion(region)</dt>
-<dd><p class="first"><strong>region</strong>: <em>String</em> - The region identifier as defined by ISO 3166-1
+<dt>region</dt>
+<dd><p class="first"><em>String</em> - The region identifier as defined by ISO 3166-1
 alpha-2. The region id must be the two-letter ISO-3166 country code as
 defined in <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a></p>
 <p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">order</span><span class="p">.</span><span class="nx">setRegion</span><span class="p">(</span><span class="s1">&#39;DE&#39;</span><span class="p">);</span>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="s1">&#39;DE&#39;</span>
 </pre></div>
 </div>
 </dd>
@@ -240,9 +202,8 @@ defined in <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_
 </div>
 </div>
 <div class="section" id="line-items">
-<span id="label-line-items"></span><h2>Line Items<a class="headerlink" href="#line-items" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Line items can be added to an order either by individually calling <tt class="docutils literal"><span class="pre">addItem</span></tt> or
-by calling <tt class="docutils literal"><span class="pre">addItems</span></tt> with an array of items.</p>
+<span id="label-line-items-v3"></span><h2>Line Items<a class="headerlink" href="#line-items" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Line items represent the actual products that have been purchased.</p>
 <div class="section" id="id1">
 <h3>Required attributes<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="docutils">
@@ -360,7 +321,7 @@ added for each variant.</p>
   
     <div class="rst-footer-buttons">
       
-        <a href="complete-example.html" class="btn btn-neutral float-right" title="Complete example"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../legacy-integration-guide.html" class="btn btn-neutral float-right" title="Legacy Integration guide"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="introduction.html" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Search &mdash; Virtusize developer docs 1.1 documentation</title>
+  <title>Legacy Integration guide &mdash; Virtusize developer docs 1.1 documentation</title>
   
 
   
@@ -31,7 +31,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/searchtools.js"></script>
       <script type="text/javascript" src="_static/js/virtusize.js"></script>
       <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -47,13 +46,8 @@
 
   
     <link rel="top" title="Virtusize developer docs 1.1 documentation" href="index.html"/>
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
-   
-
+        <link rel="next" title="Integration v2" href="legacy-integration-guide/legacy-integration.html"/>
+        <link rel="prev" title="Order API" href="order-confirmation/order-api.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -67,7 +61,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
         <a href="index.html" class="icon icon-home"> Virtusize developer docs</a>
-        <form class="wy-form" action="#" method="get">
+        <form class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
   <input type="hidden" name="check_keywords" value="yes" />
   <input type="hidden" name="area" value="default" />
@@ -77,7 +71,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="integration-guide.html">Integration guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="integration-guide/introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integration-guide/overview.html">Overview</a></li>
@@ -92,7 +86,7 @@
 <li class="toctree-l2"><a class="reference internal" href="order-confirmation/order-api.html">Order API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="legacy-integration-guide.html">Legacy Integration guide</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Legacy Integration guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="legacy-integration-guide/legacy-integration.html">Integration v2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="legacy-integration-guide/legacy-javascript-api.html">JavaScript API v2</a></li>
 </ul>
@@ -118,27 +112,44 @@
         <div class="rst-content">
           <ul class="wy-breadcrumbs">
   <li><a href="index.html">Docs</a> &raquo;</li>
-  <li><a href=""></a></li>
+  <li><a href="">Legacy Integration guide</a></li>
   
 </ul>
 <hr/>
 
           
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="legacy-integration-guide">
+<h1>Legacy Integration guide<a class="headerlink" href="#legacy-integration-guide" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="legacy-integration-guide/legacy-integration.html">Integration v2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="legacy-integration-guide/legacy-integration.html#single-product-integration">Single Product Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="legacy-integration-guide/legacy-integration.html#multiple-product-integration">Multiple Product Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="legacy-integration-guide/legacy-integration.html#using-a-custom-button">Using a custom button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="legacy-integration-guide/legacy-integration.html#staging-environment">Staging Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="legacy-integration-guide/legacy-integration.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="legacy-integration-guide/legacy-javascript-api.html">JavaScript API v2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="legacy-integration-guide/legacy-javascript-api.html#virtusizewidget">VirtusizeWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="legacy-integration-guide/legacy-javascript-api.html#events-and-callbacks">Events and Callbacks</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
           <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="legacy-integration-guide/legacy-integration.html" class="btn btn-neutral float-right" title="Integration v2"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="order-confirmation/order-api.html" class="btn btn-neutral" title="Order API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

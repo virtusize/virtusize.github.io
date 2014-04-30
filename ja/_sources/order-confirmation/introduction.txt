@@ -1,7 +1,7 @@
 Introduction
 ------------
 
-Virtusize order confirmation consists of a small Javascript, that retailer can
+Virtusize order confirmation consists of a small JavaScript, that retailer can
 include in their order confirmation pages. The retailer will supply Virtusize
 with a number of useful information, that is relevant for finding the perfect
 size and fit for the customers of the retailer.
@@ -13,6 +13,12 @@ are looking to purchase from the retailer at the moment. Doing this will
 effectively eliminate the tedious task of measuring garments from their
 wardrobe for the customers and will therefore make it much easier for the
 customer to get started with using Virtusize.
+
+.. note::
+    You can start providing purchase data as soon as you have received your API
+    key. This way your customers will benefit as soon as you integrate
+    Virtusize on your product pages. They will already have purchase history
+    from their previous purchases in place.
 
 
 Dependencies
@@ -34,7 +40,7 @@ page will not be impacted other than that the button won't show.
 
 How it works
 ^^^^^^^^^^^^
-After the order confirmation script loads, it will create one ore more tracking
+After the order confirmation script loads, it will create one or more tracking
 pixels and insert them into the retailers page. That way the given information
 will get passed on to Virtusize. Our servers will store the order data and
 connect it to the current customer.

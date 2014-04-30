@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JavaScript API v2 &mdash; Virtusize developer docs 1.1 ドキュメント</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../',
+        VERSION:'1.1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Virtusize developer docs 1.1 ドキュメント" href="../index.html"/>
+        <link rel="up" title="Legacy Integration guide" href="../legacy-integration-guide.html"/>
+        <link rel="prev" title="Integration v2" href="legacy-integration.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> Virtusize developer docs</a>
+        <form class="wy-form" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../integration-guide.html">Integration guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/introduction.html">Introduction ja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/product-types.html">Product Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/measurements.html">Providing Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/integration.html">Integration - Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/advanced.html">Advanced Configuration - JavaScript API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../order-confirmation.html">Order confirmation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../order-confirmation/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../order-confirmation/order-api.html">Order API</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../legacy-integration-guide.html">Legacy Integration guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="legacy-integration.html">Integration v2</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">JavaScript API v2</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Virtusize developer docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+  <li><a href="">JavaScript API v2</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <div class="section" id="javascript-api-v2">
+<span id="label-javascript-api"></span><h1>JavaScript API v2<a class="headerlink" href="#javascript-api-v2" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">ノート</p>
+<p class="last">This integration version is out of date. Please use the new integration v3
+or upgrade your old integration v2. See: <a class="reference internal" href="../integration-guide/integration.html#label-integration-v3"><em>Integration - Quick Start</em></a></p>
+</div>
+<div class="section" id="virtusizewidget">
+<h2>VirtusizeWidget<a class="headerlink" href="#virtusizewidget" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">vsWidget</span></tt> object allows for programmatic configuration of the widget.
+Depending on your chosen integration type you either have access to a single
+vsWidget object or to multiple objects used in the multi product integration.</p>
+<script src="https://gist.github.com/butschi/5620596.js">&nbsp;</script><p>The function <tt class="docutils literal"><span class="pre">vsWidgetAsyncInit</span></tt> is required and is called by the integration
+script during loading.</p>
+<p>This function has access to the <tt class="docutils literal"><span class="pre">vsWidget</span></tt> object and can configure it.</p>
+<div class="section" id="api-methods-of-the-vswidget-object">
+<h3>API Methods of the vsWidget object<a class="headerlink" href="#api-methods-of-the-vswidget-object" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="basic-api">
+<h4>Basic API<a class="headerlink" href="#basic-api" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<dl class="docutils">
+<dt>setApiKey(key)</dt>
+<dd><p class="first"><strong>key</strong> - String</p>
+<p>Sets the API key required for vs widget.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+<dt>setProductId(id)</dt>
+<dd><p class="first"><strong>id</strong> - String, the unique product id.</p>
+<p>Use this to provide the product identifier.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setProductId</span><span class="p">(</span><span class="s2">&quot;1234567890&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+<dt>setButton(buttonElement)</dt>
+<dd><p class="first"><strong>buttonElement</strong> - string, either a CSS selector or a jQuery object.</p>
+<p>If you want to use a custom DOM element as a button, use this. If this is
+not supplied, integration defaults to default button placed in
+<strong>#vs-widget-button-container</strong> element.  setButton will override any
+button-position strategy.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setButton</span><span class="p">(</span><span class="s2">&quot;.special-vs-button&quot;</span><span class="p">);</span>
+<span class="nx">OR</span>
+<span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setButton</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button.vs-button&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+</dd>
+<dt>setButtonContainer(buttonContainer)</dt>
+<dd><p class="first"><strong>buttonContainer</strong> - string, either a css selector or a jQuery
+object.</p>
+<p>If you want to use the default button, but use a different
+container, use this call.
+Default container is <strong>#vs-widget-button-container</strong></p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setButtonContainer</span><span class="p">(</span><span class="s2">&quot;.special-vs-button-container&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="advanced-api">
+<h4>Advanced API<a class="headerlink" href="#advanced-api" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<dl class="docutils">
+<dt>setButtonStrategy(strategy)</dt>
+<dd><p class="first"><strong>strategy</strong> - function callable, function must return a DOM element
+representing the button.</p>
+<p>Sets a button strategy to use, see <a class="reference internal" href="#label-button-strategies"><em>Button strategies</em></a> for more
+information. You can use any DOM element on your page to trigger the
+widget functionality.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setButtonStrategy</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.some-element-we-can-use-as-button&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd>
+<dt>setButtonPositionStrategy(strategy)</dt>
+<dd><p class="first"><strong>strategy</strong> - function callable, function must return a container where to
+place the button.</p>
+<p>Set a button position strategy to use, see
+<a class="reference internal" href="#label-button-position-strategies"><em>Button position strategies</em></a> for more information.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setButtonPositionStrategy</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.some-element-we-can-use-as-container&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd>
+<dt>setProductData(productData)</dt>
+<dd><p class="first"><strong>productData</strong> - Object, containing the product data.</p>
+<p>Shortcut to be able to provide the product data directly, this allows you
+to set more than just product id, you can also provide a name and other
+variables.  This is required for feeds integration.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setProductData</span><span class="p">({</span><span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;1234567890&quot;</span><span class="p">,</span> <span class="nx">version</span><span class="o">:</span> <span class="s2">&quot;v1&quot;</span><span class="p">});</span>
+</pre></div>
+</div>
+</dd>
+<dt>setProductDataStrategy(strategy)</dt>
+<dd><p class="first"><strong>strategy</strong> - function callable, function must return product data.</p>
+<p>Set a product data strategy to use, see
+<a class="reference internal" href="#label-product-data-strategies"><em>Custom product data strategy</em></a> for more information.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setProductDataStrategy</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.some-element-that-contains-product-id&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd>
+<dt>setLanguage(languageId)</dt>
+<dd><p class="first"><strong>languageId</strong> - String, language identifier in the format of
+&#8220;languageCode-regionCode&#8221;.</p>
+<p>Sets the preferred language to be used in widget, The language id must
+follow the form: <strong>languageCode[-regionCode]</strong> where regionCode is
+optional.</p>
+<p><strong>languageCode</strong> - two-letter ISO-639-1 language abbreviation as defined by
+<a class="reference external" href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes</a></p>
+<p><strong>regionCode</strong> - two-letter ISO-3166 country code where this language is
+spoken (optional) as defined in
+<a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a> If the requested language
+is not supported, the call is ignored.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setLanguage</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">);</span>
+<span class="nx">OR</span>
+<span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setLanguage</span><span class="p">(</span><span class="s2">&quot;en-GB&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+<dt>setRegion(regionId)</dt>
+<dd><p class="first"><strong>regionId</strong> - String, region identifier as defined by ISO 3166-1 alpha-2</p>
+<p>Sets the preferred region to be used in widget, The region id must be the
+two-letter ISO-3166 country code as defined in
+<a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a> Region controls the default
+length unit.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setRegion</span><span class="p">(</span><span class="s2">&quot;GB&quot;</span><span class="p">);</span>
+<span class="nx">OR</span>
+<span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setRegion</span><span class="p">(</span><span class="s2">&quot;US&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+<dt>setAvailableSizes(sizesList)</dt>
+<dd><p class="first"><strong>sizesList</strong> - Array, list of product sizes.</p>
+<p>Sets the product sizes that are in stock, to be used in the widget. Must
+contain the original size identifiers, not the regional names. The names
+provided here must correspond to size identifiers for each product.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setAvailableSizes</span><span class="p">([</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">]);</span>
+<span class="nx">OR</span>
+<span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setAvailableSizes</span><span class="p">([</span><span class="s2">&quot;1432&quot;</span><span class="p">,</span> <span class="s2">&quot;4123&quot;</span><span class="p">,</span> <span class="s2">&quot;2314&quot;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</dd>
+<dt>setSizeAliases(sizeAliases)</dt>
+<dd><p class="first"><strong>sizeAliases</strong> - Object, containing the sizes and their aliases.</p>
+<p>Sets the alternative product sizes names. Maps to original size names. Use
+this for regional size names.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setSizeAliases</span><span class="p">({</span>
+    <span class="s2">&quot;S&quot;</span><span class="o">:</span> <span class="s2">&quot;UK 6&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;M&quot;</span><span class="o">:</span> <span class="s2">&quot;UK 10&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;L&quot;</span><span class="o">:</span> <span class="s2">&quot;UK 14&quot;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd>
+<dt>bindCallback(eventName, callback)</dt>
+<dd><p class="first"><strong>eventName</strong> - String, valid event to bind a callback to. See
+<a class="reference internal" href="#label-events-and-callbacks"><em>Events and Callbacks</em></a></p>
+<p><strong>callback</strong> - Function callable, function to call when an event occurs.
+Allows programmatic subscription to widget events such as: widget.close,
+widget.open, etc...</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vsWidget</span><span class="p">.</span><span class="nx">bindCallback</span><span class="p">(</span><span class="s2">&quot;widget.open&quot;</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">,</span> <span class="nx">productData</span><span class="p">){</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Widget opened!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+<dt>unbindCallback(eventName, [callback])</dt>
+<dd><p class="first"><strong>eventName</strong> - String, valid event to unbind a callback from.</p>
+<p class="last"><strong>callback</strong> - optional - Function callable, function unbind, must be the
+real function reference.  Unbinds any callbacks registered. If not provided
+with a callback reference will unbind all callbacks to the provided event
+name.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">ノート</p>
+<p class="last">For single product integrations the vsWidget object is also available for
+reference via <strong>window.Virtusize.vsWidget</strong> after the call to the
+<strong>vsWidgetAsyncInit</strong> function. For multiple products this reference is
+pointing to the first vsWidget instance.</p>
+</div>
+<p><strong>Integration script source</strong></p>
+<p>The source code of the integration script is available at:
+<a class="reference external" href="http://api.virtusize.com/api/vs-widget/v2/vs-widget.js?source">http://api.virtusize.com/api/vs-widget/v2/vs-widget.js?source</a></p>
+<p><strong>Product data strategies</strong></p>
+<p>The simplest product data strategy for single product integrations is to
+only provide a unique product identifier. For that you can use the
+<strong>setProductId</strong> call on the <strong>vsWidget</strong> object.</p>
+<div class="admonition note">
+<p class="first admonition-title">ノート</p>
+<p class="last">There is no default product data strategy, at least the product id must
+always be provided.</p>
+</div>
+</div>
+<div class="section" id="product-identifier-example">
+<h4>Product identifier example<a class="headerlink" href="#product-identifier-example" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<script src="https://gist.github.com/butschi/5626197.js">&nbsp;</script><div class="admonition note">
+<p class="first admonition-title">ノート</p>
+<p class="last">The <strong>setProductId</strong> method is a shortcut to <strong>setProductDataStrategy</strong>, it
+creates a strategy that returns product data with the provided product id.</p>
+</div>
+</div>
+</div>
+<div class="section" id="custom-product-data-strategy">
+<span id="label-product-data-strategies"></span><h3>Custom product data strategy<a class="headerlink" href="#custom-product-data-strategy" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The product data strategy is a very versatile way to resolve product
+data. For example, assume the product id always exists on a page in a
+span element with id <tt class="docutils literal"><span class="pre">product-identifier</span></tt> and for some reason it is
+not feasible to output this id directly into the integration snippet
+with the use of <tt class="docutils literal"><span class="pre">setProductId</span></tt>. Instead we can write a custom product
+data strategy that resolves the product data by reading the product id
+from the span element.</p>
+<div class="section" id="custom-product-data-strategy-example">
+<h4>Custom product data strategy example<a class="headerlink" href="#custom-product-data-strategy-example" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<script src="https://gist.github.com/butschi/5626268.js">&nbsp;</script><p>The function <tt class="docutils literal"><span class="pre">setProductDataStrategy</span></tt> takes one parameter, a function
+callable that will be executed and passed the jQuery instance as the
+first argument. The strategy is expected to return a JSON object with at
+least the <strong>id</strong> field set.</p>
+</div>
+</div>
+<div class="section" id="button-strategies">
+<span id="label-button-strategies"></span><h3>Button strategies<a class="headerlink" href="#button-strategies" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Integration needs to know where to place the Virtusize button. By
+default, it will try to place a standard button inside an element with
+id of <tt class="docutils literal"><span class="pre">vs-widget-button-container</span></tt>. However any DOM element can be
+used as the Virtusize button. Button strategies can be used to bind any
+DOM element to act as the Virtusize button. Button strategies take
+precedence over button position strategies.</p>
+<div class="section" id="custom-button-example">
+<h4>Custom button example<a class="headerlink" href="#custom-button-example" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<script src="https://gist.github.com/jtsoi/c43d728bee8752577cd0.js">&nbsp;</script></div>
+<div class="section" id="custom-button-strategy-example">
+<h4>Custom button strategy example<a class="headerlink" href="#custom-button-strategy-example" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<script src="https://gist.github.com/jtsoi/cc0cabecdd62c5c338d3.js">&nbsp;</script></div>
+</div>
+<div class="section" id="button-position-strategies">
+<span id="label-button-position-strategies"></span><h3>Button position strategies<a class="headerlink" href="#button-position-strategies" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If no button strategy is provided, a default button position strategy is
+used as a fallback. The fallback strategy will position the button
+inside an element with the id of <tt class="docutils literal"><span class="pre">vs-widget-button-container</span></tt>.</p>
+<div class="section" id="button-position-strategy-example">
+<h4>Button position strategy example<a class="headerlink" href="#button-position-strategy-example" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<script src="https://gist.github.com/jtsoi/016190aaf9e8e1d39afb.js">&nbsp;</script></div>
+<div class="section" id="custom-button-position-strategy-example">
+<h4>Custom Button position strategy example<a class="headerlink" href="#custom-button-position-strategy-example" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<script src="https://gist.github.com/jtsoi/e5aec012cc63daef6d9b.js">&nbsp;</script><div class="admonition note">
+<p class="first admonition-title">ノート</p>
+<p class="last">Note that the button strategy can return any DOM or jQuery element. The id
+on the element is not mandatory.  However the element should be a block
+level element.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="events-and-callbacks">
+<span id="label-events-and-callbacks"></span><h2>Events and Callbacks<a class="headerlink" href="#events-and-callbacks" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The integration snippet provides a way to subscribe for event callbacks.
+Use the <tt class="docutils literal"><span class="pre">bindCallback</span></tt> method on the <tt class="docutils literal"><span class="pre">vsWidget</span></tt> object to register
+callbacks.</p>
+<p>All callbacks are called with two or more arguments. The first argument
+will always be the jQuery global object ($), in case jQuery support is
+needed inside the callback. The second argument is the current product
+data object which has at least the <tt class="docutils literal"><span class="pre">id</span></tt> property. Any additional
+arguments are event specific.</p>
+<div class="admonition note">
+<p class="first admonition-title">ノート</p>
+<p class="last">Event callbacks are a volatile feature, new events can be added, renamed or
+removed without notification as the Virtusize product evolves.</p>
+</div>
+<p>The following events are supported:</p>
+<div class="section" id="button-events">
+<h3>Button events<a class="headerlink" href="#button-events" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<dl class="docutils">
+<dt>widget.validProduct</dt>
+<dd>Triggered when the product data has been validated, and the product
+measurements exist and are valid.</dd>
+<dt>widget.button.show</dt>
+<dd>Triggered after the widget button is shown on the product page.</dd>
+<dt>widget.button.click</dt>
+<dd>Triggered when a user clicks on the button, to open the widget.</dd>
+</dl>
+</div>
+<div class="section" id="widget-events">
+<h3>Widget events<a class="headerlink" href="#widget-events" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<dl class="docutils">
+<dt>widget.open</dt>
+<dd>Triggered when the widget is opened.</dd>
+<dt>widget.introApp</dt>
+<dd>Triggered when a user sees the intro app (first screen for a new
+user).</dd>
+<dt>widget.getStartedApp</dt>
+<dd>Triggered when a user sees the get-started app (user clicks &#8220;next&#8221;
+button from intro app).</dd>
+<dt>widget.welcomeBackApp</dt>
+<dd>Triggered when a user opens the welcome-back app (if the user has
+used VS before and has at least one item in the wardrobe).</dd>
+<dt>widget.introApp.noTapeClick</dt>
+<dd>Triggered when a user clicks the &#8220;I do not have a tape measure&#8221; link
+in the intro app or the welcome-back app.</dd>
+<dt>widget.newFromMeasurementsApp</dt>
+<dd>Triggered when a user opens the new-from-measurements app, also
+known as the &#8220;third slide&#8221;.</dd>
+<dt>widget.newFromMeasurementsApp.itemCreated</dt>
+<dd>Triggered when a user successfully creates a new item from
+measurements in the new-from-measurements app.</dd>
+<dt>widget.compareApp</dt>
+<dd>Triggered when a user compares the product in the compare view.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">ノート</p>
+<p class="last">The <strong>widget.compareApp</strong> event is probably the most useful event as it
+registers when a user compares items. Use this event to register Virtusize
+&#8220;uses&#8221;.</p>
+</div>
+<dl class="docutils">
+<dt>widget.compareApp.addNewItemClick</dt>
+<dd>Triggered when a user clicks the &#8220;Add new item&#8221; button in the
+wardrobe app (previously the compare app, hence the event name).</dd>
+<dt>widget.compareApp.saveWardrobeClick</dt>
+<dd>Triggered when a user clicks the &#8220;Save my wardrobe&#8221; button in the
+compare app.</dd>
+<dt>widget.sizeId.selected</dt>
+<dd>Triggered when a size is selected in the widget. Note: the third
+argument to the callback function will be an object containing the
+selected size ID and a boolean indicating if the size was
+auto-selected or not.</dd>
+<dt>widget.iOwnItClick</dt>
+<dd>Triggered when a user clicks the &#8220;i-own-it&#8221; button, from anywhere in
+the widget.</dd>
+<dt>widget.newFromReferenceApp</dt>
+<dd>Triggered when a user opens the new-from-reference app, the
+reference size selector from intro app.</dd>
+<dt>widget.newFromReferenceApp.itemCreated</dt>
+<dd>Triggered when a user successfully adds a new item by using an
+existing product as reference.</dd>
+<dt>widget.wardrobeApp</dt>
+<dd>Triggered when a user opens the wardrobe app.</dd>
+<dt>widget.wardrobeApp.itemDeleted</dt>
+<dd>Triggered when a user deletes an existing item from her wardrobe.</dd>
+<dt>widget.editItemApp</dt>
+<dd>Triggered when a user opens the edit item app, from either compare
+app or wardrobe app.</dd>
+<dt>widget.loginApp</dt>
+<dd>Triggered when user opens the login app.</dd>
+<dt>widget.registerApp</dt>
+<dd>Triggered when user opens the register app.</dd>
+<dt>widget.faqApp</dt>
+<dd>Triggered when user opens the faq app.</dd>
+<dt>widget.faqApp.sectionClicked</dt>
+<dd>Triggered when a user clicks an faq section. Note: the third
+argument to the callback function will be the section ID (qa1-qa10).</dd>
+<dt>widget.close</dt>
+<dd>Triggered when the widget is closed.</dd>
+</dl>
+</div>
+<div class="section" id="event-callback-example">
+<h3>Event callback example<a class="headerlink" href="#event-callback-example" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<script src="https://gist.github.com/butschi/5626347.js">&nbsp;</script></div>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+      
+        <a href="legacy-integration.html" class="btn btn-neutral" title="Integration v2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2014, Virtusize.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="icon icon-globe"> Switch language</span>
+        <span class="icon icon-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Languages</dt>
+            <dd>
+                <a href="http://developers.virtusize.com/">English</a>
+            </dd>
+            <!-- TODO: comment this in, as soon as Japanese is ready
+            <dd>
+                <a href="http://developers.virtusize.com/ja/">Japanese</a>
+            </dd>
+            -->
+        </dl>
+        <hr/>
+        Developer documentation by <a href="http://www.virtusize.com/">Virtusize</a>.
+    </div>
+</div>
+
+</body>
+</html>

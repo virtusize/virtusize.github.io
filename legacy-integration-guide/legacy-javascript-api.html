@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Javascript API &mdash; Virtusize developer docs 1.1 ドキュメント</title>
+  <title>JavaScript API v2 &mdash; Virtusize developer docs 1.1 documentation</title>
   
 
   
@@ -31,7 +31,6 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/translations.js"></script>
       <script type="text/javascript" src="../_static/js/virtusize.js"></script>
       <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -46,10 +45,9 @@
   
 
   
-    <link rel="top" title="Virtusize developer docs 1.1 ドキュメント" href="../index.html"/>
-        <link rel="up" title="Integration guide" href="../integration-guide.html"/>
-        <link rel="next" title="Order confirmation" href="../order-confirmation.html"/>
-        <link rel="prev" title="Integration" href="integration.html"/> 
+    <link rel="top" title="Virtusize developer docs 1.1 documentation" href="../index.html"/>
+        <link rel="up" title="Legacy Integration guide" href="../legacy-integration-guide.html"/>
+        <link rel="prev" title="Integration v2" href="legacy-integration.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -74,19 +72,23 @@
         
         
             <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction ja</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="measurements.html">Providing Measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integration.html">Integration</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Javascript API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integration-guide.html">Integration guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/product-types.html">Product Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/measurements.html">Providing Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/integration.html">Integration - Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/advanced.html">Advanced Configuration - JavaScript API</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../order-confirmation.html">Order confirmation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../order-confirmation/introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../order-confirmation/order-api.html">Order API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../order-confirmation/complete-example.html">Complete example</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../legacy-integration-guide.html">Legacy Integration guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="legacy-integration.html">Integration v2</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">JavaScript API v2</a></li>
 </ul>
 </li>
 </ul>
@@ -110,16 +112,21 @@
         <div class="rst-content">
           <ul class="wy-breadcrumbs">
   <li><a href="../index.html">Docs</a> &raquo;</li>
-  <li><a href="">Javascript API</a></li>
+  <li><a href="">JavaScript API v2</a></li>
   
 </ul>
 <hr/>
 
           
-  <div class="section" id="javascript-api">
-<span id="label-javascript-api"></span><h1>Javascript API<a class="headerlink" href="#javascript-api" title="このヘッドラインへのパーマリンク">¶</a></h1>
+  <div class="section" id="javascript-api-v2">
+<span id="label-javascript-api"></span><h1>JavaScript API v2<a class="headerlink" href="#javascript-api-v2" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This integration version is out of date. Please use the new integration v3
+or upgrade your old integration v2. See: <a class="reference internal" href="../integration-guide/integration.html#label-integration-v3"><em>Integration - Quick Start</em></a></p>
+</div>
 <div class="section" id="virtusizewidget">
-<h2>VirtusizeWidget<a class="headerlink" href="#virtusizewidget" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>VirtusizeWidget<a class="headerlink" href="#virtusizewidget" title="Permalink to this headline">¶</a></h2>
 <p>The <tt class="docutils literal"><span class="pre">vsWidget</span></tt> object allows for programmatic configuration of the widget.
 Depending on your chosen integration type you either have access to a single
 vsWidget object or to multiple objects used in the multi product integration.</p>
@@ -127,9 +134,9 @@ vsWidget object or to multiple objects used in the multi product integration.</p
 script during loading.</p>
 <p>This function has access to the <tt class="docutils literal"><span class="pre">vsWidget</span></tt> object and can configure it.</p>
 <div class="section" id="api-methods-of-the-vswidget-object">
-<h3>API Methods of the vsWidget object<a class="headerlink" href="#api-methods-of-the-vswidget-object" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>API Methods of the vsWidget object<a class="headerlink" href="#api-methods-of-the-vswidget-object" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="basic-api">
-<h4>Basic API<a class="headerlink" href="#basic-api" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4>Basic API<a class="headerlink" href="#basic-api" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt>setApiKey(key)</dt>
 <dd><p class="first"><strong>key</strong> - String</p>
@@ -174,7 +181,7 @@ Default container is <strong>#vs-widget-button-container</strong></p>
 </dl>
 </div>
 <div class="section" id="advanced-api">
-<h4>Advanced API<a class="headerlink" href="#advanced-api" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4>Advanced API<a class="headerlink" href="#advanced-api" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt>setButtonStrategy(strategy)</dt>
 <dd><p class="first"><strong>strategy</strong> - function callable, function must return a DOM element
@@ -303,7 +310,7 @@ name.</p>
 </dd>
 </dl>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">Note</p>
 <p class="last">For single product integrations the vsWidget object is also available for
 reference via <strong>window.Virtusize.vsWidget</strong> after the call to the
 <strong>vsWidgetAsyncInit</strong> function. For multiple products this reference is
@@ -317,22 +324,22 @@ pointing to the first vsWidget instance.</p>
 only provide a unique product identifier. For that you can use the
 <strong>setProductId</strong> call on the <strong>vsWidget</strong> object.</p>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">Note</p>
 <p class="last">There is no default product data strategy, at least the product id must
 always be provided.</p>
 </div>
 </div>
 <div class="section" id="product-identifier-example">
-<h4>Product identifier example<a class="headerlink" href="#product-identifier-example" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4>Product identifier example<a class="headerlink" href="#product-identifier-example" title="Permalink to this headline">¶</a></h4>
 <script src="https://gist.github.com/butschi/5626197.js">&nbsp;</script><div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">Note</p>
 <p class="last">The <strong>setProductId</strong> method is a shortcut to <strong>setProductDataStrategy</strong>, it
 creates a strategy that returns product data with the provided product id.</p>
 </div>
 </div>
 </div>
 <div class="section" id="custom-product-data-strategy">
-<span id="label-product-data-strategies"></span><h3>Custom product data strategy<a class="headerlink" href="#custom-product-data-strategy" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<span id="label-product-data-strategies"></span><h3>Custom product data strategy<a class="headerlink" href="#custom-product-data-strategy" title="Permalink to this headline">¶</a></h3>
 <p>The product data strategy is a very versatile way to resolve product
 data. For example, assume the product id always exists on a page in a
 span element with id <tt class="docutils literal"><span class="pre">product-identifier</span></tt> and for some reason it is
@@ -341,7 +348,7 @@ with the use of <tt class="docutils literal"><span class="pre">setProductId</spa
 data strategy that resolves the product data by reading the product id
 from the span element.</p>
 <div class="section" id="custom-product-data-strategy-example">
-<h4>Custom product data strategy example<a class="headerlink" href="#custom-product-data-strategy-example" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4>Custom product data strategy example<a class="headerlink" href="#custom-product-data-strategy-example" title="Permalink to this headline">¶</a></h4>
 <script src="https://gist.github.com/butschi/5626268.js">&nbsp;</script><p>The function <tt class="docutils literal"><span class="pre">setProductDataStrategy</span></tt> takes one parameter, a function
 callable that will be executed and passed the jQuery instance as the
 first argument. The strategy is expected to return a JSON object with at
@@ -349,7 +356,7 @@ least the <strong>id</strong> field set.</p>
 </div>
 </div>
 <div class="section" id="button-strategies">
-<span id="label-button-strategies"></span><h3>Button strategies<a class="headerlink" href="#button-strategies" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<span id="label-button-strategies"></span><h3>Button strategies<a class="headerlink" href="#button-strategies" title="Permalink to this headline">¶</a></h3>
 <p>Integration needs to know where to place the Virtusize button. By
 default, it will try to place a standard button inside an element with
 id of <tt class="docutils literal"><span class="pre">vs-widget-button-container</span></tt>. However any DOM element can be
@@ -357,24 +364,24 @@ used as the Virtusize button. Button strategies can be used to bind any
 DOM element to act as the Virtusize button. Button strategies take
 precedence over button position strategies.</p>
 <div class="section" id="custom-button-example">
-<h4>Custom button example<a class="headerlink" href="#custom-button-example" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4>Custom button example<a class="headerlink" href="#custom-button-example" title="Permalink to this headline">¶</a></h4>
 <script src="https://gist.github.com/jtsoi/c43d728bee8752577cd0.js">&nbsp;</script></div>
 <div class="section" id="custom-button-strategy-example">
-<h4>Custom button strategy example<a class="headerlink" href="#custom-button-strategy-example" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4>Custom button strategy example<a class="headerlink" href="#custom-button-strategy-example" title="Permalink to this headline">¶</a></h4>
 <script src="https://gist.github.com/jtsoi/cc0cabecdd62c5c338d3.js">&nbsp;</script></div>
 </div>
 <div class="section" id="button-position-strategies">
-<span id="label-button-position-strategies"></span><h3>Button position strategies<a class="headerlink" href="#button-position-strategies" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<span id="label-button-position-strategies"></span><h3>Button position strategies<a class="headerlink" href="#button-position-strategies" title="Permalink to this headline">¶</a></h3>
 <p>If no button strategy is provided, a default button position strategy is
 used as a fallback. The fallback strategy will position the button
 inside an element with the id of <tt class="docutils literal"><span class="pre">vs-widget-button-container</span></tt>.</p>
 <div class="section" id="button-position-strategy-example">
-<h4>Button position strategy example<a class="headerlink" href="#button-position-strategy-example" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4>Button position strategy example<a class="headerlink" href="#button-position-strategy-example" title="Permalink to this headline">¶</a></h4>
 <script src="https://gist.github.com/jtsoi/016190aaf9e8e1d39afb.js">&nbsp;</script></div>
 <div class="section" id="custom-button-position-strategy-example">
-<h4>Custom Button position strategy example<a class="headerlink" href="#custom-button-position-strategy-example" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<h4>Custom Button position strategy example<a class="headerlink" href="#custom-button-position-strategy-example" title="Permalink to this headline">¶</a></h4>
 <script src="https://gist.github.com/jtsoi/e5aec012cc63daef6d9b.js">&nbsp;</script><div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">Note</p>
 <p class="last">Note that the button strategy can return any DOM or jQuery element. The id
 on the element is not mandatory.  However the element should be a block
 level element.</p>
@@ -383,7 +390,7 @@ level element.</p>
 </div>
 </div>
 <div class="section" id="events-and-callbacks">
-<span id="label-events-and-callbacks"></span><h2>Events and Callbacks<a class="headerlink" href="#events-and-callbacks" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="label-events-and-callbacks"></span><h2>Events and Callbacks<a class="headerlink" href="#events-and-callbacks" title="Permalink to this headline">¶</a></h2>
 <p>The integration snippet provides a way to subscribe for event callbacks.
 Use the <tt class="docutils literal"><span class="pre">bindCallback</span></tt> method on the <tt class="docutils literal"><span class="pre">vsWidget</span></tt> object to register
 callbacks.</p>
@@ -393,13 +400,13 @@ needed inside the callback. The second argument is the current product
 data object which has at least the <tt class="docutils literal"><span class="pre">id</span></tt> property. Any additional
 arguments are event specific.</p>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">Note</p>
 <p class="last">Event callbacks are a volatile feature, new events can be added, renamed or
 removed without notification as the Virtusize product evolves.</p>
 </div>
 <p>The following events are supported:</p>
 <div class="section" id="button-events">
-<h3>Button events<a class="headerlink" href="#button-events" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>Button events<a class="headerlink" href="#button-events" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>widget.validProduct</dt>
 <dd>Triggered when the product data has been validated, and the product
@@ -411,7 +418,7 @@ measurements exist and are valid.</dd>
 </dl>
 </div>
 <div class="section" id="widget-events">
-<h3>Widget events<a class="headerlink" href="#widget-events" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>Widget events<a class="headerlink" href="#widget-events" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>widget.open</dt>
 <dd>Triggered when the widget is opened.</dd>
@@ -437,7 +444,7 @@ measurements in the new-from-measurements app.</dd>
 <dd>Triggered when a user compares the product in the compare view.</dd>
 </dl>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">Note</p>
 <p class="last">The <strong>widget.compareApp</strong> event is probably the most useful event as it
 registers when a user compares items. Use this event to register Virtusize
 &#8220;uses&#8221;.</p>
@@ -484,7 +491,7 @@ argument to the callback function will be the section ID (qa1-qa10).</dd>
 </dl>
 </div>
 <div class="section" id="event-callback-example">
-<h3>Event callback example<a class="headerlink" href="#event-callback-example" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>Event callback example<a class="headerlink" href="#event-callback-example" title="Permalink to this headline">¶</a></h3>
 <script src="https://gist.github.com/butschi/5626347.js">&nbsp;</script></div>
 </div>
 </div>
@@ -494,10 +501,8 @@ argument to the callback function will be the section ID (qa1-qa10).</dd>
   
     <div class="rst-footer-buttons">
       
-        <a href="../order-confirmation.html" class="btn btn-neutral float-right" title="Order confirmation"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="integration.html" class="btn btn-neutral" title="Integration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="legacy-integration.html" class="btn btn-neutral" title="Integration v2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

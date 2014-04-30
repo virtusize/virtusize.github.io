@@ -79,14 +79,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/overview.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/product-types.html">Product Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/measurements.html">Providing Measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integration-guide/integration.html">Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integration-guide/javascript-api.html">Javascript API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/integration.html">Integration - Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/advanced.html">Advanced Configuration - JavaScript API</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../order-confirmation.html">Order confirmation</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="order-api.html">Order API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="complete-example.html">Complete example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy-integration-guide.html">Legacy Integration guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../legacy-integration-guide/legacy-integration.html">Integration v2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legacy-integration-guide/legacy-javascript-api.html">JavaScript API v2</a></li>
 </ul>
 </li>
 </ul>
@@ -118,7 +122,7 @@
           
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Virtusize order confirmation consists of a small Javascript, that retailer can
+<p>Virtusize order confirmation consists of a small JavaScript, that retailer can
 include in their order confirmation pages. The retailer will supply Virtusize
 with a number of useful information, that is relevant for finding the perfect
 size and fit for the customers of the retailer.</p>
@@ -129,6 +133,13 @@ are looking to purchase from the retailer at the moment. Doing this will
 effectively eliminate the tedious task of measuring garments from their
 wardrobe for the customers and will therefore make it much easier for the
 customer to get started with using Virtusize.</p>
+<div class="admonition note">
+<p class="first admonition-title">ノート</p>
+<p class="last">You can start providing purchase data as soon as you have received your API
+key. This way your customers will benefit as soon as you integrate
+Virtusize on your product pages. They will already have purchase history
+from their previous purchases in place.</p>
+</div>
 <div class="section" id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>At this moment, the order confirmation has only one dependency, jQuery 1.3 or
@@ -146,7 +157,7 @@ page will not be impacted other than that the button won&#8217;t show.</p>
 </div>
 <div class="section" id="how-it-works">
 <h2>How it works<a class="headerlink" href="#how-it-works" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>After the order confirmation script loads, it will create one ore more tracking
+<p>After the order confirmation script loads, it will create one or more tracking
 pixels and insert them into the retailers page. That way the given information
 will get passed on to Virtusize. Our servers will store the order data and
 connect it to the current customer.</p>

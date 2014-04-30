@@ -3,143 +3,93 @@
 Order API
 ---------
 
-Getting started
-^^^^^^^^^^^^^^^
+Quick Start
+^^^^^^^^^^^
 
-To get started you have to include a script into your order confirmation page.
-It is very similar to the integration script you already included on your
-product pages.
+To get started you have to include the Virtusize integration script into your
+order confirmation page just before the closing ``</head>``. This is the same
+script that you use on your product pages.
 
 You supply certain information about the order and the line items of the order.
 Some attributes are required for the purchase history to work properly, others
 are recommended.
 
-The basic script you have to include looks like the following::
+A complete example looks like the following::
 
-    window.vsOrderConfirmation = function(order) {
-        // Set details on the order object here …
-    };
+    <!-- Virtusize Integration -->
+    <script>
+    !function(a,b,c,d,e,f,g){var h,i,j,k;for(a.Virtusize=e,a[e]=a[e]||[],a[e].methods=["setApiKey","setRegion","setLanguage","setLocale","setOverlayColor","addWidget","ready","on","setAvailableSizes","setSizeAliases","addOrder","setUserId"],a[e].factory=function(b){return function(){var c;return c=Array.prototype.slice.call(arguments),c.unshift(b),a[e].push(c),a[e]}},k=a[e].methods,i=0,j=k.length;j>i;i++)h=k[i],a[e][h]=a[e].factory(h);a[e].snippetVersion="3.0.0",f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src="https:"===a.location.protocol?"https://":"http://cdn."+d,f.id="vs-integration",g.parentNode.insertBefore(f,g)}(window,document,"script","api.virtusize.com/integration/v3.js","vs");
     
-    /*** Do not change anything below this line!                ***/
-    /*** This will load the Virtusize order confirmation script ***/
-    (function(d, s){
-        var fS = d.getElementsByTagName(s)[0], sE = d.createElement(s),
-            p = "https:" == d.location.protocol ? "https://" : "http://cdn.";
-        sE.async = true; sE.type = "text/javascript";
-        sE.src = p + "api.virtusize.com/order-confirmation/v1.js";
-        fS.parentNode.insertBefore(sE, fS);
-    }(document, "script"));
+    vs.setApiKey('0000000000000000000000000000000000000000');
+
+    vs.addOrder({
+        orderId: 'ORDER_ID',
+        userId: 'USER_ID',
+        region: 'DE',
+
+        items: [
+            {
+                productId: 'PRODUCT_ID',
+                size: 'L',
+                sizeAlias: 'Large',
+                variantId: 'SKU_123',
+                url: 'http://www.retailer.com/products/PRODUCT_ID',
+                imageUrl: 'http://images.retailer.com/products/sku_123/black/image1xl.jpg',
+                color: 'black',
+                gender: 'female',
+                unitPrice: 99.95,
+                quantity: 1,
+                currency: 'EUR'
+            }
+        ]
+    });
+    </script>
+    <!-- End Virtusize Integration -->
 
 
 Order
 ^^^^^
 
-The order is the container holding all the information about this purchase. The
-object is instantiated by the order confirmation script from Virtusize and
-passed as a parameter into the function implemented by the retailer. This is
-working the same way as in the integration script. 
-
-Example::
-    
-    window.vsOrderConfirmation = function(order) {
-        // Set details on the order object here …
-    };
-
+An order contains general information about this purchase as well as a list of
+line items.
 
 Required attributes
 """""""""""""""""""
 
-setApiKey(apiKey)
-    **apiKey**: *String* - The retailers API key as provided by Virtusize. To
-    obtain your API key, please `contact our sales team
-    <http://www.virtusize.com/contact>`_.
+orderId
+    *String* - An id uniquely identifying the order
 
     Example::
 
-        order.setApiKey('0000000000000000000000000000000000000000');
+        'ORDER_ID_4321'
 
-setOrderId(orderId)
-    **orderId**: *String* - An id uniquely identifying the order
-
-    Example::
-
-        order.setOrderId('order-1234');
-
-setUserId(userId)
-    **userId**: *String* - An anonymous user id uniquely identifying a customer of the retailer
+userId
+    *String* - An anonymous user id uniquely identifying a customer of the retailer
 
     Example::
 
-        order.setUserId('user-4321');
-
-addItem(item)
-    **item**: *Object* - Add a single line item to this order. There must be at
-    least one item present, to be able to benefit from the order confirmation
-    script. It can be provided as a single item or as an array.
-
-    See :ref:`label-line-items` for more information.
-
-    Example::
-
-        order.addItem({
-            productId: 'external_id_1234',
-            size: '2128',
-            sizeAlias: 'Large',
-            imageUrl: 'http://images.retailer.com/products/sku123/black/image_large.jpg',
-            url: 'http://www.retailer.com/products/123',
-            variantId: 'sku_123',
-            color: 'black',
-            gender: 'unisex',
-            unitPrice: 99.95,
-            quantity: 1
-        });
-
-
-addItems(items)
-    **items**: *Array* - Add an array of line item to this order. This is
-    a convenience function that can be called instead of calling ``addItem``
-    multiple times.
-
-    See :ref:`label-line-items` for more information.
-
-    Example::
-
-        order.addItems([
-            {
-                productId: 'external_id_1234',
-                imageUrl: 'http://images.retailer.com/products/sku1234/black/image_large.jpg',
-                size: '2128'
-            },
-            {
-                productId: 'external_id_1235',
-                imageUrl: 'http://images.retailer.com/products/sku1235/red/image_large.jpg',
-                size: '3242'
-            },
-        ]);
+        'USER_ID_1234'
 
 
 Recommended attributes
 """"""""""""""""""""""
 
-setRegion(region)
-    **region**: *String* - The region identifier as defined by ISO 3166-1
+region
+    *String* - The region identifier as defined by ISO 3166-1
     alpha-2. The region id must be the two-letter ISO-3166 country code as
     defined in http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 
     Example::
-
-        order.setRegion('DE');
-
-
+        
+        'DE'
 
 
-.. _label-line-items:
+.. _label-line-items-v3:
 
 Line Items
 ^^^^^^^^^^
 
-Line items can be added to an order either by individually calling ``addItem`` or
-by calling ``addItems`` with an array of items.
+Line items represent the actual products that have been purchased.
 
 
 Required attributes
