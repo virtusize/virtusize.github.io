@@ -1,5 +1,9 @@
-Integration
-============
+Integration v2
+==============
+
+.. note::
+    This integration version is out of date. Please use the new integration v3
+    or upgrade your old integration v2. See: :ref:`label-integration-v3`
 
 **Dependencies**
 

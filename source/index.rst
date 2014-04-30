@@ -11,4 +11,5 @@ Virtusize developer docs
 
    integration-guide
    order-confirmation
+   legacy-integration-guide
 
