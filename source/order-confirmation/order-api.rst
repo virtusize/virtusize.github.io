@@ -7,7 +7,7 @@ Quick Start
 ^^^^^^^^^^^
 
 To get started you have to include the Virtusize integration script into your
-order confirmation page just before the closing ``</head>``. This is the same
+order confirmation page just before the closing ``</body>``. This is the same
 script that you use on your product pages.
 
 You supply certain information about the order and the line items of the order.
@@ -18,28 +18,28 @@ A complete example looks like the following::
 
     <!-- Virtusize Integration -->
     <script>
-    !function(a,b,c,d,e,f,g){var h,i,j,k;for(a.Virtusize=e,a[e]=a[e]||[],a[e].methods=["setApiKey","setRegion","setLanguage","setLocale","setOverlayColor","addWidget","ready","on","setAvailableSizes","setSizeAliases","addOrder","setUserId"],a[e].factory=function(b){return function(){var c;return c=Array.prototype.slice.call(arguments),c.unshift(b),a[e].push(c),a[e]}},k=a[e].methods,i=0,j=k.length;j>i;i++)h=k[i],a[e][h]=a[e].factory(h);a[e].snippetVersion="3.0.0",f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src="https:"===a.location.protocol?"https://":"http://cdn."+d,f.id="vs-integration",g.parentNode.insertBefore(f,g)}(window,document,"script","api.virtusize.com/integration/v3.js","vs");
+    !function(a,b,c,d,e,f,g){var h,i,j,k;for(a.Virtusize=e,a[e]=a[e]||[],a[e].methods=["setApiKey","setRegion","setLanguage","setWidgetOverlayColor","addWidget","ready","on","setAvailableSizes","setSizeAliases","addOrder","setUserId"],a[e].factory=function(b){return function(){var c;return c=Array.prototype.slice.call(arguments),c.unshift(b),a[e].push(c),a[e]}},k=a[e].methods,i=0,j=k.length;j>i;i++)h=k[i],a[e][h]=a[e].factory(h);a[e].snippetVersion="3.0.1",f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src="https:"===a.location.protocol?"https://":"http://cdn."+d,f.id="vs-integration",g.parentNode.insertBefore(f,g)}(window,document,"script","api.virtusize.com/integration/v3.js","vs");
     
-    vs.setApiKey('0000000000000000000000000000000000000000');
+    vs.setApiKey("0000000000000000000000000000000000000000");
 
     vs.addOrder({
-        orderId: 'ORDER_ID',
-        userId: 'USER_ID',
-        region: 'DE',
+        orderId: "ORDER_ID",
+        userId: "USER_ID",
+        region: "DE",
 
         items: [
             {
-                productId: 'PRODUCT_ID',
-                size: 'L',
-                sizeAlias: 'Large',
-                variantId: 'SKU_123',
-                url: 'http://www.retailer.com/products/PRODUCT_ID',
-                imageUrl: 'http://images.retailer.com/products/sku_123/black/image1xl.jpg',
-                color: 'black',
-                gender: 'female',
+                productId: "PRODUCT_ID",
+                size: "L",
+                sizeAlias: "Large",
+                variantId: "SKU_123",
+                url: "http://www.retailer.com/products/PRODUCT_ID",
+                imageUrl: "http://images.retailer.com/products/sku_123/black/image1xl.jpg",
+                color: "black",
+                gender: "female",
                 unitPrice: 99.95,
                 quantity: 1,
-                currency: 'EUR'
+                currency: "EUR"
             }
         ]
     });
@@ -61,14 +61,14 @@ orderId
 
     Example::
 
-        'ORDER_ID_4321'
+        "ORDER_ID_4321"
 
 userId
     *String* - An anonymous user id uniquely identifying a customer of the retailer
 
     Example::
 
-        'USER_ID_1234'
+        "USER_ID_1234"
 
 
 Recommended attributes
@@ -81,7 +81,7 @@ region
 
     Example::
         
-        'DE'
+        "DE"
 
 
 .. _label-line-items-v3:
@@ -101,7 +101,7 @@ productId
     
     Example::
 
-        'external_id_1234'
+        "external_id_1234"
 
 size
     *String* - The size or size id of the purchased item. This must match the
@@ -109,7 +109,7 @@ size
     
     Example::
 
-        '2128'
+        "2128"
 
 imageUrl
     *String* - The URL to a variant specific image of this line item of the
@@ -121,7 +121,7 @@ imageUrl
     
     Example::
 
-        'http://images.retailer.com/products/sku123/black/image_large.jpg'
+        "http://images.retailer.com/products/sku123/black/image_large.jpg"
 
 
 Recommended attributes
@@ -135,14 +135,14 @@ sizeAlias
     
     Example::
 
-        'Large'
+        "Large"
 
 url
     *String* - The canonical URL of this product in the retailers online store.
     
     Example::
 
-        'http://www.retailer.com/products/123'
+        "http://www.retailer.com/products/123"
 
 variantId
     *String* - An id that uniquely identifies a product variant including color
@@ -150,22 +150,22 @@ variantId
 
     Example::
 
-        'sku_1234'
+        "sku_1234"
 
 color
     *String* - The color of ordered garment.
     
     Example::
 
-        'black'
+        "black"
 
 gender
     *String* - The gender that this garment is targetting. Must have one of
-    these values: 'unisex', 'male', 'female'
+    these values: "unisex", "male", "female"
 
     Example::
 
-        'female'
+        "female"
 
 unitPrice
     *Float* - The unit price of this item.
@@ -187,14 +187,14 @@ quantity
 Here is a complete line item object::
 
     {
-        productId: 'external_id_1234',
-        size: '2128',
-        sizeAlias: 'Large',
-        imageUrl: 'http://images.retailer.com/products/sku123/black/image_large.jpg',
-        url: 'http://www.retailer.com/products/123',
-        variantId: 'sku_123',
-        color: 'black',
-        gender: 'unisex',
+        productId: "external_id_1234",
+        size: "2128",
+        sizeAlias: "Large",
+        imageUrl: "http://images.retailer.com/products/sku123/black/image_large.jpg",
+        url: "http://www.retailer.com/products/123",
+        variantId: "sku_123",
+        color: "black",
+        gender: "unisex",
         unitPrice: 99.95,
         quantity: 1
     }

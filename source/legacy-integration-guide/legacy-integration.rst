@@ -35,7 +35,7 @@ or Facebook Connect.
 .. gist:: https://gist.github.com/butschi/5619646
 
 .. note::
-    Note that line 5 defines an API key to use. The value within quotes should
+    Line 5 defines an API key to use. The value within quotes should
     be your actual API key that you get when you sign up for Virtusize.
 
 
@@ -58,7 +58,7 @@ measurements to use.  That is what line 6 does. The value ``PRODUCT_ID`` should
 be the actual identifier of the product.
 
 .. note::
-    Note that for best results, the product id should be an identifier that
+    For best results, the product id should be an identifier that
     identifies the product regardless of size and color.
 
 No button will be visible on the product page until the integration snippet can
