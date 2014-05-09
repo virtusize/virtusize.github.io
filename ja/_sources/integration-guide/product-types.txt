@@ -32,7 +32,7 @@ product type is identified by its common English name in camelCase.
 -  tShirt
 -  pants
 
-.. note:: Note the camelCase formatting of "tShirt".
+.. note:: The formatting of "tShirt" is camelCase.
 
 The latest list of available product types can be queried by the
 following GET request:
@@ -89,7 +89,7 @@ minMeasurements
     product type in millimeters.
 
 .. note::
-    Note that the "length" measurement is always represented as "height", as
+    The "length" measurement is always represented as "height", as
     "length" is ambiguous in JavaScript.
 
 

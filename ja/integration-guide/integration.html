@@ -18,23 +18,6 @@
 
   
   
-
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:'../',
-        VERSION:'1.1',
-        COLLAPSE_INDEX:false,
-        FILE_SUFFIX:'.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/translations.js"></script>
-      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
-      <script type="text/javascript" src="../_static/js/theme.js"></script>
-
     
 
   
@@ -42,7 +25,6 @@
   
   
     <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
-    <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
   
@@ -51,26 +33,29 @@
         <link rel="next" title="Advanced Configuration - JavaScript API" href="advanced.html"/>
         <link rel="prev" title="Providing Measurements" href="measurements.html"/> 
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../index.html" class="icon icon-home"> Virtusize developer docs</a>
-        <form class="wy-form" action="../search.html" method="get">
-  <input type="text" name="q" placeholder="Search docs" />
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
+        <a href="../index.html" class="fa fa-home"> Virtusize developer docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
             <ul class="current">
@@ -103,23 +88,32 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top">
-        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
-        <a href="/">Virtusize developer docs</a>
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Virtusize developer docs</a>
       </nav>
 
 
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <ul class="wy-breadcrumbs">
-  <li><a href="../index.html">Docs</a> &raquo;</li>
-  <li><a href="">Integration - Quick Start</a></li>
-  
-</ul>
-<hr/>
-
-          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../integration-guide.html">Integration guide</a> &raquo;</li>
+      
+    <li>Integration - Quick Start</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/integration-guide/integration.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
   <div class="section" id="integration-quick-start">
 <span id="label-integration-v3"></span><h1>Integration - Quick Start<a class="headerlink" href="#integration-quick-start" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p><strong>Dependencies</strong></p>
@@ -136,21 +130,21 @@ the product page will not be impacted other than that the button won&#8217;t sho
 <div class="section" id="integration-snippet">
 <span id="label-integration-snippet"></span><h2>Integration Snippet<a class="headerlink" href="#integration-snippet" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Integrating the Virtusize Widget requires embedding an integration snippet on
-the product page just before the closing <tt class="docutils literal"><span class="pre">&lt;/head&gt;</span></tt>. The code is very similar
+the product page just before the closing <tt class="docutils literal"><span class="pre">&lt;/body&gt;</span></tt>. The code is very similar
 to Google Analytics or Facebook Connect. The most simple way is shown below.</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="c">&lt;!-- Virtusize Integration --&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-<span class="o">!</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="nx">d</span><span class="p">,</span><span class="nx">e</span><span class="p">,</span><span class="nx">f</span><span class="p">,</span><span class="nx">g</span><span class="p">){</span><span class="kd">var</span> <span class="nx">h</span><span class="p">,</span><span class="nx">i</span><span class="p">,</span><span class="nx">j</span><span class="p">,</span><span class="nx">k</span><span class="p">;</span><span class="k">for</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">Virtusize</span><span class="o">=</span><span class="nx">e</span><span class="p">,</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span><span class="o">||</span><span class="p">[],</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;setApiKey&quot;</span><span class="p">,</span><span class="s2">&quot;setRegion&quot;</span><span class="p">,</span><span class="s2">&quot;setLanguage&quot;</span><span class="p">,</span><span class="s2">&quot;setLocale&quot;</span><span class="p">,</span><span class="s2">&quot;setOverlayColor&quot;</span><span class="p">,</span><span class="s2">&quot;addWidget&quot;</span><span class="p">,</span><span class="s2">&quot;ready&quot;</span><span class="p">,</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="s2">&quot;setAvailableSizes&quot;</span><span class="p">,</span><span class="s2">&quot;setSizeAliases&quot;</span><span class="p">,</span><span class="s2">&quot;addOrder&quot;</span><span class="p">,</span><span class="s2">&quot;setUserId&quot;</span><span class="p">],</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">factory</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">b</span><span class="p">){</span><span class="k">return</span> <span class="kd">function</span><span class="p">(){</span><span class="kd">var</span> <span class="nx">c</span><span class="p">;</span><span class="k">return</span> <span class="nx">c</span><span class="o">=</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">),</span><span class="nx">c</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">b</span><span class="p">),</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">]}},</span><span class="nx">k</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">methods</span><span class="p">,</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nx">j</span><span class="o">=</span><span class="nx">k</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">j</span><span class="o">&gt;</span><span class="nx">i</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="nx">h</span><span class="o">=</span><span class="nx">k</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">][</span><span class="nx">h</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">factory</span><span class="p">(</span><span class="nx">h</span><span class="p">);</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">snippetVersion</span><span class="o">=</span><span class="s2">&quot;3.0.0&quot;</span><span class="p">,</span><span class="nx">f</span><span class="o">=</span><span class="nx">b</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span><span class="nx">g</span><span class="o">=</span><span class="nx">b</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">c</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="nx">f</span><span class="p">.</span><span class="nx">async</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="nx">f</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;https:&quot;</span><span class="o">===</span><span class="nx">a</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span><span class="o">?</span><span class="s2">&quot;https://&quot;</span><span class="o">:</span><span class="s2">&quot;http://cdn.&quot;</span><span class="o">+</span><span class="nx">d</span><span class="p">,</span><span class="nx">f</span><span class="p">.</span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;vs-integration&quot;</span><span class="p">,</span><span class="nx">g</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span><span class="nx">g</span><span class="p">)}(</span><span class="nb">window</span><span class="p">,</span><span class="nb">document</span><span class="p">,</span><span class="s2">&quot;script&quot;</span><span class="p">,</span><span class="s2">&quot;api.virtusize.com/integration/v3.js&quot;</span><span class="p">,</span><span class="s2">&quot;vs&quot;</span><span class="p">);</span>
+<span class="o">!</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="nx">d</span><span class="p">,</span><span class="nx">e</span><span class="p">,</span><span class="nx">f</span><span class="p">,</span><span class="nx">g</span><span class="p">){</span><span class="kd">var</span> <span class="nx">h</span><span class="p">,</span><span class="nx">i</span><span class="p">,</span><span class="nx">j</span><span class="p">,</span><span class="nx">k</span><span class="p">;</span><span class="k">for</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">Virtusize</span><span class="o">=</span><span class="nx">e</span><span class="p">,</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span><span class="o">||</span><span class="p">[],</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;setApiKey&quot;</span><span class="p">,</span><span class="s2">&quot;setRegion&quot;</span><span class="p">,</span><span class="s2">&quot;setLanguage&quot;</span><span class="p">,</span><span class="s2">&quot;setWidgetOverlayColor&quot;</span><span class="p">,</span><span class="s2">&quot;addWidget&quot;</span><span class="p">,</span><span class="s2">&quot;ready&quot;</span><span class="p">,</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="s2">&quot;setAvailableSizes&quot;</span><span class="p">,</span><span class="s2">&quot;setSizeAliases&quot;</span><span class="p">,</span><span class="s2">&quot;addOrder&quot;</span><span class="p">,</span><span class="s2">&quot;setUserId&quot;</span><span class="p">],</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">factory</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">b</span><span class="p">){</span><span class="k">return</span> <span class="kd">function</span><span class="p">(){</span><span class="kd">var</span> <span class="nx">c</span><span class="p">;</span><span class="k">return</span> <span class="nx">c</span><span class="o">=</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">),</span><span class="nx">c</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">b</span><span class="p">),</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">]}},</span><span class="nx">k</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">methods</span><span class="p">,</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nx">j</span><span class="o">=</span><span class="nx">k</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">j</span><span class="o">&gt;</span><span class="nx">i</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="nx">h</span><span class="o">=</span><span class="nx">k</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">][</span><span class="nx">h</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">factory</span><span class="p">(</span><span class="nx">h</span><span class="p">);</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">snippetVersion</span><span class="o">=</span><span class="s2">&quot;3.0.1&quot;</span><span class="p">,</span><span class="nx">f</span><span class="o">=</span><span class="nx">b</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span><span class="nx">g</span><span class="o">=</span><span class="nx">b</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">c</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="nx">f</span><span class="p">.</span><span class="nx">async</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="nx">f</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;https:&quot;</span><span class="o">===</span><span class="nx">a</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span><span class="o">?</span><span class="s2">&quot;https://&quot;</span><span class="o">:</span><span class="s2">&quot;http://cdn.&quot;</span><span class="o">+</span><span class="nx">d</span><span class="p">,</span><span class="nx">f</span><span class="p">.</span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;vs-integration&quot;</span><span class="p">,</span><span class="nx">g</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span><span class="nx">g</span><span class="p">)}(</span><span class="nb">window</span><span class="p">,</span><span class="nb">document</span><span class="p">,</span><span class="s2">&quot;script&quot;</span><span class="p">,</span><span class="s2">&quot;api.virtusize.com/integration/v3.js&quot;</span><span class="p">,</span><span class="s2">&quot;vs&quot;</span><span class="p">);</span>
 
-<span class="nx">vs</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s1">&#39;0000000000000000000000000000000000000000&#39;</span><span class="p">);</span>
-<span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s1">&#39;PRODUCT_ID&#39;</span><span class="p">,</span> <span class="s1">&#39;BUTTON_SELECTOR&#39;</span><span class="p">);</span>
+<span class="nx">vs</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
+<span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">);</span>
 <span class="nt">&lt;/script&gt;</span>
 <span class="c">&lt;!-- End Virtusize Integration --&gt;</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">ノート</p>
-<p class="last">Note that the snippet defines an API key, product id and button selector to
+<p class="last">The snippet defines an API key, product id and button selector to
 use. The values within quotes should be your actual API key, the actual
 product id and a CSS selector for the button you want to use to open the
 Virtusize Widget.</p>
@@ -171,7 +165,7 @@ DOM-id you like. A CSS class or anything selectable will work as well:</p>
 </div>
 <p>You can then use this button with your Virtusize Widget by specifying the
 following during integration:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s1">&#39;PRODUCT_ID&#39;</span><span class="p">,</span> <span class="s1">&#39;#virtusize-button&#39;</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;#virtusize-button&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -184,7 +178,7 @@ to all buttons:</p>
 </pre></div>
 </div>
 <p>and integrate a Widget like this:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s1">&#39;PRODUCT_ID&#39;</span><span class="p">,</span> <span class="s1">&#39;.virtusize-buttons&#39;</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;.virtusize-buttons&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The element you create should not be visible when the page loads. It will
@@ -203,7 +197,7 @@ measurements to use.  That is what line 6 does. The value <tt class="docutils li
 be the actual identifier of the product.</p>
 <div class="admonition note">
 <p class="first admonition-title">ノート</p>
-<p class="last">Note that for best results, the product id should be an identifier that
+<p class="last">For best results, the product ID should be an identifier that
 identifies the product regardless of size and color.</p>
 </div>
 <p>No button will be visible on the product page until the integration snippet can
@@ -218,8 +212,8 @@ This is needed for &#8220;Buy-this-outfit&#8221; kind of pages, for example.</p>
 <p>The integration is the same as the one for single product pages. All you have
 to do, is to supply the product ids and corresponding button selectors in
 additional <tt class="docutils literal"><span class="pre">addWidget</span></tt> calls like this:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s1">&#39;PRODUCT_ID_1&#39;</span><span class="p">,</span> <span class="s1">&#39;#virtusize-button-1&#39;</span><span class="p">);</span>
-<span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s1">&#39;PRODUCT_ID_2&#39;</span><span class="p">,</span> <span class="s1">&#39;#virtusize-button-2&#39;</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID_1&quot;</span><span class="p">,</span> <span class="s2">&quot;#virtusize-button-1&quot;</span><span class="p">);</span>
+<span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID_2&quot;</span><span class="p">,</span> <span class="s2">&quot;#virtusize-button-2&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -258,25 +252,28 @@ a valid product.</p>
 </div>
 
 
+          </div>
           <footer>
   
-    <div class="rst-footer-buttons">
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="advanced.html" class="btn btn-neutral float-right" title="Advanced Configuration - JavaScript API"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="advanced.html" class="btn btn-neutral float-right" title="Advanced Configuration - JavaScript API"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="measurements.html" class="btn btn-neutral" title="Providing Measurements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="measurements.html" class="btn btn-neutral" title="Providing Measurements"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
 
   <hr/>
 
-  <p>
-      &copy; Copyright 2014, Virtusize.
-  </p>
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Virtusize.
+    </p>
+  </div>
 
-  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -305,6 +302,41 @@ a valid product.</p>
         Developer documentation by <a href="http://www.virtusize.com/">Virtusize</a>.
     </div>
 </div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
 
 </body>
 </html>

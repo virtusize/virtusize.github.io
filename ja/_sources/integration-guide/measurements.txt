@@ -17,7 +17,7 @@ via the Virtusize admin interface, and the integration snippet only
 needs the unique product ID to identify what measurements to use.
 
 .. note:: 
-    Note that for best results, the product id should be an identifier that
+    For best results, the product id should be an identifier that
     identifies the product regardless of size and color.
 
 No button will be visible on the product page until the integration
@@ -153,7 +153,7 @@ the ``id`` as well as the ``version`` variables in the product data.
 .. gist:: https://gist.github.com/butschi/5626423
 
 .. note:: 
-    Note that the **id** and **version** product data parameters must be
+    The **id** and **version** product data parameters must be
     dynamic for each product.
 
 .. note:: 

@@ -22,10 +22,10 @@ The following is an example:
 
     <!-- Virtusize Integration -->
     <script>
-    !function(a,b,c,d,e,f,g){var h,i,j,k;for(a.Virtusize=e,a[e]=a[e]||[],a[e].methods=["setApiKey","setRegion","setLanguage","setLocale","setOverlayColor","addWidget","ready","on","setAvailableSizes","setSizeAliases","addOrder","setUserId"],a[e].factory=function(b){return function(){var c;return c=Array.prototype.slice.call(arguments),c.unshift(b),a[e].push(c),a[e]}},k=a[e].methods,i=0,j=k.length;j>i;i++)h=k[i],a[e][h]=a[e].factory(h);a[e].snippetVersion="3.0.0",f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src="https:"===a.location.protocol?"https://":"http://cdn."+d,f.id="vs-integration",g.parentNode.insertBefore(f,g)}(window,document,"script","api.virtusize.com/integration/v3.js","myVs");
-    
-    myVs.setApiKey('0000000000000000000000000000000000000000');
-    myVs.addWidget('PRODUCT_ID', 'BUTTON_SELECTOR');
+    !function(a,b,c,d,e,f,g){var h,i,j,k;for(a.Virtusize=e,a[e]=a[e]||[],a[e].methods=["setApiKey","setRegion","setLanguage","setWidgetOverlayColor","addWidget","ready","on","setAvailableSizes","setSizeAliases","addOrder","setUserId"],a[e].factory=function(b){return function(){var c;return c=Array.prototype.slice.call(arguments),c.unshift(b),a[e].push(c),a[e]}},k=a[e].methods,i=0,j=k.length;j>i;i++)h=k[i],a[e][h]=a[e].factory(h);a[e].snippetVersion="3.0.1",f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src="https:"===a.location.protocol?"https://":"http://cdn."+d,f.id="vs-integration",g.parentNode.insertBefore(f,g)}(window,document,"script","api.virtusize.com/integration/v3.js","myVs");
+
+    myVs.setApiKey("0000000000000000000000000000000000000000");
+    myVs.addWidget("PRODUCT_ID", "BUTTON_SELECTOR");
     </script>
     <!-- End Virtusize Integration -->
 
@@ -46,7 +46,7 @@ Virtusize object like this:
 
 ::
     
-    vs.addWidget('PRODUCT_ID', 'BUTTON_SELECTOR');
+    vs.addWidget("PRODUCT_ID", "BUTTON_SELECTOR");
 
 
 When a widget for a different product id is added for a previously used button
@@ -60,9 +60,9 @@ you can wrap it in the ready function:
 ::
    
     vs.ready(function() {
-        var myWidget = vs.getWidget('PRODUCT_ID');
+        var myWidget = vs.getWidget("PRODUCT_ID");
         // Do something with the widget
-        myWidget.setAvailableSizes(['Medium']);
+        myWidget.setAvailableSizes(["Medium"]);
     });
 
 
@@ -143,7 +143,7 @@ setLanguage(languageId)
         vs.setLanguage("en-GB");
        
 
-setOverlayColor(rgba, ieColor)
+setWidgetOverlayColor(rgba, ieColor)
     **rgba** - String, specifying the rgba color of the overlay background that
     is displayed when the Virtusize Widget is opened. Defaults to
     ``rbga(0,0,0,0.5)``
@@ -156,7 +156,7 @@ setOverlayColor(rgba, ieColor)
 
     ::
 
-        vs.setOverlayColor('rgba(255,255,0,0.5)', '50FFFF00');
+        vs.setWidgetOverlayColor("rgba(255,255,0,0.5)", "50FFFF00");
 
 
 ready(callback)
@@ -176,18 +176,18 @@ selector:
 
 ::
 
-    vs.addWidget('PRODUCT_ID', 'BUTTON_SELECTOR');
+    vs.addWidget("PRODUCT_ID", "BUTTON_SELECTOR");
 
 For more complex situations you can pass an additional options object to the
 ``addWidget`` function. Here is an example:
 
 ::
 
-    vs.addWidget('PRODUCT_ID', 'BUTTON_SELECTOR', {
-        productVersion: '1',
+    vs.addWidget("PRODUCT_ID", "BUTTON_SELECTOR", {
+        productVersion: "1",
         done: function(error) {
             if(!error) {
-                this.setAvailableSizes(['S', 'M', 'L']);
+                this.setAvailableSizes(["S", "M", "L"]);
             }
         }
     });
@@ -208,11 +208,11 @@ this:
 ::
 
     vs.addWidget({
-        productId: 'PRODUCT_ID',
-        buttonSelector: 'BUTTON_SELECTOR',
-        productVersion: '1',
-        availableSizes: ['M', 'L'],
-        sizeAliases: {'S': 'Small', M': 'Medium', 'L': 'Large'}
+        productId: "PRODUCT_ID",
+        buttonSelector: "BUTTON_SELECTOR",
+        productVersion: "1",
+        availableSizes: ["M", "L"],
+        sizeAliases: {"S": "Small", M": "Medium", "L": "Large"}
     });
 
 
@@ -254,19 +254,22 @@ setSizeAliases(sizeAliases)
 
 on(eventName, callback)
     **eventName** - String, valid event to bind a callback to. See
-    :ref:`label-events-and-callbacks-v3`
+    :ref:`label-events-and-callbacks-v3` for a list of valid event names.
 
     **callback** - Function callable, function to call when an event occurs.
-    Allows programmatic subscription to widget events such as: widget.close,
-    widget.open, etc …
+    Allows programmatic subscription to widget events such as: "user-opened-widget",
+    "user-closed-widget". Inside the callback function ``this`` will be the
+    instance of the VirtusizeWidget from which the event was triggered. On some
+    events an additional data object is passed as a parameter to the function,
+    see :ref:`label-events-and-callbacks-v3`
 
     **Example:**
 
     ::
 
-        this.on("widget.iframe.opened", 
-            function($, productId){ 
-                alert("Widget opened!"); 
+        this.on("user-opened-widget", 
+            function() { 
+                alert("Widget opened: " + this.getProductId()); 
             }
         );
 
@@ -289,135 +292,89 @@ Use the ``on`` method directly on the Virtusize Snippet object like this:
 
 ::
     
-    vs.on('PRODUCT_ID', 'EVENT_NAME', function() { alert("Event fired."); });
+    vs.on("PRODUCT_ID", "EVENT_NAME", function() { alert("Event fired."); });
 
 or directly on a VirtusizeWidget object, for example inside an ``addWidget``
 callback like this:
 
 ::
 
-    vs.addWidget('PRODUCT_ID', 'BUTTON_SELECTOR', {
+    vs.addWidget("PRODUCT_ID", "BUTTON_SELECTOR", {
         done: function(error) {
-            this.on('EVENT_NAME', function() { alert("Event fired."); });
+            this.on("EVENT_NAME", function() { alert("Event fired."); });
         }
     });
 
-All callbacks are called with two or more arguments. The first argument
-will always be the jQuery global object ($), in case jQuery support is
-needed inside the callback. The second argument is the current product
-id. Any additional arguments are event specific.
+All callbacks functions will have ``this`` assigned to the VirtusizeWidget
+instance this event originated from. In some cases there will be optional data
+passed into the function as an argument. That is event specific.
 
 .. note::
     Event callbacks are a volatile feature, new events can be added, renamed or
     removed without notification as the Virtusize product evolves.
 
-The exact types of events will follow in the coming days in this documentation.
 
+The following events are supported:
 
-..
-    The following events are supported:
+user-saw-widget-button
+    Triggered when the widget button is shown on the product page after
+    a product check that resulted in a valid product.
 
-    widget.validProduct
-        Triggered when the product data has been validated, and the product
-        measurements exist and are valid.
+user-opened-widget
+    Triggered when the widget was opened.
 
-    widget.invalidProduct
-        Triggered when the product data check has been performed, but the
-        measurements for this product do not exist ore are not valid.
+user-closed-widget
+    Triggered when the widget was closed.
 
-    widget.button.show
-        Triggered after the widget button is shown on the product page.
+user-added-product
+    Triggered when a user successfully created a new item from
+    measurements in the panel "new from measurements".
 
-    widget.button.click
-        Triggered when a user clicks on the button, to open the widget.
+user-selected-size
+    Triggered when a size was selected in the widget. Note: the callback
+    function receives additional data containing the selected size ID and
+    a boolean indicating if the size was auto-selected or not. ``{sizeId: "xl",
+    auto: false}``
 
-    .. ---- review from here ----
+user-deleted-product
+    Triggered when a user deleted an item from his wardrobe. This can be any
+    item and does not necessarily match the product for which the widget was
+    loaded.
 
-    widget.open
-        Triggered when the widget is opened.
+.. user-clicked-survey-link
 
-    widget.introApp
-        Triggered when a user sees the intro app (first screen for a new
-        user).
+user-opened-panel-start
+    Triggered when a user opened the panel "start".
 
-    widget.getStartedApp
-        Triggered when a user sees the get-started app (user clicks "next"
-        button from intro app).
+user-opened-panel-new-from-measurements
+    Triggered when a user opened the panel "new from measurements".
 
-    widget.welcomeBackApp
-        Triggered when a user opens the welcome-back app (if the user has
-        used VS before and has at least one item in the wardrobe).
+user-opened-panel-compare
+    Triggered when a user opened the panel "compare".
 
-    widget.introApp.noTapeClick
-        Triggered when a user clicks the "I do not have a tape measure" link
-        in the intro app or the welcome-back app.
+user-opened-panel-edit-item
+    Triggered when a user opened the panel "edit item".
 
-    widget.newFromMeasurementsApp
-        Triggered when a user opens the new-from-measurements app, also
-        known as the "third slide".
+user-opened-panel-wardrobe
+    Triggered when a user opened the panel "wardrobe".
 
-    widget.newFromMeasurementsApp.itemCreated
-        Triggered when a user successfully creates a new item from
-        measurements in the new-from-measurements app.
+user-opened-panel-faq
+    Triggered when a user opened the panel "faq".
 
-    widget.compareApp
-        Triggered when a user compares the product in the compare view.
+user-opened-panel-login
+    Triggered when a user opened the panel "login".
 
-    .. note:: 
-        The **widget.compareApp** event is probably the most useful event as it
-        registers when a user compares items. Use this event to register Virtusize
-        "uses".
+user-opened-panel-register
+    Triggered when a user opened the panel "register".
 
-    widget.compareApp.addNewItemClick
-        Triggered when a user clicks the "Add new item" button in the
-        wardrobe app (previously the compare app, hence the event name).
+user-opened-panel-forgot-password
+    Triggered when a user opened the panel "forgot password".
 
-    widget.compareApp.saveWardrobeClick
-        Triggered when a user clicks the "Save my wardrobe" button in the
-        compare app.
+user-opened-panel-benefits
+    Triggered when a user opened the panel "benefits".
 
-    widget.sizeId.selected
-        Triggered when a size is selected in the widget. Note: the third
-        argument to the callback function will be an object containing the
-        selected size ID and a boolean indicating if the size was
-        auto-selected or not.
-
-    widget.iOwnItClick
-        Triggered when a user clicks the "i-own-it" button, from anywhere in
-        the widget.
-
-    widget.newFromReferenceApp
-        Triggered when a user opens the new-from-reference app, the
-        reference size selector from intro app.
-
-    widget.newFromReferenceApp.itemCreated
-        Triggered when a user successfully adds a new item by using an
-        existing product as reference.
-
-    widget.wardrobeApp
-        Triggered when a user opens the wardrobe app.
-
-    widget.wardrobeApp.itemDeleted
-        Triggered when a user deletes an existing item from her wardrobe.
-
-    widget.editItemApp
-        Triggered when a user opens the edit item app, from either compare
-        app or wardrobe app.
-
-    widget.loginApp
-        Triggered when user opens the login app.
-
-    widget.registerApp
-        Triggered when user opens the register app.
-
-    widget.faqApp
-        Triggered when user opens the faq app.
-
-    widget.faqApp.sectionClicked
-        Triggered when a user clicks an faq section. Note: the third
-        argument to the callback function will be the section ID (qa1-qa10).
-
-    widget.close
-        Triggered when the widget is closed.
-
+.. note:: 
+    The **user-opened-panel-compare** event is probably the most useful event
+    as it registers when a user compares items. Use this event to register
+    Virtusize "uses".
 
