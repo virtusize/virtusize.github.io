@@ -24,7 +24,7 @@ Integration Snippet
 -------------------
 
 Integrating the Virtusize Widget requires embedding an integration snippet on
-the product page just before the closing ``</head>``. The code is very similar
+the product page just before the closing ``</body>``. The code is very similar
 to Google Analytics or Facebook Connect. The most simple way is shown below.
 
 .. highlight:: html
@@ -33,16 +33,16 @@ to Google Analytics or Facebook Connect. The most simple way is shown below.
 
     <!-- Virtusize Integration -->
     <script>
-    !function(a,b,c,d,e,f,g){var h,i,j,k;for(a.Virtusize=e,a[e]=a[e]||[],a[e].methods=["setApiKey","setRegion","setLanguage","setLocale","setOverlayColor","addWidget","ready","on","setAvailableSizes","setSizeAliases","addOrder","setUserId"],a[e].factory=function(b){return function(){var c;return c=Array.prototype.slice.call(arguments),c.unshift(b),a[e].push(c),a[e]}},k=a[e].methods,i=0,j=k.length;j>i;i++)h=k[i],a[e][h]=a[e].factory(h);a[e].snippetVersion="3.0.0",f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src="https:"===a.location.protocol?"https://":"http://cdn."+d,f.id="vs-integration",g.parentNode.insertBefore(f,g)}(window,document,"script","api.virtusize.com/integration/v3.js","vs");
+    !function(a,b,c,d,e,f,g){var h,i,j,k;for(a.Virtusize=e,a[e]=a[e]||[],a[e].methods=["setApiKey","setRegion","setLanguage","setWidgetOverlayColor","addWidget","ready","on","setAvailableSizes","setSizeAliases","addOrder","setUserId"],a[e].factory=function(b){return function(){var c;return c=Array.prototype.slice.call(arguments),c.unshift(b),a[e].push(c),a[e]}},k=a[e].methods,i=0,j=k.length;j>i;i++)h=k[i],a[e][h]=a[e].factory(h);a[e].snippetVersion="3.0.1",f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src="https:"===a.location.protocol?"https://":"http://cdn."+d,f.id="vs-integration",g.parentNode.insertBefore(f,g)}(window,document,"script","api.virtusize.com/integration/v3.js","vs");
     
-    vs.setApiKey('0000000000000000000000000000000000000000');
-    vs.addWidget('PRODUCT_ID', 'BUTTON_SELECTOR');
+    vs.setApiKey("0000000000000000000000000000000000000000");
+    vs.addWidget("PRODUCT_ID", "BUTTON_SELECTOR");
     </script>
     <!-- End Virtusize Integration -->
 
 
 .. note::
-    Note that the snippet defines an API key, product id and button selector to
+    The snippet defines an API key, product id and button selector to
     use. The values within quotes should be your actual API key, the actual
     product id and a CSS selector for the button you want to use to open the
     Virtusize Widget.
@@ -75,7 +75,7 @@ following during integration:
 
 ::
 
-    vs.addWidget('PRODUCT_ID', '#virtusize-button');
+    vs.addWidget("PRODUCT_ID", "#virtusize-button");
 
 
 .. _label-multiple-buttons:
@@ -100,7 +100,7 @@ and integrate a Widget like this:
 
 ::
 
-    vs.addWidget('PRODUCT_ID', '.virtusize-buttons');
+    vs.addWidget("PRODUCT_ID", ".virtusize-buttons");
 
 
 The element you create should not be visible when the page loads. It will
@@ -122,7 +122,7 @@ measurements to use.  That is what line 6 does. The value ``PRODUCT_ID`` should
 be the actual identifier of the product.
 
 .. note::
-    Note that for best results, the product id should be an identifier that
+    For best results, the product ID should be an identifier that
     identifies the product regardless of size and color.
 
 No button will be visible on the product page until the integration snippet can
@@ -144,8 +144,8 @@ additional ``addWidget`` calls like this:
 
 ::
 
-    vs.addWidget('PRODUCT_ID_1', '#virtusize-button-1');
-    vs.addWidget('PRODUCT_ID_2', '#virtusize-button-2');
+    vs.addWidget("PRODUCT_ID_1", "#virtusize-button-1");
+    vs.addWidget("PRODUCT_ID_2", "#virtusize-button-2");
 
 .. note::
     You can only integrate one product with the same id per page. If you want

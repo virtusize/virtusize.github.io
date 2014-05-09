@@ -99,7 +99,7 @@ setButtonStrategy(strategy)
     ::
 
         vsWidget.setButtonStrategy(function($){
-            return $('.some-element-we-can-use-as-button');
+            return $(".some-element-we-can-use-as-button");
         });
 
 setButtonPositionStrategy(strategy)
@@ -114,7 +114,7 @@ setButtonPositionStrategy(strategy)
     ::
 
         vsWidget.setButtonPositionStrategy(function($){
-            return $('.some-element-we-can-use-as-container');
+            return $(".some-element-we-can-use-as-container");
         });
 
 setProductData(productData)
@@ -141,7 +141,7 @@ setProductDataStrategy(strategy)
     ::
 
         vsWidget.setProductDataStrategy(function($){
-            return $('.some-element-that-contains-product-id').text();
+            return $(".some-element-that-contains-product-id").text();
         });
 
 setLanguage(languageId)
@@ -354,7 +354,7 @@ Custom Button position strategy example
 
 
 .. note::
-    Note that the button strategy can return any DOM or jQuery element. The id
+    The button strategy can return any DOM or jQuery element. The id
     on the element is not mandatory.  However the element should be a block
     level element.
 
