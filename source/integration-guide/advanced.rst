@@ -306,7 +306,7 @@ callback like this:
     });
 
 All callbacks functions will have ``this`` assigned to the VirtusizeWidget
-instance this event orininated from. In some cases there will be optional data
+instance this event originated from. In some cases there will be optional data
 passed into the function as an argument. That is event specific.
 
 .. note::

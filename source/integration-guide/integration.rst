@@ -122,7 +122,7 @@ measurements to use.  That is what line 6 does. The value ``PRODUCT_ID`` should
 be the actual identifier of the product.
 
 .. note::
-    For best results, the product id should be an identifier that
+    For best results, the product ID should be an identifier that
     identifies the product regardless of size and color.
 
 No button will be visible on the product page until the integration snippet can
