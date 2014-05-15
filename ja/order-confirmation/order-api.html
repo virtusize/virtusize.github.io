@@ -18,6 +18,23 @@
 
   
   
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../',
+        VERSION:'1.1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+
     
 
   
@@ -25,6 +42,7 @@
   
   
     <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
   
@@ -33,29 +51,26 @@
         <link rel="next" title="Legacy Integration guide" href="../legacy-integration-guide.html"/>
         <link rel="prev" title="Introduction" href="introduction.html"/> 
 
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../index.html" class="fa fa-home"> Virtusize developer docs</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
+        <a href="../index.html" class="icon icon-home"> Virtusize developer docs</a>
+        <form class="wy-form" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
         
         
             <ul class="current">
@@ -88,32 +103,23 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">Virtusize developer docs</a>
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Virtusize developer docs</a>
       </nav>
 
 
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
-          <li><a href="../order-confirmation.html">Order confirmation</a> &raquo;</li>
-      
-    <li>Order API</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          <a href="../_sources/order-confirmation/order-api.txt" rel="nofollow"> View page source</a>
-        
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
-            
+          <ul class="wy-breadcrumbs">
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+  <li><a href="">Order API</a></li>
+  
+</ul>
+<hr/>
+
+          
   <div class="section" id="order-api">
 <h1>Order API<a class="headerlink" href="#order-api" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="quick-start">
@@ -127,7 +133,7 @@ are recommended.</p>
 <p>A complete example looks like the following:</p>
 <div class="highlight-javascript"><div class="highlight"><pre>&lt;!-- Virtusize Integration --&gt;
 &lt;script&gt;
-!function(a,b,c,d,e,f,g){var h,i,j,k;for(a.Virtusize=e,a[e]=a[e]||[],a[e].methods=[&quot;setApiKey&quot;,&quot;setRegion&quot;,&quot;setLanguage&quot;,&quot;setWidgetOverlayColor&quot;,&quot;addWidget&quot;,&quot;ready&quot;,&quot;on&quot;,&quot;setAvailableSizes&quot;,&quot;setSizeAliases&quot;,&quot;addOrder&quot;,&quot;setUserId&quot;],a[e].factory=function(b){return function(){var c;return c=Array.prototype.slice.call(arguments),c.unshift(b),a[e].push(c),a[e]}},k=a[e].methods,i=0,j=k.length;j&gt;i;i++)h=k[i],a[e][h]=a[e].factory(h);a[e].snippetVersion=&quot;3.0.1&quot;,f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src=&quot;https:&quot;===a.location.protocol?&quot;https://&quot;:&quot;http://cdn.&quot;+d,f.id=&quot;vs-integration&quot;,g.parentNode.insertBefore(f,g)}(window,document,&quot;script&quot;,&quot;api.virtusize.com/integration/v3.js&quot;,&quot;vs&quot;);
+!function(a,b,c,d,e,f,g){var h,i,j,k;for(a.Virtusize=e,a[e]=a[e]||[],a[e].methods=[&quot;setApiKey&quot;,&quot;setRegion&quot;,&quot;setLanguage&quot;,&quot;setWidgetOverlayColor&quot;,&quot;addWidget&quot;,&quot;ready&quot;,&quot;on&quot;,&quot;setAvailableSizes&quot;,&quot;setSizeAliases&quot;,&quot;addOrder&quot;,&quot;setUserId&quot;],a[e].factory=function(b){return function(){var c;return c=Array.prototype.slice.call(arguments),c.unshift(b),a[e].push(c),a[e]}},k=a[e].methods,i=0,j=k.length;j&gt;i;i++)h=k[i],a[e][h]=a[e].factory(h);a[e].snippetVersion=&quot;3.0.2&quot;,f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src=(&quot;https:&quot;===a.location.protocol?&quot;https://&quot;:&quot;http://cdn.&quot;)+d,f.id=&quot;vs-integration&quot;,g.parentNode.insertBefore(f,g)}(window,document,&quot;script&quot;,&quot;api.virtusize.com/integration/v3.js&quot;,&quot;vs&quot;);
 
 vs.setApiKey(&quot;0000000000000000000000000000000000000000&quot;);
 
@@ -311,28 +317,25 @@ added for each variant.</p>
 </div>
 
 
-          </div>
           <footer>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+    <div class="rst-footer-buttons">
       
-        <a href="../legacy-integration-guide.html" class="btn btn-neutral float-right" title="Legacy Integration guide"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../legacy-integration-guide.html" class="btn btn-neutral float-right" title="Legacy Integration guide"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="introduction.html" class="btn btn-neutral" title="Introduction"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="introduction.html" class="btn btn-neutral" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
 
   <hr/>
 
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2014, Virtusize.
-    </p>
-  </div>
+  <p>
+      &copy; Copyright 2014, Virtusize.
+  </p>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -361,41 +364,6 @@ added for each variant.</p>
         Developer documentation by <a href="http://www.virtusize.com/">Virtusize</a>.
     </div>
 </div>
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'1.1',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/translations.js"></script>
-      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
-      <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
-      });
-  </script>
-   
 
 </body>
 </html>
