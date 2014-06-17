@@ -44,12 +44,6 @@ msgid ""
 "unique product ID to identify what measurements to use."
 msgstr ""
 
-#: ../../source/integration-guide/measurements.rst:20
-msgid ""
-"Note that for best results, the product id should be an identifier that "
-"identifies the product regardless of size and color."
-msgstr ""
-
 #: ../../source/integration-guide/measurements.rst:23
 msgid ""
 "No button will be visible on the product page until the integration snippet "
@@ -204,12 +198,6 @@ msgid ""
 "``id`` as well as the ``version`` variables in the product data."
 msgstr ""
 
-#: ../../source/integration-guide/measurements.rst:156
-msgid ""
-"Note that the **id** and **version** product data parameters must be dynamic"
-" for each product."
-msgstr ""
-
 #: ../../source/integration-guide/measurements.rst:160
 msgid ""
 "The **version** variable can be an integer, a date, or even an unix "
@@ -322,3 +310,25 @@ msgid ""
 "Or you can use the Feed tester GUI in our `admin "
 "<http://www.virtusize.com/admin/>`_."
 msgstr ""
+
+#: ../../source/integration-guide/measurements.rst:20
+msgid ""
+"For best results, the product id should be an identifier that identifies the"
+" product regardless of size and color."
+msgstr ""
+
+#: ../../source/integration-guide/measurements.rst:156
+msgid ""
+"The **id** and **version** product data parameters must be dynamic for each "
+"product."
+msgstr ""
+
+#~ msgid ""
+#~ "Note that for best results, the product id should be an identifier that "
+#~ "identifies the product regardless of size and color."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note that the **id** and **version** product data parameters must be dynamic"
+#~ " for each product."
+#~ msgstr ""

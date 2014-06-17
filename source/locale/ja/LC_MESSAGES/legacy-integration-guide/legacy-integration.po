@@ -1,9 +1,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Virtusize developer docs 1.0\n"
+"Project-Id-Version: Virtusize developer docs 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-29 16:18+0100\n"
+"POT-Creation-Date: 2014-06-17 11:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,15 +11,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../source/integration-guide/integration.rst:2
-msgid "Integration"
+#: ../../source/legacy-integration-guide/legacy-integration.rst:2
+msgid "Integration v2"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:4
+#: ../../source/legacy-integration-guide/legacy-integration.rst:5
+msgid ""
+"This integration version is out of date. Please use the new integration v3 "
+"or upgrade your old integration v2. See: :ref:`label-integration-v3`"
+msgstr ""
+
+#: ../../source/legacy-integration-guide/legacy-integration.rst:8
 msgid "**Dependencies**"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:6
+#: ../../source/legacy-integration-guide/legacy-integration.rst:10
 msgid ""
 "At this moment, the integration has only one dependency, jQuery 1.3 or "
 "later. If jQuery is not found on the page, the integration script will "
@@ -27,11 +33,11 @@ msgid ""
 "page as it is done asynchronously and most clients already have it cached)."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:11
+#: ../../source/legacy-integration-guide/legacy-integration.rst:15
 msgid "**Asynchronous loading**"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:13
+#: ../../source/legacy-integration-guide/legacy-integration.rst:17
 msgid ""
 "All script loading is done asynchronously, minimizing the impact on the load"
 " speed of the product page. The integration snippet is inspired by the "
@@ -40,44 +46,44 @@ msgid ""
 "the product page will not be impacted other than that the button won't show."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:22
+#: ../../source/legacy-integration-guide/legacy-integration.rst:26
 msgid "Single Product Integration"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:25
+#: ../../source/legacy-integration-guide/legacy-integration.rst:29
 msgid "Embedding the integration snippet"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:27
+#: ../../source/legacy-integration-guide/legacy-integration.rst:31
 msgid ""
 "Integrating the Virtusize Widget requires embedding an integration script on"
 " the product page. The code is very similar to Google Analytics or Facebook "
 "Connect."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:34
+#: ../../source/legacy-integration-guide/legacy-integration.rst:38
 msgid ""
-"Note that line 5 defines an API key to use. The value within quotes should "
-"be your actual API key that you get when you sign up for Virtusize."
+"Line 5 defines an API key to use. The value within quotes should be your "
+"actual API key that you get when you sign up for Virtusize."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:39
+#: ../../source/legacy-integration-guide/legacy-integration.rst:43
 msgid "Positioning the button"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:41
+#: ../../source/legacy-integration-guide/legacy-integration.rst:45
 msgid ""
 "The position of the button is configured by including an empty div element "
 "with id \"#vs-widget-button-container\" anywhere on the product page."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:47
+#: ../../source/legacy-integration-guide/legacy-integration.rst:51
 msgid ""
 "The button will be created inside the #vs-widget-button-container element. "
 "The integration script is responsible for creating the button."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:50
+#: ../../source/legacy-integration-guide/legacy-integration.rst:54
 msgid ""
 "For the standard integration, the measurements are provided to Virtusize via"
 " the Virtusize admin interface (see :ref:`label-providing-measurements`), "
@@ -86,156 +92,138 @@ msgid ""
 "``PRODUCT_ID`` should be the actual identifier of the product."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:57
+#: ../../source/legacy-integration-guide/legacy-integration.rst:61
 msgid ""
-"Note that for best results, the product id should be an identifier that "
-"identifies the product regardless of size and color."
+"For best results, the product id should be an identifier that identifies the"
+" product regardless of size and color."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:60
+#: ../../source/legacy-integration-guide/legacy-integration.rst:64
 msgid ""
 "No button will be visible on the product page until the integration snippet "
 "can find the measurements for the product (until they are provided to "
 "Virtusize via our admin or via the measurements feed)."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:66
+#: ../../source/legacy-integration-guide/legacy-integration.rst:70
 msgid "Multiple Product Integration"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:68
+#: ../../source/legacy-integration-guide/legacy-integration.rst:72
 msgid ""
 "It is possible to have widget buttons for more than one product per page. "
 "This is needed for \"Buy-this-outfit\" kind of pages, for example."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:71
+#: ../../source/legacy-integration-guide/legacy-integration.rst:75
 msgid ""
 "The integration is very similiar to the one for single product pages.  All "
 "you have to do, is supply the product ids and corresponding button position "
 "strategies, to indicate, which button is used for which product."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:75
+#: ../../source/legacy-integration-guide/legacy-integration.rst:79
 msgid ""
 "The ``vsWidgetAsyncInit`` variable, that is a function in the single product"
 " case, also accepts an array of functions."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:80
+#: ../../source/legacy-integration-guide/legacy-integration.rst:84
 msgid ""
 "Make sure the products exist in the Virtusize database and the button "
 "containers containers exist on your page."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:84
-msgid "Assisted Integration"
-msgstr ""
-
-#: ../../source/integration-guide/integration.rst:86
-msgid ""
-"Assisted integration is similar to our :ref:`label-single-product-"
-"integration`, but is stripped to the core. This integration is very easy, "
-"however it does require some work on our end. If you are interested in this "
-"integration, please `contact us <http://www.virtusize.com/contact>`_."
-msgstr ""
-
-#: ../../source/integration-guide/integration.rst:93
-msgid ""
-"Once you have embedded the integration snippet, contact us and we will "
-"activate your API key and set up additional parameters."
-msgstr ""
-
-#: ../../source/integration-guide/integration.rst:98
+#: ../../source/legacy-integration-guide/legacy-integration.rst:89
 msgid "Using a custom button"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:100
+#: ../../source/legacy-integration-guide/legacy-integration.rst:91
 msgid ""
 "You can use any DOM element on your website as the Virtusize button. This "
 "gives you full control over the design of the button."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:103
+#: ../../source/legacy-integration-guide/legacy-integration.rst:94
 msgid ""
 "The Virtusize integration script still performs all product data and "
 "environment checks prior to showing the button. The button will behave the "
 "same way as the default one."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:108
+#: ../../source/legacy-integration-guide/legacy-integration.rst:99
 msgid ""
 "The button will be set to ``visibility: hidden;`` on load. Only when all "
 "checks pass will the button be shown. To prevent some flickering that may "
 "occur you can set the initial visibility of the button to hidden."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:114
+#: ../../source/legacy-integration-guide/legacy-integration.rst:105
 msgid "Example integration:"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:118
+#: ../../source/legacy-integration-guide/legacy-integration.rst:109
 msgid ""
 "Here the convenience method ``setButton(…)`` is used. To find out what other"
 " methods exist on the VirtusizeWidget object, go to :ref:`label-javascript-"
 "api`."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:123
+#: ../../source/legacy-integration-guide/legacy-integration.rst:114
 msgid "Staging Environment"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:125
+#: ../../source/legacy-integration-guide/legacy-integration.rst:116
 msgid ""
 "We have a staging environment that can be used during the development and "
 "testing phase. Just point the integration script to:"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:132
+#: ../../source/legacy-integration-guide/legacy-integration.rst:123
 msgid "instead of:"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:139
+#: ../../source/legacy-integration-guide/legacy-integration.rst:130
 msgid ""
 "Here is a sample how to configure this so the environment is controlled by a"
 " variable:"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:147
+#: ../../source/legacy-integration-guide/legacy-integration.rst:138
 msgid "Troubleshooting"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:150
+#: ../../source/legacy-integration-guide/legacy-integration.rst:141
 msgid "Verifying integration"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:152
+#: ../../source/legacy-integration-guide/legacy-integration.rst:143
 msgid ""
 "To check if the integration is successful or not, navigate your browser to a"
 " product page. Append the string ``#hasVsWidget?`` to the url in the address"
 " bar."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:156
+#: ../../source/legacy-integration-guide/legacy-integration.rst:147
 msgid "For example:"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:162
+#: ../../source/legacy-integration-guide/legacy-integration.rst:153
 msgid "becomes:"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:168
+#: ../../source/legacy-integration-guide/legacy-integration.rst:159
 msgid ""
 "Press the enter-key to confirm and then hit the reload button on the browser"
 " to reload the page. If the integration was successful, you will get a popup"
 " indicating precisely that."
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:173
+#: ../../source/legacy-integration-guide/legacy-integration.rst:164
 msgid "Button not showing"
 msgstr ""
 
-#: ../../source/integration-guide/integration.rst:175
+#: ../../source/legacy-integration-guide/legacy-integration.rst:166
 msgid ""
 "The button is only shown, if there is a valid product found in the Virtusize"
 " database or supplied in any other way. Make sure that there is a valid "

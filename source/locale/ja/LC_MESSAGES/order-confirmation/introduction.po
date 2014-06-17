@@ -15,14 +15,6 @@ msgstr ""
 msgid "Introduction"
 msgstr ""
 
-#: ../../source/order-confirmation/introduction.rst:4
-msgid ""
-"Virtusize order confirmation consists of a small Javascript, that retailer "
-"can include in their order confirmation pages. The retailer will supply "
-"Virtusize with a number of useful information, that is relevant for finding "
-"the perfect size and fit for the customers of the retailer."
-msgstr ""
-
 #: ../../source/order-confirmation/introduction.rst:9
 msgid ""
 "This will enable Virtusize to show the customers garments they have recently"
@@ -34,11 +26,11 @@ msgid ""
 "customer to get started with using Virtusize."
 msgstr ""
 
-#: ../../source/order-confirmation/introduction.rst:19
+#: ../../source/order-confirmation/introduction.rst:25
 msgid "Dependencies"
 msgstr ""
 
-#: ../../source/order-confirmation/introduction.rst:20
+#: ../../source/order-confirmation/introduction.rst:26
 msgid ""
 "At this moment, the order confirmation has only one dependency, jQuery 1.3 "
 "or later.  If jQuery is not found on the page, the script will "
@@ -46,11 +38,11 @@ msgid ""
 "page as it is done asynchronously and most clients already have it cached)."
 msgstr ""
 
-#: ../../source/order-confirmation/introduction.rst:27
+#: ../../source/order-confirmation/introduction.rst:33
 msgid "Asynchronous loading"
 msgstr ""
 
-#: ../../source/order-confirmation/introduction.rst:28
+#: ../../source/order-confirmation/introduction.rst:34
 msgid ""
 "All script loading is done asynchronously, minimizing the impact on the load"
 " speed of the product page. The integration snippet is inspired by the "
@@ -59,14 +51,44 @@ msgid ""
 "the product page will not be impacted other than that the button won't show."
 msgstr ""
 
-#: ../../source/order-confirmation/introduction.rst:36
+#: ../../source/order-confirmation/introduction.rst:42
 msgid "How it works"
 msgstr ""
 
-#: ../../source/order-confirmation/introduction.rst:37
+#: ../../source/order-confirmation/introduction.rst:4
 msgid ""
-"After the order confirmation script loads, it will create one ore more "
+"Virtusize order confirmation consists of a small JavaScript, that retailer "
+"can include in their order confirmation pages. The retailer will supply "
+"Virtusize with a number of useful information, that is relevant for finding "
+"the perfect size and fit for the customers of the retailer."
+msgstr ""
+
+#: ../../source/order-confirmation/introduction.rst:18
+msgid ""
+"You can start providing purchase data as soon as you have received your API "
+"key. This way your customers will benefit as soon as you integrate Virtusize"
+" on your product pages. They will already have purchase history from their "
+"previous purchases in place."
+msgstr ""
+
+#: ../../source/order-confirmation/introduction.rst:43
+msgid ""
+"After the order confirmation script loads, it will create one or more "
 "tracking pixels and insert them into the retailers page. That way the given "
 "information will get passed on to Virtusize. Our servers will store the "
 "order data and connect it to the current customer."
 msgstr ""
+
+#~ msgid ""
+#~ "Virtusize order confirmation consists of a small Javascript, that retailer "
+#~ "can include in their order confirmation pages. The retailer will supply "
+#~ "Virtusize with a number of useful information, that is relevant for finding "
+#~ "the perfect size and fit for the customers of the retailer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "After the order confirmation script loads, it will create one ore more "
+#~ "tracking pixels and insert them into the retailers page. That way the given "
+#~ "information will get passed on to Virtusize. Our servers will store the "
+#~ "order data and connect it to the current customer."
+#~ msgstr ""
