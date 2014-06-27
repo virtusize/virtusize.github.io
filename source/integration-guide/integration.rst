@@ -1,7 +1,7 @@
 .. _label-integration-v3:
 
-Integration - Quick Start
-=========================
+Product Page Integration
+========================
 
 **Dependencies**
 
@@ -151,6 +151,42 @@ additional ``addWidget`` calls like this:
     You can only integrate one product with the same id per page. If you want
     multiple buttons to open the same widget, see:
     :ref:`label-multiple-buttons` for how to do this.
+
+
+Providing Product Images
+------------------------
+
+The Virtusize Widget includes an image of the product the customer is currently
+looking at as well as images of the items he has previously purchased.
+
+The default image that is being used is the one provided in the `Open Graph
+data <http://ogp.me>`_ of the product page. This is convenient to start out,
+since you don't have to include an image in the ``addWidget`` call, if you
+already have it in the OGP metatag.
+
+But for added flexibility or advanced use cases it is possible to overwrite
+this image with one actively provided to Virtusize like this
+
+.. highlight:: javascript
+
+::
+
+    vs.addWidget({
+        productId: 'PRODUCT_ID',
+        buttonSelector: 'BUTTON_SELECTOR',
+        productImageUrl: 'PRODUCT_IMAGE_URL'
+    });
+
+That way you can select and provide an image that represents the product better
+or is of a better quality.
+
+The image will only be downloaded once from your URL and then distributed
+through our Content Delivery Network.
+
+.. note::
+    The ideal image dimensions are ``width: 360px; height: 500px`` with
+    a safe area around the left and right edges to prevent cropping of the
+    actual content in the Virtusize Widget.
 
 
 Troubleshooting

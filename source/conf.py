@@ -57,7 +57,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Virtusize developer docs'
+project = u'Virtusize Developer Docs'
 copyright = u'2014, Virtusize'
 
 # The version info for the project you're documenting, acts as replacement for

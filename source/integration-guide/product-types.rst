@@ -45,10 +45,17 @@ following GET request:
     GET http://api.virtusize.com/api/v2/product-types
 
 
-**Example response:**
+.. highlight:: javascript
 
-.. gist:: https://gist.github.com/butschi/5634933
-       
+**Example response:**::
+
+    [
+      "dress",
+      "shirt",
+      "sweater",
+      "tShirt"
+    ]
+
 
 Product type details
 ^^^^^^^^^^^^^^^^^^^^
@@ -63,9 +70,40 @@ following GET request.
 
     GET http://api.virtusize.com/api/v2/product-types/dress
 
-**Example response:**
+**Example response:**::
 
-.. gist:: https://gist.github.com/butschi/5634978
+    {
+      "name": "dress",
+      "requiredMeasurements": [
+        "height",
+        "bust",
+        "waist",
+        "hip"
+      ],
+      "optionalMeasurements": [
+        "sleeveOpening",
+        "hem",
+        "waistHeight"
+      ],
+      "maxMeasurements": {
+        "hip": 800,
+        "waistHeight": 550,
+        "waist": 700,
+        "sleeveOpening": 400,
+        "bust": 700,
+        "height": 1700,
+        "hem": 1200
+      },
+      "minMeasurements": {
+        "hip": 300,
+        "waistHeight": 250,
+        "waist": 200,
+        "sleeveOpening": 100,
+        "bust": 250,
+        "height": 650,
+        "hem": 200
+      }
+    }
     
 
 Product type attributes
