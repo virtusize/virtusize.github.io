@@ -7,6 +7,10 @@
 </url>
 
 <url>
+  <loc>http://developers.virtusize.com/quick-start-guide/index.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
   <loc>http://developers.virtusize.com/integration-guide.html</loc>
   <changefreq>weekly</changefreq>
 </url>
@@ -31,23 +35,17 @@
   <changefreq>weekly</changefreq>
 </url>
 <url>
+  <loc>http://developers.virtusize.com/integration-guide/order-confirmation.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
   <loc>http://developers.virtusize.com/integration-guide/advanced.html</loc>
   <changefreq>weekly</changefreq>
 </url>
-
 <url>
-  <loc>http://developers.virtusize.com/order-confirmation.html</loc>
+  <loc>http://developers.virtusize.com/upgrade-guide/index.html</loc>
   <changefreq>weekly</changefreq>
 </url>
-<url>
-  <loc>http://developers.virtusize.com/order-confirmation/introduction.html</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://developers.virtusize.com/order-confirmation/order-api.html</loc>
-  <changefreq>weekly</changefreq>
-</url>
-
 <url>
   <loc>http://developers.virtusize.com/legacy-integration-guide.html</loc>
   <changefreq>weekly</changefreq>

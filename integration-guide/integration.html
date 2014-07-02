@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Integration - Quick Start &mdash; Virtusize developer docs 1.1 documentation</title>
+  <title>Product Page Integration &mdash; Virtusize Developer Docs 1.1 documentation</title>
   
 
   
@@ -18,22 +18,6 @@
 
   
   
-
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:'../',
-        VERSION:'1.1',
-        COLLAPSE_INDEX:false,
-        FILE_SUFFIX:'.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
-      <script type="text/javascript" src="../_static/js/theme.js"></script>
-
     
 
   
@@ -41,53 +25,63 @@
   
   
     <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
-    <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
   
-    <link rel="top" title="Virtusize developer docs 1.1 documentation" href="../index.html"/>
-        <link rel="up" title="Integration guide" href="../integration-guide.html"/>
-        <link rel="next" title="Advanced Configuration - JavaScript API" href="advanced.html"/>
+    <link rel="top" title="Virtusize Developer Docs 1.1 documentation" href="../index.html"/>
+        <link rel="up" title="Integration Guide" href="../integration-guide.html"/>
+        <link rel="next" title="Order Confirmation Integration" href="order-confirmation.html"/>
         <link rel="prev" title="Providing Measurements" href="measurements.html"/> 
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../index.html" class="icon icon-home"> Virtusize developer docs</a>
-        <form class="wy-form" action="../search.html" method="get">
-  <input type="text" name="q" placeholder="Search docs" />
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
+        <a href="../index.html" class="fa fa-home"> Virtusize Developer Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
             <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration guide</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quick-start-guide/index.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">1. Provide your product measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">2. Integrate on your product pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">3. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#verify-your-integration">4. Verify your integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="measurements.html">Providing Measurements</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Integration - Quick Start</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Product Page Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced Configuration - JavaScript API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../order-confirmation.html">Order confirmation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../order-confirmation/introduction.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../order-confirmation/order-api.html">Order API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrade-guide/index.html">Upgrade Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../upgrade-guide/index.html#replace-product-page-integration-with-new-one">1. Replace product page integration with new one</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../upgrade-guide/index.html#integrate-on-your-order-confirmation-page">2. Integrate on your order confirmation page</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../legacy-integration-guide.html">Legacy Integration guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../legacy-integration-guide.html">Legacy Integration Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../legacy-integration-guide/legacy-integration.html">Integration v2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../legacy-integration-guide/legacy-javascript-api.html">JavaScript API v2</a></li>
 </ul>
@@ -102,25 +96,34 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top">
-        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
-        <a href="/">Virtusize developer docs</a>
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Virtusize Developer Docs</a>
       </nav>
 
 
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <ul class="wy-breadcrumbs">
-  <li><a href="../index.html">Docs</a> &raquo;</li>
-  <li><a href="">Integration - Quick Start</a></li>
-  
-</ul>
-<hr/>
-
-          
-  <div class="section" id="integration-quick-start">
-<span id="label-integration-v3"></span><h1>Integration - Quick Start<a class="headerlink" href="#integration-quick-start" title="Permalink to this headline">¶</a></h1>
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../integration-guide.html">Integration Guide</a> &raquo;</li>
+      
+    <li>Product Page Integration</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/integration-guide/integration.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="product-page-integration">
+<span id="label-integration-v3"></span><h1>Product Page Integration<a class="headerlink" href="#product-page-integration" title="Permalink to this headline">¶</a></h1>
 <p><strong>Dependencies</strong></p>
 <p>At this moment, the integration has only one dependency, jQuery 1.3 or later.
 If jQuery is not found on the page, the integration script will asynchronously
@@ -228,6 +231,34 @@ multiple buttons to open the same widget, see:
 <a class="reference internal" href="#label-multiple-buttons"><em>Multiple Buttons</em></a> for how to do this.</p>
 </div>
 </div>
+<div class="section" id="providing-product-images">
+<h2>Providing Product Images<a class="headerlink" href="#providing-product-images" title="Permalink to this headline">¶</a></h2>
+<p>The Virtusize Widget includes an image of the product the customer is currently
+looking at as well as images of the items he has previously purchased.</p>
+<p>The default image that is being used is the one provided in the <a class="reference external" href="http://ogp.me">Open Graph
+data</a> of the product page. This is convenient to start out,
+since you don&#8217;t have to include an image in the <tt class="docutils literal"><span class="pre">addWidget</span></tt> call, if you
+already have it in the OGP metatag.</p>
+<p>But for added flexibility or advanced use cases it is possible to overwrite
+this image with one actively provided to Virtusize like this</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
+    <span class="nx">productId</span><span class="o">:</span> <span class="s1">&#39;PRODUCT_ID&#39;</span><span class="p">,</span>
+    <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s1">&#39;BUTTON_SELECTOR&#39;</span><span class="p">,</span>
+    <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s1">&#39;PRODUCT_IMAGE_URL&#39;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>That way you can select and provide an image that represents the product better
+or is of a better quality.</p>
+<p>The image will only be downloaded once from your URL and then distributed
+through our Content Delivery Network.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The ideal image dimensions are <tt class="docutils literal"><span class="pre">width:</span> <span class="pre">360px;</span> <span class="pre">height:</span> <span class="pre">500px</span></tt> with
+a safe area around the left and right edges to prevent cropping of the
+actual content in the Virtusize Widget.</p>
+</div>
+</div>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="verifying-integration">
@@ -257,25 +288,28 @@ a valid product.</p>
 </div>
 
 
+          </div>
           <footer>
   
-    <div class="rst-footer-buttons">
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="advanced.html" class="btn btn-neutral float-right" title="Advanced Configuration - JavaScript API"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="order-confirmation.html" class="btn btn-neutral float-right" title="Order Confirmation Integration"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="measurements.html" class="btn btn-neutral" title="Providing Measurements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="measurements.html" class="btn btn-neutral" title="Providing Measurements"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
 
   <hr/>
 
-  <p>
-      &copy; Copyright 2014, Virtusize.
-  </p>
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Virtusize.
+    </p>
+  </div>
 
-  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -285,8 +319,8 @@ a valid product.</p>
   </div>
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
-        <span class="icon icon-globe"> Switch language</span>
-        <span class="icon icon-caret-down"></span>
+        <span class="fa fa-globe"> Switch language</span>
+        <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
         <dl>
@@ -304,6 +338,40 @@ a valid product.</p>
         Developer documentation by <a href="http://www.virtusize.com/">Virtusize</a>.
     </div>
 </div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
 
 </body>
 </html>

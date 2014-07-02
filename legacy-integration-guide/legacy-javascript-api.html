@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>JavaScript API v2 &mdash; Virtusize developer docs 1.1 documentation</title>
+  <title>JavaScript API v2 &mdash; Virtusize Developer Docs 1.1 documentation</title>
   
 
   
@@ -18,22 +18,6 @@
 
   
   
-
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:'../',
-        VERSION:'1.1',
-        COLLAPSE_INDEX:false,
-        FILE_SUFFIX:'.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
-      <script type="text/javascript" src="../_static/js/theme.js"></script>
-
     
 
   
@@ -41,52 +25,62 @@
   
   
     <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
-    <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
   
-    <link rel="top" title="Virtusize developer docs 1.1 documentation" href="../index.html"/>
-        <link rel="up" title="Legacy Integration guide" href="../legacy-integration-guide.html"/>
+    <link rel="top" title="Virtusize Developer Docs 1.1 documentation" href="../index.html"/>
+        <link rel="up" title="Legacy Integration Guide" href="../legacy-integration-guide.html"/>
         <link rel="prev" title="Integration v2" href="legacy-integration.html"/> 
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../index.html" class="icon icon-home"> Virtusize developer docs</a>
-        <form class="wy-form" action="../search.html" method="get">
-  <input type="text" name="q" placeholder="Search docs" />
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
+        <a href="../index.html" class="fa fa-home"> Virtusize Developer Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
             <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../integration-guide.html">Integration guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start-guide/index.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">1. Provide your product measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">2. Integrate on your product pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">3. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#verify-your-integration">4. Verify your integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/overview.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/product-types.html">Product Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/measurements.html">Providing Measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integration-guide/integration.html">Integration - Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/integration.html">Product Page Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/order-confirmation.html">Order Confirmation Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/advanced.html">Advanced Configuration - JavaScript API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../order-confirmation.html">Order confirmation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../order-confirmation/introduction.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../order-confirmation/order-api.html">Order API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrade-guide/index.html">Upgrade Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../upgrade-guide/index.html#replace-product-page-integration-with-new-one">1. Replace product page integration with new one</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../upgrade-guide/index.html#integrate-on-your-order-confirmation-page">2. Integrate on your order confirmation page</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../legacy-integration-guide.html">Legacy Integration guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../legacy-integration-guide.html">Legacy Integration Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="legacy-integration.html">Integration v2</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">JavaScript API v2</a></li>
 </ul>
@@ -101,36 +95,63 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top">
-        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
-        <a href="/">Virtusize developer docs</a>
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Virtusize Developer Docs</a>
       </nav>
 
 
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <ul class="wy-breadcrumbs">
-  <li><a href="../index.html">Docs</a> &raquo;</li>
-  <li><a href="">JavaScript API v2</a></li>
-  
-</ul>
-<hr/>
-
-          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../legacy-integration-guide.html">Legacy Integration Guide</a> &raquo;</li>
+      
+    <li>JavaScript API v2</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/legacy-integration-guide/legacy-javascript-api.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
   <div class="section" id="javascript-api-v2">
 <span id="label-javascript-api"></span><h1>JavaScript API v2<a class="headerlink" href="#javascript-api-v2" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This integration version is out of date. Please use the new integration v3
-or upgrade your old integration v2. See: <a class="reference internal" href="../integration-guide/integration.html#label-integration-v3"><em>Integration - Quick Start</em></a></p>
+or upgrade your old integration v2. See: <a class="reference internal" href="../integration-guide/integration.html#label-integration-v3"><em>Product Page Integration</em></a> or
+follow our <a class="reference internal" href="../upgrade-guide/index.html#label-upgrade-guide"><em>Upgrade Guide</em></a>.</p>
 </div>
 <div class="section" id="virtusizewidget">
 <h2>VirtusizeWidget<a class="headerlink" href="#virtusizewidget" title="Permalink to this headline">¶</a></h2>
 <p>The <tt class="docutils literal"><span class="pre">vsWidget</span></tt> object allows for programmatic configuration of the widget.
 Depending on your chosen integration type you either have access to a single
 vsWidget object or to multiple objects used in the multi product integration.</p>
-<script src="https://gist.github.com/butschi/5620596.js">&nbsp;</script><p>The function <tt class="docutils literal"><span class="pre">vsWidgetAsyncInit</span></tt> is required and is called by the integration
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*** Multi product integration ***/</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">vsWidgetAsyncInit</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">vsWidgetAsyncInit</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">vsWidget</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Setup and access first vsWidget</span>
+<span class="p">});</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">vsWidgetAsyncInit</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">vsWidget</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Setup and access second vsWidget</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*** Single product integration ***/</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">vsWidgetAsyncInit</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">vsWidget</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Setup and access the only vsWidget</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>The function <tt class="docutils literal"><span class="pre">vsWidgetAsyncInit</span></tt> is required and is called by the integration
 script during loading.</p>
 <p>This function has access to the <tt class="docutils literal"><span class="pre">vsWidget</span></tt> object and can configure it.</p>
 <div class="section" id="api-methods-of-the-vswidget-object">
@@ -331,7 +352,16 @@ always be provided.</p>
 </div>
 <div class="section" id="product-identifier-example">
 <h4>Product identifier example<a class="headerlink" href="#product-identifier-example" title="Permalink to this headline">¶</a></h4>
-<script src="https://gist.github.com/butschi/5626197.js">&nbsp;</script><div class="admonition note">
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*** Virtusize Widget parameters and initialization ***/</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">vsWidgetAsyncInit</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">vsWidget</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setProductId</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">);</span>
+
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The <strong>setProductId</strong> method is a shortcut to <strong>setProductDataStrategy</strong>, it
 creates a strategy that returns product data with the provided product id.</p>
@@ -349,7 +379,24 @@ data strategy that resolves the product data by reading the product id
 from the span element.</p>
 <div class="section" id="custom-product-data-strategy-example">
 <h4>Custom product data strategy example<a class="headerlink" href="#custom-product-data-strategy-example" title="Permalink to this headline">¶</a></h4>
-<script src="https://gist.github.com/butschi/5626268.js">&nbsp;</script><p>The function <tt class="docutils literal"><span class="pre">setProductDataStrategy</span></tt> takes one parameter, a function
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*** Virtusize Widget parameters and initialization ***/</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">vsWidgetAsyncInit</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">vsWidget</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setProductDataStrategy</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">pid</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#product-identifier&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">();</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span> <span class="o">:</span> <span class="nx">pid</span>
+    <span class="p">};</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;product-identifier&quot;</span><span class="nt">&gt;</span>PRODUCT_ID<span class="nt">&lt;/span&gt;</span>
+</pre></div>
+</div>
+<p>The function <tt class="docutils literal"><span class="pre">setProductDataStrategy</span></tt> takes one parameter, a function
 callable that will be executed and passed the jQuery instance as the
 first argument. The strategy is expected to return a JSON object with at
 least the <strong>id</strong> field set.</p>
@@ -365,10 +412,34 @@ DOM element to act as the Virtusize button. Button strategies take
 precedence over button position strategies.</p>
 <div class="section" id="custom-button-example">
 <h4>Custom button example<a class="headerlink" href="#custom-button-example" title="Permalink to this headline">¶</a></h4>
-<script src="https://gist.github.com/jtsoi/c43d728bee8752577cd0.js">&nbsp;</script></div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*** Virtusize Widget parameters and initialization ***/</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">vsWidgetAsyncInit</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">vsWidget</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setProductId</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">);</span>
+
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setButton</span><span class="p">(</span><span class="s1">&#39;.some-class&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="custom-button-strategy-example">
 <h4>Custom button strategy example<a class="headerlink" href="#custom-button-strategy-example" title="Permalink to this headline">¶</a></h4>
-<script src="https://gist.github.com/jtsoi/cc0cabecdd62c5c338d3.js">&nbsp;</script></div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*** Virtusize Widget parameters and initialization ***/</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">vsWidgetAsyncInit</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">vsWidget</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setProductId</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">);</span>
+
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setButtonStrategy</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;button&gt;Dynamic button&lt;/button&gt;&#39;</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.product-description&#39;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nx">button</span><span class="p">;</span>
+  <span class="p">});</span>
+
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="button-position-strategies">
 <span id="label-button-position-strategies"></span><h3>Button position strategies<a class="headerlink" href="#button-position-strategies" title="Permalink to this headline">¶</a></h3>
@@ -377,10 +448,36 @@ used as a fallback. The fallback strategy will position the button
 inside an element with the id of <tt class="docutils literal"><span class="pre">vs-widget-button-container</span></tt>.</p>
 <div class="section" id="button-position-strategy-example">
 <h4>Button position strategy example<a class="headerlink" href="#button-position-strategy-example" title="Permalink to this headline">¶</a></h4>
-<script src="https://gist.github.com/jtsoi/016190aaf9e8e1d39afb.js">&nbsp;</script></div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*** Virtusize Widget parameters and initialization ***/</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">vsWidgetAsyncInit</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">vsWidget</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setProductId</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">);</span>
+
+  <span class="c1">//Use .product-description as the container for the default VS button.</span>
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setButtonContainer</span><span class="p">(</span><span class="s1">&#39;.product-description&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="custom-button-position-strategy-example">
 <h4>Custom Button position strategy example<a class="headerlink" href="#custom-button-position-strategy-example" title="Permalink to this headline">¶</a></h4>
-<script src="https://gist.github.com/jtsoi/e5aec012cc63daef6d9b.js">&nbsp;</script><div class="admonition note">
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*** Virtusize Widget parameters and initialization ***/</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">vsWidgetAsyncInit</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">vsWidget</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setProductId</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">);</span>
+
+  <span class="c1">//Custome element created as container.</span>
+  <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setButtonPositionStrategy</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;div id=&quot;custom-vs-widget-button-container&quot;&gt;&lt;/div&gt;&#39;</span><span class="p">);</span>
+    <span class="nx">container</span><span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.product-page&#39;</span><span class="p">));</span>
+    <span class="k">return</span> <span class="nx">container</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The button strategy can return any DOM or jQuery element. The id
 on the element is not mandatory.  However the element should be a block
@@ -492,28 +589,63 @@ argument to the callback function will be the section ID (qa1-qa10).</dd>
 </div>
 <div class="section" id="event-callback-example">
 <h3>Event callback example<a class="headerlink" href="#event-callback-example" title="Permalink to this headline">¶</a></h3>
-<script src="https://gist.github.com/butschi/5626347.js">&nbsp;</script></div>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+<span class="cm">/*** Virtusize Widget parameters and initialization ***/</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">vsWidgetAsyncInit</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">vsWidget</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
+    <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">setProductId</span><span class="p">(</span><span class="s2">&quot;0123456789&quot;</span><span class="p">);</span>
+
+    <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">bindCallback</span><span class="p">(</span><span class="s2">&quot;widget.button.show&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">,</span> <span class="nx">productData</span><span class="p">){</span>
+
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;The Virtusize button is now visible.&quot;</span><span class="p">);</span>
+
+    <span class="p">});</span>
+
+    <span class="nx">vsWidget</span><span class="p">.</span><span class="nx">bindCallback</span><span class="p">(</span><span class="s2">&quot;widget.faqApp.sectionClicked&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">,</span> <span class="nx">productData</span><span class="p">,</span> <span class="nx">sectionId</span><span class="p">){</span>
+
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;User read section &quot;</span> <span class="o">+</span> <span class="nx">sectionId</span> <span class="o">+</span> <span class="s2">&quot; in the FAQ app.&quot;</span><span class="p">);</span>
+
+    <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="cm">/*** Do not change anything below this line!    ***/</span>
+<span class="cm">/*** This will load the Virtusize widget script ***/</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">s</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">fS</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">s</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">sE</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">s</span><span class="p">),</span>
+        <span class="nx">p</span> <span class="o">=</span> <span class="s2">&quot;https:&quot;</span> <span class="o">==</span> <span class="nx">d</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="o">?</span> <span class="s2">&quot;https://&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://cdn.&quot;</span><span class="p">;</span>
+    <span class="nx">sE</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="nx">sE</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">&quot;text/javascript&quot;</span><span class="p">;</span>
+    <span class="nx">sE</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">p</span> <span class="o">+</span> <span class="s2">&quot;api.virtusize.com/api/vs-widget/v2/vs-widget.js&quot;</span><span class="p">;</span>
+    <span class="nx">fS</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">sE</span><span class="p">,</span> <span class="nx">fS</span><span class="p">);</span>
+<span class="p">}(</span><span class="nb">document</span><span class="p">,</span> <span class="s2">&quot;script&quot;</span><span class="p">));</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
 
+          </div>
           <footer>
   
-    <div class="rst-footer-buttons">
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="legacy-integration.html" class="btn btn-neutral" title="Integration v2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="legacy-integration.html" class="btn btn-neutral" title="Integration v2"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
 
   <hr/>
 
-  <p>
-      &copy; Copyright 2014, Virtusize.
-  </p>
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Virtusize.
+    </p>
+  </div>
 
-  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -523,8 +655,8 @@ argument to the callback function will be the section ID (qa1-qa10).</dd>
   </div>
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
-        <span class="icon icon-globe"> Switch language</span>
-        <span class="icon icon-caret-down"></span>
+        <span class="fa fa-globe"> Switch language</span>
+        <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
         <dl>
@@ -542,6 +674,40 @@ argument to the callback function will be the section ID (qa1-qa10).</dd>
         Developer documentation by <a href="http://www.virtusize.com/">Virtusize</a>.
     </div>
 </div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
 
 </body>
 </html>

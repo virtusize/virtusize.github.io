@@ -7,7 +7,8 @@ JavaScript API v2
 
 .. note::
     This integration version is out of date. Please use the new integration v3
-    or upgrade your old integration v2. See: :ref:`label-integration-v3`
+    or upgrade your old integration v2. See: :ref:`label-integration-v3` or
+    follow our :ref:`label-upgrade-guide`.
 
 VirtusizeWidget
 ---------------
@@ -16,7 +17,24 @@ The ``vsWidget`` object allows for programmatic configuration of the widget.
 Depending on your chosen integration type you either have access to a single
 vsWidget object or to multiple objects used in the multi product integration.
 
-.. gist:: https://gist.github.com/butschi/5620596
+::
+
+    /*** Multi product integration ***/
+    window.vsWidgetAsyncInit = [];
+    window.vsWidgetAsyncInit.push(function(vsWidget) {
+      // Setup and access first vsWidget
+    });
+
+    window.vsWidgetAsyncInit.push(function(vsWidget) {
+      // Setup and access second vsWidget
+    });
+
+::
+
+    /*** Single product integration ***/
+    window.vsWidgetAsyncInit = function(vsWidget) {
+      // Setup and access the only vsWidget
+    };
 
 The function ``vsWidgetAsyncInit`` is required and is called by the integration
 script during loading.
@@ -272,7 +290,15 @@ only provide a unique product identifier. For that you can use the
 Product identifier example
 """"""""""""""""""""""""""
 
-.. gist:: https://gist.github.com/butschi/5626197
+::
+
+    /*** Virtusize Widget parameters and initialization ***/
+    window.vsWidgetAsyncInit = function(vsWidget) {
+
+      vsWidget.setApiKey("0000000000000000000000000000000000000000");
+      vsWidget.setProductId("PRODUCT_ID");
+
+    };
 
 
 .. note::
@@ -298,7 +324,26 @@ from the span element.
 Custom product data strategy example
 """"""""""""""""""""""""""""""""""""
 
-.. gist:: https://gist.github.com/butschi/5626268
+::
+
+    /*** Virtusize Widget parameters and initialization ***/
+    window.vsWidgetAsyncInit = function(vsWidget) {
+
+      vsWidget.setApiKey("0000000000000000000000000000000000000000");
+      vsWidget.setProductDataStrategy(function($) {
+      
+        var pid = $('#product-identifier').text();
+        return {
+          "id" : pid
+        };
+      });
+    };
+
+.. highlight:: html
+
+::
+
+    <span id="product-identifier">PRODUCT_ID</span>
 
 The function ``setProductDataStrategy`` takes one parameter, a function
 callable that will be executed and passed the jQuery instance as the
@@ -322,13 +367,37 @@ precedence over button position strategies.
 Custom button example
 """""""""""""""""""""
 
-.. gist:: https://gist.github.com/jtsoi/c43d728bee8752577cd0
+.. highlight:: javascript
+
+::
+
+    /*** Virtusize Widget parameters and initialization ***/
+    window.vsWidgetAsyncInit = function(vsWidget) {
+     
+      vsWidget.setApiKey("0000000000000000000000000000000000000000");
+      vsWidget.setProductId("PRODUCT_ID");
+      
+      vsWidget.setButton('.some-class');
+    };
 
 
 Custom button strategy example
 """"""""""""""""""""""""""""""
 
-.. gist:: https://gist.github.com/jtsoi/cc0cabecdd62c5c338d3
+::
+
+    /*** Virtusize Widget parameters and initialization ***/
+    window.vsWidgetAsyncInit = function(vsWidget) {
+     
+      vsWidget.setApiKey("0000000000000000000000000000000000000000");
+      vsWidget.setProductId("PRODUCT_ID");
+      
+      vsWidget.setButtonStrategy(function($){
+        var button = $('<button>Dynamic button</button>').appendTo($('.product-description'))
+        return button;
+      });
+
+    };
 
 
 .. _label-button-position-strategies:
@@ -344,13 +413,38 @@ inside an element with the id of ``vs-widget-button-container``.
 Button position strategy example
 """"""""""""""""""""""""""""""""
 
-.. gist:: https://gist.github.com/jtsoi/016190aaf9e8e1d39afb
+::
+
+    /*** Virtusize Widget parameters and initialization ***/
+    window.vsWidgetAsyncInit = function(vsWidget) {
+     
+      vsWidget.setApiKey("0000000000000000000000000000000000000000");
+      vsWidget.setProductId("PRODUCT_ID");
+      
+      //Use .product-description as the container for the default VS button.
+      vsWidget.setButtonContainer('.product-description');
+    };
 
 
 Custom Button position strategy example
 """""""""""""""""""""""""""""""""""""""
 
-.. gist:: https://gist.github.com/jtsoi/e5aec012cc63daef6d9b
+::
+
+    /*** Virtusize Widget parameters and initialization ***/
+    window.vsWidgetAsyncInit = function(vsWidget) {
+     
+      vsWidget.setApiKey("0000000000000000000000000000000000000000");
+      vsWidget.setProductId("PRODUCT_ID");
+      
+      //Custome element created as container.
+      vsWidget.setButtonPositionStrategy(function($){
+        var container = $('<div id="custom-vs-widget-button-container"></div>');
+        container.appendTo($('.product-page'));
+        return container;
+      });
+    };
+
 
 
 .. note::
@@ -490,6 +584,39 @@ widget.close
 Event callback example
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. gist:: https://gist.github.com/butschi/5626347
+.. highlight:: html
+
+::
+
+    <script type="text/javascript">
+    /*** Virtusize Widget parameters and initialization ***/
+    window.vsWidgetAsyncInit = function(vsWidget) {
+
+        vsWidget.setApiKey("0000000000000000000000000000000000000000");
+        vsWidget.setProductId("0123456789");
+        
+        vsWidget.bindCallback("widget.button.show", function($, productData){
+        
+            alert("The Virtusize button is now visible.");
+            
+        });
+        
+        vsWidget.bindCallback("widget.faqApp.sectionClicked", function($, productData, sectionId){
+        
+            alert("User read section " + sectionId + " in the FAQ app.");
+            
+        });
+    };
+
+    /*** Do not change anything below this line!    ***/
+    /*** This will load the Virtusize widget script ***/
+    (function(d, s){
+        var fS = d.getElementsByTagName(s)[0], sE = d.createElement(s),
+            p = "https:" == d.location.protocol ? "https://" : "http://cdn.";
+        sE.async = true; sE.type = "text/javascript";
+        sE.src = p + "api.virtusize.com/api/vs-widget/v2/vs-widget.js";
+        fS.parentNode.insertBefore(sE, fS);
+    }(document, "script"));
+    </script>
 
 

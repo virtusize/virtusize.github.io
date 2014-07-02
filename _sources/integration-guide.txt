@@ -1,4 +1,4 @@
-Integration guide
+Integration Guide
 =================
 
 .. toctree::
@@ -10,6 +10,7 @@ Integration guide
    integration-guide/product-types
    integration-guide/measurements
    integration-guide/integration
+   integration-guide/order-confirmation
    integration-guide/advanced
 
 

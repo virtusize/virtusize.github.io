@@ -3,7 +3,8 @@ Integration v2
 
 .. note::
     This integration version is out of date. Please use the new integration v3
-    or upgrade your old integration v2. See: :ref:`label-integration-v3`
+    or upgrade your old integration v2. See: :ref:`label-integration-v3` or
+    follow our :ref:`label-upgrade-guide`.
 
 **Dependencies**
 
@@ -28,11 +29,34 @@ Single Product Integration
 Embedding the integration snippet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. highlight:: html
+
 Integrating the Virtusize Widget requires embedding an integration
 script on the product page. The code is very similar to Google Analytics
 or Facebook Connect.
 
-.. gist:: https://gist.github.com/butschi/5619646
+::
+
+  <script type="text/javascript">
+    /*** Virtusize Widget parameters and initialization ***/
+    window.vsWidgetAsyncInit = function(vsWidget) {
+
+      vsWidget.setApiKey("0000000000000000000000000000000000000000");
+      vsWidget.setProductId("PRODUCT_ID");
+
+    };
+
+    /*** Do not change anything below this line!    ***/
+    /*** This will load the Virtusize widget script ***/
+    (function(d, s){
+      var fS = d.getElementsByTagName(s)[0], sE = d.createElement(s),
+          p = "https:" == d.location.protocol ? "https://" : "http://cdn.";
+      sE.async = true; sE.type = "text/javascript";
+      sE.src = p + "api.virtusize.com/api/vs-widget/v2/vs-widget.js";
+      fS.parentNode.insertBefore(sE, fS);
+    }(document, "script"));
+  </script>
+
 
 .. note::
     Line 5 defines an API key to use. The value within quotes should
@@ -46,7 +70,10 @@ The position of the button is configured by including an empty div
 element with id "#vs-widget-button-container" anywhere on the product
 page.
 
-.. gist:: https://gist.github.com/butschi/5619736
+::
+
+    <div id="vs-widget-button-container"></div>
+
 
 The button will be created inside the #vs-widget-button-container
 element. The integration script is responsible for creating the button.
@@ -79,7 +106,21 @@ strategies, to indicate, which button is used for which product.
 The ``vsWidgetAsyncInit`` variable, that is a function in the single product
 case, also accepts an array of functions.
 
-.. gist:: https://gist.github.com/butschi/5619699
+.. highlight:: javascript
+
+::
+
+    window.vsWidgetAsyncInit = [];
+    window.vsWidgetAsyncInit.push(function(vsWidget) {
+
+      vsWidget.setApiKey("0000000000000000000000000000000000000000");
+      vsWidget.setProductId("12345678");
+      vsWidget.setButtonPositionStrategy(function($) {
+        return $('#button-container-12345678');
+      });
+        
+    });
+
 
 Make sure the products exist in the Virtusize database and the button
 containers containers exist on your page.
@@ -104,7 +145,17 @@ the same way as the default one.
 Example integration:
 ^^^^^^^^^^^^^^^^^^^^
 
-.. gist:: https://gist.github.com/butschi/5684927
+::
+
+    /*** Virtusize Widget parameters and initialization ***/
+    window.vsWidgetAsyncInit = function(vsWidget) {
+     
+      vsWidget.setApiKey("0000000000000000000000000000000000000000");
+      vsWidget.setProductId("PRODUCT_ID");
+      vsWidget.setButton("#dom-button-id");
+     
+    };
+
 
 Here the convenience method ``setButton(…)`` is used. To find out what other
 methods exist on the VirtusizeWidget object, go to :ref:`label-javascript-api`.
@@ -128,10 +179,19 @@ instead of:
 
 
 Here is a sample how to configure this so the environment is controlled
-by a variable:
+by a variable::
 
+    window.vsStaging = true;
 
-.. gist:: https://gist.github.com/jtsoi/2173ec22f70e8eee5664
+    (function(d, s){
+      var fS = d.getElementsByTagName(s)[0], sE = d.createElement(s),
+          p = "https:" == d.location.protocol ? "https://" : "http://cdn.",
+          env = window.vsStaging ? "staging" : "api";
+      sE.async = true; sE.type = "text/javascript";
+      sE.src = p + env + ".virtusize.com/api/vs-widget/v2/vs-widget.js";
+      fS.parentNode.insertBefore(sE, fS);
+    }(document, "script"));
+
 
 
 Troubleshooting
@@ -145,6 +205,8 @@ to a product page. Append the string ``#hasVsWidget?`` to the url in the
 address bar.
 
 For example:
+
+.. highlight:: html
 
 ::
 

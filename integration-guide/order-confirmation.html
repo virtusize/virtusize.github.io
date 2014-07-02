@@ -1,0 +1,426 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Order Confirmation Integration &mdash; Virtusize Developer Docs 1.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Virtusize Developer Docs 1.1 documentation" href="../index.html"/>
+        <link rel="up" title="Integration Guide" href="../integration-guide.html"/>
+        <link rel="next" title="Advanced Configuration - JavaScript API" href="advanced.html"/>
+        <link rel="prev" title="Product Page Integration" href="integration.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Virtusize Developer Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quick-start-guide/index.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">1. Provide your product measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">2. Integrate on your product pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">3. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#verify-your-integration">4. Verify your integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="measurements.html">Providing Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration.html">Product Page Integration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Order Confirmation Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced Configuration - JavaScript API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrade-guide/index.html">Upgrade Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../upgrade-guide/index.html#replace-product-page-integration-with-new-one">1. Replace product page integration with new one</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../upgrade-guide/index.html#integrate-on-your-order-confirmation-page">2. Integrate on your order confirmation page</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../legacy-integration-guide.html">Legacy Integration Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../legacy-integration-guide/legacy-integration.html">Integration v2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legacy-integration-guide/legacy-javascript-api.html">JavaScript API v2</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Virtusize Developer Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../integration-guide.html">Integration Guide</a> &raquo;</li>
+      
+    <li>Order Confirmation Integration</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/integration-guide/order-confirmation.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="order-confirmation-integration">
+<h1>Order Confirmation Integration<a class="headerlink" href="#order-confirmation-integration" title="Permalink to this headline">¶</a></h1>
+<p>Virtusize order confirmation utilizes the same small JavaScript that is used on
+the product pages. The retailer will provide Virtusize with a number of useful
+information, that is relevant for finding the perfect size and fit for the
+customers of the retailer.</p>
+<p>This will enable Virtusize to show the customers items they have recently
+purchased as part of the purchase history. They can then select one or more of
+these items as a reference item used for comparison with the garment they are
+looking to purchase from the retailer at the moment. Doing this will
+effectively eliminate the tedious task of measuring garments from their
+wardrobe for the customers and will therefore make it much easier for the
+customer to get started with using Virtusize.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can start providing purchase data as soon as you have received your API
+key. This way your customers will benefit as soon as you integrate
+Virtusize on your product pages by having purchase history from their
+previous purchases already in place.</p>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>To get started you have to include the Virtusize integration script into your
+order confirmation page just before the closing <tt class="docutils literal"><span class="pre">&lt;/body&gt;</span></tt>. This is the same
+script that you use on your product pages.</p>
+<p>You provide certain information about the order and the line items of the
+order. Some attributes are required for the purchase history to work properly,
+others are recommended.</p>
+<p>A complete example looks like the following:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="c">&lt;!-- Virtusize Integration --&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="o">!</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="nx">d</span><span class="p">,</span><span class="nx">e</span><span class="p">,</span><span class="nx">f</span><span class="p">,</span><span class="nx">g</span><span class="p">){</span><span class="kd">var</span> <span class="nx">h</span><span class="p">,</span><span class="nx">i</span><span class="p">,</span><span class="nx">j</span><span class="p">,</span><span class="nx">k</span><span class="p">;</span><span class="k">for</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">Virtusize</span><span class="o">=</span><span class="nx">e</span><span class="p">,</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span><span class="o">||</span><span class="p">[],</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;setApiKey&quot;</span><span class="p">,</span><span class="s2">&quot;setRegion&quot;</span><span class="p">,</span><span class="s2">&quot;setLanguage&quot;</span><span class="p">,</span><span class="s2">&quot;setWidgetOverlayColor&quot;</span><span class="p">,</span><span class="s2">&quot;addWidget&quot;</span><span class="p">,</span><span class="s2">&quot;ready&quot;</span><span class="p">,</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="s2">&quot;setAvailableSizes&quot;</span><span class="p">,</span><span class="s2">&quot;setSizeAliases&quot;</span><span class="p">,</span><span class="s2">&quot;addOrder&quot;</span><span class="p">,</span><span class="s2">&quot;setUserId&quot;</span><span class="p">],</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">factory</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">b</span><span class="p">){</span><span class="k">return</span> <span class="kd">function</span><span class="p">(){</span><span class="kd">var</span> <span class="nx">c</span><span class="p">;</span><span class="k">return</span> <span class="nx">c</span><span class="o">=</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">),</span><span class="nx">c</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">b</span><span class="p">),</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">]}},</span><span class="nx">k</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">methods</span><span class="p">,</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nx">j</span><span class="o">=</span><span class="nx">k</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">j</span><span class="o">&gt;</span><span class="nx">i</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="nx">h</span><span class="o">=</span><span class="nx">k</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">][</span><span class="nx">h</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">factory</span><span class="p">(</span><span class="nx">h</span><span class="p">);</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">snippetVersion</span><span class="o">=</span><span class="s2">&quot;3.0.2&quot;</span><span class="p">,</span><span class="nx">f</span><span class="o">=</span><span class="nx">b</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span><span class="nx">g</span><span class="o">=</span><span class="nx">b</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">c</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="nx">f</span><span class="p">.</span><span class="nx">async</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="nx">f</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;https:&quot;</span><span class="o">===</span><span class="nx">a</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span><span class="o">?</span><span class="s2">&quot;https://&quot;</span><span class="o">:</span><span class="s2">&quot;http://cdn.&quot;</span><span class="p">)</span><span class="o">+</span><span class="nx">d</span><span class="p">,</span><span class="nx">f</span><span class="p">.</span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;vs-integration&quot;</span><span class="p">,</span><span class="nx">g</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span><span class="nx">g</span><span class="p">)}(</span><span class="nb">window</span><span class="p">,</span><span class="nb">document</span><span class="p">,</span><span class="s2">&quot;script&quot;</span><span class="p">,</span><span class="s2">&quot;api.virtusize.com/integration/v3.js&quot;</span><span class="p">,</span><span class="s2">&quot;vs&quot;</span><span class="p">);</span>
+
+<span class="nx">vs</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
+
+<span class="nx">vs</span><span class="p">.</span><span class="nx">addOrder</span><span class="p">({</span>
+    <span class="nx">orderId</span><span class="o">:</span> <span class="s2">&quot;ORDER_ID&quot;</span><span class="p">,</span>
+    <span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;USER_ID&quot;</span><span class="p">,</span>
+    <span class="nx">region</span><span class="o">:</span> <span class="s2">&quot;DE&quot;</span><span class="p">,</span>
+
+    <span class="nx">items</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
+            <span class="nx">size</span><span class="o">:</span> <span class="s2">&quot;L&quot;</span><span class="p">,</span>
+            <span class="nx">sizeAlias</span><span class="o">:</span> <span class="s2">&quot;Large&quot;</span><span class="p">,</span>
+            <span class="nx">variantId</span><span class="o">:</span> <span class="s2">&quot;SKU_123&quot;</span><span class="p">,</span>
+            <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://www.retailer.com/products/PRODUCT_ID&quot;</span><span class="p">,</span>
+            <span class="nx">imageUrl</span><span class="o">:</span> <span class="s2">&quot;http://images.retailer.com/products/sku_123/black/image1xl.jpg&quot;</span><span class="p">,</span>
+            <span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span>
+            <span class="nx">gender</span><span class="o">:</span> <span class="s2">&quot;female&quot;</span><span class="p">,</span>
+            <span class="nx">unitPrice</span><span class="o">:</span> <span class="mf">99.95</span><span class="p">,</span>
+            <span class="nx">quantity</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nx">currency</span><span class="o">:</span> <span class="s2">&quot;EUR&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="c">&lt;!-- End Virtusize Integration --&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="order">
+<h2>Order<a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
+<p>An order contains general information about this purchase as well as a list of
+line items.</p>
+<div class="section" id="required-attributes">
+<h3>Required attributes<a class="headerlink" href="#required-attributes" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>orderId</dt>
+<dd><p class="first"><em>String</em> - An id uniquely identifying the order</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;ORDER_ID_4321&quot;</span>
+</pre></div>
+</div>
+</dd>
+<dt>userId</dt>
+<dd><p class="first"><em>String</em> - An anonymous user id uniquely identifying a customer of the retailer</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;USER_ID_1234&quot;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="recommended-attributes">
+<h3>Recommended attributes<a class="headerlink" href="#recommended-attributes" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>region</dt>
+<dd><p class="first"><em>String</em> - The region identifier as defined by ISO 3166-1
+alpha-2. The region id must be the two-letter ISO-3166 country code as
+defined in <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a></p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;DE&quot;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="line-items">
+<span id="label-line-items-v3"></span><h2>Line Items<a class="headerlink" href="#line-items" title="Permalink to this headline">¶</a></h2>
+<p>Line items represent the actual products that have been purchased.</p>
+<div class="section" id="id1">
+<h3>Required attributes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>productId</dt>
+<dd><p class="first"><em>String</em> - The id of the product. This must match the product id used
+during integration on the retailers product page.</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;external_id_1234&quot;</span>
+</pre></div>
+</div>
+</dd>
+<dt>size</dt>
+<dd><p class="first"><em>String</em> - The size or size id of the purchased item. This must match the
+size identifiers used in the product database of Virtusize.</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;2128&quot;</span>
+</pre></div>
+</div>
+</dd>
+<dt>imageUrl</dt>
+<dd><p class="first"><em>String</em> - The URL to a variant specific image of this line item of the
+color and style the item was ordered by the customer. If possible provide
+a high quality image. This will be used to help the customer identify his
+previous purchases at a later stage in the Virtusize widget. In case there
+is no variant specific image available, please provide the default product
+image.</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;http://images.retailer.com/products/sku123/black/image_large.jpg&quot;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h3>Recommended attributes<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>sizeAlias</dt>
+<dd><p class="first"><em>String</em> - A size alias that will be used to display the size to the
+customer at a later stage, for example while showing him his personal
+purchase history. It should be set, if the retailer uses size-ids instead of
+human readable sizes as identifiers.</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;Large&quot;</span>
+</pre></div>
+</div>
+</dd>
+<dt>url</dt>
+<dd><p class="first"><em>String</em> - The canonical URL of this product in the retailers online store.</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;http://www.retailer.com/products/123&quot;</span>
+</pre></div>
+</div>
+</dd>
+<dt>variantId</dt>
+<dd><p class="first"><em>String</em> - An id that uniquely identifies a product variant including color
+and size, usually the SKU.</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;sku_1234&quot;</span>
+</pre></div>
+</div>
+</dd>
+<dt>color</dt>
+<dd><p class="first"><em>String</em> - The color of ordered garment.</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;black&quot;</span>
+</pre></div>
+</div>
+</dd>
+<dt>gender</dt>
+<dd><p class="first"><em>String</em> - The gender that this garment is targetting. Must have one of
+these values: &#8220;unisex&#8221;, &#8220;male&#8221;, &#8220;female&#8221;</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;female&quot;</span>
+</pre></div>
+</div>
+</dd>
+<dt>unitPrice</dt>
+<dd><p class="first"><em>Float</em> - The unit price of this item.</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="mf">99.95</span>
+</pre></div>
+</div>
+</dd>
+<dt>quantity</dt>
+<dd><p class="first"><em>Integer</em> - The quantitiy of this line item for the given color and size.
+If the customer bought different sizes or colors, a separate item has to be
+added for each variant.</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="mi">1</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Here is a complete line item object:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;external_id_1234&quot;</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="s2">&quot;2128&quot;</span><span class="p">,</span>
+    <span class="nx">sizeAlias</span><span class="o">:</span> <span class="s2">&quot;Large&quot;</span><span class="p">,</span>
+    <span class="nx">imageUrl</span><span class="o">:</span> <span class="s2">&quot;http://images.retailer.com/products/sku123/black/image_large.jpg&quot;</span><span class="p">,</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://www.retailer.com/products/123&quot;</span><span class="p">,</span>
+    <span class="nx">variantId</span><span class="o">:</span> <span class="s2">&quot;sku_123&quot;</span><span class="p">,</span>
+    <span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span>
+    <span class="nx">gender</span><span class="o">:</span> <span class="s2">&quot;unisex&quot;</span><span class="p">,</span>
+    <span class="nx">unitPrice</span><span class="o">:</span> <span class="mf">99.95</span><span class="p">,</span>
+    <span class="nx">quantity</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="advanced.html" class="btn btn-neutral float-right" title="Advanced Configuration - JavaScript API"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="integration.html" class="btn btn-neutral" title="Product Page Integration"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Virtusize.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-globe"> Switch language</span>
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Languages</dt>
+            <dd>
+                <a href="http://developers.virtusize.com/">English</a>
+            </dd>
+            <!-- TODO: comment this in, as soon as Japanese is ready
+            <dd>
+                <a href="http://developers.virtusize.com/ja/">Japanese</a>
+            </dd>
+            -->
+        </dl>
+        <hr/>
+        Developer documentation by <a href="http://www.virtusize.com/">Virtusize</a>.
+    </div>
+</div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

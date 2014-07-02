@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Advanced Configuration - JavaScript API &mdash; Virtusize developer docs 1.1 ドキュメント</title>
+  <title>Advanced Configuration - JavaScript API &mdash; Virtusize Developer Docs 1.1 ドキュメント</title>
   
 
   
@@ -18,23 +18,6 @@
 
   
   
-
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:'../',
-        VERSION:'1.1',
-        COLLAPSE_INDEX:false,
-        FILE_SUFFIX:'.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/translations.js"></script>
-      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
-      <script type="text/javascript" src="../_static/js/theme.js"></script>
-
     
 
   
@@ -42,53 +25,63 @@
   
   
     <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
-    <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
   
-    <link rel="top" title="Virtusize developer docs 1.1 ドキュメント" href="../index.html"/>
-        <link rel="up" title="Integration guide" href="../integration-guide.html"/>
-        <link rel="next" title="Order confirmation" href="../order-confirmation.html"/>
-        <link rel="prev" title="Integration - Quick Start" href="integration.html"/> 
+    <link rel="top" title="Virtusize Developer Docs 1.1 ドキュメント" href="../index.html"/>
+        <link rel="up" title="Integration Guide" href="../integration-guide.html"/>
+        <link rel="next" title="Upgrade Guide" href="../upgrade-guide/index.html"/>
+        <link rel="prev" title="Order Confirmation Integration" href="order-confirmation.html"/> 
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../index.html" class="icon icon-home"> Virtusize developer docs</a>
-        <form class="wy-form" action="../search.html" method="get">
-  <input type="text" name="q" placeholder="Search docs" />
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
+        <a href="../index.html" class="fa fa-home"> Virtusize Developer Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
             <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration guide</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quick-start-guide/index.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">1. Provide your product measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">2. Integrate on your product pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">3. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#verify-your-integration">4. Verify your integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction ja</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="measurements.html">Providing Measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integration.html">Integration - Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration.html">Product Page Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Advanced Configuration - JavaScript API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../order-confirmation.html">Order confirmation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../order-confirmation/introduction.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../order-confirmation/order-api.html">Order API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrade-guide/index.html">Upgrade Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../upgrade-guide/index.html#replace-product-page-integration-with-new-one">1. Replace product page integration with new one</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../upgrade-guide/index.html#integrate-on-your-order-confirmation-page">2. Integrate on your order confirmation page</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../legacy-integration-guide.html">Legacy Integration guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../legacy-integration-guide.html">Legacy Integration Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../legacy-integration-guide/legacy-integration.html">Integration v2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../legacy-integration-guide/legacy-javascript-api.html">JavaScript API v2</a></li>
 </ul>
@@ -103,23 +96,32 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top">
-        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
-        <a href="/">Virtusize developer docs</a>
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Virtusize Developer Docs</a>
       </nav>
 
 
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <ul class="wy-breadcrumbs">
-  <li><a href="../index.html">Docs</a> &raquo;</li>
-  <li><a href="">Advanced Configuration - JavaScript API</a></li>
-  
-</ul>
-<hr/>
-
-          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../integration-guide.html">Integration Guide</a> &raquo;</li>
+      
+    <li>Advanced Configuration - JavaScript API</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/integration-guide/advanced.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
   <div class="section" id="advanced-configuration-javascript-api">
 <span id="label-advanced-configuration"></span><h1>Advanced Configuration - JavaScript API<a class="headerlink" href="#advanced-configuration-javascript-api" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="renaming-the-global-variable">
@@ -194,7 +196,11 @@ for this would be setting the product ids or available sizes.</p>
 <p>Sets the preferred region to be used in widget, The region id must be the
 two-letter ISO-3166 country code as defined in
 <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a> Region controls the default
-length unit.</p>
+length unit. This value is then passed on to all widgets that are added
+afterwards without a region parameter.</p>
+<p>It is considered a convenience function for pages with multiple
+widgets of the same region. It does <strong>not</strong> have any effect on widgets,
+that have already been added.</p>
 <p><strong>Example:</strong></p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">setRegion</span><span class="p">(</span><span class="s2">&quot;GB&quot;</span><span class="p">);</span>
 <span class="nx">OR</span>
@@ -207,7 +213,11 @@ length unit.</p>
 &#8220;languageCode-regionCode&#8221;.</p>
 <p>Sets the preferred language to be used in widget, The language id must
 follow the form: <strong>languageCode[-regionCode]</strong> where regionCode is
-optional.</p>
+optional. This value is then passed on to all widgets that are added
+afterwards without a language parameter.</p>
+<p>It is considered a convenience function for pages with multiple
+widgets of the same language. It does <strong>not</strong> have any effect on widgets,
+that have already been added.</p>
 <p><strong>languageCode</strong> - two-letter ISO-639-1 language abbreviation as defined by
 <a class="reference external" href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes</a></p>
 <p><strong>regionCode</strong> - two-letter ISO-3166 country code where this language is
@@ -415,25 +425,28 @@ Virtusize &#8220;uses&#8221;.</p>
 </div>
 
 
+          </div>
           <footer>
   
-    <div class="rst-footer-buttons">
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../order-confirmation.html" class="btn btn-neutral float-right" title="Order confirmation"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../upgrade-guide/index.html" class="btn btn-neutral float-right" title="Upgrade Guide"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="integration.html" class="btn btn-neutral" title="Integration - Quick Start"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="order-confirmation.html" class="btn btn-neutral" title="Order Confirmation Integration"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
 
   <hr/>
 
-  <p>
-      &copy; Copyright 2014, Virtusize.
-  </p>
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Virtusize.
+    </p>
+  </div>
 
-  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
         </div>
       </div>
@@ -443,8 +456,8 @@ Virtusize &#8220;uses&#8221;.</p>
   </div>
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
-        <span class="icon icon-globe"> Switch language</span>
-        <span class="icon icon-caret-down"></span>
+        <span class="fa fa-globe"> Switch language</span>
+        <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
         <dl>
@@ -462,6 +475,41 @@ Virtusize &#8220;uses&#8221;.</p>
         Developer documentation by <a href="http://www.virtusize.com/">Virtusize</a>.
     </div>
 </div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
 
 </body>
 </html>
