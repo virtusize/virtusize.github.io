@@ -1,18 +1,38 @@
-.. highlight:: javascript
+.. highlight:: html
 
-Order API
----------
+Order Confirmation Integration
+------------------------------
 
-Quick Start
-^^^^^^^^^^^
+Virtusize order confirmation utilizes the same small JavaScript that is used on
+the product pages. The retailer will provide Virtusize with a number of useful
+information, that is relevant for finding the perfect size and fit for the
+customers of the retailer.
+
+This will enable Virtusize to show the customers items they have recently
+purchased as part of the purchase history. They can then select one or more of
+these items as a reference item used for comparison with the garment they are
+looking to purchase from the retailer at the moment. Doing this will
+effectively eliminate the tedious task of measuring garments from their
+wardrobe for the customers and will therefore make it much easier for the
+customer to get started with using Virtusize.
+
+.. note::
+    You can start providing purchase data as soon as you have received your API
+    key. This way your customers will benefit as soon as you integrate
+    Virtusize on your product pages by having purchase history from their
+    previous purchases already in place.
+
+
+Getting started
+^^^^^^^^^^^^^^^
 
 To get started you have to include the Virtusize integration script into your
 order confirmation page just before the closing ``</body>``. This is the same
 script that you use on your product pages.
 
-You supply certain information about the order and the line items of the order.
-Some attributes are required for the purchase history to work properly, others
-are recommended.
+You provide certain information about the order and the line items of the
+order. Some attributes are required for the purchase history to work properly,
+others are recommended.
 
 A complete example looks like the following::
 
@@ -49,6 +69,8 @@ A complete example looks like the following::
 
 Order
 ^^^^^
+
+.. highlight:: javascript
 
 An order contains general information about this purchase as well as a list of
 line items.

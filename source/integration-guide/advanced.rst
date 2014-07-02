@@ -107,7 +107,12 @@ setRegion(regionId)
     Sets the preferred region to be used in widget, The region id must be the
     two-letter ISO-3166 country code as defined in
     http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 Region controls the default
-    length unit.
+    length unit. This value is then passed on to all widgets that are added
+    afterwards without a region parameter.
+    
+    It is considered a convenience function for pages with multiple
+    widgets of the same region. It does **not** have any effect on widgets,
+    that have already been added. 
 
     **Example:**
 
@@ -124,7 +129,12 @@ setLanguage(languageId)
     
     Sets the preferred language to be used in widget, The language id must
     follow the form: **languageCode[-regionCode]** where regionCode is
-    optional.
+    optional. This value is then passed on to all widgets that are added
+    afterwards without a language parameter.
+
+    It is considered a convenience function for pages with multiple
+    widgets of the same language. It does **not** have any effect on widgets,
+    that have already been added. 
     
     **languageCode** - two-letter ISO-639-1 language abbreviation as defined by
     http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes

@@ -146,18 +146,34 @@ return a **404** status code.
 Product feed integration example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+
 In order to use the product feed, the integration snippet must provide
 the ``id`` as well as the ``version`` variables in the product data.
 
+.. highlight:: html
 
-.. gist:: https://gist.github.com/butschi/5626423
+::
+    
+    <!-- Virtusize Integration -->
+    <script>
+    !function(a,b,c,d,e,f,g){var h,i,j,k;for(a.Virtusize=e,a[e]=a[e]||[],a[e].methods=["setApiKey","setRegion","setLanguage","setWidgetOverlayColor","addWidget","ready","on","setAvailableSizes","setSizeAliases","addOrder","setUserId"],a[e].factory=function(b){return function(){var c;return c=Array.prototype.slice.call(arguments),c.unshift(b),a[e].push(c),a[e]}},k=a[e].methods,i=0,j=k.length;j>i;i++)h=k[i],a[e][h]=a[e].factory(h);a[e].snippetVersion="3.0.2",f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src=("https:"===a.location.protocol?"https://":"http://cdn.")+d,f.id="vs-integration",g.parentNode.insertBefore(f,g)}(window,document,"script","api.virtusize.com/integration/v3.js","vs");
+    
+    vs.setApiKey("0000000000000000000000000000000000000000");
+    vs.addWidget({
+        productId: 'PRODUCT_VERSION',
+        buttonSelector 'BUTTON_SELECTOR',
+        productVersion: 'PRODUCT_VERSION'
+    });
+    </script>
+    <!-- End Virtusize Integration -->
+
 
 .. note:: 
-    The **id** and **version** product data parameters must be
+    The **PRODUCT_ID** and **PRODUCT_VERSION** product data parameters must be
     dynamic for each product.
 
 .. note:: 
-    The **version** variable can be an integer, a date, or even an unix
+    The **PRODUCT_VERSION** variable can be an integer, a date, or even an unix
     timestamp, as long as it changes when the product measurements change.
 
 
@@ -170,16 +186,53 @@ The feed must return data as valid
 `Example feed <http://api.virtusize.com/api/v2/feed/examples/json>`_
 
 
-**Example request:**
-
-::
+**Example request:**::
 
     GET http://www.example.com/product/123456abc/measurements
 
+.. highlight:: javascript
 
-**Example response:**
+**Example response:**::
 
-.. gist:: https://gist.github.com/butschi/5626460
+    {
+      "id": "123456abc",
+      "type": "dress",
+      "name": "Dress - Summer dream",
+     
+      "sizes": {
+        
+        "small": {
+          "height":        88,
+          "bust":          41,
+          "waist":         37,
+          "hip":           42,
+          "sleeveOpening": 18,
+          "hem":           45,
+          "waistHeight":   39
+        },
+        
+        "medium": {
+          "height":        90,
+          "bust":          43,
+          "waist":         39,
+          "hip":           44,
+          "sleeveOpening": 20,
+          "hem":           47,
+          "waistHeight":   41
+        },
+        
+        "large": {
+          "height":        92,
+          "bust":          45,
+          "waist":         41,
+          "hip":           46,
+          "sleeveOpening": 22,
+          "hem":           49,
+          "waistHeight":   42
+        }
+      }
+    }
+
 
 
 **Product attributes**
@@ -223,13 +276,12 @@ each product type.
 Feed validation
 ^^^^^^^^^^^^^^^
 
-To validate your feed, you can use our feed tester URL:
+.. highlight:: html
 
-::
+To validate your feed, you can use our feed tester URL::
 
     GET http://api.virtusize.com/api/v2/feed/tester/json?apiKey=xxxxxxxxxxxxx&url=http://www.example.com/backend/virtusize/product-info?id=123456abc
 
 
 Or you can use the Feed tester GUI in our `admin <http://www.virtusize.com/admin/>`_.
-
 

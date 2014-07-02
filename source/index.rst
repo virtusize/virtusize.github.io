@@ -3,13 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Virtusize developer docs
+Virtusize Developer Docs
 ========================
 
 .. toctree::
    :maxdepth: 2
 
+   quick-start-guide/index
    integration-guide
-   order-confirmation
+   upgrade-guide/index
    legacy-integration-guide
 

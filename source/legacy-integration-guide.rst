@@ -1,4 +1,4 @@
-Legacy Integration guide
+Legacy Integration Guide
 ========================
 
 .. toctree::
