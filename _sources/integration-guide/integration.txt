@@ -172,9 +172,9 @@ this image with one actively provided to Virtusize like this
 ::
 
     vs.addWidget({
-        productId: 'PRODUCT_ID',
-        buttonSelector: 'BUTTON_SELECTOR',
-        productImageUrl: 'PRODUCT_IMAGE_URL'
+        productId: "PRODUCT_ID",
+        buttonSelector: "BUTTON_SELECTOR",
+        productImageUrl: "PRODUCT_IMAGE_URL"
     });
 
 That way you can select and provide an image that represents the product better

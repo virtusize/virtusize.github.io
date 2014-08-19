@@ -281,13 +281,13 @@ error message. Inside the function you have access to the Virtusize Widget by
 <tt class="docutils literal"><span class="pre">this</span></tt>.</p>
 <p>It is also possible to only pass one JavaScript object to the function like
 this:</p>
-<div class="highlight-javascript"><div class="highlight"><pre>vs.addWidget({
-    productId: &quot;PRODUCT_ID&quot;,
-    buttonSelector: &quot;BUTTON_SELECTOR&quot;,
-    productVersion: &quot;1&quot;,
-    availableSizes: [&quot;M&quot;, &quot;L&quot;],
-    sizeAliases: {&quot;S&quot;: &quot;Small&quot;, M&quot;: &quot;Medium&quot;, &quot;L&quot;: &quot;Large&quot;}
-});
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
+     <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
+     <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>
+     <span class="nx">productVersion</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+     <span class="nx">availableSizes</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">],</span>
+     <span class="nx">sizeAliases</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;S&quot;</span><span class="o">:</span> <span class="s2">&quot;Small&quot;</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="o">:</span> <span class="s2">&quot;Medium&quot;</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="o">:</span> <span class="s2">&quot;Large&quot;</span><span class="p">}</span>
+ <span class="p">});</span>
 </pre></div>
 </div>
 <p>The following are functions you can call on the widget object, for example

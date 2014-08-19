@@ -198,9 +198,20 @@ line items.</p>
 </div>
 </dd>
 <dt>userId</dt>
-<dd><p class="first"><em>String</em> - An anonymous user id uniquely identifying a customer of the retailer</p>
-<p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;USER_ID_1234&quot;</span>
+<dd><p class="first"><em>String</em> - An anonymous user id uniquely identifying a customer of the
+retailer. Could be the database id, either plaintext or hashed, or the
+hashed email address of the user.</p>
+<p>Examples:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="c1">// Good examples</span>
+<span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;62731&quot;</span>
+<span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;2c9a0ad49c90c71c29cf4399e262e095&quot;</span>
+
+<span class="c1">// Bad examples</span>
+<span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;guest&quot;</span>
+<span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;Anonymous&quot;</span>
+<span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;john@example.com&quot;</span>
+<span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+<span class="nx">userId</span><span class="o">:</span> <span class="kc">null</span>
 </pre></div>
 </div>
 </dd>
@@ -302,8 +313,14 @@ these values: &#8220;unisex&#8221;, &#8220;male&#8221;, &#8220;female&#8221;</p>
 </dd>
 <dt>unitPrice</dt>
 <dd><p class="first"><em>Float</em> - The unit price of this item.</p>
-<p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="mf">99.95</span>
+<p>Examples:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="c1">// Good examples</span>
+<span class="mf">99.95</span>
+<span class="mf">100.00</span>
+
+<span class="c1">// Bad examples</span>
+<span class="s2">&quot;100.00&quot;</span>
+<span class="mf">100.0005</span>
 </pre></div>
 </div>
 </dd>
@@ -311,8 +328,15 @@ these values: &#8220;unisex&#8221;, &#8220;male&#8221;, &#8220;female&#8221;</p>
 <dd><p class="first"><em>Integer</em> - The quantitiy of this line item for the given color and size.
 If the customer bought different sizes or colors, a separate item has to be
 added for each variant.</p>
-<p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="mi">1</span>
+<p>Examples:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="c1">// Good examples</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">10</span>
+
+<span class="c1">// Bad examples</span>
+<span class="s2">&quot;1&quot;</span>
+<span class="mf">0.5</span>
 </pre></div>
 </div>
 </dd>

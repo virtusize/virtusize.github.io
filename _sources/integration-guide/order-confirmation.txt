@@ -86,11 +86,22 @@ orderId
         "ORDER_ID_4321"
 
 userId
-    *String* - An anonymous user id uniquely identifying a customer of the retailer
+    *String* - An anonymous user id uniquely identifying a customer of the
+    retailer. Could be the database id, either plaintext or hashed, or the
+    hashed email address of the user.
 
-    Example::
+    Examples::
 
-        "USER_ID_1234"
+        // Good examples
+        userId: "62731"
+        userId: "2c9a0ad49c90c71c29cf4399e262e095"
+
+        // Bad examples
+        userId: "guest"
+        userId: "Anonymous"
+        userId: "john@example.com"
+        userId: ""
+        userId: null
 
 
 Recommended attributes
@@ -192,18 +203,31 @@ gender
 unitPrice
     *Float* - The unit price of this item.
     
-    Example::
-
+    Examples::
+        
+        // Good examples
         99.95
+        100.00
+
+        // Bad examples
+        "100.00"
+        100.0005
 
 quantity
     *Integer* - The quantitiy of this line item for the given color and size.
     If the customer bought different sizes or colors, a separate item has to be
     added for each variant.
 
-    Example::
+    Examples::
 
+        // Good examples
         1
+        2
+        10
+
+        // Bad examples
+        "1"
+        0.5
 
 
 Here is a complete line item object::

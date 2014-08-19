@@ -182,16 +182,12 @@ Widget settings
 
 The starting point for adding a Virtusize Widget is the ``addWidget`` method of
 the snippet. The minimum requirement is to supply a product id and a button
-selector:
-
-::
+selector::
 
     vs.addWidget("PRODUCT_ID", "BUTTON_SELECTOR");
 
 For more complex situations you can pass an additional options object to the
-``addWidget`` function. Here is an example:
-
-::
+``addWidget`` function. Here is an example::
 
     vs.addWidget("PRODUCT_ID", "BUTTON_SELECTOR", {
         productVersion: "1",
@@ -212,17 +208,17 @@ performed. It receives ``error`` as a parameter that is either ``false`` or an
 error message. Inside the function you have access to the Virtusize Widget by
 ``this``.
 
+.. highlight:: javascript
+
 It is also possible to only pass one JavaScript object to the function like
-this:
+this::
 
-::
-
-    vs.addWidget({
+   vs.addWidget({
         productId: "PRODUCT_ID",
         buttonSelector: "BUTTON_SELECTOR",
         productVersion: "1",
         availableSizes: ["M", "L"],
-        sizeAliases: {"S": "Small", M": "Medium", "L": "Large"}
+        sizeAliases: {"S": "Small", "M": "Medium", "L": "Large"}
     });
 
 

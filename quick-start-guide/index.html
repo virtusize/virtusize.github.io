@@ -121,6 +121,9 @@
             
   <div class="section" id="quick-start-guide">
 <span id="label-quick-start-guide"></span><h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permalink to this headline">¶</a></h1>
+<p>This quick start guide describes all the steps to integrate Virtusize including
+purchase history in a fast and simple way. For more customization options
+please check the more detailed sections of the developer documentation.</p>
 <p>Before you get started, make sure you have received your <strong>API key</strong> and
 <strong>Admin account</strong> credentials. <a class="reference external" href="http://www.virtusize.com/contact">Contact our sales team</a>, if you have any questions.</p>
 <p>Virtusize consists of the following three components:</p>
@@ -132,12 +135,6 @@ your customers</li>
 <li><strong>Order Confirmation Integration:</strong> tracks the purchases of your customers
 to enable purchase history in the widget.</li>
 </ol>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This quick start guide describes all the steps to integrate Virtusize including
-purchase history in a fast and simple way. For more customization options
-please check the more detailed sections of the developer documentation.</p>
-</div>
 <div class="section" id="provide-your-product-measurements">
 <h2>1. Provide your product measurements<a class="headerlink" href="#provide-your-product-measurements" title="Permalink to this headline">¶</a></h2>
 <p>For production environments you can send your spec sheets directly to us. We
@@ -146,8 +143,11 @@ free to get in touch with your sales contact or our <a class="reference external
 <p>For testing purposes the easiest way to upload product measurements to
 Virtusize is through the Virtusize Admin, which is available on
 <a class="reference external" href="http://www.virtusize.com/admin">http://www.virtusize.com/admin</a>.</p>
-<p>In this step you set a unique <tt class="docutils literal"><span class="pre">PRODUCT_ID</span></tt> that you need to reference in all
-the other steps.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In this step you set a unique <tt class="docutils literal"><span class="pre">PRODUCT_ID</span></tt> that you need to reference in
+all the other steps.</p>
+</div>
 </div>
 <div class="section" id="integrate-on-your-product-pages">
 <h2>2. Integrate on your product pages<a class="headerlink" href="#integrate-on-your-product-pages" title="Permalink to this headline">¶</a></h2>
@@ -185,20 +185,39 @@ it onto your product page just before the closing <tt class="docutils literal"><
 <div class="section" id="integrate-on-your-order-confirmation-page">
 <h2>3. Integrate on your order confirmation page<a class="headerlink" href="#integrate-on-your-order-confirmation-page" title="Permalink to this headline">¶</a></h2>
 <p>For this step you will need to have the following information to be available:</p>
-<ul class="simple">
-<li>Your <tt class="docutils literal"><span class="pre">API_KEY</span></tt></li>
-<li>The <tt class="docutils literal"><span class="pre">ORDER_ID</span></tt> uniquely identifying a completed order by your customer</li>
-<li>An anonymous <tt class="docutils literal"><span class="pre">USER_ID</span></tt> uniquely identifying the customer of this order</li>
-<li>The <tt class="docutils literal"><span class="pre">PRODUCT_ID</span></tt> that was purchased. This needs to be the same id that you
-used in the previous steps.</li>
-<li>The <tt class="docutils literal"><span class="pre">SIZE</span></tt> that this product was purchased in. This value has to match one
+<ul>
+<li><p class="first">Your <tt class="docutils literal"><span class="pre">API_KEY</span></tt></p>
+</li>
+<li><p class="first">The <tt class="docutils literal"><span class="pre">ORDER_ID</span></tt> uniquely identifying a completed order by your customer</p>
+</li>
+<li><p class="first">An anonymous <tt class="docutils literal"><span class="pre">USER_ID</span></tt> uniquely identifying the customer of this order.
+This could be the hashed email address or the database id of the user:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// Good examples</span>
+<span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;62731&quot;</span>
+<span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;2c9a0ad49c90c71c29cf4399e262e095&quot;</span>
+
+<span class="c1">// Bad examples</span>
+<span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;guest&quot;</span>
+<span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;Anonymous&quot;</span>
+<span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;john@example.com&quot;</span>
+<span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+<span class="nx">userId</span><span class="o">:</span> <span class="kc">null</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">The <tt class="docutils literal"><span class="pre">PRODUCT_ID</span></tt> that was purchased. This needs to be the same id that you
+used in the previous steps.</p>
+</li>
+<li><p class="first">The <tt class="docutils literal"><span class="pre">SIZE</span></tt> that this product was purchased in. This value has to match one
 of the size identifiers that you specified in step 1 for the product
-measurements.</li>
-<li>The <tt class="docutils literal"><span class="pre">IMAGE_URL</span></tt> that you want the user to see in his purchase history. This
+measurements.</p>
+</li>
+<li><p class="first">The <tt class="docutils literal"><span class="pre">IMAGE_URL</span></tt> that you want the user to see in his purchase history. This
 should preferably be an image of the garment in the color that was actually
 purchased in this order. This image is not used as a product image, but it
 should have the same proportions <tt class="docutils literal"><span class="pre">width:360px;</span> <span class="pre">height:</span> <span class="pre">500px;</span></tt>, if
-possible.</li>
+possible.</p>
+</li>
 </ul>
 <p>Replace the variables in the following snippet with the real values and paste
 it onto your order confirmation page just before the closing <tt class="docutils literal"><span class="pre">&lt;/body&gt;</span></tt> tag:</p>
