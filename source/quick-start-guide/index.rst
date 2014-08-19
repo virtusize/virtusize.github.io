@@ -8,6 +8,10 @@
 Quick Start Guide
 -----------------
 
+This quick start guide describes all the steps to integrate Virtusize including
+purchase history in a fast and simple way. For more customization options
+please check the more detailed sections of the developer documentation.
+
 Before you get started, make sure you have received your **API key** and
 **Admin account** credentials. `Contact our sales team
 <http://www.virtusize.com/contact>`__, if you have any questions.
@@ -21,11 +25,6 @@ Virtusize consists of the following three components:
 3. **Order Confirmation Integration:** tracks the purchases of your customers
    to enable purchase history in the widget.
 
-.. note::
-
-    This quick start guide describes all the steps to integrate Virtusize including
-    purchase history in a fast and simple way. For more customization options
-    please check the more detailed sections of the developer documentation.
 
 1. Provide your product measurements
 ====================================
@@ -39,8 +38,10 @@ For testing purposes the easiest way to upload product measurements to
 Virtusize is through the Virtusize Admin, which is available on
 http://www.virtusize.com/admin.
 
-In this step you set a unique ``PRODUCT_ID`` that you need to reference in all
-the other steps.
+.. note::
+
+    In this step you set a unique ``PRODUCT_ID`` that you need to reference in
+    all the other steps.
 
 
 2. Integrate on your product pages
@@ -82,9 +83,24 @@ it onto your product page just before the closing ``</body>`` tag::
 
 For this step you will need to have the following information to be available:
 
+.. highlight:: javascript
+
 - Your ``API_KEY``
 - The ``ORDER_ID`` uniquely identifying a completed order by your customer
-- An anonymous ``USER_ID`` uniquely identifying the customer of this order
+- An anonymous ``USER_ID`` uniquely identifying the customer of this order.
+  This could be the hashed email address or the database id of the user::
+
+    // Good examples
+    userId: "62731"
+    userId: "2c9a0ad49c90c71c29cf4399e262e095"
+
+    // Bad examples
+    userId: "guest"
+    userId: "Anonymous"
+    userId: "john@example.com"
+    userId: ""
+    userId: null
+
 - The ``PRODUCT_ID`` that was purchased. This needs to be the same id that you
   used in the previous steps.
 - The ``SIZE`` that this product was purchased in. This value has to match one
@@ -95,6 +111,8 @@ For this step you will need to have the following information to be available:
   purchased in this order. This image is not used as a product image, but it
   should have the same proportions ``width:360px; height: 500px;``, if
   possible.
+
+.. highlight:: html
 
 Replace the variables in the following snippet with the real values and paste
 it onto your order confirmation page just before the closing ``</body>`` tag::
@@ -142,5 +160,4 @@ tells you on first glance, if you have integrated correctly.
 You can click the *Debug* tab to see, if there are widgets or orders added to
 Virtusize on this page. If so, there are additional tabs for inspecting the
 details of these items.
-
 
