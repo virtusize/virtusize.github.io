@@ -36,16 +36,73 @@ to Google Analytics or Facebook Connect. The most simple way is shown below.
     !function(a,b,c,d,e,f,g){var h,i,j,k;for(a.Virtusize=e,a[e]=a[e]||[],a[e].methods=["setApiKey","setRegion","setLanguage","setWidgetOverlayColor","addWidget","ready","on","setAvailableSizes","setSizeAliases","addOrder","setUserId"],a[e].factory=function(b){return function(){var c;return c=Array.prototype.slice.call(arguments),c.unshift(b),a[e].push(c),a[e]}},k=a[e].methods,i=0,j=k.length;j>i;i++)h=k[i],a[e][h]=a[e].factory(h);a[e].snippetVersion="3.0.2",f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src=("https:"===a.location.protocol?"https://":"http://cdn.")+d,f.id="vs-integration",g.parentNode.insertBefore(f,g)}(window,document,"script","api.virtusize.com/integration/v3.js","vs");
     
     vs.setApiKey("0000000000000000000000000000000000000000");
-    vs.addWidget("PRODUCT_ID", "BUTTON_SELECTOR");
+    vs.addWidget({
+        productId: "PRODUCT_ID",
+        buttonSelector: "BUTTON_SELECTOR",
+        productImageUrl: "PRODUCT_IMAGE_URL",
+        done: function(error) {
+            this.on("user-opened-panel-compare", function() {
+                // This callback will get called, when a User
+                // actually compares an item. Use this to detect
+                // real Virtusize uses.
+            });
+        }
+    });
     </script>
     <!-- End Virtusize Integration -->
 
 
 .. note::
-    The snippet defines an API key, product id and button selector to
-    use. The values within quotes should be your actual API key, the actual
-    product id and a CSS selector for the button you want to use to open the
-    Virtusize Widget.
+    The snippet defines an API key, product id, button selector and
+    a productImageUrl to use. The values within quotes should be your actual
+    API key, the actual product id, a CSS selector for the button you want to
+    use to open the Virtusize Widget and the URL to the product image.
+
+You might have noticed the example callback within the ``done`` function. For
+more information about this topic click here:
+:ref:`label-events-and-callbacks-v3`
+
+For more information about how to provide product images see:
+:ref:`label-providing-product-images`
+
+
+
+.. _label-providing-product-images:
+
+Providing Product Images
+------------------------
+
+The Virtusize Widget includes an image of the product the customer is currently
+looking at as well as images of the items he has previously purchased.
+
+The default image that is being used is the one provided in the `Open Graph
+data <http://ogp.me>`_ of the product page. This is convenient to start out,
+since you don't have to include an image in the ``addWidget`` call, if you
+already have it in the OGP metatag.
+
+But for added flexibility or advanced use cases it is possible to overwrite
+this image with one actively provided to Virtusize like this
+
+.. highlight:: javascript
+
+::
+
+    vs.addWidget({
+        productId: "PRODUCT_ID",
+        buttonSelector: "BUTTON_SELECTOR",
+        productImageUrl: "PRODUCT_IMAGE_URL"
+    });
+
+That way you can select and provide an image that represents the product better
+or is of a better quality.
+
+The image will only be downloaded once from your URL and then distributed
+through our Content Delivery Network.
+
+.. note::
+    The ideal image dimensions are ``width: 360px; height: 500px`` with
+    a safe area around the left and right edges to prevent cropping of the
+    actual content in the Virtusize Widget.
 
 
 .. _label-using-a-button:
@@ -152,41 +209,6 @@ additional ``addWidget`` calls like this:
     multiple buttons to open the same widget, see:
     :ref:`label-multiple-buttons` for how to do this.
 
-
-Providing Product Images
-------------------------
-
-The Virtusize Widget includes an image of the product the customer is currently
-looking at as well as images of the items he has previously purchased.
-
-The default image that is being used is the one provided in the `Open Graph
-data <http://ogp.me>`_ of the product page. This is convenient to start out,
-since you don't have to include an image in the ``addWidget`` call, if you
-already have it in the OGP metatag.
-
-But for added flexibility or advanced use cases it is possible to overwrite
-this image with one actively provided to Virtusize like this
-
-.. highlight:: javascript
-
-::
-
-    vs.addWidget({
-        productId: "PRODUCT_ID",
-        buttonSelector: "BUTTON_SELECTOR",
-        productImageUrl: "PRODUCT_IMAGE_URL"
-    });
-
-That way you can select and provide an image that represents the product better
-or is of a better quality.
-
-The image will only be downloaded once from your URL and then distributed
-through our Content Delivery Network.
-
-.. note::
-    The ideal image dimensions are ``width: 360px; height: 500px`` with
-    a safe area around the left and right edges to prevent cropping of the
-    actual content in the Virtusize Widget.
 
 
 Troubleshooting

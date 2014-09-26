@@ -52,7 +52,6 @@ A complete example looks like the following::
                 productId: "PRODUCT_ID",
                 size: "L",
                 sizeAlias: "Large",
-                variantId: "SKU_123",
                 url: "http://www.retailer.com/products/PRODUCT_ID",
                 imageUrl: "http://images.retailer.com/products/sku_123/black/image1xl.jpg",
                 color: "black",
@@ -92,11 +91,11 @@ userId
 
     Examples::
 
-        // Good examples
+        // Valid examples
         userId: "62731"
         userId: "2c9a0ad49c90c71c29cf4399e262e095"
 
-        // Bad examples
+        // Invalid examples
         userId: "guest"
         userId: "Anonymous"
         userId: "john@example.com"
@@ -114,7 +113,7 @@ region
 
     Example::
         
-        "DE"
+        region: "DE"
 
 
 .. _label-line-items-v3:
@@ -134,7 +133,7 @@ productId
     
     Example::
 
-        "external_id_1234"
+        productId: "external_id_1234"
 
 size
     *String* - The size or size id of the purchased item. This must match the
@@ -142,7 +141,7 @@ size
     
     Example::
 
-        "2128"
+        size: "2128"
 
 imageUrl
     *String* - The URL to a variant specific image of this line item of the
@@ -154,64 +153,20 @@ imageUrl
     
     Example::
 
-        "http://images.retailer.com/products/sku123/black/image_large.jpg"
-
-
-Recommended attributes
-""""""""""""""""""""""
-
-sizeAlias
-    *String* - A size alias that will be used to display the size to the
-    customer at a later stage, for example while showing him his personal
-    purchase history. It should be set, if the retailer uses size-ids instead of
-    human readable sizes as identifiers.
-    
-    Example::
-
-        "Large"
-
-url
-    *String* - The canonical URL of this product in the retailers online store.
-    
-    Example::
-
-        "http://www.retailer.com/products/123"
-
-variantId
-    *String* - An id that uniquely identifies a product variant including color
-    and size, usually the SKU.
-
-    Example::
-
-        "sku_1234"
-
-color
-    *String* - The color of ordered garment.
-    
-    Example::
-
-        "black"
-
-gender
-    *String* - The gender that this garment is targetting. Must have one of
-    these values: "unisex", "male", "female"
-
-    Example::
-
-        "female"
+        imageUrl: "http://images.retailer.com/products/sku123/black/image_large.jpg"
 
 unitPrice
     *Float* - The unit price of this item.
     
     Examples::
         
-        // Good examples
-        99.95
-        100.00
+        // Valid examples
+        unitPrice: 99.95
+        unitPrice: 100.00
 
-        // Bad examples
-        "100.00"
-        100.0005
+        // Invalid examples
+        unitPrice: "100.00"
+        unitPrice: 100.0005
 
 quantity
     *Integer* - The quantitiy of this line item for the given color and size.
@@ -220,14 +175,64 @@ quantity
 
     Examples::
 
-        // Good examples
-        1
-        2
-        10
+        // Valid examples
+        quantity: 1
+        quantity: 2
+        quantity: 10
 
-        // Bad examples
-        "1"
-        0.5
+        // Invalid examples
+        quantity: "1"
+        quantity: 0.5
+
+currency
+    *String* - Three letter currency code as defined in http://en.wikipedia.org/wiki/ISO_4217
+
+    Examples::
+        
+        currency: "EUR"
+        currency: "USD"
+        currency: "GBP"
+
+
+Optional attributes
+"""""""""""""""""""
+
+sizeAlias
+    *String* - A size alias that will be used to display the size to the
+    customer when he opens the widget the next time. He will see this item from
+    his personal purchase history with the sizeAlias instead of the size, if
+    this is set. It should be set, if the retailer uses size-ids instead of
+    human readable sizes as identifiers.
+    
+    Example::
+
+        // When the size is not understandable by customers, like:
+        size: "2148"
+        // Then the sizeAlias can be used, to specify what the customer will see for
+        // this product of his purchase history the next time he opens the widget:
+        sizeAlias: "Large"
+
+url
+    *String* - The canonical URL of this product in the retailers online store.
+    
+    Example::
+
+        url: "http://www.retailer.com/products/123"
+
+color
+    *String* - The color of ordered garment.
+    
+    Example::
+
+        color: "black"
+
+gender
+    *String* - The gender that this garment is targetting. Must have one of
+    these values: "unisex", "male", "female"
+
+    Example::
+
+        gender: "female"
 
 
 Here is a complete line item object::
@@ -238,10 +243,10 @@ Here is a complete line item object::
         sizeAlias: "Large",
         imageUrl: "http://images.retailer.com/products/sku123/black/image_large.jpg",
         url: "http://www.retailer.com/products/123",
-        variantId: "sku_123",
         color: "black",
         gender: "unisex",
         unitPrice: 99.95,
-        quantity: 1
+        quantity: 1,
+        currency: "EUR"
     }
 

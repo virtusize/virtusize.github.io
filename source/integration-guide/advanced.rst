@@ -51,7 +51,7 @@ Virtusize object like this:
 
 When a widget for a different product id is added for a previously used button
 selector, it will replace the widget for the old product with the new one. So
-a click on the button will now open the most recent button.
+a click on the button will now open the most recent widget.
 
 You can obtain a VirtusizeWidget object after it has been initialized from the
 global object like the following. To be sure, that the integration has loaded,
@@ -223,8 +223,9 @@ this::
 
 
 The following are functions you can call on the widget object, for example
-inside the ``done`` callback of ``addWidget`` or at a later stage when you get
-the loaded widget from the global Virtusize Snippet object.
+inside the ``done`` callback of ``addWidget`` like in the example above or at
+a later stage when you get the loaded widget from the global Virtusize Snippet
+object.
 
 setAvailableSizes(sizesList)
     **sizesList** - Array, list of product sizes. 
@@ -288,99 +289,4 @@ off(eventName, [callback])
     name.
 
 
-.. _label-events-and-callbacks-v3:
-
-Events and Callbacks
---------------------
-
-The integration snippet provides a way to subscribe for event callbacks.
-Use the ``on`` method directly on the Virtusize Snippet object like this:
-
-::
-    
-    vs.on("PRODUCT_ID", "EVENT_NAME", function() { alert("Event fired."); });
-
-or directly on a VirtusizeWidget object, for example inside an ``addWidget``
-callback like this:
-
-::
-
-    vs.addWidget("PRODUCT_ID", "BUTTON_SELECTOR", {
-        done: function(error) {
-            this.on("EVENT_NAME", function() { alert("Event fired."); });
-        }
-    });
-
-All callbacks functions will have ``this`` assigned to the VirtusizeWidget
-instance this event originated from. In some cases there will be optional data
-passed into the function as an argument. That is event specific.
-
-.. note::
-    Event callbacks are a volatile feature, new events can be added, renamed or
-    removed without notification as the Virtusize product evolves.
-
-
-The following events are supported:
-
-user-saw-widget-button
-    Triggered when the widget button is shown on the product page after
-    a product check that resulted in a valid product.
-
-user-opened-widget
-    Triggered when the widget was opened.
-
-user-closed-widget
-    Triggered when the widget was closed.
-
-user-added-product
-    Triggered when a user successfully created a new item from
-    measurements in the panel "new from measurements".
-
-user-selected-size
-    Triggered when a size was selected in the widget. Note: the callback
-    function receives additional data containing the selected size ID and
-    a boolean indicating if the size was auto-selected or not. ``{sizeId: "xl",
-    auto: false}``
-
-user-deleted-product
-    Triggered when a user deleted an item from his wardrobe. This can be any
-    item and does not necessarily match the product for which the widget was
-    loaded.
-
-.. user-clicked-survey-link
-
-user-opened-panel-start
-    Triggered when a user opened the panel "start".
-
-user-opened-panel-new-from-measurements
-    Triggered when a user opened the panel "new from measurements".
-
-user-opened-panel-compare
-    Triggered when a user opened the panel "compare".
-
-user-opened-panel-edit-item
-    Triggered when a user opened the panel "edit item".
-
-user-opened-panel-wardrobe
-    Triggered when a user opened the panel "wardrobe".
-
-user-opened-panel-faq
-    Triggered when a user opened the panel "faq".
-
-user-opened-panel-login
-    Triggered when a user opened the panel "login".
-
-user-opened-panel-register
-    Triggered when a user opened the panel "register".
-
-user-opened-panel-forgot-password
-    Triggered when a user opened the panel "forgot password".
-
-user-opened-panel-benefits
-    Triggered when a user opened the panel "benefits".
-
-.. note:: 
-    The **user-opened-panel-compare** event is probably the most useful event
-    as it registers when a user compares items. Use this event to register
-    Virtusize "uses".
 
