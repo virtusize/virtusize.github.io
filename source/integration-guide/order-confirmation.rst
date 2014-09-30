@@ -3,21 +3,18 @@
 Order Confirmation Integration
 ------------------------------
 
-Virtusize order confirmation utilizes the same small JavaScript that is used on
-the product pages. The retailer will provide Virtusize with a number of useful
-information, that is relevant for finding the perfect size and fit for the
-customers of the retailer.
+The Virtusize order confirmation integration utilises the same small JavaScript 
+that will be used on your product pages. You will need to provide Virtusize with certain
+information that will be used for your customers to find the right fit on your website 
+when using our widget.
 
-This will enable Virtusize to show the customers items they have recently
-purchased as part of the purchase history. They can then select one or more of
-these items as a reference item used for comparison with the garment they are
-looking to purchase from the retailer at the moment. Doing this will
-effectively eliminate the tedious task of measuring garments from their
-wardrobe for the customers and will therefore make it much easier for the
-customer to get started with using Virtusize.
+This will enable Virtusize to show your consumers the items they have recently
+purchased as part of their ‘Purchase History’. They can then select one or more of
+these items in their purchase history wardrobe as a reference item to compare with the 
+garment they are looking to purchase from your site. 
 
 .. note::
-    You can start providing purchase data as soon as you have received your API
+    You can start providing us purchase data as soon as you have received your API
     key. This way your customers will benefit as soon as you integrate
     Virtusize on your product pages by having purchase history from their
     previous purchases already in place.
@@ -32,7 +29,7 @@ script that you use on your product pages.
 
 You provide certain information about the order and the line items of the
 order. Some attributes are required for the purchase history to work properly,
-others are recommended.
+others are optional.
 
 A complete example looks like the following::
 
@@ -103,8 +100,8 @@ userId
         userId: null
 
 
-Recommended attributes
-""""""""""""""""""""""
+Optional attributes
+"""""""""""""""""""
 
 region
     *String* - The region identifier as defined by ISO 3166-1
@@ -129,7 +126,7 @@ Required attributes
 
 productId
     *String* - The id of the product. This must match the product id used
-    during integration on the retailers product page.
+    during integration on your product page.
     
     Example::
 
@@ -169,7 +166,7 @@ unitPrice
         unitPrice: 100.0005
 
 quantity
-    *Integer* - The quantitiy of this line item for the given color and size.
+    *Integer* - The quantity of this line item for the given color and size.
     If the customer bought different sizes or colors, a separate item has to be
     added for each variant.
 
@@ -198,22 +195,22 @@ Optional attributes
 """""""""""""""""""
 
 sizeAlias
-    *String* - A size alias that will be used to display the size to the
-    customer when he opens the widget the next time. He will see this item from
-    his personal purchase history with the sizeAlias instead of the size, if
-    this is set. It should be set, if the retailer uses size-ids instead of
+    *String* - A size alias that will be used to display the size purchased to the
+    customer when they open the widget the next time. They will see this item from
+    their personal purchase history with the sizeAlias instead of the actual size, if
+    this is set. This alias should be set if you use size-ids instead of
     human readable sizes as identifiers.
     
     Example::
 
         // When the size is not understandable by customers, like:
         size: "2148"
-        // Then the sizeAlias can be used, to specify what the customer will see for
-        // this product of his purchase history the next time he opens the widget:
+        // Then the sizeAlias can be use to specify what the customer will see for
+        // this product in his purchase history the next time they open the widget:
         sizeAlias: "Large"
 
 url
-    *String* - The canonical URL of this product in the retailers online store.
+    *String* - The canonical URL of this product on your online store.
     
     Example::
 
@@ -227,7 +224,7 @@ color
         color: "black"
 
 gender
-    *String* - The gender that this garment is targetting. Must have one of
+    *String* - The gender that this garment is targeting. Must have one of
     these values: "unisex", "male", "female"
 
     Example::

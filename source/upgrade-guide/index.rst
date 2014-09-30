@@ -5,8 +5,8 @@
 Upgrade Guide
 -------------
 
-If you are still using our old integration v2 and widget v4 you should consider
-upgrading to take advantage of the following benefits:
+If you are still using our old integration v2 and widget v4 you should 
+upgrade to take advantage of the following benefits:
 
 - Unified product page and order confirmation script. No need to include
   different scripts anymore.
@@ -58,8 +58,6 @@ Change this to the new integration::
     If you haven't been using your own button, you have to create one now and
     pass the CSS selector to it in the ``addWidget`` call above.
     
-    Since most of our clients use their custom designed Virtusize buttons, we
-    removed the functionality to create a default button from the integration.
     If you don't want to create your own button, please talk to your Virtusize
     sales contact.
 
@@ -73,5 +71,5 @@ your order confirmation page.
 
 Please refer to the :ref:`label-quick-start-guide` or the more detailed
 :ref:`label-integration-v3` for more information on how to provide your order
-data to Virusize.
+data to Virtusize.
 

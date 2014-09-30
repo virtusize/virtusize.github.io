@@ -4,7 +4,7 @@ Events and Callbacks
 ====================
 
 The JavaScript integration of Virtusize has the ability to trigger custom
-callback functions on specific events. You can use is for a number of things
+callback functions on specific events. You can use this for a number of things
 including analytics and custom behaviour on the product pages, like showing
 a tooltip and the like.
 
@@ -35,7 +35,7 @@ instance this event originated from. In some cases there will be optional data
 passed into the function as an argument. That is event specific.
 
 .. note::
-    Event callbacks are a volatile feature, new events can be added, renamed or
+    Event callbacks are a volatile feature and new events can be added, renamed or
     removed without notification as the Virtusize product evolves.
 
 

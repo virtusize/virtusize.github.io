@@ -12,7 +12,7 @@ asynchronously and most clients already have it cached).
 
 **Asynchronous loading**
 
-All script loading is done asynchronously, minimizing the impact on the load
+All script loading is done asynchronously, minimising the impact on the load
 speed of the product page. The integration snippet is inspired by the
 asynchronous loading done by Google Universal Analytics, FB Connect, Google+
 and others. In the unlikely event of Virtusize servers experiencing down time,
@@ -73,11 +73,11 @@ Providing Product Images
 ------------------------
 
 The Virtusize Widget includes an image of the product the customer is currently
-looking at as well as images of the items he has previously purchased.
+looking at as well as images of the items they have previously purchased.
 
 The default image that is being used is the one provided in the `Open Graph
 data <http://ogp.me>`_ of the product page. This is convenient to start out,
-since you don't have to include an image in the ``addWidget`` call, if you
+since you don't have to include an image in the ``addWidget`` call if you
 already have it in the OGP metatag.
 
 But for added flexibility or advanced use cases it is possible to overwrite
@@ -110,10 +110,9 @@ through our Content Delivery Network.
 Using a Button
 --------------
 
-You can use any element on your product pages to open the Virtusize Widget. You
-have full control over the placement and appearance of the button. It is even
-possible to use multiple buttons to open the Virtusize Widget for the same
-product.
+You can use any element on your product pages to open the Virtusize Widget.
+It is even possible to use multiple buttons to open the Virtusize Widget 
+for the same product.
 
 Single Button
 ^^^^^^^^^^^^^
@@ -161,7 +160,7 @@ and integrate a Widget like this:
 
 
 The element you create should not be visible when the page loads. It will
-automatically appear, when there is a valid product in the Virtusize database.
+automatically appear when there is a valid product in the Virtusize database.
 This way you don't have to worry about a product and its measurements being
 available and valid or not.
 
@@ -194,7 +193,7 @@ It is possible to have Virtusize Widgets for more than one product per page.
 This is needed for "Buy-this-outfit" kind of pages, for example.
 
 The integration is the same as the one for single product pages. All you have
-to do, is to supply the product ids and corresponding button selectors in
+to do is supply the product ids and corresponding button selectors in
 additional ``addWidget`` calls like this:
 
 .. highlight:: javascript
@@ -241,7 +240,7 @@ get a popup indicating precisely that.
 Button not showing
 ^^^^^^^^^^^^^^^^^^
 
-The button is only shown, if there is a valid product found in the
+The button is only shown if there is a valid product found in the
 Virtusize database or supplied in any other way. Make sure that there is
 a valid product.
 

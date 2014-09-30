@@ -9,7 +9,7 @@ Advanced Configuration - JavaScript API
 Renaming the Global Variable
 ----------------------------
 
-You can choose yourself, under which global variable you want Virtusize to be
+You can choose yourself under which global variable you want Virtusize to be
 available on your page. The default here is ``vs``. If this is already used on
 your site, then you can provide a different variable name as the last parameter
 to the main function. 
@@ -34,9 +34,9 @@ Dynamic integration (AJAX)
 --------------------------
 
 The Virtusize Integration v3 is designed to be used either statically by
-integrating on page load or dynamically at a later state. This is useful for
-retailers that have single page stores, where a product page loads dynamically
-after an AJAX request and is presented as an overlay on the same page.
+integrating on page load or dynamically at a later state. This is useful if you have a single page
+store where a product page loads dynamically after an AJAX
+request and is presented as an overlay on the same page.
 
 The API stays exactly the same, so you are free to choose your preferred way.
 To add a widget after page load, you just call the same functions on the global
@@ -53,8 +53,8 @@ When a widget for a different product id is added for a previously used button
 selector, it will replace the widget for the old product with the new one. So
 a click on the button will now open the most recent widget.
 
-You can obtain a VirtusizeWidget object after it has been initialized from the
-global object like the following. To be sure, that the integration has loaded,
+You can obtain a VirtusizeWidget object after it has been initialised from the
+global object like the following. To be sure that the integration has loaded
 you can wrap it in the ready function:
 
 ::
@@ -70,13 +70,13 @@ you can wrap it in the ready function:
 Snippet API
 -----------
 
-The snippet is the little JavaScript, that you include directly in your pages.
+The snippet is the little JavaScript that you include directly in your pages.
 It creates method stubs for the most commonly used functions of the Virtusize
 Integration. This enables you to call these methods immediately after the
 snippet.
 
 The method calls will be added to a queue that is executed after the
-integration script has loaded asyncronously. From that point on all calls to
+integration script has loaded asyncronously. From that point on, all calls to
 these methods will execute immediately.
 
 Some of the methods work in a global way, like setting the API key or defining
@@ -170,7 +170,7 @@ setWidgetOverlayColor(rgba, ieColor)
 
 
 ready(callback)
-    **callback** - Function that is called, when the integration script has
+    **callback** - Function that is called when the integration script has
     loaded. These functions will be called after all the other functions of the
     initial queue have been executed. It does not mean that all product checks
     have been executed for the widgets. You should enclose calls to the snippet
@@ -230,7 +230,7 @@ object.
 setAvailableSizes(sizesList)
     **sizesList** - Array, list of product sizes. 
     
-    Sets the product sizes that are in stock, to be used in the widget. Must
+    Sets the product sizes that are in stock to be used in the widget. Must
     contain the original size identifiers, not the regional names. The names
     provided here must correspond to size identifiers for each product.
 

@@ -3,33 +3,33 @@
 Providing Measurements
 ======================
 
-In order for the Widget to correctly visualize the different product
+In order for our Widget to correctly visualise different product
 sizes, the Widget needs to know the product's measurements.
 
-There are three main ways of providing these measurements:
+There are three main ways of providing these measurements to Virtusize:
 
 -  Via the :ref:`label-web-interface`
 -  Via :ref:`label-bulk-upload`
 -  Via a product :ref:`label-feed`
 
-For the standard integration, the measurements are provided to Virtusize
+For a standard integration, the measurements are provided to Virtusize
 via the Virtusize admin interface, and the integration snippet only
 needs the unique product ID to identify what measurements to use.
 
 .. note:: 
-    For best results, the product id should be an identifier that
+    For the best results, the product id should be an identifier that
     identifies the product regardless of size and color.
 
-No button will be visible on the product page until the integration
-snippet can find the measurements for the product.
+No button will be visible on a product page until our integration
+snippet can find the measurements for that product.
 
 .. _label-web-interface:
 
 Web Interface
 -------------
 
-The basic way of providing measurements is via our web admin. This
-option is primarily suited for smaller retailers.
+The basic way of providing measurements is via our web admin.
+This can be done to provide measurements one by one.
 
 1. Login into our `admin <http://www.virtusize.com/admin/>`_ with your credentials.
 
@@ -54,9 +54,9 @@ option is primarily suited for smaller retailers.
 Bulk Upload
 -----------
 
-The second way to provide measurements is via the bulk upload, using the
-excel template. This option is most suited for medium sized retailers
-and single brand stores with seasonal collections.
+The second way of providing measurements is via the bulk upload, using our
+excel template. This option is most suited if you are a medium sized retailer
+or single brand store with seasonal collections.
 
 1. Login into our `admin <http://www.virtusize.com/admin/>`_ with your credentials.
 
@@ -92,15 +92,15 @@ and single brand stores with seasonal collections.
 Feed
 ----
 
-In case the product measurements and data cannot be provided via the
+If your product measurements and data cannot be provided via the
 Virtusize admin, the data can instead be provided by a product feed.
-This is very similar to Pricerunner and Kelkoo feeds, but with focus on
-product measurements. The major difference is that in this case the feed
-must only return information about one product, not a list of products.
+This is very similar to Pricerunner and Kelkoo feeds, but with a focus on
+product measurements. The major difference is that in this case, the feed
+must only return information about one product, and not a list of products.
 
-The feed is implemented by each store according to specification details
-in this document. The feed option is suitable for bigger stores that
-have internal measurement database and can expose this as an API.
+The feed is implemented according to the specification details
+in this document. This feed option is suitable if you are a large scale store that
+has an internal measurement database and can expose this as an API.
 
 .. attention:: 
     The feed must return its data using the `UTF-8
@@ -116,7 +116,7 @@ product is identified by the product id. If the product does not have
 registered measurements, we can issue a request to a URL provided by you
 to get the measurements of a product (the feed).
 
-The requests will be sent out by our servers only, results will be
+The requests will be sent out by our servers only and the results will be
 cached. Additional requests may be issued periodically to get updates.
 
 The feed URL must provide details and measurements about a product given
@@ -173,7 +173,7 @@ the ``id`` as well as the ``version`` variables in the product data.
     dynamic for each product.
 
 .. note:: 
-    The **PRODUCT_VERSION** variable can be an integer, a date, or even an unix
+    The **PRODUCT_VERSION** variable can be an integer, a date, or even a unix
     timestamp, as long as it changes when the product measurements change.
 
 
@@ -239,10 +239,10 @@ The feed must return data as valid
 
 id
     *required* - String/Number - The per retailer unique product identifier.
-    Must be same as id used to query.
+    Must be the same as the id used to query.
 
 type
-    *required* - String - Product type identifier, in camelCase, refer to
+    *required* - String - Product type identifier, in camelCase, refers to
     product type section in API reference.
 
 name
@@ -265,7 +265,7 @@ The values must be numeric integer or floating point values in the unit of your
 choice.
 
 .. note::
-    The unit of measurements is configured on a store by store basis, default
+    The unit of measurements is configured on a store by store basis and the default
     is **centimeters**. (We also support millimeters and inches in decimal
     format) Get in touch with us to configure this for your store.
 
