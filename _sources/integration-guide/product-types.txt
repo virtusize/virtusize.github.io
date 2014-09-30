@@ -10,7 +10,7 @@ We support a large range of different types of garments and are continuously wor
 towards supporting more types. This list is the latest up-to-date list of the
 supported product types.
 
-Each type has a set of measurements, some measurements are marked as
+Each type has a set of measurements. Some measurements are marked as
 required and represent the minimal subset of measurements that have to be
 provided.
 

@@ -31,7 +31,7 @@
     <link rel="top" title="Virtusize Developer Docs 1.1 ドキュメント" href="../index.html"/>
         <link rel="up" title="Integration Guide" href="../integration-guide.html"/>
         <link rel="next" title="Product Page Integration" href="integration.html"/>
-        <link rel="prev" title="Product Types" href="product-types.html"/> 
+        <link rel="prev" title="Order Confirmation Integration" href="order-confirmation.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -60,20 +60,19 @@
         
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quick-start-guide/index.html">Quick Start Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">1. Provide your product measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">2. Integrate on your product pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">3. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">1. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">2. Provide your product measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">3. Integrate on your product pages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#verify-your-integration">4. Verify your integration</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction ja</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Providing Measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integration.html">Product Page Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-and-callbacks.html">Events and Callbacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced Configuration - JavaScript API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../upgrade-guide/index.html">Upgrade Guide</a><ul>
@@ -124,28 +123,28 @@
             
   <div class="section" id="providing-measurements">
 <span id="label-providing-measurements"></span><h1>Providing Measurements<a class="headerlink" href="#providing-measurements" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>In order for the Widget to correctly visualize the different product
+<p>In order for our Widget to correctly visualise different product
 sizes, the Widget needs to know the product&#8217;s measurements.</p>
-<p>There are three main ways of providing these measurements:</p>
+<p>There are three main ways of providing these measurements to Virtusize:</p>
 <ul class="simple">
 <li>Via the <a class="reference internal" href="#label-web-interface"><em>Web Interface</em></a></li>
 <li>Via <a class="reference internal" href="#label-bulk-upload"><em>Bulk Upload</em></a></li>
 <li>Via a product <a class="reference internal" href="#label-feed"><em>Feed</em></a></li>
 </ul>
-<p>For the standard integration, the measurements are provided to Virtusize
+<p>For a standard integration, the measurements are provided to Virtusize
 via the Virtusize admin interface, and the integration snippet only
 needs the unique product ID to identify what measurements to use.</p>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
-<p class="last">For best results, the product id should be an identifier that
+<p class="first admonition-title">注釈</p>
+<p class="last">For the best results, the product id should be an identifier that
 identifies the product regardless of size and color.</p>
 </div>
-<p>No button will be visible on the product page until the integration
-snippet can find the measurements for the product.</p>
+<p>No button will be visible on a product page until our integration
+snippet can find the measurements for that product.</p>
 <div class="section" id="web-interface">
 <span id="label-web-interface"></span><h2>Web Interface<a class="headerlink" href="#web-interface" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The basic way of providing measurements is via our web admin. This
-option is primarily suited for smaller retailers.</p>
+<p>The basic way of providing measurements is via our web admin.
+This can be done to provide measurements one by one.</p>
 <ol class="arabic simple">
 <li>Login into our <a class="reference external" href="http://www.virtusize.com/admin/">admin</a> with your credentials.</li>
 <li>Navigate to &#8220;products &gt; add product&#8221;</li>
@@ -158,9 +157,9 @@ option is primarily suited for smaller retailers.</p>
 </div>
 <div class="section" id="bulk-upload">
 <span id="label-bulk-upload"></span><h2>Bulk Upload<a class="headerlink" href="#bulk-upload" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The second way to provide measurements is via the bulk upload, using the
-excel template. This option is most suited for medium sized retailers
-and single brand stores with seasonal collections.</p>
+<p>The second way of providing measurements is via the bulk upload, using our
+excel template. This option is most suited if you are a medium sized retailer
+or single brand store with seasonal collections.</p>
 <ol class="arabic simple">
 <li>Login into our <a class="reference external" href="http://www.virtusize.com/admin/">admin</a> with your credentials.</li>
 <li>Navigate to &#8220;product &gt; bulk upload&#8221;</li>
@@ -177,14 +176,14 @@ and single brand stores with seasonal collections.</p>
 </div>
 <div class="section" id="feed">
 <span id="label-feed"></span><h2>Feed<a class="headerlink" href="#feed" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>In case the product measurements and data cannot be provided via the
+<p>If your product measurements and data cannot be provided via the
 Virtusize admin, the data can instead be provided by a product feed.
-This is very similar to Pricerunner and Kelkoo feeds, but with focus on
-product measurements. The major difference is that in this case the feed
-must only return information about one product, not a list of products.</p>
-<p>The feed is implemented by each store according to specification details
-in this document. The feed option is suitable for bigger stores that
-have internal measurement database and can expose this as an API.</p>
+This is very similar to Pricerunner and Kelkoo feeds, but with a focus on
+product measurements. The major difference is that in this case, the feed
+must only return information about one product, and not a list of products.</p>
+<p>The feed is implemented according to the specification details
+in this document. This feed option is suitable if you are a large scale store that
+has an internal measurement database and can expose this as an API.</p>
 <div class="admonition attention">
 <p class="first admonition-title">注意</p>
 <p class="last">The feed must return its data using the <a class="reference external" href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a> encoding.</p>
@@ -196,7 +195,7 @@ the widget button if the measurements are defined for a product. Each
 product is identified by the product id. If the product does not have
 registered measurements, we can issue a request to a URL provided by you
 to get the measurements of a product (the feed).</p>
-<p>The requests will be sent out by our servers only, results will be
+<p>The requests will be sent out by our servers only and the results will be
 cached. Additional requests may be issued periodically to get updates.</p>
 <p>The feed URL must provide details and measurements about a product given
 a product id. If no product is found for given product id the feed must
@@ -210,7 +209,7 @@ return a <strong>404</strong> status code.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">注釈</p>
 <p class="last">It does not matter how the URL is formed, as long as the product id is part
 of the URL or the query.</p>
 </div>
@@ -225,7 +224,7 @@ the <tt class="docutils literal"><span class="pre">id</span></tt> as well as the
 
 <span class="nx">vs</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
 <span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
-    <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_VERSION&quot;</span><span class="p">,</span>
+    <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
     <span class="nx">buttonSelector</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>
     <span class="nx">productVersion</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_VERSION&quot;</span>
 <span class="p">});</span>
@@ -234,13 +233,13 @@ the <tt class="docutils literal"><span class="pre">id</span></tt> as well as the
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">注釈</p>
 <p class="last">The <strong>PRODUCT_ID</strong> and <strong>PRODUCT_VERSION</strong> product data parameters must be
 dynamic for each product.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
-<p class="last">The <strong>PRODUCT_VERSION</strong> variable can be an integer, a date, or even an unix
+<p class="first admonition-title">注釈</p>
+<p class="last">The <strong>PRODUCT_VERSION</strong> variable can be an integer, a date, or even a unix
 timestamp, as long as it changes when the product measurements change.</p>
 </div>
 </div>
@@ -298,9 +297,9 @@ timestamp, as long as it changes when the product measurements change.</p>
 <dl class="docutils">
 <dt>id</dt>
 <dd><em>required</em> - String/Number - The per retailer unique product identifier.
-Must be same as id used to query.</dd>
+Must be the same as the id used to query.</dd>
 <dt>type</dt>
-<dd><em>required</em> - String - Product type identifier, in camelCase, refer to
+<dd><em>required</em> - String - Product type identifier, in camelCase, refers to
 product type section in API reference.</dd>
 <dt>name</dt>
 <dd><em>required</em> - String - Name of the product, will be visible to customer in
@@ -319,8 +318,8 @@ object is also a JSON object. The keys are the measurement names in camelCase.
 The values must be numeric integer or floating point values in the unit of your
 choice.</p>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
-<p class="last">The unit of measurements is configured on a store by store basis, default
+<p class="first admonition-title">注釈</p>
+<p class="last">The unit of measurements is configured on a store by store basis and the default
 is <strong>centimeters</strong>. (We also support millimeters and inches in decimal
 format) Get in touch with us to configure this for your store.</p>
 </div>
@@ -347,7 +346,7 @@ each product type.</p>
         <a href="integration.html" class="btn btn-neutral float-right" title="Product Page Integration"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="product-types.html" class="btn btn-neutral" title="Product Types"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="order-confirmation.html" class="btn btn-neutral" title="Order Confirmation Integration"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

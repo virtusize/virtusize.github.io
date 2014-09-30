@@ -59,20 +59,19 @@
         
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quick-start-guide/index.html">Quick Start Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">1. Provide your product measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">2. Integrate on your product pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">3. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">1. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">2. Provide your product measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">3. Integrate on your product pages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#verify-your-integration">4. Verify your integration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../integration-guide/introduction.html">Introduction ja</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integration-guide/overview.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integration-guide/product-types.html">Product Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/order-confirmation.html">Order Confirmation Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/measurements.html">Providing Measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/integration.html">Product Page Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integration-guide/order-confirmation.html">Order Confirmation Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/events-and-callbacks.html">Events and Callbacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/advanced.html">Advanced Configuration - JavaScript API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/product-types.html">Product Types</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../upgrade-guide/index.html">Upgrade Guide</a><ul>
@@ -124,7 +123,7 @@
   <div class="section" id="javascript-api-v2">
 <span id="label-javascript-api"></span><h1>JavaScript API v2<a class="headerlink" href="#javascript-api-v2" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">注釈</p>
 <p class="last">This integration version is out of date. Please use the new integration v3
 or upgrade your old integration v2. See: <a class="reference internal" href="../integration-guide/integration.html#label-integration-v3"><em>Product Page Integration</em></a> or
 follow our <a class="reference internal" href="../upgrade-guide/index.html#label-upgrade-guide"><em>Upgrade Guide</em></a>.</p>
@@ -331,7 +330,7 @@ name.</p>
 </dd>
 </dl>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">注釈</p>
 <p class="last">For single product integrations the vsWidget object is also available for
 reference via <strong>window.Virtusize.vsWidget</strong> after the call to the
 <strong>vsWidgetAsyncInit</strong> function. For multiple products this reference is
@@ -345,7 +344,7 @@ pointing to the first vsWidget instance.</p>
 only provide a unique product identifier. For that you can use the
 <strong>setProductId</strong> call on the <strong>vsWidget</strong> object.</p>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">注釈</p>
 <p class="last">There is no default product data strategy, at least the product id must
 always be provided.</p>
 </div>
@@ -362,7 +361,7 @@ always be provided.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">注釈</p>
 <p class="last">The <strong>setProductId</strong> method is a shortcut to <strong>setProductDataStrategy</strong>, it
 creates a strategy that returns product data with the provided product id.</p>
 </div>
@@ -478,7 +477,7 @@ inside an element with the id of <tt class="docutils literal"><span class="pre">
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">注釈</p>
 <p class="last">The button strategy can return any DOM or jQuery element. The id
 on the element is not mandatory.  However the element should be a block
 level element.</p>
@@ -497,7 +496,7 @@ needed inside the callback. The second argument is the current product
 data object which has at least the <tt class="docutils literal"><span class="pre">id</span></tt> property. Any additional
 arguments are event specific.</p>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">注釈</p>
 <p class="last">Event callbacks are a volatile feature, new events can be added, renamed or
 removed without notification as the Virtusize product evolves.</p>
 </div>
@@ -541,7 +540,7 @@ measurements in the new-from-measurements app.</dd>
 <dd>Triggered when a user compares the product in the compare view.</dd>
 </dl>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">注釈</p>
 <p class="last">The <strong>widget.compareApp</strong> event is probably the most useful event as it
 registers when a user compares items. Use this event to register Virtusize
 &#8220;uses&#8221;.</p>

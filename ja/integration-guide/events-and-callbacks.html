@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview &mdash; Virtusize Developer Docs 1.1 ドキュメント</title>
+  <title>Events and Callbacks &mdash; Virtusize Developer Docs 1.1 ドキュメント</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Virtusize Developer Docs 1.1 ドキュメント" href="../index.html"/>
         <link rel="up" title="Integration Guide" href="../integration-guide.html"/>
-        <link rel="next" title="Product Types" href="product-types.html"/>
-        <link rel="prev" title="Introduction ja" href="introduction.html"/> 
+        <link rel="next" title="Advanced Configuration - JavaScript API" href="advanced.html"/>
+        <link rel="prev" title="Product Page Integration" href="integration.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -60,20 +60,19 @@
         
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quick-start-guide/index.html">Quick Start Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">1. Provide your product measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">2. Integrate on your product pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">3. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">1. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">2. Provide your product measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">3. Integrate on your product pages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#verify-your-integration">4. Verify your integration</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction ja</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="measurements.html">Providing Measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integration.html">Product Page Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Events and Callbacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced Configuration - JavaScript API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../upgrade-guide/index.html">Upgrade Guide</a><ul>
@@ -111,10 +110,10 @@
       
           <li><a href="../integration-guide.html">Integration Guide</a> &raquo;</li>
       
-    <li>Overview</li>
+    <li>Events and Callbacks</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/integration-guide/overview.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/integration-guide/events-and-callbacks.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -122,20 +121,87 @@
 </div>
           <div role="main">
             
-  <div class="section" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>This document covers everything you need to know about integrating
-Virtusize. It guides you through the process and provides details about
-the supported garment product types as well as the JavaScript API.</p>
-<p>The main steps for a successful integration involve:</p>
-<ul class="simple">
-<li>Becoming Virtusize customer, obtaining an API key and admin account.
-In order to get these, please <a class="reference external" href="http://www.virtusize.com/contact">contact our sales team</a></li>
-<li>Providing garment measurements to Virtusize</li>
-<li>Integrating the Virtusize button and widget into your product pages</li>
-<li>Integrating the Virtusize order confirmation script to enable purchase
-history for your customers</li>
-</ul>
+  <div class="section" id="events-and-callbacks">
+<span id="label-events-and-callbacks-v3"></span><h1>Events and Callbacks<a class="headerlink" href="#events-and-callbacks" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>The JavaScript integration of Virtusize has the ability to trigger custom
+callback functions on specific events. You can use this for a number of things
+including analytics and custom behaviour on the product pages, like showing
+a tooltip and the like.</p>
+<div class="section" id="registering-callbacks">
+<h2>Registering callbacks<a class="headerlink" href="#registering-callbacks" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>To subscribe for event callbacks, use the <tt class="docutils literal"><span class="pre">on</span></tt> method on the Virtusize
+Snippet object like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>vs.on(&quot;PRODUCT_ID&quot;, &quot;EVENT_NAME&quot;, function() { alert(&quot;Event fired.&quot;); });
+</pre></div>
+</div>
+<p>or directly on a VirtusizeWidget object, for example inside an <tt class="docutils literal"><span class="pre">addWidget</span></tt>
+callback like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>vs.addWidget(&quot;PRODUCT_ID&quot;, &quot;BUTTON_SELECTOR&quot;, {
+    done: function(error) {
+        this.on(&quot;EVENT_NAME&quot;, function() { alert(&quot;Event fired.&quot;); });
+    }
+});
+</pre></div>
+</div>
+<p>All callbacks functions will have <tt class="docutils literal"><span class="pre">this</span></tt> assigned to the VirtusizeWidget
+instance this event originated from. In some cases there will be optional data
+passed into the function as an argument. That is event specific.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Event callbacks are a volatile feature and new events can be added, renamed or
+removed without notification as the Virtusize product evolves.</p>
+</div>
+<p>The following events are supported:</p>
+<dl class="docutils">
+<dt>user-saw-widget-button</dt>
+<dd>Triggered when the widget button is shown on the product page after
+a product check that resulted in a valid product.</dd>
+<dt>user-opened-widget</dt>
+<dd>Triggered when the widget was opened.</dd>
+<dt>user-closed-widget</dt>
+<dd>Triggered when the widget was closed.</dd>
+<dt>user-added-product</dt>
+<dd>Triggered when a user successfully created a new item from
+measurements in the panel &#8220;new from measurements&#8221;.</dd>
+<dt>user-selected-size</dt>
+<dd>Triggered when a size was selected in the widget. Note: the callback
+function receives additional data containing the selected size ID and
+a boolean indicating if the size was auto-selected or not. <tt class="docutils literal"><span class="pre">{sizeId:</span> <span class="pre">&quot;xl&quot;,</span>
+<span class="pre">auto:</span> <span class="pre">false}</span></tt></dd>
+<dt>user-deleted-product</dt>
+<dd>Triggered when a user deleted an item from his wardrobe. This can be any
+item and does not necessarily match the product for which the widget was
+loaded.</dd>
+</dl>
+<dl class="docutils">
+<dt>user-opened-panel-start</dt>
+<dd>Triggered when a user opened the panel &#8220;start&#8221;.</dd>
+<dt>user-opened-panel-new-from-measurements</dt>
+<dd>Triggered when a user opened the panel &#8220;new from measurements&#8221;.</dd>
+<dt>user-opened-panel-compare</dt>
+<dd>Triggered when a user opened the panel &#8220;compare&#8221;.</dd>
+<dt>user-opened-panel-edit-item</dt>
+<dd>Triggered when a user opened the panel &#8220;edit item&#8221;.</dd>
+<dt>user-opened-panel-wardrobe</dt>
+<dd>Triggered when a user opened the panel &#8220;wardrobe&#8221;.</dd>
+<dt>user-opened-panel-faq</dt>
+<dd>Triggered when a user opened the panel &#8220;faq&#8221;.</dd>
+<dt>user-opened-panel-login</dt>
+<dd>Triggered when a user opened the panel &#8220;login&#8221;.</dd>
+<dt>user-opened-panel-register</dt>
+<dd>Triggered when a user opened the panel &#8220;register&#8221;.</dd>
+<dt>user-opened-panel-forgot-password</dt>
+<dd>Triggered when a user opened the panel &#8220;forgot password&#8221;.</dd>
+<dt>user-opened-panel-benefits</dt>
+<dd>Triggered when a user opened the panel &#8220;benefits&#8221;.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The <strong>user-opened-panel-compare</strong> event is probably the most useful event
+as it registers when a user compares items. Use this event to register
+Virtusize &#8220;uses&#8221;.</p>
+</div>
+</div>
 </div>
 
 
@@ -144,10 +210,10 @@ history for your customers</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="product-types.html" class="btn btn-neutral float-right" title="Product Types"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="advanced.html" class="btn btn-neutral float-right" title="Advanced Configuration - JavaScript API"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="introduction.html" class="btn btn-neutral" title="Introduction ja"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="integration.html" class="btn btn-neutral" title="Product Page Integration"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

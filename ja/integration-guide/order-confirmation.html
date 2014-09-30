@@ -30,8 +30,8 @@
   
     <link rel="top" title="Virtusize Developer Docs 1.1 ドキュメント" href="../index.html"/>
         <link rel="up" title="Integration Guide" href="../integration-guide.html"/>
-        <link rel="next" title="Advanced Configuration - JavaScript API" href="advanced.html"/>
-        <link rel="prev" title="Product Page Integration" href="integration.html"/> 
+        <link rel="next" title="Providing Measurements" href="measurements.html"/>
+        <link rel="prev" title="Integration Guide" href="../integration-guide.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -60,20 +60,19 @@
         
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quick-start-guide/index.html">Quick Start Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">1. Provide your product measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">2. Integrate on your product pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">3. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">1. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">2. Provide your product measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">3. Integrate on your product pages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#verify-your-integration">4. Verify your integration</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction ja</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Order Confirmation Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="measurements.html">Providing Measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integration.html">Product Page Integration</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Order Confirmation Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-and-callbacks.html">Events and Callbacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced Configuration - JavaScript API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../upgrade-guide/index.html">Upgrade Guide</a><ul>
@@ -124,20 +123,17 @@
             
   <div class="section" id="order-confirmation-integration">
 <h1>Order Confirmation Integration<a class="headerlink" href="#order-confirmation-integration" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Virtusize order confirmation utilizes the same small JavaScript that is used on
-the product pages. The retailer will provide Virtusize with a number of useful
-information, that is relevant for finding the perfect size and fit for the
-customers of the retailer.</p>
-<p>This will enable Virtusize to show the customers items they have recently
-purchased as part of the purchase history. They can then select one or more of
-these items as a reference item used for comparison with the garment they are
-looking to purchase from the retailer at the moment. Doing this will
-effectively eliminate the tedious task of measuring garments from their
-wardrobe for the customers and will therefore make it much easier for the
-customer to get started with using Virtusize.</p>
+<p>The Virtusize order confirmation integration utilises the same small JavaScript
+that will be used on your product pages. You will need to provide Virtusize with certain
+information that will be used for your customers to find the right fit on your website
+when using our widget.</p>
+<p>This will enable Virtusize to show your consumers the items they have recently
+purchased as part of their ‘Purchase History’. They can then select one or more of
+these items in their purchase history wardrobe as a reference item to compare with the
+garment they are looking to purchase from your site.</p>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
-<p class="last">You can start providing purchase data as soon as you have received your API
+<p class="first admonition-title">注釈</p>
+<p class="last">You can start providing us purchase data as soon as you have received your API
 key. This way your customers will benefit as soon as you integrate
 Virtusize on your product pages by having purchase history from their
 previous purchases already in place.</p>
@@ -149,7 +145,7 @@ order confirmation page just before the closing <tt class="docutils literal"><sp
 script that you use on your product pages.</p>
 <p>You provide certain information about the order and the line items of the
 order. Some attributes are required for the purchase history to work properly,
-others are recommended.</p>
+others are optional.</p>
 <p>A complete example looks like the following:</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="c">&lt;!-- Virtusize Integration --&gt;</span>
 <span class="nt">&lt;script&gt;</span>
@@ -167,7 +163,6 @@ others are recommended.</p>
             <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
             <span class="nx">size</span><span class="o">:</span> <span class="s2">&quot;L&quot;</span><span class="p">,</span>
             <span class="nx">sizeAlias</span><span class="o">:</span> <span class="s2">&quot;Large&quot;</span><span class="p">,</span>
-            <span class="nx">variantId</span><span class="o">:</span> <span class="s2">&quot;SKU_123&quot;</span><span class="p">,</span>
             <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://www.retailer.com/products/PRODUCT_ID&quot;</span><span class="p">,</span>
             <span class="nx">imageUrl</span><span class="o">:</span> <span class="s2">&quot;http://images.retailer.com/products/sku_123/black/image1xl.jpg&quot;</span><span class="p">,</span>
             <span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span>
@@ -202,11 +197,11 @@ line items.</p>
 retailer. Could be the database id, either plaintext or hashed, or the
 hashed email address of the user.</p>
 <p>Examples:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="c1">// Good examples</span>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="c1">// Valid examples</span>
 <span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;62731&quot;</span>
 <span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;2c9a0ad49c90c71c29cf4399e262e095&quot;</span>
 
-<span class="c1">// Bad examples</span>
+<span class="c1">// Invalid examples</span>
 <span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;guest&quot;</span>
 <span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;Anonymous&quot;</span>
 <span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;john@example.com&quot;</span>
@@ -217,15 +212,15 @@ hashed email address of the user.</p>
 </dd>
 </dl>
 </div>
-<div class="section" id="recommended-attributes">
-<h3>Recommended attributes<a class="headerlink" href="#recommended-attributes" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="optional-attributes">
+<h3>Optional attributes<a class="headerlink" href="#optional-attributes" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="docutils">
 <dt>region</dt>
 <dd><p class="first"><em>String</em> - The region identifier as defined by ISO 3166-1
 alpha-2. The region id must be the two-letter ISO-3166 country code as
 defined in <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a></p>
 <p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;DE&quot;</span>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">region</span><span class="o">:</span> <span class="s2">&quot;DE&quot;</span>
 </pre></div>
 </div>
 </dd>
@@ -240,9 +235,9 @@ defined in <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_
 <dl class="docutils">
 <dt>productId</dt>
 <dd><p class="first"><em>String</em> - The id of the product. This must match the product id used
-during integration on the retailers product page.</p>
+during integration on your product page.</p>
 <p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;external_id_1234&quot;</span>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;external_id_1234&quot;</span>
 </pre></div>
 </div>
 </dd>
@@ -250,7 +245,7 @@ during integration on the retailers product page.</p>
 <dd><p class="first"><em>String</em> - The size or size id of the purchased item. This must match the
 size identifiers used in the product database of Virtusize.</p>
 <p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;2128&quot;</span>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">size</span><span class="o">:</span> <span class="s2">&quot;2128&quot;</span>
 </pre></div>
 </div>
 </dd>
@@ -262,81 +257,87 @@ previous purchases at a later stage in the Virtusize widget. In case there
 is no variant specific image available, please provide the default product
 image.</p>
 <p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;http://images.retailer.com/products/sku123/black/image_large.jpg&quot;</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-</div>
-<div class="section" id="id2">
-<h3>Recommended attributes<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<dl class="docutils">
-<dt>sizeAlias</dt>
-<dd><p class="first"><em>String</em> - A size alias that will be used to display the size to the
-customer at a later stage, for example while showing him his personal
-purchase history. It should be set, if the retailer uses size-ids instead of
-human readable sizes as identifiers.</p>
-<p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;Large&quot;</span>
-</pre></div>
-</div>
-</dd>
-<dt>url</dt>
-<dd><p class="first"><em>String</em> - The canonical URL of this product in the retailers online store.</p>
-<p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;http://www.retailer.com/products/123&quot;</span>
-</pre></div>
-</div>
-</dd>
-<dt>variantId</dt>
-<dd><p class="first"><em>String</em> - An id that uniquely identifies a product variant including color
-and size, usually the SKU.</p>
-<p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;sku_1234&quot;</span>
-</pre></div>
-</div>
-</dd>
-<dt>color</dt>
-<dd><p class="first"><em>String</em> - The color of ordered garment.</p>
-<p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;black&quot;</span>
-</pre></div>
-</div>
-</dd>
-<dt>gender</dt>
-<dd><p class="first"><em>String</em> - The gender that this garment is targetting. Must have one of
-these values: &#8220;unisex&#8221;, &#8220;male&#8221;, &#8220;female&#8221;</p>
-<p>Example:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;female&quot;</span>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">imageUrl</span><span class="o">:</span> <span class="s2">&quot;http://images.retailer.com/products/sku123/black/image_large.jpg&quot;</span>
 </pre></div>
 </div>
 </dd>
 <dt>unitPrice</dt>
 <dd><p class="first"><em>Float</em> - The unit price of this item.</p>
 <p>Examples:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="c1">// Good examples</span>
-<span class="mf">99.95</span>
-<span class="mf">100.00</span>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="c1">// Valid examples</span>
+<span class="nx">unitPrice</span><span class="o">:</span> <span class="mf">99.95</span>
+<span class="nx">unitPrice</span><span class="o">:</span> <span class="mf">100.00</span>
 
-<span class="c1">// Bad examples</span>
-<span class="s2">&quot;100.00&quot;</span>
-<span class="mf">100.0005</span>
+<span class="c1">// Invalid examples</span>
+<span class="nx">unitPrice</span><span class="o">:</span> <span class="s2">&quot;100.00&quot;</span>
+<span class="nx">unitPrice</span><span class="o">:</span> <span class="mf">100.0005</span>
 </pre></div>
 </div>
 </dd>
 <dt>quantity</dt>
-<dd><p class="first"><em>Integer</em> - The quantitiy of this line item for the given color and size.
+<dd><p class="first"><em>Integer</em> - The quantity of this line item for the given color and size.
 If the customer bought different sizes or colors, a separate item has to be
 added for each variant.</p>
 <p>Examples:</p>
-<div class="last highlight-javascript"><div class="highlight"><pre><span class="c1">// Good examples</span>
-<span class="mi">1</span>
-<span class="mi">2</span>
-<span class="mi">10</span>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="c1">// Valid examples</span>
+<span class="nx">quantity</span><span class="o">:</span> <span class="mi">1</span>
+<span class="nx">quantity</span><span class="o">:</span> <span class="mi">2</span>
+<span class="nx">quantity</span><span class="o">:</span> <span class="mi">10</span>
 
-<span class="c1">// Bad examples</span>
-<span class="s2">&quot;1&quot;</span>
-<span class="mf">0.5</span>
+<span class="c1">// Invalid examples</span>
+<span class="nx">quantity</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="nx">quantity</span><span class="o">:</span> <span class="mf">0.5</span>
+</pre></div>
+</div>
+</dd>
+<dt>currency</dt>
+<dd><p class="first"><em>String</em> - Three letter currency code as defined in <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_4217">http://en.wikipedia.org/wiki/ISO_4217</a></p>
+<p>Examples:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">currency</span><span class="o">:</span> <span class="s2">&quot;EUR&quot;</span>
+<span class="nx">currency</span><span class="o">:</span> <span class="s2">&quot;USD&quot;</span>
+<span class="nx">currency</span><span class="o">:</span> <span class="s2">&quot;GBP&quot;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h3>Optional attributes<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<dl class="docutils">
+<dt>sizeAlias</dt>
+<dd><p class="first"><em>String</em> - A size alias that will be used to display the size purchased to the
+customer when they open the widget the next time. They will see this item from
+their personal purchase history with the sizeAlias instead of the actual size, if
+this is set. This alias should be set if you use size-ids instead of
+human readable sizes as identifiers.</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="c1">// When the size is not understandable by customers, like:</span>
+<span class="nx">size</span><span class="o">:</span> <span class="s2">&quot;2148&quot;</span>
+<span class="c1">// Then the sizeAlias can be use to specify what the customer will see for</span>
+<span class="c1">// this product in his purchase history the next time they open the widget:</span>
+<span class="nx">sizeAlias</span><span class="o">:</span> <span class="s2">&quot;Large&quot;</span>
+</pre></div>
+</div>
+</dd>
+<dt>url</dt>
+<dd><p class="first"><em>String</em> - The canonical URL of this product on your online store.</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://www.retailer.com/products/123&quot;</span>
+</pre></div>
+</div>
+</dd>
+<dt>color</dt>
+<dd><p class="first"><em>String</em> - The color of ordered garment.</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;black&quot;</span>
+</pre></div>
+</div>
+</dd>
+<dt>gender</dt>
+<dd><p class="first"><em>String</em> - The gender that this garment is targeting. Must have one of
+these values: &#8220;unisex&#8221;, &#8220;male&#8221;, &#8220;female&#8221;</p>
+<p>Example:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">gender</span><span class="o">:</span> <span class="s2">&quot;female&quot;</span>
 </pre></div>
 </div>
 </dd>
@@ -348,11 +349,11 @@ added for each variant.</p>
     <span class="nx">sizeAlias</span><span class="o">:</span> <span class="s2">&quot;Large&quot;</span><span class="p">,</span>
     <span class="nx">imageUrl</span><span class="o">:</span> <span class="s2">&quot;http://images.retailer.com/products/sku123/black/image_large.jpg&quot;</span><span class="p">,</span>
     <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;http://www.retailer.com/products/123&quot;</span><span class="p">,</span>
-    <span class="nx">variantId</span><span class="o">:</span> <span class="s2">&quot;sku_123&quot;</span><span class="p">,</span>
     <span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span>
     <span class="nx">gender</span><span class="o">:</span> <span class="s2">&quot;unisex&quot;</span><span class="p">,</span>
     <span class="nx">unitPrice</span><span class="o">:</span> <span class="mf">99.95</span><span class="p">,</span>
-    <span class="nx">quantity</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="nx">quantity</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">currency</span><span class="o">:</span> <span class="s2">&quot;EUR&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -366,10 +367,10 @@ added for each variant.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="advanced.html" class="btn btn-neutral float-right" title="Advanced Configuration - JavaScript API"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="measurements.html" class="btn btn-neutral float-right" title="Providing Measurements"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="integration.html" class="btn btn-neutral" title="Product Page Integration"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../integration-guide.html" class="btn btn-neutral" title="Integration Guide"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

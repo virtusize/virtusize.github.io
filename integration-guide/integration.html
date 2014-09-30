@@ -30,7 +30,7 @@
   
     <link rel="top" title="Virtusize Developer Docs 1.1 documentation" href="../index.html"/>
         <link rel="up" title="Integration Guide" href="../integration-guide.html"/>
-        <link rel="next" title="Order Confirmation Integration" href="order-confirmation.html"/>
+        <link rel="next" title="Events and Callbacks" href="events-and-callbacks.html"/>
         <link rel="prev" title="Providing Measurements" href="measurements.html"/> 
 
   
@@ -60,20 +60,19 @@
         
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quick-start-guide/index.html">Quick Start Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">1. Provide your product measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">2. Integrate on your product pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">3. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">1. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">2. Provide your product measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">3. Integrate on your product pages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#verify-your-integration">4. Verify your integration</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="measurements.html">Providing Measurements</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Product Page Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-and-callbacks.html">Events and Callbacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced Configuration - JavaScript API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../upgrade-guide/index.html">Upgrade Guide</a><ul>
@@ -130,7 +129,7 @@ If jQuery is not found on the page, the integration script will asynchronously
 load jQuery from the Google CDN (this will not slow down the page as it is done
 asynchronously and most clients already have it cached).</p>
 <p><strong>Asynchronous loading</strong></p>
-<p>All script loading is done asynchronously, minimizing the impact on the load
+<p>All script loading is done asynchronously, minimising the impact on the load
 speed of the product page. The integration snippet is inspired by the
 asynchronous loading done by Google Universal Analytics, FB Connect, Google+
 and others. In the unlikely event of Virtusize servers experiencing down time,
@@ -145,30 +144,73 @@ to Google Analytics or Facebook Connect. The most simple way is shown below.</p>
 <span class="o">!</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="nx">d</span><span class="p">,</span><span class="nx">e</span><span class="p">,</span><span class="nx">f</span><span class="p">,</span><span class="nx">g</span><span class="p">){</span><span class="kd">var</span> <span class="nx">h</span><span class="p">,</span><span class="nx">i</span><span class="p">,</span><span class="nx">j</span><span class="p">,</span><span class="nx">k</span><span class="p">;</span><span class="k">for</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">Virtusize</span><span class="o">=</span><span class="nx">e</span><span class="p">,</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">]</span><span class="o">||</span><span class="p">[],</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;setApiKey&quot;</span><span class="p">,</span><span class="s2">&quot;setRegion&quot;</span><span class="p">,</span><span class="s2">&quot;setLanguage&quot;</span><span class="p">,</span><span class="s2">&quot;setWidgetOverlayColor&quot;</span><span class="p">,</span><span class="s2">&quot;addWidget&quot;</span><span class="p">,</span><span class="s2">&quot;ready&quot;</span><span class="p">,</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="s2">&quot;setAvailableSizes&quot;</span><span class="p">,</span><span class="s2">&quot;setSizeAliases&quot;</span><span class="p">,</span><span class="s2">&quot;addOrder&quot;</span><span class="p">,</span><span class="s2">&quot;setUserId&quot;</span><span class="p">],</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">factory</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">b</span><span class="p">){</span><span class="k">return</span> <span class="kd">function</span><span class="p">(){</span><span class="kd">var</span> <span class="nx">c</span><span class="p">;</span><span class="k">return</span> <span class="nx">c</span><span class="o">=</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">),</span><span class="nx">c</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">b</span><span class="p">),</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">]}},</span><span class="nx">k</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">methods</span><span class="p">,</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nx">j</span><span class="o">=</span><span class="nx">k</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">j</span><span class="o">&gt;</span><span class="nx">i</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="nx">h</span><span class="o">=</span><span class="nx">k</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">][</span><span class="nx">h</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">factory</span><span class="p">(</span><span class="nx">h</span><span class="p">);</span><span class="nx">a</span><span class="p">[</span><span class="nx">e</span><span class="p">].</span><span class="nx">snippetVersion</span><span class="o">=</span><span class="s2">&quot;3.0.2&quot;</span><span class="p">,</span><span class="nx">f</span><span class="o">=</span><span class="nx">b</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span><span class="nx">g</span><span class="o">=</span><span class="nx">b</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">c</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="nx">f</span><span class="p">.</span><span class="nx">async</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="nx">f</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;https:&quot;</span><span class="o">===</span><span class="nx">a</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span><span class="o">?</span><span class="s2">&quot;https://&quot;</span><span class="o">:</span><span class="s2">&quot;http://cdn.&quot;</span><span class="p">)</span><span class="o">+</span><span class="nx">d</span><span class="p">,</span><span class="nx">f</span><span class="p">.</span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;vs-integration&quot;</span><span class="p">,</span><span class="nx">g</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span><span class="nx">g</span><span class="p">)}(</span><span class="nb">window</span><span class="p">,</span><span class="nb">document</span><span class="p">,</span><span class="s2">&quot;script&quot;</span><span class="p">,</span><span class="s2">&quot;api.virtusize.com/integration/v3.js&quot;</span><span class="p">,</span><span class="s2">&quot;vs&quot;</span><span class="p">);</span>
 
 <span class="nx">vs</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
-<span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">);</span>
+<span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
+    <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
+    <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>
+    <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_IMAGE_URL&quot;</span><span class="p">,</span>
+    <span class="nx">done</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;user-opened-panel-compare&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">// This callback will get called, when a User</span>
+            <span class="c1">// actually compares an item. Use this to detect</span>
+            <span class="c1">// real Virtusize uses.</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 <span class="c">&lt;!-- End Virtusize Integration --&gt;</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The snippet defines an API key, product id and button selector to
-use. The values within quotes should be your actual API key, the actual
-product id and a CSS selector for the button you want to use to open the
-Virtusize Widget.</p>
+<p class="last">The snippet defines an API key, product id, button selector and
+a productImageUrl to use. The values within quotes should be your actual
+API key, the actual product id, a CSS selector for the button you want to
+use to open the Virtusize Widget and the URL to the product image.</p>
+</div>
+<p>You might have noticed the example callback within the <tt class="docutils literal"><span class="pre">done</span></tt> function. For
+more information about this topic click here:
+<a class="reference internal" href="events-and-callbacks.html#label-events-and-callbacks-v3"><em>Events and Callbacks</em></a></p>
+<p>For more information about how to provide product images see:
+<a class="reference internal" href="#label-providing-product-images"><em>Providing Product Images</em></a></p>
+</div>
+<div class="section" id="providing-product-images">
+<span id="label-providing-product-images"></span><h2>Providing Product Images<a class="headerlink" href="#providing-product-images" title="Permalink to this headline">¶</a></h2>
+<p>The Virtusize Widget includes an image of the product the customer is currently
+looking at as well as images of the items they have previously purchased.</p>
+<p>The default image that is being used is the one provided in the <a class="reference external" href="http://ogp.me">Open Graph
+data</a> of the product page. This is convenient to start out,
+since you don&#8217;t have to include an image in the <tt class="docutils literal"><span class="pre">addWidget</span></tt> call if you
+already have it in the OGP metatag.</p>
+<p>But for added flexibility or advanced use cases it is possible to overwrite
+this image with one actively provided to Virtusize like this</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
+    <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
+    <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>
+    <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_IMAGE_URL&quot;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>That way you can select and provide an image that represents the product better
+or is of a better quality.</p>
+<p>The image will only be downloaded once from your URL and then distributed
+through our Content Delivery Network.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The ideal image dimensions are <tt class="docutils literal"><span class="pre">width:</span> <span class="pre">360px;</span> <span class="pre">height:</span> <span class="pre">500px</span></tt> with
+a safe area around the left and right edges to prevent cropping of the
+actual content in the Virtusize Widget.</p>
 </div>
 </div>
 <div class="section" id="using-a-button">
 <span id="label-using-a-button"></span><h2>Using a Button<a class="headerlink" href="#using-a-button" title="Permalink to this headline">¶</a></h2>
-<p>You can use any element on your product pages to open the Virtusize Widget. You
-have full control over the placement and appearance of the button. It is even
-possible to use multiple buttons to open the Virtusize Widget for the same
-product.</p>
+<p>You can use any element on your product pages to open the Virtusize Widget.
+It is even possible to use multiple buttons to open the Virtusize Widget
+for the same product.</p>
 <div class="section" id="single-button">
 <h3>Single Button<a class="headerlink" href="#single-button" title="Permalink to this headline">¶</a></h3>
 <p>For using a button, create an element like this on your page. You can use any
 DOM-id you like. A CSS class or anything selectable will work as well:</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;virtusize-button&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">style=</span><span class="s">&quot;display:none;&quot;</span><span class="nt">&gt;</span>Virtusize<span class="nt">&lt;/button&gt;</span>
+<div class="highlight-javascript"><div class="highlight"><pre>&lt;button id=&quot;virtusize-button&quot; type=&quot;button&quot; style=&quot;display:none;&quot;&gt;Virtusize&lt;/button&gt;
 </pre></div>
 </div>
 <p>You can then use this button with your Virtusize Widget by specifying the
@@ -190,7 +232,7 @@ to all buttons:</p>
 </pre></div>
 </div>
 <p>The element you create should not be visible when the page loads. It will
-automatically appear, when there is a valid product in the Virtusize database.
+automatically appear when there is a valid product in the Virtusize database.
 This way you don&#8217;t have to worry about a product and its measurements being
 available and valid or not.</p>
 <p>You can either set the buttons style to <tt class="docutils literal"><span class="pre">visibility:hidden</span></tt> or to
@@ -218,7 +260,7 @@ our admin or via the measurements feed).</p>
 <p>It is possible to have Virtusize Widgets for more than one product per page.
 This is needed for &#8220;Buy-this-outfit&#8221; kind of pages, for example.</p>
 <p>The integration is the same as the one for single product pages. All you have
-to do, is to supply the product ids and corresponding button selectors in
+to do is supply the product ids and corresponding button selectors in
 additional <tt class="docutils literal"><span class="pre">addWidget</span></tt> calls like this:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID_1&quot;</span><span class="p">,</span> <span class="s2">&quot;#virtusize-button-1&quot;</span><span class="p">);</span>
 <span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID_2&quot;</span><span class="p">,</span> <span class="s2">&quot;#virtusize-button-2&quot;</span><span class="p">);</span>
@@ -229,34 +271,6 @@ additional <tt class="docutils literal"><span class="pre">addWidget</span></tt> 
 <p class="last">You can only integrate one product with the same id per page. If you want
 multiple buttons to open the same widget, see:
 <a class="reference internal" href="#label-multiple-buttons"><em>Multiple Buttons</em></a> for how to do this.</p>
-</div>
-</div>
-<div class="section" id="providing-product-images">
-<h2>Providing Product Images<a class="headerlink" href="#providing-product-images" title="Permalink to this headline">¶</a></h2>
-<p>The Virtusize Widget includes an image of the product the customer is currently
-looking at as well as images of the items he has previously purchased.</p>
-<p>The default image that is being used is the one provided in the <a class="reference external" href="http://ogp.me">Open Graph
-data</a> of the product page. This is convenient to start out,
-since you don&#8217;t have to include an image in the <tt class="docutils literal"><span class="pre">addWidget</span></tt> call, if you
-already have it in the OGP metatag.</p>
-<p>But for added flexibility or advanced use cases it is possible to overwrite
-this image with one actively provided to Virtusize like this</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
-    <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
-    <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>
-    <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_IMAGE_URL&quot;</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<p>That way you can select and provide an image that represents the product better
-or is of a better quality.</p>
-<p>The image will only be downloaded once from your URL and then distributed
-through our Content Delivery Network.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The ideal image dimensions are <tt class="docutils literal"><span class="pre">width:</span> <span class="pre">360px;</span> <span class="pre">height:</span> <span class="pre">500px</span></tt> with
-a safe area around the left and right edges to prevent cropping of the
-actual content in the Virtusize Widget.</p>
 </div>
 </div>
 <div class="section" id="troubleshooting">
@@ -280,7 +294,7 @@ get a popup indicating precisely that.</p>
 </div>
 <div class="section" id="button-not-showing">
 <h3>Button not showing<a class="headerlink" href="#button-not-showing" title="Permalink to this headline">¶</a></h3>
-<p>The button is only shown, if there is a valid product found in the
+<p>The button is only shown if there is a valid product found in the
 Virtusize database or supplied in any other way. Make sure that there is
 a valid product.</p>
 </div>
@@ -293,7 +307,7 @@ a valid product.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="order-confirmation.html" class="btn btn-neutral float-right" title="Order Confirmation Integration"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="events-and-callbacks.html" class="btn btn-neutral float-right" title="Events and Callbacks"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="measurements.html" class="btn btn-neutral" title="Providing Measurements"><span class="fa fa-arrow-circle-left"></span> Previous</a>

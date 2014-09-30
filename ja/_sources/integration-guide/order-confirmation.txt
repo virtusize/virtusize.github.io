@@ -3,21 +3,18 @@
 Order Confirmation Integration
 ------------------------------
 
-Virtusize order confirmation utilizes the same small JavaScript that is used on
-the product pages. The retailer will provide Virtusize with a number of useful
-information, that is relevant for finding the perfect size and fit for the
-customers of the retailer.
+The Virtusize order confirmation integration utilises the same small JavaScript 
+that will be used on your product pages. You will need to provide Virtusize with certain
+information that will be used for your customers to find the right fit on your website 
+when using our widget.
 
-This will enable Virtusize to show the customers items they have recently
-purchased as part of the purchase history. They can then select one or more of
-these items as a reference item used for comparison with the garment they are
-looking to purchase from the retailer at the moment. Doing this will
-effectively eliminate the tedious task of measuring garments from their
-wardrobe for the customers and will therefore make it much easier for the
-customer to get started with using Virtusize.
+This will enable Virtusize to show your consumers the items they have recently
+purchased as part of their ‘Purchase History’. They can then select one or more of
+these items in their purchase history wardrobe as a reference item to compare with the 
+garment they are looking to purchase from your site. 
 
 .. note::
-    You can start providing purchase data as soon as you have received your API
+    You can start providing us purchase data as soon as you have received your API
     key. This way your customers will benefit as soon as you integrate
     Virtusize on your product pages by having purchase history from their
     previous purchases already in place.
@@ -32,7 +29,7 @@ script that you use on your product pages.
 
 You provide certain information about the order and the line items of the
 order. Some attributes are required for the purchase history to work properly,
-others are recommended.
+others are optional.
 
 A complete example looks like the following::
 
@@ -52,7 +49,6 @@ A complete example looks like the following::
                 productId: "PRODUCT_ID",
                 size: "L",
                 sizeAlias: "Large",
-                variantId: "SKU_123",
                 url: "http://www.retailer.com/products/PRODUCT_ID",
                 imageUrl: "http://images.retailer.com/products/sku_123/black/image1xl.jpg",
                 color: "black",
@@ -92,11 +88,11 @@ userId
 
     Examples::
 
-        // Good examples
+        // Valid examples
         userId: "62731"
         userId: "2c9a0ad49c90c71c29cf4399e262e095"
 
-        // Bad examples
+        // Invalid examples
         userId: "guest"
         userId: "Anonymous"
         userId: "john@example.com"
@@ -104,8 +100,8 @@ userId
         userId: null
 
 
-Recommended attributes
-""""""""""""""""""""""
+Optional attributes
+"""""""""""""""""""
 
 region
     *String* - The region identifier as defined by ISO 3166-1
@@ -114,7 +110,7 @@ region
 
     Example::
         
-        "DE"
+        region: "DE"
 
 
 .. _label-line-items-v3:
@@ -130,11 +126,11 @@ Required attributes
 
 productId
     *String* - The id of the product. This must match the product id used
-    during integration on the retailers product page.
+    during integration on your product page.
     
     Example::
 
-        "external_id_1234"
+        productId: "external_id_1234"
 
 size
     *String* - The size or size id of the purchased item. This must match the
@@ -142,7 +138,7 @@ size
     
     Example::
 
-        "2128"
+        size: "2128"
 
 imageUrl
     *String* - The URL to a variant specific image of this line item of the
@@ -154,80 +150,86 @@ imageUrl
     
     Example::
 
-        "http://images.retailer.com/products/sku123/black/image_large.jpg"
-
-
-Recommended attributes
-""""""""""""""""""""""
-
-sizeAlias
-    *String* - A size alias that will be used to display the size to the
-    customer at a later stage, for example while showing him his personal
-    purchase history. It should be set, if the retailer uses size-ids instead of
-    human readable sizes as identifiers.
-    
-    Example::
-
-        "Large"
-
-url
-    *String* - The canonical URL of this product in the retailers online store.
-    
-    Example::
-
-        "http://www.retailer.com/products/123"
-
-variantId
-    *String* - An id that uniquely identifies a product variant including color
-    and size, usually the SKU.
-
-    Example::
-
-        "sku_1234"
-
-color
-    *String* - The color of ordered garment.
-    
-    Example::
-
-        "black"
-
-gender
-    *String* - The gender that this garment is targetting. Must have one of
-    these values: "unisex", "male", "female"
-
-    Example::
-
-        "female"
+        imageUrl: "http://images.retailer.com/products/sku123/black/image_large.jpg"
 
 unitPrice
     *Float* - The unit price of this item.
     
     Examples::
         
-        // Good examples
-        99.95
-        100.00
+        // Valid examples
+        unitPrice: 99.95
+        unitPrice: 100.00
 
-        // Bad examples
-        "100.00"
-        100.0005
+        // Invalid examples
+        unitPrice: "100.00"
+        unitPrice: 100.0005
 
 quantity
-    *Integer* - The quantitiy of this line item for the given color and size.
+    *Integer* - The quantity of this line item for the given color and size.
     If the customer bought different sizes or colors, a separate item has to be
     added for each variant.
 
     Examples::
 
-        // Good examples
-        1
-        2
-        10
+        // Valid examples
+        quantity: 1
+        quantity: 2
+        quantity: 10
 
-        // Bad examples
-        "1"
-        0.5
+        // Invalid examples
+        quantity: "1"
+        quantity: 0.5
+
+currency
+    *String* - Three letter currency code as defined in http://en.wikipedia.org/wiki/ISO_4217
+
+    Examples::
+        
+        currency: "EUR"
+        currency: "USD"
+        currency: "GBP"
+
+
+Optional attributes
+"""""""""""""""""""
+
+sizeAlias
+    *String* - A size alias that will be used to display the size purchased to the
+    customer when they open the widget the next time. They will see this item from
+    their personal purchase history with the sizeAlias instead of the actual size, if
+    this is set. This alias should be set if you use size-ids instead of
+    human readable sizes as identifiers.
+    
+    Example::
+
+        // When the size is not understandable by customers, like:
+        size: "2148"
+        // Then the sizeAlias can be use to specify what the customer will see for
+        // this product in his purchase history the next time they open the widget:
+        sizeAlias: "Large"
+
+url
+    *String* - The canonical URL of this product on your online store.
+    
+    Example::
+
+        url: "http://www.retailer.com/products/123"
+
+color
+    *String* - The color of ordered garment.
+    
+    Example::
+
+        color: "black"
+
+gender
+    *String* - The gender that this garment is targeting. Must have one of
+    these values: "unisex", "male", "female"
+
+    Example::
+
+        gender: "female"
 
 
 Here is a complete line item object::
@@ -238,10 +240,10 @@ Here is a complete line item object::
         sizeAlias: "Large",
         imageUrl: "http://images.retailer.com/products/sku123/black/image_large.jpg",
         url: "http://www.retailer.com/products/123",
-        variantId: "sku_123",
         color: "black",
         gender: "unisex",
         unitPrice: 99.95,
-        quantity: 1
+        quantity: 1,
+        currency: "EUR"
     }
 

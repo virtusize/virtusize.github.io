@@ -30,8 +30,8 @@
   
     <link rel="top" title="Virtusize Developer Docs 1.1 ドキュメント" href="../index.html"/>
         <link rel="up" title="Integration Guide" href="../integration-guide.html"/>
-        <link rel="next" title="Upgrade Guide" href="../upgrade-guide/index.html"/>
-        <link rel="prev" title="Order Confirmation Integration" href="order-confirmation.html"/> 
+        <link rel="next" title="Product Types" href="product-types.html"/>
+        <link rel="prev" title="Events and Callbacks" href="events-and-callbacks.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -60,20 +60,19 @@
         
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quick-start-guide/index.html">Quick Start Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">1. Provide your product measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">2. Integrate on your product pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">3. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">1. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">2. Provide your product measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">3. Integrate on your product pages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#verify-your-integration">4. Verify your integration</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction ja</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="measurements.html">Providing Measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integration.html">Product Page Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-and-callbacks.html">Events and Callbacks</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Advanced Configuration - JavaScript API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../upgrade-guide/index.html">Upgrade Guide</a><ul>
@@ -126,7 +125,7 @@
 <span id="label-advanced-configuration"></span><h1>Advanced Configuration - JavaScript API<a class="headerlink" href="#advanced-configuration-javascript-api" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="renaming-the-global-variable">
 <h2>Renaming the Global Variable<a class="headerlink" href="#renaming-the-global-variable" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>You can choose yourself, under which global variable you want Virtusize to be
+<p>You can choose yourself under which global variable you want Virtusize to be
 available on your page. The default here is <tt class="docutils literal"><span class="pre">vs</span></tt>. If this is already used on
 your site, then you can provide a different variable name as the last parameter
 to the main function.</p>
@@ -145,9 +144,9 @@ to the main function.</p>
 <div class="section" id="dynamic-integration-ajax">
 <h2>Dynamic integration (AJAX)<a class="headerlink" href="#dynamic-integration-ajax" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The Virtusize Integration v3 is designed to be used either statically by
-integrating on page load or dynamically at a later state. This is useful for
-retailers that have single page stores, where a product page loads dynamically
-after an AJAX request and is presented as an overlay on the same page.</p>
+integrating on page load or dynamically at a later state. This is useful if you have a single page
+store where a product page loads dynamically after an AJAX
+request and is presented as an overlay on the same page.</p>
 <p>The API stays exactly the same, so you are free to choose your preferred way.
 To add a widget after page load, you just call the same functions on the global
 Virtusize object like this:</p>
@@ -156,9 +155,9 @@ Virtusize object like this:</p>
 </div>
 <p>When a widget for a different product id is added for a previously used button
 selector, it will replace the widget for the old product with the new one. So
-a click on the button will now open the most recent button.</p>
-<p>You can obtain a VirtusizeWidget object after it has been initialized from the
-global object like the following. To be sure, that the integration has loaded,
+a click on the button will now open the most recent widget.</p>
+<p>You can obtain a VirtusizeWidget object after it has been initialised from the
+global object like the following. To be sure that the integration has loaded
 you can wrap it in the ready function:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">myWidget</span> <span class="o">=</span> <span class="nx">vs</span><span class="p">.</span><span class="nx">getWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">);</span>
@@ -170,12 +169,12 @@ you can wrap it in the ready function:</p>
 </div>
 <div class="section" id="snippet-api">
 <h2>Snippet API<a class="headerlink" href="#snippet-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The snippet is the little JavaScript, that you include directly in your pages.
+<p>The snippet is the little JavaScript that you include directly in your pages.
 It creates method stubs for the most commonly used functions of the Virtusize
 Integration. This enables you to call these methods immediately after the
 snippet.</p>
 <p>The method calls will be added to a queue that is executed after the
-integration script has loaded asyncronously. From that point on all calls to
+integration script has loaded asyncronously. From that point on, all calls to
 these methods will execute immediately.</p>
 <p>Some of the methods work in a global way, like setting the API key or defining
 a region. Other things can be specified on a widget to widget basis. Examples
@@ -244,7 +243,7 @@ to <tt class="docutils literal"><span class="pre">50000000</span></tt></p>
 </div>
 </dd>
 <dt>ready(callback)</dt>
-<dd><strong>callback</strong> - Function that is called, when the integration script has
+<dd><strong>callback</strong> - Function that is called when the integration script has
 loaded. These functions will be called after all the other functions of the
 initial queue have been executed. It does not mean that all product checks
 have been executed for the widgets. You should enclose calls to the snippet
@@ -291,12 +290,13 @@ this:</p>
 </pre></div>
 </div>
 <p>The following are functions you can call on the widget object, for example
-inside the <tt class="docutils literal"><span class="pre">done</span></tt> callback of <tt class="docutils literal"><span class="pre">addWidget</span></tt> or at a later stage when you get
-the loaded widget from the global Virtusize Snippet object.</p>
+inside the <tt class="docutils literal"><span class="pre">done</span></tt> callback of <tt class="docutils literal"><span class="pre">addWidget</span></tt> like in the example above or at
+a later stage when you get the loaded widget from the global Virtusize Snippet
+object.</p>
 <dl class="docutils">
 <dt>setAvailableSizes(sizesList)</dt>
 <dd><p class="first"><strong>sizesList</strong> - Array, list of product sizes.</p>
-<p>Sets the product sizes that are in stock, to be used in the widget. Must
+<p>Sets the product sizes that are in stock to be used in the widget. Must
 contain the original size identifiers, not the regional names. The names
 provided here must correspond to size identifiers for each product.</p>
 <p><strong>Example:</strong></p>
@@ -321,13 +321,13 @@ this for regional size names.</p>
 </dd>
 <dt>on(eventName, callback)</dt>
 <dd><p class="first"><strong>eventName</strong> - String, valid event to bind a callback to. See
-<a class="reference internal" href="#label-events-and-callbacks-v3"><em>Events and Callbacks</em></a> for a list of valid event names.</p>
+<a class="reference internal" href="events-and-callbacks.html#label-events-and-callbacks-v3"><em>Events and Callbacks</em></a> for a list of valid event names.</p>
 <p><strong>callback</strong> - Function callable, function to call when an event occurs.
 Allows programmatic subscription to widget events such as: &#8220;user-opened-widget&#8221;,
 &#8220;user-closed-widget&#8221;. Inside the callback function <tt class="docutils literal"><span class="pre">this</span></tt> will be the
 instance of the VirtusizeWidget from which the event was triggered. On some
 events an additional data object is passed as a parameter to the function,
-see <a class="reference internal" href="#label-events-and-callbacks-v3"><em>Events and Callbacks</em></a></p>
+see <a class="reference internal" href="events-and-callbacks.html#label-events-and-callbacks-v3"><em>Events and Callbacks</em></a></p>
 <p><strong>Example:</strong></p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;user-opened-widget&quot;</span><span class="p">,</span>
     <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -347,81 +347,6 @@ name.</p>
 </dl>
 </div>
 </div>
-<div class="section" id="events-and-callbacks">
-<span id="label-events-and-callbacks-v3"></span><h2>Events and Callbacks<a class="headerlink" href="#events-and-callbacks" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The integration snippet provides a way to subscribe for event callbacks.
-Use the <tt class="docutils literal"><span class="pre">on</span></tt> method directly on the Virtusize Snippet object like this:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;EVENT_NAME&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Event fired.&quot;</span><span class="p">);</span> <span class="p">});</span>
-</pre></div>
-</div>
-<p>or directly on a VirtusizeWidget object, for example inside an <tt class="docutils literal"><span class="pre">addWidget</span></tt>
-callback like this:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">done</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;EVENT_NAME&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Event fired.&quot;</span><span class="p">);</span> <span class="p">});</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<p>All callbacks functions will have <tt class="docutils literal"><span class="pre">this</span></tt> assigned to the VirtusizeWidget
-instance this event originated from. In some cases there will be optional data
-passed into the function as an argument. That is event specific.</p>
-<div class="admonition note">
-<p class="first admonition-title">ノート</p>
-<p class="last">Event callbacks are a volatile feature, new events can be added, renamed or
-removed without notification as the Virtusize product evolves.</p>
-</div>
-<p>The following events are supported:</p>
-<dl class="docutils">
-<dt>user-saw-widget-button</dt>
-<dd>Triggered when the widget button is shown on the product page after
-a product check that resulted in a valid product.</dd>
-<dt>user-opened-widget</dt>
-<dd>Triggered when the widget was opened.</dd>
-<dt>user-closed-widget</dt>
-<dd>Triggered when the widget was closed.</dd>
-<dt>user-added-product</dt>
-<dd>Triggered when a user successfully created a new item from
-measurements in the panel &#8220;new from measurements&#8221;.</dd>
-<dt>user-selected-size</dt>
-<dd>Triggered when a size was selected in the widget. Note: the callback
-function receives additional data containing the selected size ID and
-a boolean indicating if the size was auto-selected or not. <tt class="docutils literal"><span class="pre">{sizeId:</span> <span class="pre">&quot;xl&quot;,</span>
-<span class="pre">auto:</span> <span class="pre">false}</span></tt></dd>
-<dt>user-deleted-product</dt>
-<dd>Triggered when a user deleted an item from his wardrobe. This can be any
-item and does not necessarily match the product for which the widget was
-loaded.</dd>
-</dl>
-<dl class="docutils">
-<dt>user-opened-panel-start</dt>
-<dd>Triggered when a user opened the panel &#8220;start&#8221;.</dd>
-<dt>user-opened-panel-new-from-measurements</dt>
-<dd>Triggered when a user opened the panel &#8220;new from measurements&#8221;.</dd>
-<dt>user-opened-panel-compare</dt>
-<dd>Triggered when a user opened the panel &#8220;compare&#8221;.</dd>
-<dt>user-opened-panel-edit-item</dt>
-<dd>Triggered when a user opened the panel &#8220;edit item&#8221;.</dd>
-<dt>user-opened-panel-wardrobe</dt>
-<dd>Triggered when a user opened the panel &#8220;wardrobe&#8221;.</dd>
-<dt>user-opened-panel-faq</dt>
-<dd>Triggered when a user opened the panel &#8220;faq&#8221;.</dd>
-<dt>user-opened-panel-login</dt>
-<dd>Triggered when a user opened the panel &#8220;login&#8221;.</dd>
-<dt>user-opened-panel-register</dt>
-<dd>Triggered when a user opened the panel &#8220;register&#8221;.</dd>
-<dt>user-opened-panel-forgot-password</dt>
-<dd>Triggered when a user opened the panel &#8220;forgot password&#8221;.</dd>
-<dt>user-opened-panel-benefits</dt>
-<dd>Triggered when a user opened the panel &#8220;benefits&#8221;.</dd>
-</dl>
-<div class="admonition note">
-<p class="first admonition-title">ノート</p>
-<p class="last">The <strong>user-opened-panel-compare</strong> event is probably the most useful event
-as it registers when a user compares items. Use this event to register
-Virtusize &#8220;uses&#8221;.</p>
-</div>
-</div>
 </div>
 
 
@@ -430,10 +355,10 @@ Virtusize &#8220;uses&#8221;.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../upgrade-guide/index.html" class="btn btn-neutral float-right" title="Upgrade Guide"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="product-types.html" class="btn btn-neutral float-right" title="Product Types"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="order-confirmation.html" class="btn btn-neutral" title="Order Confirmation Integration"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="events-and-callbacks.html" class="btn btn-neutral" title="Events and Callbacks"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

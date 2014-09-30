@@ -30,7 +30,7 @@
   
     <link rel="top" title="Virtusize Developer Docs 1.1 ドキュメント" href="../index.html"/>
         <link rel="next" title="Legacy Integration Guide" href="../legacy-integration-guide.html"/>
-        <link rel="prev" title="Advanced Configuration - JavaScript API" href="../integration-guide/advanced.html"/> 
+        <link rel="prev" title="Product Types" href="../integration-guide/product-types.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -59,20 +59,19 @@
         
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quick-start-guide/index.html">Quick Start Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">1. Provide your product measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">2. Integrate on your product pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">3. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">1. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">2. Provide your product measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">3. Integrate on your product pages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#verify-your-integration">4. Verify your integration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../integration-guide/introduction.html">Introduction ja</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integration-guide/overview.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integration-guide/product-types.html">Product Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/order-confirmation.html">Order Confirmation Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/measurements.html">Providing Measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/integration.html">Product Page Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integration-guide/order-confirmation.html">Order Confirmation Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/events-and-callbacks.html">Events and Callbacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../integration-guide/advanced.html">Advanced Configuration - JavaScript API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integration-guide/product-types.html">Product Types</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Upgrade Guide</a><ul>
@@ -121,8 +120,8 @@
             
   <div class="section" id="upgrade-guide">
 <span id="label-upgrade-guide"></span><h1>Upgrade Guide<a class="headerlink" href="#upgrade-guide" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>If you are still using our old integration v2 and widget v4 you should consider
-upgrading to take advantage of the following benefits:</p>
+<p>If you are still using our old integration v2 and widget v4 you should
+upgrade to take advantage of the following benefits:</p>
 <ul class="simple">
 <li>Unified product page and order confirmation script. No need to include
 different scripts anymore.</li>
@@ -168,12 +167,10 @@ the closing of the <tt class="docutils literal"><span class="pre">&lt;/body&gt;<
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">ノート</p>
+<p class="first admonition-title">注釈</p>
 <p>If you haven&#8217;t been using your own button, you have to create one now and
 pass the CSS selector to it in the <tt class="docutils literal"><span class="pre">addWidget</span></tt> call above.</p>
-<p class="last">Since most of our clients use their custom designed Virtusize buttons, we
-removed the functionality to create a default button from the integration.
-If you don&#8217;t want to create your own button, please talk to your Virtusize
+<p class="last">If you don&#8217;t want to create your own button, please talk to your Virtusize
 sales contact.</p>
 </div>
 </div>
@@ -184,7 +181,7 @@ your customers, it is necessary to take this additional step and integrate on
 your order confirmation page.</p>
 <p>Please refer to the <a class="reference internal" href="../quick-start-guide/index.html#label-quick-start-guide"><em>Quick Start Guide</em></a> or the more detailed
 <a class="reference internal" href="../integration-guide/integration.html#label-integration-v3"><em>Product Page Integration</em></a> for more information on how to provide your order
-data to Virusize.</p>
+data to Virtusize.</p>
 </div>
 </div>
 
@@ -197,7 +194,7 @@ data to Virusize.</p>
         <a href="../legacy-integration-guide.html" class="btn btn-neutral float-right" title="Legacy Integration Guide"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../integration-guide/advanced.html" class="btn btn-neutral" title="Advanced Configuration - JavaScript API"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../integration-guide/product-types.html" class="btn btn-neutral" title="Product Types"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
