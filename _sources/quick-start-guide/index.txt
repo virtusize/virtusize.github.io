@@ -28,7 +28,7 @@ Before you get started, make sure you have received your **API key** and
 The following three steps will enable Virtusize on your website:
 
 1. **Order Confirmation Integration:** tracks your customer’s purchases
-  and enables purchase history in the widget by setting order details through
+   and enables purchase history in the widget by setting order details through
    a JavaScript snippet.
 2. **Product Measurements:** define the sizes and measurements of your products
    in our database.
