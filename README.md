@@ -1,10 +1,18 @@
 Virtusize developer docs
 ========================
 
-To generate the docs and push them to the master branch on Github do
+## Release
+
+- Bump the version in setup.py
+- Move the changes from "NEXT RELEASE" to the same version
+- Commit and push to develop
+
+Then: to generate the docs and push them to the master branch on Github do:
 
     make gh-pages
 
+
+## Development build
 
 To build the html in the develop branch for testing before publishing it:
 
