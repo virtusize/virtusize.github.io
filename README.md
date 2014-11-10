@@ -4,12 +4,13 @@ Virtusize developer docs
 ## Release
 
 - Bump the version in setup.py
-- Move the changes from "NEXT RELEASE" to the same version
+- Create a headline for the changes from "NEXT RELEASE" with the same version
 - Commit and push to develop
-
-Then: to generate the docs and push them to the master branch on Github do:
+- Generate the docs and push them to the master branch on Github:
 
     make gh-pages
+
+- Create a new release on Github with the changes that were made
 
 
 ## Development build
