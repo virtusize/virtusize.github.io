@@ -1,5 +1,5 @@
-VS Integration Changes
-======================
+VS develeper docs changes
+=========================
 
 Instructions:
 Use list notation, and following prefixes:
