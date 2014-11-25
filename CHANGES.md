@@ -12,8 +12,11 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+
+### 1.2.0
+
 - Feature: added "setUserId" documentation to Advanced guide. (hs)
-- Feature: updated snippet to v3.1.0
+- Feature: updated snippet to v3.1.0 (hs)
 - Minor: added productImageUrl to addWidget section in upgrade guide. (hs)
 
 ### 1.1.0
