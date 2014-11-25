@@ -169,6 +169,20 @@ setWidgetOverlayColor(rgba, ieColor)
         vs.setWidgetOverlayColor("rgba(255,255,0,0.5)", "50FFFF00");
 
 
+setUserId(userId)
+    **userId** - String, identifying the current user of the retailers online
+    store. It has to be a unique identifier that matches the one used on the
+    order confirmation page. Setting the userId during integration enables
+    Virtusize to show the personal purchase history to a user on a new device
+    even before purchasing something at the store from this device.
+
+    **Example:**
+
+    ::
+
+        vs.setUserId("UID_1234");
+
+
 ready(callback)
     **callback** - Function that is called when the integration script has
     loaded. These functions will be called after all the other functions of the
