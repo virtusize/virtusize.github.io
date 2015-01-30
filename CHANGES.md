@@ -13,6 +13,12 @@ Use list notation, and following prefixes:
 ### NEXT RELEASE
 
 
+
+### 1.3.0
+
+- Feature: Added integration overview. (jt)
+- Cleanup: Remove v2 integrations. (jt)
+
 ### 1.2.0
 
 - Feature: added "setUserId" documentation to Advanced guide. (hs)
