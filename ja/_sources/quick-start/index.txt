@@ -5,8 +5,8 @@
 
 .. _label-quick-start-guide:
 
-Quick Start Guide
------------------
+Quick Start
+-----------
 
 Virtusize provides a JavaScript API for you to integrate on your website and
 various ways for you to submit product measurements.

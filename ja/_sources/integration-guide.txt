@@ -39,6 +39,7 @@ The main steps for a successful integration involve:
    :maxdepth: 2
    :glob:
 
+   integration-guide/overview
    integration-guide/order-confirmation
    integration-guide/measurements
    integration-guide/integration

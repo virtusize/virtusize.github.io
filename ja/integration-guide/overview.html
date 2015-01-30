@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Events and Callbacks &mdash; Virtusize Developer Docs 1.1 documentation</title>
+  <title>Virtusize integration overview &mdash; Virtusize Developer Docs 1.1 ドキュメント</title>
   
 
   
@@ -28,10 +28,10 @@
   
 
   
-    <link rel="top" title="Virtusize Developer Docs 1.1 documentation" href="../index.html"/>
+    <link rel="top" title="Virtusize Developer Docs 1.1 ドキュメント" href="../index.html"/>
         <link rel="up" title="Integration Guide" href="../integration-guide.html"/>
-        <link rel="next" title="Advanced Configuration - JavaScript API" href="advanced.html"/>
-        <link rel="prev" title="Product Page Integration" href="integration.html"/> 
+        <link rel="next" title="Order Confirmation Integration" href="order-confirmation.html"/>
+        <link rel="prev" title="Integration Guide" href="../integration-guide.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,11 +67,11 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="overview.html">Virtusize integration overview</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Virtusize integration overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="measurements.html">Providing Measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integration.html">Product Page Integration</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Events and Callbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-and-callbacks.html">Events and Callbacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced Configuration - JavaScript API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
 </ul>
@@ -101,10 +101,10 @@
       
           <li><a href="../integration-guide.html">Integration Guide</a> &raquo;</li>
       
-    <li>Events and Callbacks</li>
+    <li>Virtusize integration overview</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/integration-guide/events-and-callbacks.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/integration-guide/overview.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -112,86 +112,55 @@
 </div>
           <div role="main">
             
-  <div class="section" id="events-and-callbacks">
-<span id="label-events-and-callbacks-v3"></span><h1>Events and Callbacks<a class="headerlink" href="#events-and-callbacks" title="Permalink to this headline">¶</a></h1>
-<p>The JavaScript integration of Virtusize has the ability to trigger custom
-callback functions on specific events. You can use this for a number of things
-including analytics and custom behaviour on the product pages, like showing
-a tooltip and the like.</p>
-<div class="section" id="registering-callbacks">
-<h2>Registering callbacks<a class="headerlink" href="#registering-callbacks" title="Permalink to this headline">¶</a></h2>
-<p>To subscribe for event callbacks, use the <tt class="docutils literal"><span class="pre">on</span></tt> method on the Virtusize
-Snippet object like this:</p>
-<div class="highlight-python"><div class="highlight"><pre>vs.on(&quot;PRODUCT_ID&quot;, &quot;EVENT_NAME&quot;, function() { alert(&quot;Event fired.&quot;); });
-</pre></div>
+  <div class="section" id="virtusize-integration-overview">
+<span id="label-integration-v3"></span><h1>Virtusize integration overview<a class="headerlink" href="#virtusize-integration-overview" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>At this moment, the integration has only one dependency, jQuery 1.3 or later.
+If jQuery is not found on the page, the integration script will asynchronously
+load jQuery from the Google CDN (this will not slow down the page as it is done
+asynchronously and most client browsers already have it cached).</p>
 </div>
-<p>or directly on a VirtusizeWidget object, for example inside an <tt class="docutils literal"><span class="pre">addWidget</span></tt>
-callback like this:</p>
-<div class="highlight-python"><div class="highlight"><pre>vs.addWidget(&quot;PRODUCT_ID&quot;, &quot;BUTTON_SELECTOR&quot;, {
-    done: function(error) {
-        this.on(&quot;EVENT_NAME&quot;, function() { alert(&quot;Event fired.&quot;); });
-    }
-});
-</pre></div>
+<div class="section" id="integration-script-hosting">
+<h2>Integration script hosting<a class="headerlink" href="#integration-script-hosting" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The integration script is hosted on the global Amazon CDN CloudFront. The file itself has
+a sane Cache-Control header value set to ensure that the client browser checks for updated versions
+according to our release schedule.</p>
 </div>
-<p>All callbacks functions will have <tt class="docutils literal"><span class="pre">this</span></tt> assigned to the VirtusizeWidget
-instance this event originated from. In some cases there will be optional data
-passed into the function as an argument. That is event specific.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Event callbacks are a volatile feature and new events can be added, renamed or
-removed without notification as the Virtusize product evolves.</p>
+<div class="section" id="asynchronous-loading">
+<h2>Asynchronous loading<a class="headerlink" href="#asynchronous-loading" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>All script loading is done asynchronously, minimising the impact on the load
+time of the product page. The integration snippet is inspired by the
+asynchronous loading done by Google Analytics, FB Connect, Google+
+and others. In the unlikely event of Virtusize servers experiencing down time,
+the product page will not be impacted other than that the button won&#8217;t show.</p>
+<p>We recommend including the integration snippet at the bottom of the page to
+ensure minimal impact on the page load speed.</p>
 </div>
-<p>The following events are supported:</p>
-<dl class="docutils">
-<dt>user-saw-widget-button</dt>
-<dd>Triggered when the widget button is shown on the product page after
-a product check that resulted in a valid product.</dd>
-<dt>user-opened-widget</dt>
-<dd>Triggered when the widget was opened.</dd>
-<dt>user-closed-widget</dt>
-<dd>Triggered when the widget was closed.</dd>
-<dt>user-added-product</dt>
-<dd>Triggered when a user successfully created a new item from
-measurements in the panel &#8220;new from measurements&#8221;.</dd>
-<dt>user-selected-size</dt>
-<dd>Triggered when a size was selected in the widget. Note: the callback
-function receives additional data containing the selected size ID and
-a boolean indicating if the size was auto-selected or not. <tt class="docutils literal"><span class="pre">{sizeId:</span> <span class="pre">&quot;xl&quot;,</span>
-<span class="pre">auto:</span> <span class="pre">false}</span></tt></dd>
-<dt>user-deleted-product</dt>
-<dd>Triggered when a user deleted an item from his wardrobe. This can be any
-item and does not necessarily match the product for which the widget was
-loaded.</dd>
-</dl>
-<dl class="docutils">
-<dt>user-opened-panel-start</dt>
-<dd>Triggered when a user opened the panel &#8220;start&#8221;.</dd>
-<dt>user-opened-panel-new-from-measurements</dt>
-<dd>Triggered when a user opened the panel &#8220;new from measurements&#8221;.</dd>
-<dt>user-opened-panel-compare</dt>
-<dd>Triggered when a user opened the panel &#8220;compare&#8221;.</dd>
-<dt>user-opened-panel-edit-item</dt>
-<dd>Triggered when a user opened the panel &#8220;edit item&#8221;.</dd>
-<dt>user-opened-panel-wardrobe</dt>
-<dd>Triggered when a user opened the panel &#8220;wardrobe&#8221;.</dd>
-<dt>user-opened-panel-faq</dt>
-<dd>Triggered when a user opened the panel &#8220;faq&#8221;.</dd>
-<dt>user-opened-panel-login</dt>
-<dd>Triggered when a user opened the panel &#8220;login&#8221;.</dd>
-<dt>user-opened-panel-register</dt>
-<dd>Triggered when a user opened the panel &#8220;register&#8221;.</dd>
-<dt>user-opened-panel-forgot-password</dt>
-<dd>Triggered when a user opened the panel &#8220;forgot password&#8221;.</dd>
-<dt>user-opened-panel-benefits</dt>
-<dd>Triggered when a user opened the panel &#8220;benefits&#8221;.</dd>
-</dl>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The <strong>user-opened-panel-compare</strong> event is probably the most useful event
-as it registers when a user compares items. Use this event to register
-Virtusize &#8220;uses&#8221;.</p>
+<div class="section" id="integration-flow">
+<h2>Integration flow<a class="headerlink" href="#integration-flow" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>Step 1</strong></p>
+<p>Integration snippet is included in a &lt;script&gt; block at the bottom of the web page.
+The snippet contains a skeleton API to allow complete async integration.</p>
+<p><strong>Step 2</strong></p>
+<p>As soon as the first line of the snippet executes, the snippet creates an array,
+and all calls to the skeleton API are recorded in this &#8220;API calls array&#8221;.
+Besides providing the skeleton JS API, the snippet triggers the load of the integration script.</p>
+<p>The integration script is loaded by inserting a &lt;script&gt; tag into the head element (using insertBefore call);
+this is the most common way to include third-party scripts and ensure async loading.
+(Google Analytics and FB tracking are built using the same method)
+This means if anything goes wrong with loading the integration script, there will be no impact on the
+product page.</p>
+<p><strong>Step 3</strong></p>
+<p>Once the integration script is loaded on the page, it looks for commands in the defined &#8220;API calls array&#8221;.
+If the array is empty, no integration occurs. Otherwise the integration script triggers the
+presentation of the widget button, or in the case of confirmation page, triggers tracking calls to
+record purchase history. All of the calls are async, to not impact user-experience on the web shop.</p>
 </div>
+<div class="section" id="note-on-product-page-integration">
+<h2>Note on product page integration<a class="headerlink" href="#note-on-product-page-integration" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The Virtusize widget opens as an iFrame on the product page, thus there is no CSS/JS pollution
+of the product page, except the integration snippet and the integration script.</p>
 </div>
 </div>
 
@@ -201,10 +170,10 @@ Virtusize &#8220;uses&#8221;.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="advanced.html" class="btn btn-neutral float-right" title="Advanced Configuration - JavaScript API"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="order-confirmation.html" class="btn btn-neutral float-right" title="Order Confirmation Integration"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="integration.html" class="btn btn-neutral" title="Product Page Integration"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../integration-guide.html" class="btn btn-neutral" title="Integration Guide"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -262,6 +231,7 @@ Virtusize &#8220;uses&#8221;.</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
       <script type="text/javascript" src="../_static/js/virtusize.js"></script>
       <script type="text/javascript" src="../_static/js/theme.js"></script>
 

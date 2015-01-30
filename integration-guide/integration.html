@@ -59,30 +59,21 @@
         
         
             <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../quick-start-guide/index.html">Quick Start Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-order-confirmation-page">1. Integrate on your order confirmation page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#provide-your-product-measurements">2. Provide your product measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#integrate-on-your-product-pages">3. Integrate on your product pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../quick-start-guide/index.html#verify-your-integration">4. Verify your integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start/index.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/index.html#integrate-on-your-order-confirmation-page">1. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/index.html#provide-your-product-measurements">2. Provide your product measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/index.html#integrate-on-your-product-pages">3. Integrate on your product pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/index.html#verify-your-integration">4. Verify your integration</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Virtusize integration overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="measurements.html">Providing Measurements</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Product Page Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="events-and-callbacks.html">Events and Callbacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced Configuration - JavaScript API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../upgrade-guide/index.html">Upgrade Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../upgrade-guide/index.html#replace-product-page-integration-with-new-one">1. Replace product page integration with new one</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../upgrade-guide/index.html#integrate-on-your-order-confirmation-page">2. Integrate on your order confirmation page</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../legacy-integration-guide.html">Legacy Integration Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../legacy-integration-guide/legacy-integration.html">Integration v2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../legacy-integration-guide/legacy-javascript-api.html">JavaScript API v2</a></li>
 </ul>
 </li>
 </ul>
@@ -123,17 +114,6 @@
             
   <div class="section" id="product-page-integration">
 <span id="label-integration-v3"></span><h1>Product Page Integration<a class="headerlink" href="#product-page-integration" title="Permalink to this headline">¶</a></h1>
-<p><strong>Dependencies</strong></p>
-<p>At this moment, the integration has only one dependency, jQuery 1.3 or later.
-If jQuery is not found on the page, the integration script will asynchronously
-load jQuery from the Google CDN (this will not slow down the page as it is done
-asynchronously and most clients already have it cached).</p>
-<p><strong>Asynchronous loading</strong></p>
-<p>All script loading is done asynchronously, minimising the impact on the load
-speed of the product page. The integration snippet is inspired by the
-asynchronous loading done by Google Universal Analytics, FB Connect, Google+
-and others. In the unlikely event of Virtusize servers experiencing down time,
-the product page will not be impacted other than that the button won&#8217;t show.</p>
 <div class="section" id="integration-snippet">
 <span id="label-integration-snippet"></span><h2>Integration Snippet<a class="headerlink" href="#integration-snippet" title="Permalink to this headline">¶</a></h2>
 <p>Integrating the Virtusize Widget requires embedding an integration snippet on
@@ -319,7 +299,7 @@ a valid product.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2014, Virtusize.
+        &copy; Copyright 2015, Virtusize.
     </p>
   </div>
 
