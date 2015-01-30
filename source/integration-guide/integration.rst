@@ -3,21 +3,6 @@
 Product Page Integration
 ========================
 
-**Dependencies**
-
-At this moment, the integration has only one dependency, jQuery 1.3 or later.
-If jQuery is not found on the page, the integration script will asynchronously
-load jQuery from the Google CDN (this will not slow down the page as it is done
-asynchronously and most clients already have it cached).
-
-**Asynchronous loading**
-
-All script loading is done asynchronously, minimising the impact on the load
-speed of the product page. The integration snippet is inspired by the
-asynchronous loading done by Google Universal Analytics, FB Connect, Google+
-and others. In the unlikely event of Virtusize servers experiencing down time,
-the product page will not be impacted other than that the button won't show.
-
 .. _label-integration-snippet:
 
 Integration Snippet
