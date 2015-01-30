@@ -13,7 +13,7 @@ asynchronously and most client browsers already have it cached).
 Integration script hosting
 --------------------------
 The integration script is hosted on the global Amazon CDN CloudFront. The file itself has
-a sane Cache-Control header values set to ensure the client browser checks for updated versions
+a sane Cache-Control header value set to ensure that the client browser checks for updated versions
 according to our release schedule.
 
 Asynchronous loading
@@ -41,8 +41,8 @@ As soon as the first line of the snippet executes, the snippet creates an array,
 and all calls to the skeleton API are recorded in this "API calls array".
 Besides providing the skeleton JS API, the snippet triggers the load of the integration script.
 
-The integration script is loaded by inserting a <script> tag into the head element (using insertBefore call),
-it is the most common way to include third-party scripts, and ensure async loading.
+The integration script is loaded by inserting a <script> tag into the head element (using insertBefore call);
+this is the most common way to include third-party scripts and ensure async loading.
 (Google Analytics and FB tracking are built using the same method)
 This means if anything goes wrong with loading the integration script, there will be no impact on the
 product page.
@@ -53,3 +53,8 @@ Once the integration script is loaded on the page, it looks for commands in the 
 If the array is empty, no integration occurs. Otherwise the integration script triggers the
 presentation of the widget button, or in the case of confirmation page, triggers tracking calls to
 record purchase history. All of the calls are async, to not impact user-experience on the web shop.
+
+Note on product page integration
+--------------------------------
+The Virtusize widget opens as an iFrame on the product page, thus there is no CSS/JS pollution
+of the product page, except the integration snippet and the integration script.
