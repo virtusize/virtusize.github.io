@@ -303,4 +303,27 @@ off(eventName, [callback])
     name.
 
 
+Purchase History Preview
+^^^^^^^^^^^^^^^^^^^^^^^^
 
+The Virtusize widget can be configured to show a tooltip for previewing
+a recent item from the users purchase history.
+
+The tooltip can be set to a light or a dark style, so you can choose the one
+that matches your website's design best.
+
+To enable the purchase history tooltip add the ``tooltipEnabled`` option to the
+``addWidget`` call. Changing the style to ``light`` can be achieved with the
+``tooltipStyle`` option, but this is optional and defaulting to dark.
+
+**Example:**
+
+::
+
+    vs.addWidget({
+        productId: "PRODUCT_ID",
+        buttonSelector: "BUTTON_SELECTOR",
+        productImageUrl: "PRODUCT_IMAGE_URL",
+        tooltipEnabled: true,
+        tooltipStyle: "light"
+    });
