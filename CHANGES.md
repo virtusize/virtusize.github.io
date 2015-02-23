@@ -13,6 +13,7 @@ Use list notation, and following prefixes:
 ### NEXT RELEASE
 
 
+- Feature: Added PH preview docs. (hs)
 
 ### 1.3.0
 
