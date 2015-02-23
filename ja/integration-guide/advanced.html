@@ -348,6 +348,26 @@ name.</p>
 </dd>
 </dl>
 </div>
+<div class="section" id="purchase-history-preview">
+<h3>Purchase History Preview<a class="headerlink" href="#purchase-history-preview" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The Virtusize widget can be configured to show a tooltip for previewing
+a recent item from the users purchase history.</p>
+<p>The tooltip can be set to a light or a dark style, so you can choose the one
+that matches your website&#8217;s design best.</p>
+<p>To enable the purchase history tooltip add the <tt class="docutils literal"><span class="pre">tooltipEnabled</span></tt> option to the
+<tt class="docutils literal"><span class="pre">addWidget</span></tt> call. Changing the style to <tt class="docutils literal"><span class="pre">light</span></tt> can be achieved with the
+<tt class="docutils literal"><span class="pre">tooltipStyle</span></tt> option, but this is optional and defaulting to dark.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
+    <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
+    <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>
+    <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_IMAGE_URL&quot;</span><span class="p">,</span>
+    <span class="nx">tooltipEnabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">tooltipStyle</span><span class="o">:</span> <span class="s2">&quot;light&quot;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
