@@ -43,6 +43,7 @@ The main steps for a successful integration involve:
    integration-guide/order-confirmation
    integration-guide/measurements
    integration-guide/integration
+   integration-guide/mobile
    integration-guide/events-and-callbacks
    integration-guide/advanced
    integration-guide/product-types

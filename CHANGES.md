@@ -12,6 +12,7 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+- Feature: Added mobile integration section. (hs)
 
 ### 1.4.0
 
