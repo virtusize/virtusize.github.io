@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Virtusize integration overview &mdash; Virtusize Developer Docs 1.1 documentation</title>
+  <title>Mobile integration &mdash; Virtusize Developer Docs 1.1 ドキュメント</title>
   
 
   
@@ -28,10 +28,10 @@
   
 
   
-    <link rel="top" title="Virtusize Developer Docs 1.1 documentation" href="../index.html"/>
+    <link rel="top" title="Virtusize Developer Docs 1.1 ドキュメント" href="../index.html"/>
         <link rel="up" title="Integration Guide" href="../integration-guide.html"/>
-        <link rel="next" title="Order Confirmation Integration" href="order-confirmation.html"/>
-        <link rel="prev" title="Integration Guide" href="../integration-guide.html"/> 
+        <link rel="next" title="Events and Callbacks" href="events-and-callbacks.html"/>
+        <link rel="prev" title="Product Page Integration" href="integration.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,11 +67,11 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Virtusize integration overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Virtusize integration overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="measurements.html">Providing Measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integration.html">Product Page Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mobile.html">Mobile integration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Mobile integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="events-and-callbacks.html">Events and Callbacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced Configuration - JavaScript API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
@@ -102,10 +102,10 @@
       
           <li><a href="../integration-guide.html">Integration Guide</a> &raquo;</li>
       
-    <li>Virtusize integration overview</li>
+    <li>Mobile integration</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/integration-guide/overview.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/integration-guide/mobile.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -113,55 +113,54 @@
 </div>
           <div role="main">
             
-  <div class="section" id="virtusize-integration-overview">
-<span id="label-integration-v3"></span><h1>Virtusize integration overview<a class="headerlink" href="#virtusize-integration-overview" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="dependencies">
-<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
-<p>At this moment, the integration has only one dependency, jQuery 1.3 or later.
-If jQuery is not found on the page, the integration script will asynchronously
-load jQuery from the Google CDN (this will not slow down the page as it is done
-asynchronously and most client browsers already have it cached).</p>
+  <div class="section" id="mobile-integration">
+<span id="label-mobile"></span><h1>Mobile integration<a class="headerlink" href="#mobile-integration" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">The mobile widget is still in beta and does not automatically load for all
+retailers. It will be launched in summer of 2015. Talk to your sales
+contact to find out more about the mobile widget.</p>
 </div>
-<div class="section" id="integration-script-hosting">
-<h2>Integration script hosting<a class="headerlink" href="#integration-script-hosting" title="Permalink to this headline">¶</a></h2>
-<p>The integration script is hosted on the global Amazon CDN CloudFront. The file itself has
-a sane Cache-Control header value set to ensure that the client browser checks for updated versions
-according to our release schedule.</p>
+<p>Virtusize comes with a mobile version of the widget that is optimized for
+phones. When a mobile browser is detected, the Virtusize integration
+automatically loads the mobile widget.</p>
+<div class="section" id="best-practice">
+<h2>Best practice<a class="headerlink" href="#best-practice" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>To achieve the best experience for your customers across devices, it is
+recommended that you provide Virtusize with the user id during integration.
+This must be the same user id as you used in the order confirmation.</p>
+<p>We use this to identify the customers previous purchases and add them to his
+personal purchase history. This allows him to compare two garments with one
+click and is especially useful on mobile devices.</p>
+<p>To add a user id you simply call this in your integration code:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// Add the users id. Same as during order confirmation.</span>
+<span class="c1">// User ID as string, set to null if unknown.</span>
+<span class="nx">vs</span><span class="p">.</span><span class="nx">setUserId</span><span class="p">(</span><span class="s2">&quot;UID_1234&quot;</span><span class="p">);</span>
+</pre></div>
 </div>
-<div class="section" id="asynchronous-loading">
-<h2>Asynchronous loading<a class="headerlink" href="#asynchronous-loading" title="Permalink to this headline">¶</a></h2>
-<p>All script loading is done asynchronously, minimising the impact on the load
-time of the product page. The integration snippet is inspired by the
-asynchronous loading done by Google Analytics, FB Connect, Google+
-and others. In the unlikely event of Virtusize servers experiencing down time,
-the product page will not be impacted other than that the button won&#8217;t show.</p>
-<p>We recommend including the integration snippet at the bottom of the page to
-ensure minimal impact on the page load speed.</p>
 </div>
-<div class="section" id="integration-flow">
-<h2>Integration flow<a class="headerlink" href="#integration-flow" title="Permalink to this headline">¶</a></h2>
-<p><strong>Step 1</strong></p>
-<p>Integration snippet is included in a &lt;script&gt; block at the bottom of the web page.
-The snippet contains a skeleton API to allow complete async integration.</p>
-<p><strong>Step 2</strong></p>
-<p>As soon as the first line of the snippet executes, the snippet creates an array,
-and all calls to the skeleton API are recorded in this &#8220;API calls array&#8221;.
-Besides providing the skeleton JS API, the snippet triggers the load of the integration script.</p>
-<p>The integration script is loaded by inserting a &lt;script&gt; tag into the head element (using insertBefore call);
-this is the most common way to include third-party scripts and ensure async loading.
-(Google Analytics and FB tracking are built using the same method)
-This means if anything goes wrong with loading the integration script, there will be no impact on the
-product page.</p>
-<p><strong>Step 3</strong></p>
-<p>Once the integration script is loaded on the page, it looks for commands in the defined &#8220;API calls array&#8221;.
-If the array is empty, no integration occurs. Otherwise the integration script triggers the
-presentation of the widget button, or in the case of confirmation page, triggers tracking calls to
-record purchase history. All of the calls are async, to not impact user-experience on the web shop.</p>
+<div class="section" id="automatic-device-detection">
+<h2>Automatic device detection<a class="headerlink" href="#automatic-device-detection" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>There is no need to configure anything for this to work on your end. However,
+in case you are using a dedicated mobile website and have not yet integrated
+with Virtusize, you need to do that. This works exactly the same as on your
+desktop website.</p>
+<p>Make sure you create and place a button for opening the Virtusize widget on the
+mobile website and integrate by setting the same variables as you would on
+a desktop page.</p>
 </div>
-<div class="section" id="note-on-product-page-integration">
-<h2>Note on product page integration<a class="headerlink" href="#note-on-product-page-integration" title="Permalink to this headline">¶</a></h2>
-<p>The Virtusize widget opens as an iFrame on the product page, thus there is no CSS/JS pollution
-of the product page, except the integration snippet and the integration script.</p>
+<div class="section" id="manual-device-detection">
+<h2>Manual device detection<a class="headerlink" href="#manual-device-detection" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>If you experience that there is a difference between your own mobile site
+detection and ours, you can force the Virtusize integration to load either the
+mobile or the desktop version of the widget by calling:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// To force mobile</span>
+<span class="nx">vs</span><span class="p">.</span><span class="nx">setMobile</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+
+<span class="c1">// To force desktop</span>
+<span class="nx">vs</span><span class="p">.</span><span class="nx">setMobile</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -171,10 +170,10 @@ of the product page, except the integration snippet and the integration script.<
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="order-confirmation.html" class="btn btn-neutral float-right" title="Order Confirmation Integration"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="events-and-callbacks.html" class="btn btn-neutral float-right" title="Events and Callbacks"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../integration-guide.html" class="btn btn-neutral" title="Integration Guide"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="integration.html" class="btn btn-neutral" title="Product Page Integration"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -232,6 +231,7 @@ of the product page, except the integration snippet and the integration script.<
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
       <script type="text/javascript" src="../_static/js/virtusize.js"></script>
       <script type="text/javascript" src="../_static/js/theme.js"></script>
 
