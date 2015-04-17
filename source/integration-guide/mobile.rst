@@ -32,6 +32,7 @@ To add a user id you simply call this in your integration code:
 ::
 
     // Add the users id. Same as during order confirmation.
+    // User ID as string, set to null if unknown.
     vs.setUserId("UID_1234");
 
 
