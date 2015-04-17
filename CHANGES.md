@@ -12,6 +12,8 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+- Feature: Upgraded snippet to v3.2.0. (hs)
+- Feature: Added mobile integration section. (hs)
 
 ### 1.4.0
 
