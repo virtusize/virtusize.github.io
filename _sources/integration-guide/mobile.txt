@@ -18,8 +18,9 @@ Best practice
 -------------
 
 To achieve the best experience for your customers across devices, it is
-recommended that you provide Virtusize with the user id during integration.
-This must be the same user id as you used in the order confirmation.
+recommended that you provide Virtusize with the user id during the product page
+integration for both mobile and desktop. This must be the same user id as you
+used in the order confirmation.
 
 We use this to identify the customers previous purchases and add them to his
 personal purchase history. This allows him to compare two garments with one
@@ -41,8 +42,8 @@ Automatic device detection
 
 There is no need to configure anything for this to work on your end. However,
 in case you are using a dedicated mobile website and have not yet integrated
-with Virtusize, you need to do that. This works exactly the same as on your
-desktop website.
+with Virtusize, you need to do that for both the order confirmation page and
+the product page. This works exactly the same as on your desktop website.
 
 Make sure you create and place a button for opening the Virtusize widget on the
 mobile website and integrate by setting the same variables as you would on

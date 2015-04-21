@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
+  
+
   
 
   
@@ -45,9 +47,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../index.html" class="fa fa-home"> Virtusize Developer Docs</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+        
+          <a href="../index.html" class="fa fa-home"> Virtusize Developer Docs</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -57,8 +62,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
+          
+          
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quick-start/index.html">Quick Start</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../quick-start/index.html#integrate-on-your-order-confirmation-page">1. Integrate on your order confirmation page</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quick-start/index.html#provide-your-product-measurements">2. Provide your product measurements</a></li>
@@ -79,6 +85,7 @@
 </li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -111,14 +118,14 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="product-page-integration">
 <span id="label-integration-v3"></span><h1>Product Page Integration<a class="headerlink" href="#product-page-integration" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="integration-snippet">
 <span id="label-integration-snippet"></span><h2>Integration Snippet<a class="headerlink" href="#integration-snippet" title="Permalink to this headline">¶</a></h2>
 <p>Integrating the Virtusize Widget requires embedding an integration snippet on
-the product page just before the closing <tt class="docutils literal"><span class="pre">&lt;/body&gt;</span></tt>. The code is very similar
+the product page just before the closing <code class="docutils literal"><span class="pre">&lt;/body&gt;</span></code>. The code is very similar
 to Google Analytics or Facebook Connect. The most simple way is shown below.</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="c">&lt;!-- Virtusize Integration --&gt;</span>
 <span class="nt">&lt;script&gt;</span>
@@ -148,11 +155,11 @@ a productImageUrl to use. The values within quotes should be your actual
 API key, the actual product id, a CSS selector for the button you want to
 use to open the Virtusize Widget and the URL to the product image.</p>
 </div>
-<p>You might have noticed the example callback within the <tt class="docutils literal"><span class="pre">done</span></tt> function. For
+<p>You might have noticed the example callback within the <code class="docutils literal"><span class="pre">done</span></code> function. For
 more information about this topic click here:
-<a class="reference internal" href="events-and-callbacks.html#label-events-and-callbacks-v3"><em>Events and Callbacks</em></a></p>
+<a class="reference internal" href="events-and-callbacks.html#label-events-and-callbacks-v3"><span>Events and Callbacks</span></a></p>
 <p>For more information about how to provide product images see:
-<a class="reference internal" href="#label-providing-product-images"><em>Providing Product Images</em></a></p>
+<a class="reference internal" href="#label-providing-product-images"><span>Providing Product Images</span></a></p>
 </div>
 <div class="section" id="providing-product-images">
 <span id="label-providing-product-images"></span><h2>Providing Product Images<a class="headerlink" href="#providing-product-images" title="Permalink to this headline">¶</a></h2>
@@ -160,7 +167,7 @@ more information about this topic click here:
 looking at as well as images of the items they have previously purchased.</p>
 <p>The default image that is being used is the one provided in the <a class="reference external" href="http://ogp.me">Open Graph
 data</a> of the product page. This is convenient to start out,
-since you don&#8217;t have to include an image in the <tt class="docutils literal"><span class="pre">addWidget</span></tt> call if you
+since you don&#8217;t have to include an image in the <code class="docutils literal"><span class="pre">addWidget</span></code> call if you
 already have it in the OGP metatag.</p>
 <p>But for added flexibility or advanced use cases it is possible to overwrite
 this image with one actively provided to Virtusize like this</p>
@@ -177,7 +184,7 @@ or is of a better quality.</p>
 through our Content Delivery Network.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The ideal image dimensions are <tt class="docutils literal"><span class="pre">width:</span> <span class="pre">360px;</span> <span class="pre">height:</span> <span class="pre">500px</span></tt> with
+<p class="last">The ideal image dimensions are <code class="docutils literal"><span class="pre">width:</span> <span class="pre">360px;</span> <span class="pre">height:</span> <span class="pre">500px</span></code> with
 a safe area around the left and right edges to prevent cropping of the
 actual content in the Virtusize Widget.</p>
 </div>
@@ -216,15 +223,15 @@ to all buttons:</p>
 automatically appear when there is a valid product in the Virtusize database.
 This way you don&#8217;t have to worry about a product and its measurements being
 available and valid or not.</p>
-<p>You can either set the buttons style to <tt class="docutils literal"><span class="pre">visibility:hidden</span></tt> or to
-<tt class="docutils literal"><span class="pre">display:none</span></tt> or both. That gives you the flexibility you need, depending on
+<p>You can either set the buttons style to <code class="docutils literal"><span class="pre">visibility:hidden</span></code> or to
+<code class="docutils literal"><span class="pre">display:none</span></code> or both. That gives you the flexibility you need, depending on
 your layout.</p>
 <p>If you don&#8217;t set the style of the button to one of the above values, it will be
 hidden by the Virtusize Integration, but some flickering may occur.</p>
 <p>For the standard integration, the measurements are provided to Virtusize via
-the Virtusize admin interface (see <a class="reference internal" href="measurements.html#label-providing-measurements"><em>Providing Measurements</em></a>), and
+the Virtusize admin interface (see <a class="reference internal" href="measurements.html#label-providing-measurements"><span>Providing Measurements</span></a>), and
 the integration snippet only needs the unique product ID to identify what
-measurements to use.  That is what line 6 does. The value <tt class="docutils literal"><span class="pre">PRODUCT_ID</span></tt> should
+measurements to use.  That is what line 6 does. The value <code class="docutils literal"><span class="pre">PRODUCT_ID</span></code> should
 be the actual identifier of the product.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -242,7 +249,7 @@ our admin or via the measurements feed).</p>
 This is needed for &#8220;Buy-this-outfit&#8221; kind of pages, for example.</p>
 <p>The integration is the same as the one for single product pages. All you have
 to do is supply the product ids and corresponding button selectors in
-additional <tt class="docutils literal"><span class="pre">addWidget</span></tt> calls like this:</p>
+additional <code class="docutils literal"><span class="pre">addWidget</span></code> calls like this:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID_1&quot;</span><span class="p">,</span> <span class="s2">&quot;#virtusize-button-1&quot;</span><span class="p">);</span>
 <span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID_2&quot;</span><span class="p">,</span> <span class="s2">&quot;#virtusize-button-2&quot;</span><span class="p">);</span>
 </pre></div>
@@ -251,7 +258,7 @@ additional <tt class="docutils literal"><span class="pre">addWidget</span></tt> 
 <p class="first admonition-title">Note</p>
 <p class="last">You can only integrate one product with the same id per page. If you want
 multiple buttons to open the same widget, see:
-<a class="reference internal" href="#label-multiple-buttons"><em>Multiple Buttons</em></a> for how to do this.</p>
+<a class="reference internal" href="#label-multiple-buttons"><span>Multiple Buttons</span></a> for how to do this.</p>
 </div>
 </div>
 <div class="section" id="troubleshooting">
@@ -259,7 +266,7 @@ multiple buttons to open the same widget, see:
 <div class="section" id="verifying-integration">
 <h3>Verifying Integration<a class="headerlink" href="#verifying-integration" title="Permalink to this headline">¶</a></h3>
 <p>To check if the integration is successful or not, navigate your browser
-to a product page. Append the string <tt class="docutils literal"><span class="pre">#hasVsWidget</span></tt> to the url in the
+to a product page. Append the string <code class="docutils literal"><span class="pre">#hasVsWidget</span></code> to the url in the
 address bar.</p>
 <p>For example:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">http</span><span class="o">:</span><span class="c1">//www.example.com/products/28657</span>
@@ -288,7 +295,7 @@ a valid product.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mobile.html" class="btn btn-neutral float-right" title="Mobile integration"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mobile.html" class="btn btn-neutral float-right" title="Mobile integration">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="measurements.html" class="btn btn-neutral" title="Providing Measurements"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -304,7 +311,8 @@ a valid product.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>

@@ -14,7 +14,7 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -25,6 +25,8 @@
   
   
     <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
+  
+
   
 
   
@@ -45,9 +47,12 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
-        <a href="../index.html" class="fa fa-home"> Virtusize Developer Docs</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+        
+          <a href="../index.html" class="fa fa-home"> Virtusize Developer Docs</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -57,8 +62,9 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        
-            <ul class="current">
+          
+          
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../quick-start/index.html">Quick Start</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../quick-start/index.html#integrate-on-your-order-confirmation-page">1. Integrate on your order confirmation page</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quick-start/index.html#provide-your-product-measurements">2. Provide your product measurements</a></li>
@@ -79,6 +85,7 @@
 </li>
 </ul>
 
+          
         
       </div>
       &nbsp;
@@ -111,14 +118,14 @@
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document">
             
   <div class="section" id="advanced-configuration-javascript-api">
 <span id="label-advanced-configuration"></span><h1>Advanced Configuration - JavaScript API<a class="headerlink" href="#advanced-configuration-javascript-api" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="renaming-the-global-variable">
 <h2>Renaming the Global Variable<a class="headerlink" href="#renaming-the-global-variable" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>You can choose yourself under which global variable you want Virtusize to be
-available on your page. The default here is <tt class="docutils literal"><span class="pre">vs</span></tt>. If this is already used on
+available on your page. The default here is <code class="docutils literal"><span class="pre">vs</span></code>. If this is already used on
 your site, then you can provide a different variable name as the last parameter
 to the main function.</p>
 <p>The following is an example:</p>
@@ -225,10 +232,10 @@ is not supported, the call is ignored.</p>
 <dt>setWidgetOverlayColor(rgba, ieColor)</dt>
 <dd><p class="first"><strong>rgba</strong> - String, specifying the rgba color of the overlay background that
 is displayed when the Virtusize Widget is opened. Defaults to
-<tt class="docutils literal"><span class="pre">rbga(0,0,0,0.5)</span></tt></p>
+<code class="docutils literal"><span class="pre">rbga(0,0,0,0.5)</span></code></p>
 <p><strong>ieColor</strong> - String, specifying the Internet Explorer color of the overlay
 background that is displayed when the Virtusize Widget is opened. Defaults
-to <tt class="docutils literal"><span class="pre">50000000</span></tt></p>
+to <code class="docutils literal"><span class="pre">50000000</span></code></p>
 <p><strong>Example:</strong></p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">setWidgetOverlayColor</span><span class="p">(</span><span class="s2">&quot;rgba(255,255,0,0.5)&quot;</span><span class="p">,</span> <span class="s2">&quot;50FFFF00&quot;</span><span class="p">);</span>
 </pre></div>
@@ -255,14 +262,14 @@ where you depend on the fact that the integration has run in this function.</dd>
 </div>
 <div class="section" id="widget-settings">
 <h3>Widget settings<a class="headerlink" href="#widget-settings" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>The starting point for adding a Virtusize Widget is the <tt class="docutils literal"><span class="pre">addWidget</span></tt> method of
+<p>The starting point for adding a Virtusize Widget is the <code class="docutils literal"><span class="pre">addWidget</span></code> method of
 the snippet. The minimum requirement is to supply a product id and a button
 selector:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>For more complex situations you can pass an additional options object to the
-<tt class="docutils literal"><span class="pre">addWidget</span></tt> function. Here is an example:</p>
+<code class="docutils literal"><span class="pre">addWidget</span></code> function. Here is an example:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">productVersion</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
     <span class="nx">done</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
@@ -275,12 +282,12 @@ selector:</p>
 </div>
 <p>The productVersion from above is an example of an additional parameter for
 a specific widget. It is mandatory for feed integrations. See:
-<a class="reference internal" href="measurements.html#label-feed"><em>Feed</em></a></p>
-<p>The other important thing to note is the <tt class="docutils literal"><span class="pre">done</span></tt> parameter. It takes
+<a class="reference internal" href="measurements.html#label-feed"><span>Feed</span></a></p>
+<p>The other important thing to note is the <code class="docutils literal"><span class="pre">done</span></code> parameter. It takes
 a function, that is called, after the product check for this widget has been
-performed. It receives <tt class="docutils literal"><span class="pre">error</span></tt> as a parameter that is either <tt class="docutils literal"><span class="pre">false</span></tt> or an
+performed. It receives <code class="docutils literal"><span class="pre">error</span></code> as a parameter that is either <code class="docutils literal"><span class="pre">false</span></code> or an
 error message. Inside the function you have access to the Virtusize Widget by
-<tt class="docutils literal"><span class="pre">this</span></tt>.</p>
+<code class="docutils literal"><span class="pre">this</span></code>.</p>
 <p>It is also possible to only pass one JavaScript object to the function like
 this:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
@@ -293,7 +300,7 @@ this:</p>
 </pre></div>
 </div>
 <p>The following are functions you can call on the widget object, for example
-inside the <tt class="docutils literal"><span class="pre">done</span></tt> callback of <tt class="docutils literal"><span class="pre">addWidget</span></tt> like in the example above or at
+inside the <code class="docutils literal"><span class="pre">done</span></code> callback of <code class="docutils literal"><span class="pre">addWidget</span></code> like in the example above or at
 a later stage when you get the loaded widget from the global Virtusize Snippet
 object.</p>
 <dl class="docutils">
@@ -324,13 +331,13 @@ this for regional size names.</p>
 </dd>
 <dt>on(eventName, callback)</dt>
 <dd><p class="first"><strong>eventName</strong> - String, valid event to bind a callback to. See
-<a class="reference internal" href="events-and-callbacks.html#label-events-and-callbacks-v3"><em>Events and Callbacks</em></a> for a list of valid event names.</p>
+<a class="reference internal" href="events-and-callbacks.html#label-events-and-callbacks-v3"><span>Events and Callbacks</span></a> for a list of valid event names.</p>
 <p><strong>callback</strong> - Function callable, function to call when an event occurs.
 Allows programmatic subscription to widget events such as: &#8220;user-opened-widget&#8221;,
-&#8220;user-closed-widget&#8221;. Inside the callback function <tt class="docutils literal"><span class="pre">this</span></tt> will be the
+&#8220;user-closed-widget&#8221;. Inside the callback function <code class="docutils literal"><span class="pre">this</span></code> will be the
 instance of the VirtusizeWidget from which the event was triggered. On some
 events an additional data object is passed as a parameter to the function,
-see <a class="reference internal" href="events-and-callbacks.html#label-events-and-callbacks-v3"><em>Events and Callbacks</em></a></p>
+see <a class="reference internal" href="events-and-callbacks.html#label-events-and-callbacks-v3"><span>Events and Callbacks</span></a></p>
 <p><strong>Example:</strong></p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;user-opened-widget&quot;</span><span class="p">,</span>
     <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -355,9 +362,9 @@ name.</p>
 a recent item from the users purchase history.</p>
 <p>The tooltip can be set to a light or a dark style, so you can choose the one
 that matches your website&#8217;s design best.</p>
-<p>To enable the purchase history tooltip add the <tt class="docutils literal"><span class="pre">tooltipEnabled</span></tt> option to the
-<tt class="docutils literal"><span class="pre">addWidget</span></tt> call. Changing the style to <tt class="docutils literal"><span class="pre">light</span></tt> can be achieved with the
-<tt class="docutils literal"><span class="pre">tooltipStyle</span></tt> option, but this is optional and defaulting to dark.</p>
+<p>To enable the purchase history tooltip add the <code class="docutils literal"><span class="pre">tooltipEnabled</span></code> option to the
+<code class="docutils literal"><span class="pre">addWidget</span></code> call. Changing the style to <code class="docutils literal"><span class="pre">light</span></code> can be achieved with the
+<code class="docutils literal"><span class="pre">tooltipStyle</span></code> option, but this is optional and defaulting to dark.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
     <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
@@ -378,7 +385,7 @@ that matches your website&#8217;s design best.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="product-types.html" class="btn btn-neutral float-right" title="Product Types"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="product-types.html" class="btn btn-neutral float-right" title="Product Types">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="events-and-callbacks.html" class="btn btn-neutral" title="Events and Callbacks"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -394,7 +401,8 @@ that matches your website&#8217;s design best.</p>
     </p>
   </div>
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
 </footer>
         </div>
       </div>
