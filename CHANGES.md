@@ -12,6 +12,12 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+### 1.5.1
+
+- Minor: Applied change requests from JD regarding tho order confirmation page and user id on both mobile and desktop. (hs)
+
+### 1.5.0
+
 - Feature: Upgraded snippet to v3.2.0. (hs)
 - Feature: Added mobile integration section. (hs)
 

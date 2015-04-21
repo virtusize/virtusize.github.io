@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 setup(
 
     name='vs-docs',
-    version='1.4.0',
+    version='1.5.1',
     packages=find_packages(),
 
     install_requires=[
