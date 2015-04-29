@@ -327,3 +327,68 @@ To enable the purchase history tooltip add the ``tooltipEnabled`` option to the
         tooltipEnabled: true,
         tooltipStyle: "light"
     });
+
+
+Add to cart
+^^^^^^^^^^^
+You can enable an add to cart button directly inside the Virtusize widget.
+
+While it is not required, we recommend that you provide Virtusize with a list
+of **available sizes** when you enable add to cart. If you do so, the add to
+cart button will be disabled and a little note will inform your customer for
+items that are out of stock.
+
+.. note::
+
+    Virtusize does not handle color or variant selection at the moment.
+    Therefore it is recommended that you integrate add to cart functionality
+    only, if you have dedicated product pages for every variant. See
+    :ref:`label-variant-selection` for more information.
+
+
+To activate the add to cart button, you have to register a callback for the
+event that is triggered when a user clicks the add to cart button. Like with
+all callbacks you can register for the event in two ways:
+
+Directly in the ``addWidget`` call::
+
+    vs.addWidget({
+        productId: "PRODUCT_ID",                        // Your product id you're using within Virtusize
+        buttonSelector: "BUTTON_SELECTOR",              // CSS selector for the virtusize button
+        availableSizes: ["small", "medium", "large"]    // Change this to the currently available sizes
+        done: function(error) {
+            this.on("user-added-item-to-cart", function(data) {
+                // Handle the event by added the appropiate item into the users
+                // shopping cart.
+                //
+                // The additional data contains the productId and the size:
+                // data == {productId: "vs_shoe", size: "42"}
+            });
+        }
+    });
+
+Or on the global Virtusize object::
+
+    vs.on("PRODUCT_ID", "user-added-item-to-cart", function(data) {
+        // Handle the event by added the appropiate item into the users
+        // shopping cart.
+        //
+        // The additional data contains the productId and the size:
+        // data == {productId: "vs_shoe", size: "42"}
+    });
+
+
+.. _label-variant-selection:
+
+Variant selection for add to cart
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Having multiple variants of a product on a single product page complicates the
+integration of the add to cart functionality in two ways:
+
+#. The callback you registered could get called before your customer selected
+   the variant he is looking to buy.
+#. The selection of a variant could have an impact on the available sizes that
+   you have in stock.
+
+At the moment there is no simple solution for this problem. Talk to your sales
+contact to get more information about this topic.
