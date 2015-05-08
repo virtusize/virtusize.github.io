@@ -358,7 +358,7 @@ Directly in the ``addWidget`` call::
         availableSizes: ["small", "medium", "large"]    // Change this to the currently available sizes
         done: function(error) {
             this.on("user-added-item-to-cart", function(data) {
-                // Handle the event by added the appropiate item into the users
+                // Handle the event by added the appropriate item into the users
                 // shopping cart.
                 //
                 // The additional data contains the productId and the size:
@@ -370,7 +370,7 @@ Directly in the ``addWidget`` call::
 Or on the global Virtusize object::
 
     vs.on("PRODUCT_ID", "user-added-item-to-cart", function(data) {
-        // Handle the event by added the appropiate item into the users
+        // Handle the event by added the appropriate item into the users
         // shopping cart.
         //
         // The additional data contains the productId and the size:
