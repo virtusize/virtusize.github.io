@@ -191,6 +191,9 @@ ready(callback)
     where you depend on the fact that the integration has run in this function.
 
 
+
+.. _label-widget-settings:
+
 Widget settings
 ^^^^^^^^^^^^^^^
 
@@ -334,15 +337,16 @@ Add to cart
 You can enable an add to cart button directly inside the Virtusize widget.
 
 While it is not required, we recommend that you provide Virtusize with a list
-of **available sizes** when you enable add to cart. If you do so, the add to
-cart button will be disabled and a little note will inform your customer for
-items that are out of stock.
+of **available sizes**  when you enable add to cart (see
+:ref:`label-widget-settings` for how to set available sizes). If you do so, for
+items that are out of stock, the add to cart button will be disabled and a note
+will inform your customer that the item is not available.
 
 .. note::
 
     Virtusize does not handle color or variant selection at the moment.
     Therefore it is recommended that you integrate add to cart functionality
-    only, if you have dedicated product pages for every variant. See
+    only if you have dedicated product pages for every variant. See
     :ref:`label-variant-selection` for more information.
 
 
