@@ -12,6 +12,8 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+### 1.6.0
+
 - Feature: Added add to cart documentation. (hs)
 
 ### 1.5.1
