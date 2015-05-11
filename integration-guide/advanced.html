@@ -261,7 +261,7 @@ where you depend on the fact that the integration has run in this function.</dd>
 </dl>
 </div>
 <div class="section" id="widget-settings">
-<h3>Widget settings<a class="headerlink" href="#widget-settings" title="Permalink to this headline">¶</a></h3>
+<span id="label-widget-settings"></span><h3>Widget settings<a class="headerlink" href="#widget-settings" title="Permalink to this headline">¶</a></h3>
 <p>The starting point for adding a Virtusize Widget is the <code class="docutils literal"><span class="pre">addWidget</span></code> method of
 the snippet. The minimum requirement is to supply a product id and a button
 selector:</p>
@@ -375,6 +375,65 @@ that matches your website&#8217;s design best.</p>
 <span class="p">});</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="add-to-cart">
+<h3>Add to cart<a class="headerlink" href="#add-to-cart" title="Permalink to this headline">¶</a></h3>
+<p>You can enable an add to cart button directly inside the Virtusize widget.</p>
+<p>While it is not required, we recommend that you provide Virtusize with a list
+of <strong>available sizes</strong>  when you enable add to cart (see
+<a class="reference internal" href="#label-widget-settings"><span>Widget settings</span></a> for how to set available sizes). If you do so, for
+items that are out of stock, the add to cart button will be disabled and a note
+will inform your customer that the item is not available.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Virtusize does not handle color or variant selection at the moment.
+Therefore it is recommended that you integrate add to cart functionality
+only if you have dedicated product pages for every variant. See
+<a class="reference internal" href="#label-variant-selection"><span>Variant selection for add to cart</span></a> for more information.</p>
+</div>
+<p>To activate the add to cart button, you have to register a callback for the
+event that is triggered when a user clicks the add to cart button. Like with
+all callbacks you can register for the event in two ways:</p>
+<p>Directly in the <code class="docutils literal"><span class="pre">addWidget</span></code> call:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
+    <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>                        <span class="c1">// Your product id you&#39;re using within Virtusize</span>
+    <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>              <span class="c1">// CSS selector for the virtusize button</span>
+    <span class="nx">availableSizes</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;small&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;large&quot;</span><span class="p">]</span>    <span class="c1">// Change this to the currently available sizes</span>
+    <span class="nx">done</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;user-added-item-to-cart&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Handle the event by added the appropriate item into the users</span>
+            <span class="c1">// shopping cart.</span>
+            <span class="c1">//</span>
+            <span class="c1">// The additional data contains the productId and the size:</span>
+            <span class="c1">// data == {productId: &quot;vs_shoe&quot;, size: &quot;42&quot;}</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Or on the global Virtusize object:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">vs</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;user-added-item-to-cart&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Handle the event by added the appropriate item into the users</span>
+    <span class="c1">// shopping cart.</span>
+    <span class="c1">//</span>
+    <span class="c1">// The additional data contains the productId and the size:</span>
+    <span class="c1">// data == {productId: &quot;vs_shoe&quot;, size: &quot;42&quot;}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variant-selection-for-add-to-cart">
+<span id="label-variant-selection"></span><h3>Variant selection for add to cart<a class="headerlink" href="#variant-selection-for-add-to-cart" title="Permalink to this headline">¶</a></h3>
+<p>Having multiple variants of a product on a single product page complicates the
+integration of the add to cart functionality in two ways:</p>
+<ol class="arabic simple">
+<li>The callback you registered could get called before your customer selected
+the variant he is looking to buy.</li>
+<li>The selection of a variant could have an impact on the available sizes that
+you have in stock.</li>
+</ol>
+<p>At the moment there is no simple solution for this problem. Talk to your sales
+contact to get more information about this topic.</p>
 </div>
 </div>
 </div>
