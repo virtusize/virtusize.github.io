@@ -57,8 +57,8 @@ user-added-product
 
 user-selected-size
     Triggered when a size was selected in the widget. Note: the callback
-    function receives additional data containing the selected size ID and
-    a boolean indicating if the size was auto-selected or not. ``{sizeId: "xl",
+    function receives additional data containing the selected size and
+    a boolean indicating if the size was auto-selected or not. ``{size: "xl",
     auto: false}``
 
 user-deleted-product
