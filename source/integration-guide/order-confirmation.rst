@@ -5,8 +5,8 @@ Order Confirmation Integration
 
 The Virtusize order confirmation integration utilises the same small JavaScript 
 that will be used on your product pages. You will need to provide Virtusize with certain
-information that will be used for your customers to find the right fit on your website 
-when using our widget.
+information that will be used for your customers to find the right size and fit on your
+website when using our widget.
 
 This will enable Virtusize to show your consumers the items they have recently
 purchased as part of their ‘Purchase History’. They can then select one or more of
@@ -27,7 +27,7 @@ To get started you have to include the Virtusize integration script into your
 order confirmation page just before the closing ``</body>``. This is the same
 script that you use on your product pages.
 
-You provide certain information about the order and the line items of the
+You need to provide certain information about the order and the line items of the
 order. Some attributes are required for the purchase history to work properly,
 others are optional.
 
@@ -82,8 +82,8 @@ orderId
         "ORDER_ID_4321"
 
 userId
-    *String* - An anonymous user id uniquely identifying a customer of the
-    retailer. Could be the database id, either plaintext or hashed, or the
+    *String* - An anonymous user id uniquely identifying a customer.
+    Could be the database id, either plaintext or hashed, or the
     hashed email address of the user.
 
     Examples::
@@ -142,8 +142,8 @@ size
 
 imageUrl
     *String* - The URL to a variant specific image of this line item of the
-    color and style the item was ordered by the customer. If possible provide
-    a high quality image. This will be used to help the customer identify his
+    color and style the item was ordered in by the customer. If possible, provide
+    a high quality image. This will be used to help the customer identify their
     previous purchases at a later stage in the Virtusize widget. In case there
     is no variant specific image available, please provide the default product
     image.
@@ -196,7 +196,7 @@ Optional attributes
 
 sizeAlias
     *String* - A size alias that will be used to display the size purchased to the
-    customer when they open the widget the next time. They will see this item from
+    customer the next time they open the widget. They will see this item from
     their personal purchase history with the sizeAlias instead of the actual size, if
     this is set. This alias should be set if you use size-ids instead of
     human readable sizes as identifiers.
@@ -206,7 +206,7 @@ sizeAlias
         // When the size is not understandable by customers, like:
         size: "2148"
         // Then the sizeAlias can be use to specify what the customer will see for
-        // this product in his purchase history the next time they open the widget:
+        // this product in their purchase history the next time they open the widget:
         sizeAlias: "Large"
 
 url

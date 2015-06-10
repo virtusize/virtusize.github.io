@@ -27,9 +27,9 @@ to Google Analytics or Facebook Connect. The most simple way is shown below.
         productImageUrl: "PRODUCT_IMAGE_URL",
         done: function(error) {
             this.on("user-opened-panel-compare", function() {
-                // This callback will get called, when a User
-                // actually compares an item. Use this to detect
-                // real Virtusize uses.
+                // This callback is called when a User
+                // compares an item.
+                // Use this to detect actual Virtusize usage.
             });
         }
     });
@@ -102,7 +102,7 @@ for the same product.
 Single Button
 ^^^^^^^^^^^^^
 
-For using a button, create an element like this on your page. You can use any
+When implementing a button, create an element like this on your page. You can use any
 DOM-id you like. A CSS class or anything selectable will work as well:
 
 ::
