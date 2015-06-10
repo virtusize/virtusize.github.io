@@ -12,6 +12,7 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+- Feature: Added section about responsive buttons. (ab)
 - Refactor: Moved dependencies and added install instructions. (ab)
 - Feature: Updated sitemap.xml to be correctly mapped. (ab)
 
