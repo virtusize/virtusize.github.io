@@ -12,6 +12,8 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+- Feature: Updated sitemap.xml to be correctly mapped. (ab)
+
 ### 1.6.0
 
 - Feature: Added add to cart documentation. (hs)
