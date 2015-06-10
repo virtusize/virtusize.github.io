@@ -1,6 +1,13 @@
 Virtusize developer docs
 ========================
 
+## Install
+
+Before anything else, start with installing the necessary items:
+
+    pip install -r requirements.txt
+
+
 ## Release
 
 - Bump the version in setup.py
