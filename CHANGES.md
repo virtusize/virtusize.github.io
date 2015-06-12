@@ -12,6 +12,9 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+
+### 1.7.0
+
 - Feature: Misc. copy changes. (ab)
 - Feature: Added section about responsive buttons. (ab)
 - Refactor: Moved dependencies and added install instructions. (ab)
