@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Providing Measurements &mdash; Virtusize Developer Docs 1.1 ドキュメント</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -36,7 +36,7 @@
         <link rel="prev" title="Order Confirmation Integration" href="order-confirmation.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -48,8 +48,14 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
         
-          <a href="../index.html" class="fa fa-home"> Virtusize Developer Docs</a>
+
         
+          <a href="../index.html" class="icon icon-home"> Virtusize Developer Docs
+        
+
+        
+        </a>
+
         
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -58,6 +64,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
+
+        
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
@@ -73,14 +81,91 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="overview.html">Virtusize integration overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Providing Measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integration.html">Product Page Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mobile.html">Mobile integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="events-and-callbacks.html">Events and Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced Configuration - JavaScript API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Virtusize integration overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#dependencies">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#integration-script-hosting">Integration script hosting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#asynchronous-loading">Asynchronous loading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#integration-flow">Integration flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#note-on-product-page-integration">Note on product page integration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="order-confirmation.html#getting-started">Getting started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order-confirmation.html#order">Order</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="order-confirmation.html#required-attributes">Required attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="order-confirmation.html#optional-attributes">Optional attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="order-confirmation.html#line-items">Line Items</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="order-confirmation.html#id1">Required attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="order-confirmation.html#id2">Optional attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Providing Measurements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#web-interface">Web Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bulk-upload">Bulk Upload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#feed">Feed</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-it-works">How it works</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#product-feed-integration-example">Product feed integration example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#json-format">JSON format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#measurements-object">Measurements object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#feed-validation">Feed validation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="integration.html">Product Page Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#integration-snippet">Integration Snippet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#providing-product-images">Providing Product Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#using-a-button">Using a Button</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#single-button">Single Button</a></li>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#multiple-buttons">Multiple Buttons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#responsive-buttons">Responsive Buttons</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#multiple-product-integration">Multiple Product Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#verifying-integration">Verifying Integration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#button-not-showing">Button not showing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html">Mobile integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mobile.html#best-practice">Best practice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mobile.html#automatic-device-detection">Automatic device detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mobile.html#manual-device-detection">Manual device detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="events-and-callbacks.html">Events and Callbacks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="events-and-callbacks.html#registering-callbacks">Registering callbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced Configuration - JavaScript API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advanced.html#renaming-the-global-variable">Renaming the Global Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced.html#dynamic-integration-ajax">Dynamic integration (AJAX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced.html#snippet-api">Snippet API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#global-settings">Global settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#widget-settings">Widget settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#purchase-history-preview">Purchase History Preview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#add-to-cart">Add to cart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#variant-selection-for-add-to-cart">Variant selection for add to cart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="product-types.html#about">About</a></li>
+<li class="toctree-l3"><a class="reference internal" href="product-types.html#product-types-api">Product Types API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="product-types.html#product-type-details">Product type details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="product-types.html#product-type-attributes">Product type attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="product-types.html#list-of-product-types">List of product types</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -112,7 +197,9 @@
     <li>Providing Measurements</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/integration-guide/measurements.txt" rel="nofollow"> View page source</a>
+          
+            <a href="../_sources/integration-guide/measurements.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
   </ul>
@@ -342,10 +429,10 @@ each product type.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="integration.html" class="btn btn-neutral float-right" title="Product Page Integration">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="integration.html" class="btn btn-neutral float-right" title="Product Page Integration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="order-confirmation.html" class="btn btn-neutral" title="Order Confirmation Integration"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="order-confirmation.html" class="btn btn-neutral" title="Order Confirmation Integration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -357,10 +444,10 @@ each product type.</p>
         &copy; Copyright 2015, Virtusize.
     </p>
   </div>
-
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+
 </footer>
+
         </div>
       </div>
 

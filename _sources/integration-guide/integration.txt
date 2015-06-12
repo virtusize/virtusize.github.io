@@ -27,9 +27,9 @@ to Google Analytics or Facebook Connect. The most simple way is shown below.
         productImageUrl: "PRODUCT_IMAGE_URL",
         done: function(error) {
             this.on("user-opened-panel-compare", function() {
-                // This callback will get called, when a User
-                // actually compares an item. Use this to detect
-                // real Virtusize uses.
+                // This callback is called when a User
+                // compares an item.
+                // Use this to detect actual Virtusize usage.
             });
         }
     });
@@ -102,7 +102,7 @@ for the same product.
 Single Button
 ^^^^^^^^^^^^^
 
-For using a button, create an element like this on your page. You can use any
+When implementing a button, create an element like this on your page. You can use any
 DOM-id you like. A CSS class or anything selectable will work as well:
 
 ::
@@ -169,6 +169,30 @@ be the actual identifier of the product.
 No button will be visible on the product page until the integration snippet can
 find the measurements for the product (until they are provided to Virtusize via
 our admin or via the measurements feed).
+
+.. _label-responsive-buttons:
+
+Responsive Buttons
+^^^^^^^^^^^^^^^^^^
+
+If you want to add a responsive button to your page, sample code can be found
+`here <http://codepen.io/wijkstrom/pen/EjVEBv>`_. This code enables the button
+to respond to 3 different screen resolutions: 
+
+* larger than 992 pixels in width (typically a desktop screen), 
+* between 992 and 769 pixels in width (typically a tablet screen), and 
+* below 768 pixels in width (typically a mobile screen). 
+
+In this example, the button responds to the screen resolution by resizing the
+button. The example makes the button smaller when the screen resolution is
+smaller, but you can also reverse it to have a larger button on a smaller screen
+resolution.
+
+In the largest version (which represents a desktop screen), the example uses a
+PNG symbol, while in the two smaller versions we use an SVG to look better on
+high-resolution screens, such as tablets and mobiles. If you'd like to use
+another size,  additional sizes of the Virtusize "V" logo are available
+`here <https://drive.google.com/folderview?id=0B4WX_xTVOfAqY2lLNTFzdElmUWc&usp=sharing>`_.
 
 
 Multiple Product Integration

@@ -23,7 +23,7 @@ sections of our developer documentation.
 
 Before you get started, make sure you have received your **API key** and
 **Admin account** credentials. `Contact our sales team
-<http://www.virtusize.com/contact>`__, if you have any questions.
+<sales@virtusize.com>`__ if you have any questions.
 
 The following three steps will enable Virtusize on your website:
 
@@ -131,7 +131,7 @@ it onto your order confirmation page just before the closing ``</body>`` tag::
 For production environments you can send your spec sheets directly to us. We
 will take care of inserting the correct measurements into our database. Feel
 free to get in touch with your sales contact or our `sales team
-<http://www.virtusize.com/contact>`__ for more details on this.
+<sales@virtusize.com>`__ for more details on this.
 
 For testing purposes, the easiest way to upload product measurements to
 Virtusize is through the Virtusize Admin, which is available on
@@ -148,7 +148,7 @@ an Excel file containing the product measurements is available as well.
 ==================================
 
 You need to provide some information to our JavaScript snippet on your product
-pages to configure the Virtusize widget to be able to load.
+pages to configure the Virtusize widget to load.
 
 For this step you will need to make the following information to be available:
 
@@ -179,9 +179,9 @@ it onto your product page just before the closing ``</body>`` tag::
         productImageUrl: "PRODUCT_IMAGE_URL",
         done: function(error) {
             this.on("user-opened-panel-compare", function() {
-                // This callback will get called, when a User
-                // actually compares an item. Use this to detect
-                // real Virtusize uses.
+                // This callback is called when a User
+                // compares an item.
+                // Use this to detect actual Virtusize usage.
             });
         }
     });
@@ -210,5 +210,5 @@ You can click the *Debug* tab to see if there are widgets or orders added to
 Virtusize on this page. There are also additional tabs for inspecting the
 details of these items.
 
-For any additional questions, please feel to reach out to our at client.support@virtusize.com
+For any additional questions, please feel to reach out to us at client.support@virtusize.com
 

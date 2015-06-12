@@ -170,7 +170,7 @@ setWidgetOverlayColor(rgba, ieColor)
 
 
 setUserId(userId)
-    **userId** - String, identifying the current user of the retailers online
+    **userId** - String, identifying the current user of the retailer's online
     store. It has to be a unique identifier that matches the one used on the
     order confirmation page. Setting the userId during integration enables
     Virtusize to show the personal purchase history to a user on a new device
@@ -310,7 +310,7 @@ Purchase History Preview
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Virtusize widget can be configured to show a tooltip for previewing
-a recent item from the users purchase history.
+a recent item from the user's purchase history.
 
 The tooltip can be set to a light or a dark style, so you can choose the one
 that matches your website's design best.

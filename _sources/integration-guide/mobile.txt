@@ -22,8 +22,8 @@ recommended that you provide Virtusize with the user id during the product page
 integration for both mobile and desktop. This must be the same user id as you
 used in the order confirmation.
 
-We use this to identify the customers previous purchases and add them to his
-personal purchase history. This allows him to compare two garments with one
+We use this to identify the customers previous purchases and add them to their
+personal purchase history. This allows them to compare two garments with one
 click and is especially useful on mobile devices.
 
 To add a user id you simply call this in your integration code:

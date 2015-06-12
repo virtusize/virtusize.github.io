@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Order Confirmation Integration &mdash; Virtusize Developer Docs 1.1 documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -36,7 +36,7 @@
         <link rel="prev" title="Virtusize integration overview" href="overview.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -48,8 +48,14 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
         
-          <a href="../index.html" class="fa fa-home"> Virtusize Developer Docs</a>
+
         
+          <a href="../index.html" class="icon icon-home"> Virtusize Developer Docs
+        
+
+        
+        </a>
+
         
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -58,6 +64,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
+
+        
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
@@ -73,14 +81,91 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="overview.html">Virtusize integration overview</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Order Confirmation Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="measurements.html">Providing Measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integration.html">Product Page Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mobile.html">Mobile integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="events-and-callbacks.html">Events and Callbacks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced Configuration - JavaScript API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Virtusize integration overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#dependencies">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#integration-script-hosting">Integration script hosting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#asynchronous-loading">Asynchronous loading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#integration-flow">Integration flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#note-on-product-page-integration">Note on product page integration</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Order Confirmation Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started">Getting started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#order">Order</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#required-attributes">Required attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optional-attributes">Optional attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#line-items">Line Items</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Required attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Optional attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="measurements.html">Providing Measurements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="measurements.html#web-interface">Web Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="measurements.html#bulk-upload">Bulk Upload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="measurements.html#feed">Feed</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="measurements.html#how-it-works">How it works</a></li>
+<li class="toctree-l4"><a class="reference internal" href="measurements.html#product-feed-integration-example">Product feed integration example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="measurements.html#json-format">JSON format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="measurements.html#measurements-object">Measurements object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="measurements.html#feed-validation">Feed validation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="integration.html">Product Page Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#integration-snippet">Integration Snippet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#providing-product-images">Providing Product Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#using-a-button">Using a Button</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#single-button">Single Button</a></li>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#multiple-buttons">Multiple Buttons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#responsive-buttons">Responsive Buttons</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#multiple-product-integration">Multiple Product Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#verifying-integration">Verifying Integration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#button-not-showing">Button not showing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html">Mobile integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mobile.html#best-practice">Best practice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mobile.html#automatic-device-detection">Automatic device detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mobile.html#manual-device-detection">Manual device detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="events-and-callbacks.html">Events and Callbacks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="events-and-callbacks.html#registering-callbacks">Registering callbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced Configuration - JavaScript API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advanced.html#renaming-the-global-variable">Renaming the Global Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced.html#dynamic-integration-ajax">Dynamic integration (AJAX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced.html#snippet-api">Snippet API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#global-settings">Global settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#widget-settings">Widget settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#purchase-history-preview">Purchase History Preview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#add-to-cart">Add to cart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#variant-selection-for-add-to-cart">Variant selection for add to cart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="product-types.html#about">About</a></li>
+<li class="toctree-l3"><a class="reference internal" href="product-types.html#product-types-api">Product Types API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="product-types.html#product-type-details">Product type details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="product-types.html#product-type-attributes">Product type attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="product-types.html#list-of-product-types">List of product types</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -112,7 +197,9 @@
     <li>Order Confirmation Integration</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/integration-guide/order-confirmation.txt" rel="nofollow"> View page source</a>
+          
+            <a href="../_sources/integration-guide/order-confirmation.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
   </ul>
@@ -124,8 +211,8 @@
 <h1>Order Confirmation Integration<a class="headerlink" href="#order-confirmation-integration" title="Permalink to this headline">¶</a></h1>
 <p>The Virtusize order confirmation integration utilises the same small JavaScript
 that will be used on your product pages. You will need to provide Virtusize with certain
-information that will be used for your customers to find the right fit on your website
-when using our widget.</p>
+information that will be used for your customers to find the right size and fit on your
+website when using our widget.</p>
 <p>This will enable Virtusize to show your consumers the items they have recently
 purchased as part of their ‘Purchase History’. They can then select one or more of
 these items in their purchase history wardrobe as a reference item to compare with the
@@ -142,7 +229,7 @@ previous purchases already in place.</p>
 <p>To get started you have to include the Virtusize integration script into your
 order confirmation page just before the closing <code class="docutils literal"><span class="pre">&lt;/body&gt;</span></code>. This is the same
 script that you use on your product pages.</p>
-<p>You provide certain information about the order and the line items of the
+<p>You need to provide certain information about the order and the line items of the
 order. Some attributes are required for the purchase history to work properly,
 others are optional.</p>
 <p>A complete example looks like the following:</p>
@@ -192,8 +279,8 @@ line items.</p>
 </div>
 </dd>
 <dt>userId</dt>
-<dd><p class="first"><em>String</em> - An anonymous user id uniquely identifying a customer of the
-retailer. Could be the database id, either plaintext or hashed, or the
+<dd><p class="first"><em>String</em> - An anonymous user id uniquely identifying a customer.
+Could be the database id, either plaintext or hashed, or the
 hashed email address of the user.</p>
 <p>Examples:</p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="c1">// Valid examples</span>
@@ -250,8 +337,8 @@ size identifiers used in the product database of Virtusize.</p>
 </dd>
 <dt>imageUrl</dt>
 <dd><p class="first"><em>String</em> - The URL to a variant specific image of this line item of the
-color and style the item was ordered by the customer. If possible provide
-a high quality image. This will be used to help the customer identify his
+color and style the item was ordered in by the customer. If possible, provide
+a high quality image. This will be used to help the customer identify their
 previous purchases at a later stage in the Virtusize widget. In case there
 is no variant specific image available, please provide the default product
 image.</p>
@@ -305,7 +392,7 @@ added for each variant.</p>
 <dl class="docutils">
 <dt>sizeAlias</dt>
 <dd><p class="first"><em>String</em> - A size alias that will be used to display the size purchased to the
-customer when they open the widget the next time. They will see this item from
+customer the next time they open the widget. They will see this item from
 their personal purchase history with the sizeAlias instead of the actual size, if
 this is set. This alias should be set if you use size-ids instead of
 human readable sizes as identifiers.</p>
@@ -313,7 +400,7 @@ human readable sizes as identifiers.</p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span class="c1">// When the size is not understandable by customers, like:</span>
 <span class="nx">size</span><span class="o">:</span> <span class="s2">&quot;2148&quot;</span>
 <span class="c1">// Then the sizeAlias can be use to specify what the customer will see for</span>
-<span class="c1">// this product in his purchase history the next time they open the widget:</span>
+<span class="c1">// this product in their purchase history the next time they open the widget:</span>
 <span class="nx">sizeAlias</span><span class="o">:</span> <span class="s2">&quot;Large&quot;</span>
 </pre></div>
 </div>
@@ -366,10 +453,10 @@ these values: &#8220;unisex&#8221;, &#8220;male&#8221;, &#8220;female&#8221;</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="measurements.html" class="btn btn-neutral float-right" title="Providing Measurements">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="measurements.html" class="btn btn-neutral float-right" title="Providing Measurements" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="overview.html" class="btn btn-neutral" title="Virtusize integration overview"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="overview.html" class="btn btn-neutral" title="Virtusize integration overview" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -381,10 +468,10 @@ these values: &#8220;unisex&#8221;, &#8220;male&#8221;, &#8220;female&#8221;</p>
         &copy; Copyright 2015, Virtusize.
     </p>
   </div>
-
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+
 </footer>
+
         </div>
       </div>
 
