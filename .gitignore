@@ -1,7 +1,8 @@
 *.egg-info
 .DS_Store
 build
-.idea/**
+.idea
+dist
 
 # Ignore Vim swap files.
 *~

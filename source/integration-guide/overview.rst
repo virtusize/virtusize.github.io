@@ -22,7 +22,7 @@ All script loading is done asynchronously, minimising the impact on the load
 time of the product page. The integration snippet is inspired by the
 asynchronous loading done by Google Analytics, FB Connect, Google+
 and others. In the unlikely event of Virtusize servers experiencing down time,
-the product page will not be impacted other than that the button won't show.
+the product page will not be impacted other than the Virtusize button not showing.
 
 We recommend including the integration snippet at the bottom of the page to
 ensure minimal impact on the page load speed.

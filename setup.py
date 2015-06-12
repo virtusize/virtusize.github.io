@@ -6,12 +6,5 @@ setup(
 
     name='vs-docs',
     version='1.6.0',
-    packages=find_packages(),
-
-    install_requires=[
-        'sphinx',
-        'sphinx_rtd_theme',
-        'sphinxcontrib.gist',
-        'sphinx-intl'
-    ]
+    packages=find_packages()
 )
