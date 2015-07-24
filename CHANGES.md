@@ -12,6 +12,7 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+- Feature: Updated callbacks to reflect mobile and desktop differences. (jd)
 
 ### 1.7.0
 
