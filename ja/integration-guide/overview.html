@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Virtusize integration overview &mdash; Virtusize Developer Docs 1.1 ドキュメント</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Virtusize Developer Docs 1.1 ドキュメント" href="../index.html"/>
+        <link rel="up" title="Integration Guide" href="../integration-guide.html"/>
+        <link rel="next" title="Order Confirmation Integration" href="order-confirmation.html"/>
+        <link rel="prev" title="Integration Guide" href="../integration-guide.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> Virtusize Developer Docs
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quick-start/index.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/index.html#integrate-on-your-order-confirmation-page">1. Integrate on your order confirmation page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/index.html#provide-your-product-measurements">2. Provide your product measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/index.html#integrate-on-your-product-pages">3. Integrate on your product pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/index.html#verify-your-integration">4. Verify your integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../integration-guide.html">Integration Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Virtusize integration overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#integration-script-hosting">Integration script hosting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asynchronous-loading">Asynchronous loading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#integration-flow">Integration flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#note-on-product-page-integration">Note on product page integration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="order-confirmation.html">Order Confirmation Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="order-confirmation.html#getting-started">Getting started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="order-confirmation.html#order">Order</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="order-confirmation.html#required-attributes">Required attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="order-confirmation.html#optional-attributes">Optional attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="order-confirmation.html#line-items">Line Items</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="order-confirmation.html#id1">Required attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="order-confirmation.html#id2">Optional attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="measurements.html">Providing Measurements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="measurements.html#web-interface">Web Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="measurements.html#bulk-upload">Bulk Upload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="measurements.html#feed">Feed</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="measurements.html#how-it-works">How it works</a></li>
+<li class="toctree-l4"><a class="reference internal" href="measurements.html#product-feed-integration-example">Product feed integration example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="measurements.html#json-format">JSON format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="measurements.html#measurements-object">Measurements object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="measurements.html#feed-validation">Feed validation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="integration.html">Product Page Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#integration-snippet">Integration Snippet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#providing-product-images">Providing Product Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#using-a-button">Using a Button</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#single-button">Single Button</a></li>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#multiple-buttons">Multiple Buttons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#responsive-buttons">Responsive Buttons</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#multiple-product-integration">Multiple Product Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="integration.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#verifying-integration">Verifying Integration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="integration.html#button-not-showing">Button not showing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html">Mobile integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mobile.html#best-practice">Best practice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mobile.html#automatic-device-detection">Automatic device detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mobile.html#manual-device-detection">Manual device detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="events-and-callbacks.html">Events and Callbacks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="events-and-callbacks.html#registering-callbacks">Registering callbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html">Advanced Configuration - JavaScript API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advanced.html#renaming-the-global-variable">Renaming the Global Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced.html#dynamic-integration-ajax">Dynamic integration (AJAX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced.html#snippet-api">Snippet API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#global-settings">Global settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#widget-settings">Widget settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#purchase-history-preview">Purchase History Preview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#add-to-cart">Add to cart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="advanced.html#variant-selection-for-add-to-cart">Variant selection for add to cart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="product-types.html">Product Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="product-types.html#about">About</a></li>
+<li class="toctree-l3"><a class="reference internal" href="product-types.html#product-types-api">Product Types API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="product-types.html#product-type-details">Product type details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="product-types.html#product-type-attributes">Product type attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="product-types.html#list-of-product-types">List of product types</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Virtusize Developer Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../integration-guide.html">Integration Guide</a> &raquo;</li>
+      
+    <li>Virtusize integration overview</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/integration-guide/overview.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="virtusize-integration-overview">
+<span id="label-integration-v3"></span><h1>Virtusize integration overview<a class="headerlink" href="#virtusize-integration-overview" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>At this moment, the integration has only one dependency, jQuery 1.3 or later.
+If jQuery is not found on the page, the integration script will asynchronously
+load jQuery from the Google CDN (this will not slow down the page as it is done
+asynchronously and most client browsers already have it cached).</p>
+</div>
+<div class="section" id="integration-script-hosting">
+<h2>Integration script hosting<a class="headerlink" href="#integration-script-hosting" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The integration script is hosted on the global Amazon CDN CloudFront. The file itself has
+a sane Cache-Control header value set to ensure that the client browser checks for updated versions
+according to our release schedule.</p>
+</div>
+<div class="section" id="asynchronous-loading">
+<h2>Asynchronous loading<a class="headerlink" href="#asynchronous-loading" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>All script loading is done asynchronously, minimising the impact on the load
+time of the product page. The integration snippet is inspired by the
+asynchronous loading done by Google Analytics, FB Connect, Google+
+and others. In the unlikely event of Virtusize servers experiencing down time,
+the product page will not be impacted other than the Virtusize button not showing.</p>
+<p>We recommend including the integration snippet at the bottom of the page to
+ensure minimal impact on the page load speed.</p>
+</div>
+<div class="section" id="integration-flow">
+<h2>Integration flow<a class="headerlink" href="#integration-flow" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>Step 1</strong></p>
+<p>Integration snippet is included in a &lt;script&gt; block at the bottom of the web page.
+The snippet contains a skeleton API to allow complete async integration.</p>
+<p><strong>Step 2</strong></p>
+<p>As soon as the first line of the snippet executes, the snippet creates an array,
+and all calls to the skeleton API are recorded in this &#8220;API calls array&#8221;.
+Besides providing the skeleton JS API, the snippet triggers the load of the integration script.</p>
+<p>The integration script is loaded by inserting a &lt;script&gt; tag into the head element (using insertBefore call);
+this is the most common way to include third-party scripts and ensure async loading.
+(Google Analytics and FB tracking are built using the same method)
+This means if anything goes wrong with loading the integration script, there will be no impact on the
+product page.</p>
+<p><strong>Step 3</strong></p>
+<p>Once the integration script is loaded on the page, it looks for commands in the defined &#8220;API calls array&#8221;.
+If the array is empty, no integration occurs. Otherwise the integration script triggers the
+presentation of the widget button, or in the case of confirmation page, triggers tracking calls to
+record purchase history. All of the calls are async, to not impact user-experience on the web shop.</p>
+</div>
+<div class="section" id="note-on-product-page-integration">
+<h2>Note on product page integration<a class="headerlink" href="#note-on-product-page-integration" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The Virtusize widget opens as an iFrame on the product page, thus there is no CSS/JS pollution
+of the product page, except the integration snippet and the integration script.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="order-confirmation.html" class="btn btn-neutral float-right" title="Order Confirmation Integration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../integration-guide.html" class="btn btn-neutral" title="Integration Guide" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Virtusize.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-globe"> Switch language</span>
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Languages</dt>
+            <dd>
+                <a href="http://developers.virtusize.com/">English</a>
+            </dd>
+            <!-- TODO: comment this in, as soon as Japanese is ready
+            <dd>
+                <a href="http://developers.virtusize.com/ja/">Japanese</a>
+            </dd>
+            -->
+        </dl>
+        <hr/>
+        Developer documentation by <a href="http://www.virtusize.com/">Virtusize</a>.
+    </div>
+</div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
