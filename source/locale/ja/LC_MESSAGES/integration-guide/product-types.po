@@ -1,0 +1,185 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Virtusize developer docs 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-29 16:18+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/integration-guide/product-types.rst:4
+msgid "Product Types"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:7
+msgid "About"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:17
+msgid "A product type is identified by its common English name in camelCase."
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:21
+msgid "Product Types API"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:29
+msgid "**Examples of product type identifiers:**"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:31
+msgid "dress"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:32
+msgid "tShirt"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:33
+msgid "pants"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:37
+msgid ""
+"The latest list of available product types can be queried by the following "
+"GET request:"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:41
+msgid "**Product types API request:**"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:48
+#: ../../source/integration-guide/product-types.rst:66
+msgid "**Example response:**"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:54
+msgid "Product type details"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:56
+msgid ""
+"To get detailed information about a specific product type issue the "
+"following GET request."
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:60
+msgid "**Example details request:**"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:72
+msgid "Product type attributes"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:75
+msgid "name"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:75
+msgid "*String* - Unique product type identifier in camelCase."
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:78
+msgid "requiredMeasurements"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:78
+msgid "*List* - Measurements that are required for this product type."
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:81
+msgid "optionalMeasurements"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:81
+msgid "*List* - Measurements that are optional for this product type."
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:85
+msgid "maxMeasurements"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:84
+msgid ""
+"*Object* - JSON object representing maximal measurements for this product "
+"type in millimeters."
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:89
+msgid "minMeasurements"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:88
+msgid ""
+"*Object* - JSON object representing minimal measurements for this product "
+"type in millimeters."
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:97
+msgid "List of product types"
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:9
+msgid ""
+"We support a large range of different types of garments and are continuously"
+" working towards supporting more types. This list is the latest up-to-date "
+"list of the supported product types."
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:13
+msgid ""
+"Each type has a set of measurements, some measurements are marked as "
+"required and represent the minimal subset of measurements that have to be "
+"provided."
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:23
+msgid ""
+"There are different product types supported by Virtusize and we are always "
+"working on implementing more product types. We provide a JSON API to get the"
+" data about each product type. Each product type has a specific set of "
+"required measurements and optional measurements. A product type is "
+"identified by its common English name in camelCase."
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:35
+msgid "The formatting of \"tShirt\" is camelCase."
+msgstr ""
+
+#: ../../source/integration-guide/product-types.rst:92
+msgid ""
+"The \"length\" measurement is always represented as \"height\", as "
+"\"length\" is ambiguous in JavaScript."
+msgstr ""
+
+#~ msgid ""
+#~ "We support a range of different types of garments and are always working "
+#~ "towards more types. This list is the latest up to date list of the supported"
+#~ " product types."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Each type has a set of measurements, some measurements are mark as required "
+#~ "and represent the minimal subset if measurements that must be provided."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "There are different product types supported by Virtusize, and we are always "
+#~ "working on implementing more product types. We provide a JSON API to get the"
+#~ " data about each product type. Each product type has a specific set of "
+#~ "required measurements and optional measurements. A product type is "
+#~ "identified by its common English name in camelCase."
+#~ msgstr ""
+
+#~ msgid "Note the camelCase formatting of \"tShirt\"."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note that the \"length\" measurement is always represented as \"height\", as"
+#~ " \"length\" is ambiguous in JavaScript."
+#~ msgstr ""
