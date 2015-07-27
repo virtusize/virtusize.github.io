@@ -72,7 +72,7 @@ user-opened-panel-start
     Triggered when a user opened the panel "start".
 
 user-opened-panel-new-from-measurements
-    Triggered when a user opened the panel "new from measurements".
+    Triggered when a user opened the panel "new from measurements". (Not available on mobile)
 
 user-opened-panel-compare
     Triggered when a user opened the panel "compare".
@@ -81,7 +81,7 @@ user-opened-panel-edit-item
     Triggered when a user opened the panel "edit item". (Not available on mobile)
 
 user-opened-panel-wardrobe
-    Triggered when a user opened the panel "wardrobe". (Not available on mobile)
+    Triggered when a user opened the panel "wardrobe".
 
 user-opened-panel-add-edit
 	Triggered when a user opened the product list to select a different reference
