@@ -12,6 +12,9 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+
+### 1.8.0
+
 - Feature: Updated callbacks to reflect mobile and desktop differences. (jd)
 
 ### 1.7.0
