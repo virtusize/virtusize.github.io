@@ -12,6 +12,7 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+- Feature: Changed which events are not shown in mobile. (ab)
 - Feature: Updated callbacks to reflect mobile and desktop differences. (jd)
 
 ### 1.7.0
