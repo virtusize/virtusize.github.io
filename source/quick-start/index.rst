@@ -101,17 +101,17 @@ it onto your order confirmation page just before the closing ``</body>`` tag::
     vs.setApiKey("0000000000000000000000000000000000000000");
 
     vs.addOrder({
-        orderId: "ORDER_ID",
-        userId: "USER_ID",
+        orderId: "ORDER_ID",             // Order id as string
+        userId: "USER_ID",               // User id as string
 
         items: [
             {
-                productId: "PRODUCT_ID",
-                size: "SIZE",
-                imageUrl: "IMAGE_URL",
-                unitPrice: 99.95,
-                quantity: 1,
-                currency: "EUR"
+                productId: "PRODUCT_ID", // Product id as string
+                size: "SIZE",            // Size as string
+                imageUrl: "IMAGE_URL",   // Full absolute image URL as string
+                unitPrice: 99.95,        // Unit price as float
+                quantity: 1,             // Quantity as integer
+                currency: "EUR"          // Currency as ISO code, String ("SEK" for Swedish krona)
             }
         ]
     });
@@ -174,9 +174,9 @@ it onto your product page just before the closing ``</body>`` tag::
 
     vs.setApiKey("0000000000000000000000000000000000000000");
     vs.addWidget({
-        productId: "PRODUCT_ID",
-        buttonSelector: "BUTTON_SELECTOR",
-        productImageUrl: "PRODUCT_IMAGE_URL",
+        productId: "PRODUCT_ID",              // Product id as string
+        buttonSelector: "BUTTON_SELECTOR",    // CSS selector as string for button
+        productImageUrl: "PRODUCT_IMAGE_URL", // Product image URL, as string
         done: function(error) {
             this.on("user-opened-panel-compare", function() {
                 // This callback is called when a User
