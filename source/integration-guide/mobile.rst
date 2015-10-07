@@ -3,12 +3,6 @@
 Mobile integration
 ==================
 
-.. note::
-    The mobile widget is still in beta and does not automatically load for all
-    retailers. It will be launched in summer of 2015. Talk to your sales
-    contact to find out more about the mobile widget.
-
-
 Virtusize comes with a mobile version of the widget that is optimized for
 phones. When a mobile browser is detected, the Virtusize integration
 automatically loads the mobile widget.
