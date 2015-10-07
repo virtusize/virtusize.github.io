@@ -12,6 +12,8 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+### 1.9.0
+
 - Feature: Removed mobile beta note. (hs)
 - Feature: Added comments in JS code in quick-start-guide. (hs)
 
