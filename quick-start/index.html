@@ -295,17 +295,17 @@ it onto your order confirmation page just before the closing <code class="docuti
 <span class="nx">vs</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
 
 <span class="nx">vs</span><span class="p">.</span><span class="nx">addOrder</span><span class="p">({</span>
-    <span class="nx">orderId</span><span class="o">:</span> <span class="s2">&quot;ORDER_ID&quot;</span><span class="p">,</span>
-    <span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;USER_ID&quot;</span><span class="p">,</span>
+    <span class="nx">orderId</span><span class="o">:</span> <span class="s2">&quot;ORDER_ID&quot;</span><span class="p">,</span>             <span class="c1">// Order id as string</span>
+    <span class="nx">userId</span><span class="o">:</span> <span class="s2">&quot;USER_ID&quot;</span><span class="p">,</span>               <span class="c1">// User id as string</span>
 
     <span class="nx">items</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
-            <span class="nx">size</span><span class="o">:</span> <span class="s2">&quot;SIZE&quot;</span><span class="p">,</span>
-            <span class="nx">imageUrl</span><span class="o">:</span> <span class="s2">&quot;IMAGE_URL&quot;</span><span class="p">,</span>
-            <span class="nx">unitPrice</span><span class="o">:</span> <span class="mf">99.95</span><span class="p">,</span>
-            <span class="nx">quantity</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="nx">currency</span><span class="o">:</span> <span class="s2">&quot;EUR&quot;</span>
+            <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span> <span class="c1">// Product id as string</span>
+            <span class="nx">size</span><span class="o">:</span> <span class="s2">&quot;SIZE&quot;</span><span class="p">,</span>            <span class="c1">// Size as string</span>
+            <span class="nx">imageUrl</span><span class="o">:</span> <span class="s2">&quot;IMAGE_URL&quot;</span><span class="p">,</span>   <span class="c1">// Full absolute image URL as string</span>
+            <span class="nx">unitPrice</span><span class="o">:</span> <span class="mf">99.95</span><span class="p">,</span>        <span class="c1">// Unit price as float</span>
+            <span class="nx">quantity</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>             <span class="c1">// Quantity as integer</span>
+            <span class="nx">currency</span><span class="o">:</span> <span class="s2">&quot;EUR&quot;</span>          <span class="c1">// Currency as ISO code, String (&quot;SEK&quot; for Swedish krona)</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">});</span>
@@ -362,9 +362,9 @@ it onto your product page just before the closing <code class="docutils literal"
 
 <span class="nx">vs</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
 <span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
-    <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
-    <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>
-    <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_IMAGE_URL&quot;</span><span class="p">,</span>
+    <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>              <span class="c1">// Product id as string</span>
+    <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>    <span class="c1">// CSS selector as string for button</span>
+    <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_IMAGE_URL&quot;</span><span class="p">,</span> <span class="c1">// Product image URL, as string</span>
     <span class="nx">done</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;user-opened-panel-compare&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
             <span class="c1">// This callback is called when a User</span>
