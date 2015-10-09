@@ -14,6 +14,7 @@ Use list notation, and following prefixes:
 
 ### 1.9.0
 
+- Feature: Added robots.txt to exclude mockups. (ab)
 - Feature: Removed mobile beta note. (hs)
 - Feature: Added comments in JS code in quick-start-guide. (hs)
 
