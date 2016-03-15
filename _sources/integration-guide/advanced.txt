@@ -151,22 +151,18 @@ setLanguage(languageId)
         vs.setLanguage("en");
         OR
         vs.setLanguage("en-GB");
-       
 
-setWidgetOverlayColor(rgba, ieColor)
+
+setWidgetOverlayColor(rgba)
     **rgba** - String, specifying the rgba color of the overlay background that
     is displayed when the Virtusize Widget is opened. Defaults to
     ``rbga(0,0,0,0.5)``
-
-    **ieColor** - String, specifying the Internet Explorer color of the overlay
-    background that is displayed when the Virtusize Widget is opened. Defaults
-    to ``50000000``
 
     **Example:**
 
     ::
 
-        vs.setWidgetOverlayColor("rgba(255,255,0,0.5)", "50FFFF00");
+        vs.setWidgetOverlayColor("rgba(255,255,0,0.5)");
 
 
 setUserId(userId)

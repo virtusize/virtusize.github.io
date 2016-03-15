@@ -12,6 +12,8 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+- Cleanup: Removed deprecated ieColor param. (ab)
+
 ### 1.9.0
 
 - Feature: Added robots.txt to exclude mockups. (ab)
