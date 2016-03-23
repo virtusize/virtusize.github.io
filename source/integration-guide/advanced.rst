@@ -316,6 +316,9 @@ To enable the purchase history tooltip add the ``tooltipEnabled`` option to the
 ``addWidget`` call. Changing the style to ``light`` can be achieved with the
 ``tooltipStyle`` option, but this is optional and defaulting to dark.
 
+The tooltip is displayed on top of the button, by default. To display the tooltip
+below, set ``tooltipPosition`` to ``bottom``.
+
 **Example:**
 
 ::
@@ -325,7 +328,8 @@ To enable the purchase history tooltip add the ``tooltipEnabled`` option to the
         buttonSelector: "BUTTON_SELECTOR",
         productImageUrl: "PRODUCT_IMAGE_URL",
         tooltipEnabled: true,
-        tooltipStyle: "light"
+        tooltipStyle: "light",
+        tooltipPosition: "top"
     });
 
 
