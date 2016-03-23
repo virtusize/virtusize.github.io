@@ -1,4 +1,4 @@
-VS develeper docs changes
+VS developer docs changes
 =========================
 
 Instructions:
