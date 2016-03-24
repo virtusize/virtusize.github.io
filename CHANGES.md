@@ -1,4 +1,4 @@
-VS develeper docs changes
+VS developer docs changes
 =========================
 
 Instructions:
@@ -11,6 +11,10 @@ Use list notation, and following prefixes:
 
 
 ### NEXT RELEASE
+
+- Feature: Added section on PHPV tooltip position. (ab)
+- Feature: Auto-bump year. (ab)
+- Cleanup: Removed deprecated ieColor param. (ab)
 
 ### 1.9.0
 

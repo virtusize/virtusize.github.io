@@ -12,6 +12,7 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
+import datetime
 import sys
 import os
 
@@ -58,7 +59,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Virtusize Developer Docs'
-copyright = u'2015, Virtusize'
+copyright = u'{}, Virtusize'.format(datetime.datetime.now().year)
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
