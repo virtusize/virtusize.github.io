@@ -12,6 +12,9 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+
+### 1.10.0
+
 - Feature: Added section on PHPV tooltip position. (ab)
 - Feature: Auto-bump year. (ab)
 - Cleanup: Removed deprecated ieColor param. (ab)

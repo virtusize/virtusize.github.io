@@ -10,6 +10,7 @@ Before anything else, start with installing the necessary items:
 
 ## Release
 
+- Don't use HF for this!
 - Bump the version in setup.py
 - Create a headline for the changes from "NEXT RELEASE" with the same version
 - Commit and push to develop
