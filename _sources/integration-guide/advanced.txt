@@ -153,20 +153,17 @@ setLanguage(languageId)
         vs.setLanguage("en-GB");
        
 
-setWidgetOverlayColor(rgba, ieColor)
+
+setWidgetOverlayColor(rgba)
     **rgba** - String, specifying the rgba color of the overlay background that
     is displayed when the Virtusize Widget is opened. Defaults to
     ``rbga(0,0,0,0.5)``
-
-    **ieColor** - String, specifying the Internet Explorer color of the overlay
-    background that is displayed when the Virtusize Widget is opened. Defaults
-    to ``50000000``
 
     **Example:**
 
     ::
 
-        vs.setWidgetOverlayColor("rgba(255,255,0,0.5)", "50FFFF00");
+        vs.setWidgetOverlayColor("rgba(255,255,0,0.5)");
 
 
 setUserId(userId)
@@ -319,6 +316,9 @@ To enable the purchase history tooltip add the ``tooltipEnabled`` option to the
 ``addWidget`` call. Changing the style to ``light`` can be achieved with the
 ``tooltipStyle`` option, but this is optional and defaulting to dark.
 
+The tooltip is displayed on top of the button, by default. To display the tooltip
+below, set ``tooltipPosition`` to ``bottom``.
+
 **Example:**
 
 ::
@@ -328,7 +328,8 @@ To enable the purchase history tooltip add the ``tooltipEnabled`` option to the
         buttonSelector: "BUTTON_SELECTOR",
         productImageUrl: "PRODUCT_IMAGE_URL",
         tooltipEnabled: true,
-        tooltipStyle: "light"
+        tooltipStyle: "light",
+        tooltipPosition: "top"
     });
 
 
