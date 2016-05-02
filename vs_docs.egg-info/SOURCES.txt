@@ -1,6 +1,0 @@
-setup.py
-vs_docs.egg-info/PKG-INFO
-vs_docs.egg-info/SOURCES.txt
-vs_docs.egg-info/dependency_links.txt
-vs_docs.egg-info/requires.txt
-vs_docs.egg-info/top_level.txt

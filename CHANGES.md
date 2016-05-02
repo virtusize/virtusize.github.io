@@ -12,6 +12,7 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+- Cleanup: Removed deprecated files. (ab)
 
 ### 1.10.0
 
