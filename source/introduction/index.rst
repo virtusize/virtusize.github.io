@@ -1,12 +1,7 @@
-.. highlight:: html
-
-.. role:: raw-html(raw)
-   :format: html
-
 .. _label-introduction:
 
 Introduction
-------------
+============
 
 Virtusize helps retailers to illustrate the size and fit of clothing, shoes and bags
 online, by letting customers compare the measurements of an item they want to buy

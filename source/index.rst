@@ -10,4 +10,5 @@ Virtusize Developer Docs
    :maxdepth: 2
 
    introduction/index
+   technical-background/index
    integration-guide
