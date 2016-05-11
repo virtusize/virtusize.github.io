@@ -9,5 +9,5 @@ Virtusize Developer Docs
 .. toctree::
    :maxdepth: 2
 
-   quick-start/index
+   introduction/index
    integration-guide
