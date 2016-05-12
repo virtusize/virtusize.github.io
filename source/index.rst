@@ -16,4 +16,5 @@ Virtusize Developer Docs
    providing-product-measurements/index
    data-tracking/index
    advanced-integration-options/index
+   product-types/index
    integration-guide
