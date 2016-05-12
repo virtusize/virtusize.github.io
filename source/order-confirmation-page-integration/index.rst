@@ -1,3 +1,5 @@
+.. _label-order-confirmation-page-integration:
+
 Order Confirmation Page Integration
 ===================================
 
