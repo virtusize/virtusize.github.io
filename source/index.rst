@@ -12,4 +12,5 @@ Virtusize Developer Docs
    introduction/index
    technical-background/index
    product-page-integration/index
+   order-confirmation-page-integration/index
    integration-guide
