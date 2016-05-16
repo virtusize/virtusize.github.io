@@ -17,3 +17,4 @@ Virtusize Developer Docs
    data-tracking/index
    advanced-integration-options/index
    product-types/index
+   faq/index
