@@ -3,7 +3,7 @@
 Order Confirmation Page Integration
 ===================================
 
-The Order Confirmation Page Script enables Virtusize to show your consumers the
+The Order Confirmation Page Script enables Virtusize to show your customers the
 items they have recently purchased as part of their ``Purchase History``, and use
 those items to compare with new items they want to buy. The Virtusize order
 confirmation integration is the same JavaScript as the one on your product pages.
@@ -125,7 +125,7 @@ productId
 
 size
     *String* - The size or size id of the purchased item. This must match the
-    size identifiers used in the product database of Virtusize.
+    size identifiers used when providing product data to Virtusize.
 
     Example::
 

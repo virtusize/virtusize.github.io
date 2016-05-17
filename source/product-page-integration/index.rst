@@ -23,7 +23,7 @@ Set the button style to ``visibility:hidden``, to ``display:none`` or both.
 .. note::
     A responive `sample button <http://codepen.io/virtusize/pen/xVNrZP/?editors=1100>`_
     is available for use. If you want to create your own button, see our
-    `list of resources <http://codepen.io/virtusize/pen/xVNrZP/?editors=1100>`_.
+    `list of resources <http://codepen.io/virtusize/full/RamLWZ/>`_.
 
 
 .. _label-integrating-javaScript-snippet:
