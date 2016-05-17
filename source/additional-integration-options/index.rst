@@ -1,7 +1,7 @@
-.. _label-advanced-integration-options:
+.. _label-additional-integration-options:
 
-Advanced Integration Options
-============================
+Additional Integration Options
+==============================
 
 .. _label-add-to-cart:
 
