@@ -22,7 +22,7 @@ There are four main ways of providing measurements to Virtusize:
 -  Via the :ref:`label-spec-sheet-service`
 -  Via the :ref:`label-web-interface` (manual)
 -  Via :ref:`label-bulk-upload` (Excel)
--  Via a product :ref:`label-feed`
+-  Via the :ref:`label-product-feed`
 
 
 .. _label-spec-sheet-service:
@@ -44,11 +44,11 @@ Web Interface
 The basic way of providing measurements is via our web admin. This can be done to
 provide measurements one by one.
 
-1. Login into our `admin <http://www.virtusize.com/admin/>`_ with your credentials.
+1. Login into our `admin <https://www.virtusize.com/admin/>`_ with your credentials
 
 2. Navigate to ``products > add product``
 
-3. Create a new product using the provided form.
+3. Create a new product using the provided form
 
 .. rubric:: **Product menu**
 
@@ -71,7 +71,7 @@ Another way of providing measurements is via the bulk upload, using our Excel
 template. This option is most suited if you are a medium sized retailer or single
 brand store with seasonal collections.
 
-1. Login into our `admin <https://www.virtusize.com/admin/>`_ with your credentials.
+1. Login into our `admin <https://www.virtusize.com/admin/>`_ with your credentials
 
 2. Navigate to ``product > bulk upload``
 
@@ -157,11 +157,10 @@ Product feed integration example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In order to use the product feed, the integration snippet must provide
-the ``id`` as well as the ``version`` variables in the product data.
+the ``id`` as well as the ``version`` variables in the product data, lines 7 and 10:
 
-.. highlight:: html
-
-::
+.. code-block:: html
+   :linenos:
 
     <!-- Virtusize Integration -->
     <script>
@@ -193,7 +192,7 @@ JSON format
 The feed must return data as valid
 `JSON <http://en.wikipedia.org/wiki/JSON>`_.
 
-`Example feed <http://api.virtusize.com/api/v2/feed/examples/json>`_
+`Example feed <https://api.virtusize.com/api/v2/feed/examples/json>`_
 
 
 **Example request:**::
@@ -244,7 +243,6 @@ The feed must return data as valid
     }
 
 
-
 **Product attributes**
 
 id
@@ -276,8 +274,8 @@ choice.
 
 .. note::
     The unit of measurements is configured on a store by store basis and the default
-    is **centimeters**. (We also support millimeters and inches in decimal
-    format) Get in touch with us to configure this for your store.
+    is ``centimeters``. We also support millimeters and inches in decimal
+    format. Get in touch with us to configure this for your store.
 
 Please refer to :ref:`label-product-types` for details about measurements for
 each product type.
@@ -290,7 +288,7 @@ Feed validation
 
 To validate your feed, you can use our feed tester URL::
 
-    GET http://api.virtusize.com/api/v2/feed/tester/json?apiKey=xxxxxxxxxxxxx&url=http://www.example.com/backend/virtusize/product-info?id=123456abc
+    GET https://api.virtusize.com/api/v2/feed/tester/json?apiKey=xxxxxxxxxxxxx&url=http://www.example.com/backend/virtusize/product-info?id=123456abc
 
 
 Or you can use the Feed tester GUI in our `admin <https://www.virtusize.com/admin/>`_.

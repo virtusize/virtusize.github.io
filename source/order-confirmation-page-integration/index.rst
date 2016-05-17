@@ -215,7 +215,7 @@ color
         color: "black"
 
 gender
-    *String* - The gender that this garment is targeting. Must have one of
+    *String* - The gender that this garment is targeting. Must be one of
     these values: "unisex", "male", "female"
 
     Example::
