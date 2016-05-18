@@ -55,6 +55,7 @@ html:
 	cp source/sitemap.xml $(BUILDDIR)/html/
 	cp source/robots.txt $(BUILDDIR)/html/
 	cp source/favicon.ico $(BUILDDIR)/html/
+	cp -r source/resources $(BUILDDIR)/html/
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
