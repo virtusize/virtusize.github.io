@@ -116,20 +116,3 @@ confirmation page?**
 **Is it okay to send back a dummy user ID?**
 
     No, it has to be unique per user.
-
-
-**I’m sending back all of the attributes, why are none of our purchases being
-registered as Virtusize purchases?**
-
-    A Virtusize purchase will only register once the user opened the Virtusize widget
-    on a product page and made a comparison with a reference garment on the compare panel.
-
-    Check with us to see if the purchase was registered afterwards. You can also
-    check your Virtusize admin dashboard for real-time metrics.
-
-
-**Why are Virtusize purchases not registered?**
-
-    Check that the product ID on your order confirmation page matches the one supplied
-    on the product page. Make sure the product ID being sent back to us doesn't have
-    size or color appended to the ID.
