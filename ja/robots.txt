@@ -1,4 +1,0 @@
-Sitemap: http://developers.virtusize.com/sitemap.xml
-
-User-agent: *
-Disallow: /mockups/
