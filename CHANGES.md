@@ -12,6 +12,9 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+
+### 2.0.0
+
 - Refactor: Complete copy overhaul. (ab)
 - Cleanup: Removed dynamic fetch of product types. (ab)
 - Cleanup: Removed deprecated files. (ab)
