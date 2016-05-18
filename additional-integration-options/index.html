@@ -1,0 +1,553 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Additional Integration Options &mdash; Virtusize Developer Docs 1.2 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Virtusize Developer Docs 1.2 documentation" href="../index.html"/>
+        <link rel="next" title="Product Types" href="../product-types/index.html"/>
+        <link rel="prev" title="Data tracking - Events and Callbacks" href="../data-tracking/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Virtusize Developer Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../technical-background/index.html">Technical Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product-page-integration/index.html">Product Page Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-confirmation-page-integration/index.html">Order Confirmation Page Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../providing-product-measurements/index.html">Providing Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-tracking/index.html">Data tracking - Events and Callbacks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Additional Integration Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#add-to-cart">Add to cart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#variant-selection-for-add-to-cart">Variant selection for add to cart</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#multiple-buttons-on-product-page">Multiple Buttons on Product Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multiple-products-on-product-page">Multiple Products on Product Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#snippet-api">Snippet API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-settings">Global settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#widget-settings">Widget settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../product-types/index.html">Product Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Virtusize Developer Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Additional Integration Options</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="additional-integration-options">
+<span id="label-additional-integration-options"></span><h1>Additional Integration Options<a class="headerlink" href="#additional-integration-options" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="add-to-cart">
+<span id="label-add-to-cart"></span><h2>Add to cart<a class="headerlink" href="#add-to-cart" title="Permalink to this headline">¶</a></h2>
+<p>You can enable an add to cart button directly inside the Virtusize widget.</p>
+<p>We recommend that you provide Virtusize with a list of available sizes when you
+enable add to cart (see <a class="reference internal" href="#label-widget-settings"><span class="std std-ref">Widget settings</span></a> for how to set available sizes).
+If you do so, for items that are out of stock, the add to cart button will be
+disabled and a note will inform your customer that the item is not available.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Virtusize does not handle color or variant selection at the moment.
+See <a class="reference internal" href="#label-variant-selection-add-to-cart"><span class="std std-ref">Variant selection for add to cart</span></a></p>
+</div>
+<p>To activate the add to cart button, you have to register a callback for the event
+that is triggered when a user clicks the add to cart button. Like with all callbacks
+you can register for the event in two ways, on the global Virtusize object:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="nx">vs</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;user-added-item-to-cart&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+     <span class="c1">// Handle the event by added the appropriate item into the users</span>
+     <span class="c1">// shopping cart.</span>
+     <span class="c1">//</span>
+     <span class="c1">// The additional data contains the productId and the size:</span>
+     <span class="c1">// data == {productId: &quot;vs_shoe&quot;, size: &quot;42&quot;}</span>
+ <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>or directly in the <code class="docutils literal"><span class="pre">addWidget</span></code> call:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
+     <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
+     <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>
+     <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_IMAGE_URL&quot;</span><span class="p">,</span>
+     <span class="nx">availableSizes</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;small&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;large&quot;</span><span class="p">]</span>    <span class="c1">// Change this to the currently available sizes</span>
+     <span class="nx">done</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;user-added-item-to-cart&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+             <span class="c1">// Handle the event by added the appropriate item into the users</span>
+             <span class="c1">// shopping cart.</span>
+             <span class="c1">//</span>
+             <span class="c1">// The additional data contains the productId and the size:</span>
+             <span class="c1">// data == {productId: &quot;vs_shoe&quot;, size: &quot;42&quot;}</span>
+         <span class="p">});</span>
+     <span class="p">}</span>
+ <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="variant-selection-for-add-to-cart">
+<span id="label-variant-selection-add-to-cart"></span><h3>Variant selection for add to cart<a class="headerlink" href="#variant-selection-for-add-to-cart" title="Permalink to this headline">¶</a></h3>
+<p>Having multiple variants of a product on a single product page complicates the
+integration of the add to cart functionality in two ways:</p>
+<ol class="arabic simple">
+<li>The callback you registered could get called before your customer selected the
+variant he is looking to buy.</li>
+<li>The selection of a variant could have an impact on the available sizes that
+you have in stock.</li>
+</ol>
+<p>Talk to your sales contact to get more information on possible solutions.</p>
+</div>
+</div>
+<div class="section" id="multiple-buttons-on-product-page">
+<span id="label-multiple-buttons-on-product-page"></span><h2>Multiple Buttons on Product Page<a class="headerlink" href="#multiple-buttons-on-product-page" title="Permalink to this headline">¶</a></h2>
+<p>If you want multiple buttons to open the Virtusize Widget, you can add a class to
+all buttons (eg. <code class="docutils literal"><span class="pre">.virtusize-buttons</span></code>), instead of an ID as in the regular example
+(see <a class="reference internal" href="../product-page-integration/index.html#label-setting-the-css-selector"><span class="std std-ref">Setting the CSS selector</span></a>). ID&#8217;s are unique per page; classes aren&#8217;t.</p>
+<p>Then integrate a Widget like this, on line 3:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
+      <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
+      <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;.virtusize-buttons&quot;</span><span class="p">,</span>
+      <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_IMAGE_URL&quot;</span>
+ <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="multiple-products-on-product-page">
+<span id="label-multiple-products-on-product-page"></span><h2>Multiple Products on Product Page<a class="headerlink" href="#multiple-products-on-product-page" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to have Virtusize Widgets for more than one product per page. This
+is needed for &#8220;Buy-this-outfit&#8221; kind of pages or AJAX-pages, like product preview.</p>
+<p>The integration is the same as the one for single product pages. All you have to
+do is supply additional <code class="docutils literal"><span class="pre">addWidget</span></code> calls.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">The snippet can only be loaded once per page, but you can have multiple
+<code class="docutils literal"><span class="pre">addWidget</span></code> calls for each product.</p>
+</div>
+<p>For pages loaded with AJAX, to avoid conflicts with already loaded widgets you can
+obtain a VirtusizeWidget object after it has been initialised from the global
+object like the following. To be sure that the integration has loaded you can
+wrap it in the ready function:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="nx">vs</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     <span class="kd">var</span> <span class="nx">myWidget</span> <span class="o">=</span> <span class="nx">vs</span><span class="p">.</span><span class="nx">getWidget</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">);</span>
+     <span class="c1">// Do something with the widget</span>
+     <span class="nx">myWidget</span><span class="p">.</span><span class="nx">setAvailableSizes</span><span class="p">([</span><span class="s2">&quot;Medium&quot;</span><span class="p">]);</span>
+ <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can only integrate one product with the same id per page. If you want
+multiple buttons to open the same widget, see: <a class="reference internal" href="#label-multiple-buttons-on-product-page"><span class="std std-ref">Multiple Buttons on Product Page</span></a></p>
+</div>
+</div>
+<div class="section" id="snippet-api">
+<span id="label-snippet-api"></span><h2>Snippet API<a class="headerlink" href="#snippet-api" title="Permalink to this headline">¶</a></h2>
+<p>The snippet is the little JavaScript that you include directly in your pages.
+It creates method stubs for the most commonly used functions of the Virtusize
+Integration. This enables you to call these methods immediately after the
+snippet.</p>
+<p>The method calls will be added to a queue that is executed after the
+integration script has loaded asyncronously. From that point on, all calls to
+these methods will execute immediately.</p>
+<p>Some of the methods work in a global way, like setting the API key or defining
+a region. Other things can be specified on a widget to widget basis. Examples
+for this would be setting the product ids or available sizes.</p>
+<div class="section" id="global-settings">
+<h3>Global settings<a class="headerlink" href="#global-settings" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>setApiKey(key)</dt>
+<dd><p class="first"><strong>key</strong> - String</p>
+<p>Sets the API key required for vs widget.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">vs</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;0000000000000000000000000000000000000000&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+<dt>setRegion(regionId)</dt>
+<dd><p class="first"><strong>regionId</strong> - String, region identifier as defined by ISO 3166-1 alpha-2</p>
+<p>Sets the preferred region to be used in widget, The region id must be the
+two-letter ISO-3166 country code as defined in
+<a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a> Region controls the default
+length unit. This value is then passed on to all widgets that are added
+afterwards without a region parameter.</p>
+<p>It is considered a convenience function for pages with multiple
+widgets of the same region. It does <strong>not</strong> have any effect on widgets,
+that have already been added.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">vs</span><span class="p">.</span><span class="nx">setRegion</span><span class="p">(</span><span class="s2">&quot;GB&quot;</span><span class="p">);</span>
+<span class="nx">OR</span>
+<span class="nx">vs</span><span class="p">.</span><span class="nx">setRegion</span><span class="p">(</span><span class="s2">&quot;US&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+<dt>setLanguage(languageId)</dt>
+<dd><p class="first"><strong>languageId</strong> - String, language identifier in the format of
+&#8220;languageCode-regionCode&#8221;.</p>
+<p>Sets the preferred language to be used in widget, The language id must
+follow the form: <strong>languageCode[-regionCode]</strong> where regionCode is
+optional. This value is then passed on to all widgets that are added
+afterwards without a language parameter.</p>
+<p>It is considered a convenience function for pages with multiple
+widgets of the same language. It does <strong>not</strong> have any effect on widgets,
+that have already been added.</p>
+<p><strong>languageCode</strong> - two-letter ISO-639-1 language abbreviation as defined by
+<a class="reference external" href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes</a></p>
+<p><strong>regionCode</strong> - two-letter ISO-3166 country code where this language is
+spoken (optional) as defined in
+<a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a> If the requested language
+is not supported, the call is ignored.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">vs</span><span class="p">.</span><span class="nx">setLanguage</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">);</span>
+<span class="nx">OR</span>
+<span class="nx">vs</span><span class="p">.</span><span class="nx">setLanguage</span><span class="p">(</span><span class="s2">&quot;en-GB&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+<dt>setWidgetOverlayColor(rgba)</dt>
+<dd><p class="first"><strong>rgba</strong> - String, specifying the rgba color of the overlay background that
+is displayed when the Virtusize Widget is opened. Defaults to
+<code class="docutils literal"><span class="pre">rbga(0,0,0,0.5)</span></code></p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">vs</span><span class="p">.</span><span class="nx">setWidgetOverlayColor</span><span class="p">(</span><span class="s2">&quot;rgba(255,255,0,0.5)&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+<dt>setUserId(userId)</dt>
+<dd><p class="first"><strong>userId</strong> - String, identifying the current user of the retailer&#8217;s online
+store. It has to be a unique identifier that matches the one used on the
+order confirmation page. Setting the userId during integration enables
+Virtusize to show the personal purchase history to a user on a new device
+even before purchasing something at the store from this device.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">vs</span><span class="p">.</span><span class="nx">setUserId</span><span class="p">(</span><span class="s2">&quot;UID_1234&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+<dt>ready(callback)</dt>
+<dd><strong>callback</strong> - Function that is called when the integration script has
+loaded. These functions will be called after all the other functions of the
+initial queue have been executed. It does not mean that all product checks
+have been executed for the widgets. You should enclose calls to the snippet
+where you depend on the fact that the integration has run in this function.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="widget-settings">
+<span id="label-widget-settings"></span><h2>Widget settings<a class="headerlink" href="#widget-settings" title="Permalink to this headline">¶</a></h2>
+<p>The starting point for adding a Virtusize Widget is the <code class="docutils literal"><span class="pre">addWidget</span></code> method of the
+snippet. The other important thing to note is the <code class="docutils literal"><span class="pre">done</span></code> parameter. It takes a
+function, that is called, after the product check for this widget has been
+performed. It receives <code class="docutils literal"><span class="pre">error</span></code> as a parameter that is either <code class="docutils literal"><span class="pre">false</span></code> or an error
+message. Inside the function you have access to the Virtusize Widget by <code class="docutils literal"><span class="pre">this</span></code>.</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
+      <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
+      <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>
+      <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_IMAGE_URL&quot;</span><span class="p">,</span>
+      <span class="nx">productVersion</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+      <span class="nx">availableSizes</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">],</span>
+      <span class="nx">sizeAliases</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;S&quot;</span><span class="o">:</span> <span class="s2">&quot;Small&quot;</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="o">:</span> <span class="s2">&quot;Medium&quot;</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="o">:</span> <span class="s2">&quot;Large&quot;</span><span class="p">},</span>
+      <span class="nx">done</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">setAvailableSizes</span><span class="p">([</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">]);</span>
+            <span class="c1">// Or trigger event tracking, etc.</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>The following are functions you can call on the widget object, for example
+inside the <code class="docutils literal"><span class="pre">done</span></code> callback of <code class="docutils literal"><span class="pre">addWidget</span></code> like in the example above or at
+a later stage when you get the loaded widget from the global Virtusize Snippet
+object.</p>
+<dl class="docutils">
+<dt>setAvailableSizes(sizesList)</dt>
+<dd><p class="first"><strong>sizesList</strong> - Array, list of product sizes.</p>
+<p>Sets the product sizes that are in stock to be used in the widget. Must
+contain the original size identifiers, not the regional names. The names
+provided here must correspond to size identifiers for each product.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">setAvailableSizes</span><span class="p">([</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">]);</span>
+<span class="nx">OR</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">setAvailableSizes</span><span class="p">([</span><span class="s2">&quot;1432&quot;</span><span class="p">,</span> <span class="s2">&quot;4123&quot;</span><span class="p">,</span> <span class="s2">&quot;2314&quot;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</dd>
+<dt>setSizeAliases(sizeAliases)</dt>
+<dd><p class="first"><strong>sizeAliases</strong> - Object, containing the sizes and their aliases.</p>
+<p>Sets the alternative product sizes names. Maps to original size names. Use
+this for regional size names.</p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">setSizeAliases</span><span class="p">({</span>
+    <span class="s2">&quot;S&quot;</span><span class="o">:</span> <span class="s2">&quot;UK 6&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;M&quot;</span><span class="o">:</span> <span class="s2">&quot;UK 10&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;L&quot;</span><span class="o">:</span> <span class="s2">&quot;UK 14&quot;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd>
+<dt>on(eventName, callback)</dt>
+<dd><p class="first"><strong>eventName</strong> - String, valid event to bind a callback to. See
+<span class="xref std std-ref">label-events-and-callbacks-v3</span> for a list of valid event names.</p>
+<p><strong>callback</strong> - Function callable, function to call when an event occurs.
+Allows programmatic subscription to widget events such as: &#8220;user-opened-widget&#8221;,
+&#8220;user-closed-widget&#8221;. Inside the callback function <code class="docutils literal"><span class="pre">this</span></code> will be the
+instance of the VirtusizeWidget from which the event was triggered. On some
+events an additional data object is passed as a parameter to the function,
+see <span class="xref std std-ref">label-events-and-callbacks-v3</span></p>
+<p><strong>Example:</strong></p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;user-opened-widget&quot;</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Widget opened: &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getProductId</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+<dt>off(eventName, [callback])</dt>
+<dd><p class="first"><strong>eventName</strong> - String, valid event to unbind a callback from.</p>
+<p class="last"><strong>callback</strong> - optional - Function callable, function unbind, must be the
+real function reference.  Unbinds any callbacks registered. If not provided
+with a callback reference will unbind all callbacks to the provided event
+name.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../product-types/index.html" class="btn btn-neutral float-right" title="Product Types" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../data-tracking/index.html" class="btn btn-neutral" title="Data tracking - Events and Callbacks" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Virtusize.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-globe"> Switch language</span>
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Languages</dt>
+            <dd>
+                <a href="http://developers.virtusize.com/">English</a>
+            </dd>
+            <!-- TODO: comment this in, as soon as Japanese is ready
+            <dd>
+                <a href="http://developers.virtusize.com/ja/">Japanese</a>
+            </dd>
+            -->
+        </dl>
+        <hr/>
+        Developer documentation by <a href="http://www.virtusize.com/">Virtusize</a>.
+    </div>
+</div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

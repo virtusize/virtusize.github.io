@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Technical Background &mdash; Virtusize Developer Docs 1.2 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Virtusize Developer Docs 1.2 documentation" href="../index.html"/>
+        <link rel="next" title="Product Page Integration" href="../product-page-integration/index.html"/>
+        <link rel="prev" title="Virtusize Developer Docs" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Virtusize Developer Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Technical Background</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integration-script-hosting">Integration script hosting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#asynchronous-loading">Asynchronous loading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-encapsulation">Code encapsulation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../product-page-integration/index.html">Product Page Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-confirmation-page-integration/index.html">Order Confirmation Page Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../providing-product-measurements/index.html">Providing Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-tracking/index.html">Data tracking - Events and Callbacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional-integration-options/index.html">Additional Integration Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product-types/index.html">Product Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Virtusize Developer Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Technical Background</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="technical-background">
+<span id="label-technical-background"></span><h1>Technical Background<a class="headerlink" href="#technical-background" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dependencies">
+<span id="label-dependencies"></span><h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Currently, the integration has only one dependency, jQuery 1.3 or later. If jQuery
+is not found on the page, the integration script will asynchronously load jQuery
+from the Google CDN. This will not slow down the page as it is done asynchronously
+and most client browsers already have it cached.</p>
+</div>
+<div class="section" id="integration-script-hosting">
+<span id="label-integration-hosting-script"></span><h2>Integration script hosting<a class="headerlink" href="#integration-script-hosting" title="Permalink to this headline">¶</a></h2>
+<p>The integration script is hosted on the global Amazon CloudFront CDN. The file
+itself has a long-term cache set and is refreshed on new releases.</p>
+</div>
+<div class="section" id="asynchronous-loading">
+<span id="label-asynchronous-loading"></span><h2>Asynchronous loading<a class="headerlink" href="#asynchronous-loading" title="Permalink to this headline">¶</a></h2>
+<p>All script loading is done asynchronously, minimising the impact on the load time
+of the product page. The integration snippet is inspired by the asynchronous
+loading done by Google Analytics and Facebook Connect. In the unlikely event of
+Virtusize servers experiencing down time, the product page will not be impacted
+other than the Virtusize button not showing.</p>
+</div>
+<div class="section" id="code-encapsulation">
+<span id="label-code-encapsulation"></span><h2>Code encapsulation<a class="headerlink" href="#code-encapsulation" title="Permalink to this headline">¶</a></h2>
+<p>The Virtusize widget opens as an iFrame on the product page, thus there is no CSS
+or Javascript pollution of the product page, except the integration snippet and the
+integration script.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../product-page-integration/index.html" class="btn btn-neutral float-right" title="Product Page Integration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Virtusize Developer Docs" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Virtusize.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-globe"> Switch language</span>
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Languages</dt>
+            <dd>
+                <a href="http://developers.virtusize.com/">English</a>
+            </dd>
+            <!-- TODO: comment this in, as soon as Japanese is ready
+            <dd>
+                <a href="http://developers.virtusize.com/ja/">Japanese</a>
+            </dd>
+            -->
+        </dl>
+        <hr/>
+        Developer documentation by <a href="http://www.virtusize.com/">Virtusize</a>.
+    </div>
+</div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

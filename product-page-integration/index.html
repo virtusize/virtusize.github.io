@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Product Page Integration &mdash; Virtusize Developer Docs 1.2 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Virtusize Developer Docs 1.2 documentation" href="../index.html"/>
+        <link rel="next" title="Order Confirmation Page Integration" href="../order-confirmation-page-integration/index.html"/>
+        <link rel="prev" title="Technical Background" href="../technical-background/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Virtusize Developer Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../technical-background/index.html">Technical Background</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Product Page Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#virtusize-button">Virtusize button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integrating-javascript-snippet">Integrating JavaScript Snippet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-the-product-id">Setting the Product ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-the-product-image-url">Setting the Product Image URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-the-css-selector">Setting the CSS selector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#purchase-history-preview-tooltip">Purchase History Preview Tooltip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cross-device-detection">Cross Device Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mobile-integration">Mobile integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../order-confirmation-page-integration/index.html">Order Confirmation Page Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../providing-product-measurements/index.html">Providing Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-tracking/index.html">Data tracking - Events and Callbacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional-integration-options/index.html">Additional Integration Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product-types/index.html">Product Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Virtusize Developer Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Product Page Integration</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="product-page-integration">
+<span id="label-product-page-integration"></span><h1>Product Page Integration<a class="headerlink" href="#product-page-integration" title="Permalink to this headline">¶</a></h1>
+<p>On your product pages: add an HTML snippet for the Virtusize button and add the
+Virtusize script that enables the Virtusize widget, activated by the button.</p>
+<div class="section" id="virtusize-button">
+<span id="label-virtusize-button"></span><h2>Virtusize button<a class="headerlink" href="#virtusize-button" title="Permalink to this headline">¶</a></h2>
+<p>The HTML snippet for the Virtusize button should be included on the product page
+and position the button closely to the size selector. We can provide a few
+responsive buttons, with different designs that would suit your page style.</p>
+<p>The element you create should not be visible when the page loads; it will
+automatically be shown when there is a valid product in the Virtusize database.
+Set the button style to <code class="docutils literal"><span class="pre">visibility:hidden</span></code>, to <code class="docutils literal"><span class="pre">display:none</span></code> or both.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A responsive <a class="reference external" href="http://codepen.io/virtusize/pen/xVNrZP/?editors=1100">sample button</a>
+is available for use. If you want to create your own button, see our
+<a class="reference external" href="https://github.com/virtusize/virtusize.github.io/tree/master/resources/logos">list of resources</a>.</p>
+</div>
+</div>
+<div class="section" id="integrating-javascript-snippet">
+<span id="label-integrating-javascript-snippet"></span><h2>Integrating JavaScript Snippet<a class="headerlink" href="#integrating-javascript-snippet" title="Permalink to this headline">¶</a></h2>
+<p>The integration snippet should be included on the product page just before the
+closing <code class="docutils literal"><span class="pre">&lt;/body&gt;</span></code> tag. This ensures minimal impact on the page load speed. The
+code is similar to Google Analytics or Facebook Connect.</p>
+<p>Before inserting the snippet, you need to define the following items:</p>
+<ol class="arabic simple">
+<li>The API key for your store - <a class="reference external" href="mailto:sales&#37;&#52;&#48;virtusize&#46;com">contact our sales team</a>.</li>
+<li>The Product ID - see <a class="reference internal" href="#label-setting-the-product-id"><span class="std std-ref">Setting the Product ID</span></a>.</li>
+<li>The Product Image URL - see <a class="reference internal" href="#label-setting-the-product-image-url"><span class="std std-ref">Setting the Product Image URL</span></a>.</li>
+<li>The CSS selector - see <a class="reference internal" href="#label-setting-the-css-selector"><span class="std std-ref">Setting the CSS selector</span></a>.</li>
+<li>Enabling the Purchase History Preview Tooltip - see <a class="reference internal" href="#label-phpv-tooltip"><span class="std std-ref">Purchase History Preview Tooltip</span></a>.</li>
+</ol>
+<p>The simplest way to integrate is:</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c">&lt;!-- Virtusize Integration --&gt;</span>
+ <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+ <span class="o">!</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="nx">d</span><span class="p">){</span><span class="kd">var</span> <span class="nx">e</span><span class="p">,</span><span class="nx">f</span><span class="p">,</span><span class="nx">g</span><span class="p">,</span><span class="nx">h</span><span class="p">,</span><span class="nx">i</span><span class="p">,</span><span class="nx">j</span><span class="p">,</span><span class="nx">k</span><span class="p">,</span><span class="nx">l</span><span class="p">,</span><span class="nx">m</span><span class="p">;</span><span class="k">for</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">Virtusize</span><span class="o">=</span><span class="nx">d</span><span class="p">,</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">]</span><span class="o">||</span><span class="p">[],</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">].</span><span class="nx">env</span><span class="o">=</span><span class="kc">null</span><span class="o">!=</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsEnv</span><span class="o">?</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsEnv</span><span class="o">:</span><span class="s2">&quot;production&quot;</span><span class="p">,</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">].</span><span class="nx">url</span><span class="o">=</span><span class="kc">null</span><span class="o">!=</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsUrl</span><span class="o">?</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsUrl</span><span class="o">:</span><span class="nx">a</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="p">,</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsEnv</span><span class="o">=</span><span class="k">void</span> <span class="mi">0</span><span class="p">,</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsUrl</span><span class="o">=</span><span class="k">void</span> <span class="mi">0</span><span class="p">,</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">].</span><span class="nx">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;setApiKey&quot;</span><span class="p">,</span><span class="s2">&quot;setRegion&quot;</span><span class="p">,</span><span class="s2">&quot;setLanguage&quot;</span><span class="p">,</span><span class="s2">&quot;setWidgetOverlayColor&quot;</span><span class="p">,</span><span class="s2">&quot;addWidget&quot;</span><span class="p">,</span><span class="s2">&quot;ready&quot;</span><span class="p">,</span><span class="s2">&quot;setMobile&quot;</span><span class="p">,</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="s2">&quot;setAvailableSizes&quot;</span><span class="p">,</span><span class="s2">&quot;setSizeAliases&quot;</span><span class="p">,</span><span class="s2">&quot;addOrder&quot;</span><span class="p">,</span><span class="s2">&quot;setUserId&quot;</span><span class="p">],</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">].</span><span class="nx">factory</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">b</span><span class="p">){</span><span class="k">return</span> <span class="kd">function</span><span class="p">(){</span><span class="kd">var</span> <span class="nx">c</span><span class="p">;</span><span class="k">return</span> <span class="nx">c</span><span class="o">=</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">),</span><span class="nx">c</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">b</span><span class="p">),</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">]}},</span><span class="nx">m</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">].</span><span class="nx">methods</span><span class="p">,</span><span class="nx">k</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nx">l</span><span class="o">=</span><span class="nx">m</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">l</span><span class="o">&gt;</span><span class="nx">k</span><span class="p">;</span><span class="nx">k</span><span class="o">++</span><span class="p">)</span><span class="nx">f</span><span class="o">=</span><span class="nx">m</span><span class="p">[</span><span class="nx">k</span><span class="p">],</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">][</span><span class="nx">f</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">].</span><span class="nx">factory</span><span class="p">(</span><span class="nx">f</span><span class="p">);</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">].</span><span class="nx">snippetVersion</span><span class="o">=</span><span class="s2">&quot;3.2.0&quot;</span><span class="p">,</span><span class="nx">i</span><span class="o">=</span><span class="nx">b</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span><span class="nx">e</span><span class="o">=</span><span class="nx">b</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">c</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="nx">i</span><span class="p">.</span><span class="nx">async</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="nx">g</span><span class="o">=</span><span class="s2">&quot;/integration/v3.js&quot;</span><span class="p">,</span><span class="nx">h</span><span class="o">=</span><span class="s2">&quot;.virtusize.com&quot;</span><span class="o">+</span><span class="nx">g</span><span class="p">,</span><span class="nx">j</span><span class="o">=</span><span class="p">{</span><span class="nx">production</span><span class="o">:</span><span class="s2">&quot;api&quot;</span><span class="o">+</span><span class="nx">h</span><span class="p">,</span><span class="nx">staging</span><span class="o">:</span><span class="s2">&quot;staging&quot;</span><span class="o">+</span><span class="nx">h</span><span class="p">,</span><span class="nx">local</span><span class="o">:</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">].</span><span class="nx">url</span><span class="o">+</span><span class="nx">g</span><span class="o">+</span><span class="s2">&quot;?source&quot;</span><span class="p">},</span><span class="nx">i</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;//&quot;</span><span class="o">+</span><span class="p">(</span><span class="s2">&quot;https:&quot;</span><span class="o">!==</span><span class="nx">a</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span><span class="o">&amp;&amp;</span><span class="s2">&quot;local&quot;</span><span class="o">!==</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">].</span><span class="nx">env</span><span class="o">?</span><span class="s2">&quot;cdn.&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">+</span><span class="nx">j</span><span class="p">[</span><span class="nx">a</span><span class="p">[</span><span class="nx">d</span><span class="p">].</span><span class="nx">env</span><span class="p">],</span><span class="nx">i</span><span class="p">.</span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;vs-integration&quot;</span><span class="p">,</span><span class="nx">e</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="nx">e</span><span class="p">)}(</span><span class="nb">window</span><span class="p">,</span><span class="nb">document</span><span class="p">,</span><span class="s2">&quot;script&quot;</span><span class="p">,</span><span class="s2">&quot;vs&quot;</span><span class="p">);</span>
+
+ <span class="nx">vs</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;API_KEY&quot;</span><span class="p">);</span>
+ <span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
+     <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
+     <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>
+     <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_IMAGE_URL&quot;</span><span class="p">,</span>
+     <span class="nx">done</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;user-opened-panel-compare&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+             <span class="c1">// This callback is called when a User</span>
+             <span class="c1">// compares an item.</span>
+             <span class="c1">// Use this to detect actual Virtusize usage.</span>
+         <span class="p">});</span>
+     <span class="p">}</span>
+ <span class="p">});</span>
+ <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+ <span class="c">&lt;!-- End Virtusize Integration --&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="setting-the-product-id">
+<span id="label-setting-the-product-id"></span><h2>Setting the Product ID<a class="headerlink" href="#setting-the-product-id" title="Permalink to this headline">¶</a></h2>
+<p>The integration snippet needs the unique product ID to identify what measurements
+to use. The value <code class="docutils literal"><span class="pre">PRODUCT_ID</span></code> should be the actual identifier of the product.
+The Product ID must be unique for that product and should be an identifier that
+identifies the product regardless of size or color. The Product ID in the snippet
+needs to be the same as the ID that is in the Virtusize product database.</p>
+</div>
+<div class="section" id="setting-the-product-image-url">
+<span id="label-setting-the-product-image-url"></span><h2>Setting the Product Image URL<a class="headerlink" href="#setting-the-product-image-url" title="Permalink to this headline">¶</a></h2>
+<p>The Virtusize Widget includes an image of the product the customer is currently
+looking at, as well as images of the items they have previously purchased. The
+image will only be downloaded once from your URL and then distributed through our
+worldwide CDN.</p>
+<p>The ideal image dimensions are <code class="docutils literal"><span class="pre">width:</span> <span class="pre">360px;</span> <span class="pre">height:</span> <span class="pre">500px</span></code> with a safe area
+around the left and right edges to prevent cropping.</p>
+</div>
+<div class="section" id="setting-the-css-selector">
+<span id="label-setting-the-css-selector"></span><h2>Setting the CSS selector<a class="headerlink" href="#setting-the-css-selector" title="Permalink to this headline">¶</a></h2>
+<p>Any button selector can be used, the choice is yours. Normally, an ID is recommended
+when only one button is present on the page, and a class when having multiple buttons.</p>
+<p>For example, if you use <code class="docutils literal"><span class="pre">id=&quot;virtusize-button&quot;</span></code> on the button element, then set as line 3:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
+      <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
+      <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;#virtusize-button&quot;</span><span class="p">,</span>
+      <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_IMAGE_URL&quot;</span>
+ <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="purchase-history-preview-tooltip">
+<span id="label-phpv-tooltip"></span><h2>Purchase History Preview Tooltip<a class="headerlink" href="#purchase-history-preview-tooltip" title="Permalink to this headline">¶</a></h2>
+<p>This is a tooltip that shows a recent item from the user’s purchase history.
+It is inspired by the Bootstrap Tooltip.</p>
+<p>To enable this, add line 5 to your integration. Lines 7 and 8 are optional:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
+      <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
+      <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>
+      <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_IMAGE_URL&quot;</span><span class="p">,</span>
+      <span class="nx">tooltipEnabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">tooltipStyle</span><span class="o">:</span> <span class="s2">&quot;light&quot;</span><span class="p">,</span>    <span class="c1">// default: dark</span>
+      <span class="nx">tooltipPosition</span><span class="o">:</span> <span class="s2">&quot;bottom&quot;</span> <span class="c1">// default: top</span>
+ <span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="cross-device-detection">
+<span id="label-cross-device-detection"></span><h2>Cross Device Detection<a class="headerlink" href="#cross-device-detection" title="Permalink to this headline">¶</a></h2>
+<p>To make it possible for your customers to use Virtusize across different devices,
+you need to provide Virtusize with your user ID. Enabling a customer that bought
+an item from their smartphone to use that item as a reference when shopping from
+their desktop computer.</p>
+<p>User ID must match across product page and order confirmation page integration to
+have effect. Set only if user ID is known.</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// User ID as string</span>
+<span class="nx">vs</span><span class="p">.</span><span class="nx">setUserId</span><span class="p">(</span><span class="s2">&quot;USER_ID&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="mobile-integration">
+<span id="label-mobile-integration"></span><h2>Mobile integration<a class="headerlink" href="#mobile-integration" title="Permalink to this headline">¶</a></h2>
+<p>Virtusize comes with a mobile version of the widget optimized for phones. When a
+mobile browser is detected, the Virtusize integration automatically loads the
+mobile widget instead of the desktop version.</p>
+<p>You can force the Virtusize integration to load either the mobile or desktop
+version. This is useful if you have a dedicated mobile website.</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c1">// To force mobile</span>
+ <span class="nx">vs</span><span class="p">.</span><span class="nx">setMobile</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+
+ <span class="c1">// To force desktop</span>
+ <span class="nx">vs</span><span class="p">.</span><span class="nx">setMobile</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../order-confirmation-page-integration/index.html" class="btn btn-neutral float-right" title="Order Confirmation Page Integration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../technical-background/index.html" class="btn btn-neutral" title="Technical Background" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Virtusize.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-globe"> Switch language</span>
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Languages</dt>
+            <dd>
+                <a href="http://developers.virtusize.com/">English</a>
+            </dd>
+            <!-- TODO: comment this in, as soon as Japanese is ready
+            <dd>
+                <a href="http://developers.virtusize.com/ja/">Japanese</a>
+            </dd>
+            -->
+        </dl>
+        <hr/>
+        Developer documentation by <a href="http://www.virtusize.com/">Virtusize</a>.
+    </div>
+</div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
