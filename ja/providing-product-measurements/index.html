@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Providing Measurements &mdash; Virtusize Developer Docs 1.2 documentation</title>
+  <title>Providing Measurements &mdash; Virtusize Developer Docs 1.2 ドキュメント</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="Virtusize Developer Docs 1.2 documentation" href="../index.html"/>
+    <link rel="top" title="Virtusize Developer Docs 1.2 ドキュメント" href="../index.html"/>
         <link rel="next" title="Data tracking - Events and Callbacks" href="../data-tracking/index.html"/>
         <link rel="prev" title="Order Confirmation Page Integration" href="../order-confirmation-page-integration/index.html"/> 
 
@@ -148,7 +148,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="providing-measurements">
-<span id="label-providing-measurements"></span><h1>Providing Measurements<a class="headerlink" href="#providing-measurements" title="Permalink to this headline">¶</a></h1>
+<span id="label-providing-measurements"></span><h1>Providing Measurements<a class="headerlink" href="#providing-measurements" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>To enable Virtusize for a product, the Virtusize Widget needs to know that
 product&#8217;s measurements.</p>
 <p>The Virtusize button will only be shown when the integration snippet can find the
@@ -157,7 +157,7 @@ measurements for that product in the Virtusize database.</p>
 an identifier that identifies the product regardless of size. If possible, the
 Product ID should also be specific for different colors.</p>
 <div class="admonition attention">
-<p class="first admonition-title">Attention</p>
+<p class="first admonition-title">注意</p>
 <p class="last">The Product ID must match across our database, Product Page Script and Order
 Confirmation Page Script, see <a class="reference internal" href="../product-page-integration/index.html#label-setting-the-product-id"><span class="std std-ref">Setting the Product ID</span></a>.</p>
 </div>
@@ -169,14 +169,14 @@ Confirmation Page Script, see <a class="reference internal" href="../product-pag
 <li>Via the <a class="reference internal" href="#label-product-feed"><span class="std std-ref">Product Feed</span></a></li>
 </ul>
 <div class="section" id="spec-sheet-service">
-<span id="label-spec-sheet-service"></span><h2>Spec sheet service<a class="headerlink" href="#spec-sheet-service" title="Permalink to this headline">¶</a></h2>
+<span id="label-spec-sheet-service"></span><h2>Spec sheet service<a class="headerlink" href="#spec-sheet-service" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>If you are a brand with spec sheets of your products and a Virtusize customer with
 a Business or Enterprise level account, you can provide measurements to Virtusize
 simply be sending spec sheets to Virtusize. The Virtusize Garment Data team will
 extract the relevant data and upload it for you to our database.</p>
 </div>
 <div class="section" id="web-interface">
-<span id="label-web-interface"></span><h2>Web Interface<a class="headerlink" href="#web-interface" title="Permalink to this headline">¶</a></h2>
+<span id="label-web-interface"></span><h2>Web Interface<a class="headerlink" href="#web-interface" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The basic way of providing measurements is via our web admin. This can be done to
 provide measurements one by one.</p>
 <ol class="arabic simple">
@@ -190,7 +190,7 @@ provide measurements one by one.</p>
 <img alt="New product form" src="https://dasbbwm9ji7ym.cloudfront.net/integration-guide/images/vs-admin-new-product-form.png" />
 </div>
 <div class="section" id="bulk-upload">
-<span id="label-bulk-upload"></span><h2>Bulk Upload<a class="headerlink" href="#bulk-upload" title="Permalink to this headline">¶</a></h2>
+<span id="label-bulk-upload"></span><h2>Bulk Upload<a class="headerlink" href="#bulk-upload" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Another way of providing measurements is via the bulk upload, using our Excel
 template. This option is most suited if you are a medium sized retailer or single
 brand store with seasonal collections.</p>
@@ -209,18 +209,18 @@ brand store with seasonal collections.</p>
 <img alt="Bulk upload confirmation" src="https://dasbbwm9ji7ym.cloudfront.net/integration-guide/images/vs-admin-parsed-bulk-upload.png" />
 </div>
 <div class="section" id="product-feed">
-<span id="label-product-feed"></span><h2>Product Feed<a class="headerlink" href="#product-feed" title="Permalink to this headline">¶</a></h2>
+<span id="label-product-feed"></span><h2>Product Feed<a class="headerlink" href="#product-feed" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>This is similar to Pricerunner and Kelkoo feeds, but with a focus on product
 measurements. The major difference is that in this case, the feed must only
 return information about one product, and not a list of products.</p>
 <p>This feed option is suitable if you are a large store with an internal measurement
 database that cannot be exposed as an API.</p>
 <div class="admonition attention">
-<p class="first admonition-title">Attention</p>
+<p class="first admonition-title">注意</p>
 <p class="last">The feed must return its data using the <a class="reference external" href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a> encoding.</p>
 </div>
 <div class="section" id="how-it-works">
-<h3>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h3>
+<h3>How it works<a class="headerlink" href="#how-it-works" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>When you integrate with Virtusize, the integration snippet only displays
 the widget button if the measurements are defined for a product. Each
 product is identified by the product id. If the product does not have
@@ -240,13 +240,13 @@ return a <strong>404</strong> status code.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">注釈</p>
 <p class="last">It does not matter how the URL is formed, as long as the product id is part
 of the URL or the query.</p>
 </div>
 </div>
 <div class="section" id="product-feed-integration-example">
-<h3>Product feed integration example<a class="headerlink" href="#product-feed-integration-example" title="Permalink to this headline">¶</a></h3>
+<h3>Product feed integration example<a class="headerlink" href="#product-feed-integration-example" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>In order to use the product feed, the integration snippet must provide
 the <code class="docutils literal"><span class="pre">id</span></code> as well as the <code class="docutils literal"><span class="pre">version</span></code> variables in the product data, lines 7 and 10:</p>
 <div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -277,18 +277,18 @@ the <code class="docutils literal"><span class="pre">id</span></code> as well as
 </pre></div>
 </td></tr></table></div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">注釈</p>
 <p class="last">The <code class="docutils literal"><span class="pre">PRODUCT_ID</span></code> and <code class="docutils literal"><span class="pre">PRODUCT_VERSION</span></code> product data parameters must be
 dynamic for each product.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">注釈</p>
 <p class="last">The <code class="docutils literal"><span class="pre">PRODUCT_VERSION</span></code> variable can be an integer, a date, or even a unix
 timestamp, as long as it changes when the product measurements change.</p>
 </div>
 </div>
 <div class="section" id="json-format">
-<h3>JSON format<a class="headerlink" href="#json-format" title="Permalink to this headline">¶</a></h3>
+<h3>JSON format<a class="headerlink" href="#json-format" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>The feed must return data as valid
 <a class="reference external" href="http://en.wikipedia.org/wiki/JSON">JSON</a>.</p>
 <p><a class="reference external" href="https://api.virtusize.com/api/v2/feed/examples/json">Example feed</a></p>
@@ -356,13 +356,13 @@ values.</dd>
 </dl>
 </div>
 <div class="section" id="measurements-object">
-<h3>Measurements object<a class="headerlink" href="#measurements-object" title="Permalink to this headline">¶</a></h3>
+<h3>Measurements object<a class="headerlink" href="#measurements-object" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Each product size is represented as a measurements object. The measurements
 object is also a JSON object. The keys are the measurement names in camelCase.
 The values must be numeric integer or floating point values in the unit of your
 choice.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">注釈</p>
 <p class="last">The unit of measurements is configured on a store by store basis and the default
 is <code class="docutils literal"><span class="pre">centimeters</span></code>. We also support millimeters and inches in decimal
 format. Get in touch with us to configure this for your store.</p>
@@ -371,7 +371,7 @@ format. Get in touch with us to configure this for your store.</p>
 each product type.</p>
 </div>
 <div class="section" id="feed-validation">
-<h3>Feed validation<a class="headerlink" href="#feed-validation" title="Permalink to this headline">¶</a></h3>
+<h3>Feed validation<a class="headerlink" href="#feed-validation" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>To validate your feed, you can use our feed tester URL:</p>
 <div class="highlight-html"><div class="highlight"><pre><span></span>GET https://api.virtusize.com/api/v2/feed/tester/json?apiKey=xxxxxxxxxxxxx&amp;url=http://www.example.com/backend/virtusize/product-info?id=123456abc
 </pre></div>
@@ -450,6 +450,7 @@ each product type.</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
       <script type="text/javascript" src="../_static/js/virtusize.js"></script>
       <script type="text/javascript" src="../_static/js/theme.js"></script>
 

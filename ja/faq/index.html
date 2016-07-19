@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FAQ &mdash; Virtusize Developer Docs 1.2 ドキュメント</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Virtusize Developer Docs 1.2 ドキュメント" href="../index.html"/>
+        <link rel="prev" title="Product Types" href="../product-types/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Virtusize Developer Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../technical-background/index.html">Technical Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product-page-integration/index.html">Product Page Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-confirmation-page-integration/index.html">Order Confirmation Page Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../providing-product-measurements/index.html">Providing Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-tracking/index.html">Data tracking - Events and Callbacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional-integration-options/index.html">Additional Integration Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product-types/index.html">Product Types</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#product-page-integration">Product Page Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#order-confirmation-integration">Order confirmation integration</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Virtusize Developer Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>FAQ</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="faq">
+<span id="label-faq"></span><h1>FAQ<a class="headerlink" href="#faq" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><strong>How do I verify the integration?</strong></p>
+<blockquote>
+<div><p>You can verify your integration by using our Bookmarklet. Just drag the following
+link to your bookmarks bar.</p>
+<p><span class="raw-html"><a href="javascript:void((function(){var%20element=document.createElement('script');element.setAttribute('src','https://rawgit.com/virtusize/bookmarklets/master/build/override.min.js');element.setAttribute('id','vs-bookmarklet');document.body.appendChild(element)})())" title="Virtusize Bookmarklet" class="fa fa-bookmark">&nbsp;Virtusize Bookmarklet</a></span></p>
+<p>When you click this bookmarklet on either your product pages or your order
+confirmation page, a little toolbar should appear at the bottom of the page. It tells
+you at first glance if you have integrated correctly.</p>
+<p>The debug tab will give you more information about whether or not you have
+integrated correctly.</p>
+<p>In this example below, the using the Debug mode on a product page shows us:</p>
+<ul class="simple">
+<li>The API key being used</li>
+<li>There is one widget integrated on the page</li>
+</ul>
+<img alt="Virtusize Bookmarklet: Debug tab" src="https://dasbbwm9ji7ym.cloudfront.net/integration-guide/images/faq-bookmarklet-debug.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>In the widget section of the Bookmarklet, we can also see:</p>
+<ul class="simple">
+<li>The Product ID being picked up by the Virtusize snippet</li>
+<li>The button selector on the page</li>
+<li>The image URL</li>
+<li>Whether or not the Product ID is available in the Virtusize database: Valid = true</li>
+</ul>
+<img alt="Virtusize Bookmarklet: Widgets tab" src="https://dasbbwm9ji7ym.cloudfront.net/integration-guide/images/faq-bookmarklet-widgets.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>You can append <code class="docutils literal"><span class="pre">#hasVsWidget</span></code> to any product page URL, press enter to load and
+then press enter a second time to verify an integration. For example <a class="reference external" href="http://www.store.com/#hasVsWidget">http://www.store.com/#hasVsWidget</a></p>
+<p><code class="docutils literal"><span class="pre">Is</span> <span class="pre">Valid</span> <span class="pre">Product:</span> <span class="pre">false</span></code> tells you that we don&#8217;t have a product in our database.
+Here is an example response for a valid integration:</p>
+<img alt="Virtusize Integration verification" src="https://dasbbwm9ji7ym.cloudfront.net/integration-guide/images/faq-bookmarklet-popup.png" />
+</div></blockquote>
+<div class="section" id="product-page-integration">
+<span id="label-faq-product-page"></span><h2>Product Page Integration<a class="headerlink" href="#product-page-integration" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>Why isn&#8217;t Virtusize showing up on my product pages?</strong></p>
+<blockquote>
+<div><p>Make sure you have items uploaded to your Virtusize dashboard before testing. The
+Virtusize button will only be visible for products that are stored in our database.</p>
+<p>Make sure you&#8217;ve correctly identified the product ID from your product page that
+matches the product ID for the corresponding product in your Virtusize dashboard.
+If the IDs don&#8217;t match, the button won&#8217;t display. If you have multiple product
+identifiers on your product pages, make sure that you are using the correct value
+for the Virtusize script that matches the IDs in your Virtusize dashboard.</p>
+<p>Do you have different IDs for different color variants  / SKUs?  If your product
+pages contain more than one color variant, and each SKU has a unique identifier,
+make sure you are able to use the correct ID that is unique for that particular item.</p>
+<p>If you also have different product identifiers for each different size, there still
+needs to be a unique ID set for the whole size set.</p>
+<p>See <a class="reference internal" href="../product-page-integration/index.html#label-setting-the-product-id"><span class="std std-ref">Setting the Product ID</span></a>.</p>
+</div></blockquote>
+<p><strong>Why is Virtusize widget only displaying one product size?</strong></p>
+<blockquote>
+<div>Make sure you upload all the different sizes for a product under the same product
+ID. Do not upload each size with a unique product ID.</div></blockquote>
+<p><strong>Why is there no product image in the Virtusize widget?</strong></p>
+<blockquote>
+<div><p>You need to supply an image URL in the integration on your product pages. When sending
+back an image URL, make sure that you include <code class="docutils literal"><span class="pre">http://</span></code> or <code class="docutils literal"><span class="pre">https://</span></code></p>
+<p>See <a class="reference internal" href="../product-page-integration/index.html#label-setting-the-product-image-url"><span class="std std-ref">Setting the Product Image URL</span></a>.</p>
+</div></blockquote>
+<p><strong>Will the Virtusize button show up on mobile?</strong></p>
+<blockquote>
+<div><p>Yes, the Virtusize mobile widget is fully responsive and we have automatic device
+detection. If your mobile site runs on a different platform to your desktop site,
+you will need to integrate the Virtusize script separately on your mobile platform.</p>
+<p>See <a class="reference internal" href="../product-page-integration/index.html#label-mobile-integration"><span class="std std-ref">Mobile integration</span></a>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="order-confirmation-integration">
+<span id="label-faq-order-confirmation"></span><h2>Order confirmation integration<a class="headerlink" href="#order-confirmation-integration" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>Do I need to send back all of the listed attributes to Virtusize from our order
+confirmation page?</strong></p>
+<blockquote>
+<div><p>We recommend sending back all attributes. If you are unable to do so, check the
+list to see the minimum requirements.</p>
+<p>See <a class="reference internal" href="../order-confirmation-page-integration/index.html#label-order"><span class="std std-ref">Order information</span></a>.</p>
+</div></blockquote>
+<p><strong>Is it okay to send back a dummy user ID?</strong></p>
+<blockquote>
+<div>No, it has to be unique per user.</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../product-types/index.html" class="btn btn-neutral" title="Product Types" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Virtusize.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-globe"> Switch language</span>
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Languages</dt>
+            <dd>
+                <a href="http://developers.virtusize.com/">English</a>
+            </dd>
+            <!-- TODO: comment this in, as soon as Japanese is ready
+            <dd>
+                <a href="http://developers.virtusize.com/ja/">Japanese</a>
+            </dd>
+            -->
+        </dl>
+        <hr/>
+        Developer documentation by <a href="http://www.virtusize.com/">Virtusize</a>.
+    </div>
+</div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+  <loc>http://developers.virtusize.com/</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/technical-background/index.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/product-page-integration/index.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/order-confirmation-page-integration/index.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/providing-product-measurements/index.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/data-tracking/index.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/advanced-integration-options/index.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/product-types/index.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://developers.virtusize.com/faq/index.html</loc>
+  <changefreq>weekly</changefreq>
+</url>
+
+</urlset>
