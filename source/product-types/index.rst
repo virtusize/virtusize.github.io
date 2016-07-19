@@ -20,25 +20,11 @@ Product Types API
 We provide a JSON API to get the data about each product type.
 
 The latest list of available product types can be queried by the following GET
-request.
+request. This will return a list of all product types.
 
-**Product types API request:**
+**Product types API request**::
 
-::
-
-    GET https://api.virtusize.com/api/v2/product-types
-
-
-.. highlight:: javascript
-
-**Example response:**::
-
-    [
-      "dress",
-      "shirt",
-      "sweater",
-      "tShirt"
-    ]
+    GET https://api.virtusize.com/a/api/v3/product-types
 
 
 Product type details
@@ -48,45 +34,44 @@ To get detailed information about a specific product type issue the
 following GET request.
 
 
-**Example details request:**
+**Example details API request**::
 
-::
+    GET https://api.virtusize.com/a/api/v3/product-types/dress
 
-    GET https://api.virtusize.com/api/v2/product-types/dress
-
-**Example response:**::
+**Example response**::
 
     {
-      "name": "dress",
-      "requiredMeasurements": [
-        "height",
-        "bust",
-        "waist",
-        "hip"
-      ],
-      "optionalMeasurements": [
-        "sleeveOpening",
-        "hem",
-        "waistHeight"
-      ],
-      "maxMeasurements": {
-        "hip": 800,
-        "waistHeight": 550,
-        "waist": 700,
-        "sleeveOpening": 400,
-        "bust": 700,
-        "height": 1700,
-        "hem": 1200
-      },
-      "minMeasurements": {
-        "hip": 300,
-        "waistHeight": 250,
-        "waist": 200,
-        "sleeveOpening": 100,
-        "bust": 250,
-        "height": 650,
-        "hem": 200
-      }
+        "id": 1,
+        "name": "dress",
+        "requiredMeasurements": [
+            "height",
+            "bust",
+            "waist"
+        ],
+        "optionalMeasurements": [
+            "hip",
+            "sleeveOpening",
+            "hem",
+            "waistHeight"
+        ],
+        "minMeasurements": {
+            "hip": 150,
+            "waistHeight": 150,
+            "waist": 100,
+            "sleeveOpening": 50,
+            "bust": 150,
+            "height": 500,
+            "hem": 200
+        },
+        "maxMeasurements": {
+            "hip": 1500,
+            "waistHeight": 750,
+            "waist": 1200,
+            "sleeveOpening": 400,
+            "bust": 1200,
+            "height": 2500,
+            "hem": 2000
+        }
     }
 
 
