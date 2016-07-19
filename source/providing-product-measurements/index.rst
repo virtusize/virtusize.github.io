@@ -195,13 +195,13 @@ The feed must return data as valid
 `Example feed <https://api.virtusize.com/api/v2/feed/examples/json>`_
 
 
-**Example request:**::
+**Example request**::
 
     GET http://www.example.com/product/123456abc/measurements
 
 .. highlight:: javascript
 
-**Example response:**::
+**Example response**::
 
     {
       "id": "123456abc",
