@@ -12,6 +12,9 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+
+### 2.1.0
+
 - Feature: Updated snippet to 3.2.1. (ab)
 - Refactor: Updated product type API URLs. (ab)
 
