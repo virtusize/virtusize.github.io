@@ -146,6 +146,8 @@ a region. Other things can be specified on a widget to widget basis. Examples
 for this would be setting the product ids or available sizes.
 
 
+.. _label-global-settings:
+
 Global settings
 ^^^^^^^^^^^^^^^
 
