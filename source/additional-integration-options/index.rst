@@ -27,7 +27,7 @@ you can register for the event in two ways, on the global Virtusize object:
    :linenos:
 
     vs.on("PRODUCT_ID", "user-added-item-to-cart", function(data) {
-        // Handle the event by added the appropriate item into the users
+        // Handle the event by adding the appropriate item into the users
         // shopping cart.
         //
         // The additional data contains the productId and the size:
@@ -43,10 +43,10 @@ or directly in the ``addWidget`` call:
         productId: "PRODUCT_ID",
         buttonSelector: "BUTTON_SELECTOR",
         productImageUrl: "PRODUCT_IMAGE_URL",
-        availableSizes: ["small", "medium", "large"]    // Change this to the currently available sizes
+        availableSizes: ["small", "medium", "large"],    // Change this to the currently available sizes
         done: function(error) {
             this.on("user-added-item-to-cart", function(data) {
-                // Handle the event by added the appropriate item into the users
+                // Handle the event by adding the appropriate item into the users
                 // shopping cart.
                 //
                 // The additional data contains the productId and the size:
@@ -145,6 +145,8 @@ Some of the methods work in a global way, like setting the API key or defining
 a region. Other things can be specified on a widget to widget basis. Examples
 for this would be setting the product ids or available sizes.
 
+
+.. _label-global-settings:
 
 Global settings
 ^^^^^^^^^^^^^^^
