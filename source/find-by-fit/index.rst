@@ -8,12 +8,12 @@ by an item they already own. It can work as a standalone product, but is more ef
 when combined with the rest of Virtusize product line.
 
 
-.. _label-integration-steps:
+.. _label-quickstart:
 
-Integration steps
------------------
+Quickstart
+----------
 
-Integrating Find by fit on your page can be done in three simple steps:
+Integrating Find by fit on your page is done in three simple steps:
 
 1. Provide a product feed URL - see :ref:`label-product-feed`.
 2. Add a new page with Find by fit integration - see :ref:`label-page-integration`.
@@ -25,33 +25,34 @@ Integrating Find by fit on your page can be done in three simple steps:
 Product feed
 ------------
 
-The product feed is required to add additional product information to Virtusize, some of which
-might change often. This could be a feed you already have, such as an affiliate feed.
+The product feed is required to add additional product information to Virtusize, mainly
+information that might change regularly. This could be a feed you already have, such as an affiliate feed.
 
 .. note::
     The product feed must be available online and in CSV, XLS or JSON format.
     The feed is frequantly fetched multiple times every day, to ensure updated data.
 
-The list below doesn't be in specific order or any special naming. The required data is:
+The list below doesn't be in specific order or have any special naming; it just needs to exist.
+The required data is:
 
 Product ID
     The product ID is used to connect the feed product with the one in Virtusize' database.
     See :ref:`label-setting-the-product-id`.
 
 Brand
-    Product brand name.
+    Name of product brand.
 
 Product page URL
-    Direct URL to the specific product.
+    Canonical URL to the specific product.
 
 Price
     Regular product price.
 
 Sale price
-    Product price, only if there's a difference from regular price.
+    Product price, only if there is a difference from regular price.
 
 Available sizes
-    Information about which sizes the product is available in.
+    Information about which sizes the product is currently available in for purchase.
 
 
 .. _label-page-integration:
@@ -92,9 +93,12 @@ Product page
 ------------
 
 Update the existing :ref:`label-product-page-integration`. The integration provides features
-to automatically pre-select the chosen size and display additional information for the user.
+to automatically pre-populate the size selector and display additional information for the user.
 
-Note the extra lines 10 and 12:
+Add an empty container element with a custom ID. Then supply the ID as ``FIND_BY_FIT_SELECTOR``
+in the code snippet below. The button will only be shown when the user comes from Find by fit.
+
+Update your existing product page integration by adding the lines 10 and 12 from the example:
 
 .. code-block:: html
    :linenos:
@@ -110,8 +114,12 @@ Note the extra lines 10 and 12:
         productImageUrl: "PRODUCT_IMAGE_URL",
         findByFitSelector: "FIND_BY_FIT_SELECTOR",
         done: function(error) {
-            this.on("find-by-fit-select-size", function(size) {
-
+            this.on("find-by-fit-select-size", function(data) {
+             // Handle the event by selecting the appropriate size in the
+             // size selector.
+             //
+             // The additional data contains the size:
+             // data == {size: "Small"}
             });
         }
     });
@@ -123,12 +131,12 @@ Line 10
     placed in this container.
 
 Line 12
-    Add code to read the ``size`` value, being passed as a parameter, and pre-select
-    the size for the user.
+    Add code to read size from the ``data`` value, being passed as a parameter, and
+    pre-select the size in the size selector for the user.
 
 .. note::
-    You can test these functions on your product page, by appending ``?vs.cohort=findbyfit&score=95&size=Small`` to
-    a product page URL.
+    You can test these functions on your product page, by appending ``?vs.cohort=findbyfit&score=95&size=Small``
+    to a product page URL.
 
 
 .. _label-events:
