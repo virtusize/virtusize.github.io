@@ -30,9 +30,9 @@ information that might change regularly. This could be a feed you already have, 
 
 .. note::
     The product feed must be available online and in CSV, XLS or JSON format.
-    The feed is frequantly fetched multiple times every day, to ensure updated data.
+    The feed is frequently fetched multiple times every day, to ensure updated data.
 
-The list below doesn't be in specific order or have any special naming; it just needs to exist.
+The list below doesn't have to be in specific order or have any special naming; it just needs to exist.
 The required data is:
 
 Product ID
