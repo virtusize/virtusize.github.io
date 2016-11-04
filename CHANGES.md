@@ -12,6 +12,8 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+- Feature: Updated section about AJAX page integration. (ab)
+- Cleanup: Removed section about Add to cart. (ab)
 - Feature: Added Find by fit section. (ab)
 - Feature: Updated snippet to 3.2.2. (ab)
 

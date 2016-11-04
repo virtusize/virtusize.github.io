@@ -98,6 +98,13 @@ Product Page Integration
 
     See :ref:`label-mobile-integration`.
 
+**Why is the integration throwing errors?**
+
+    If the error is of type ``a[b].push is not a function`` or ``queue.sort is not a function``,
+    the error is probably cause by multiple snippets being loaded.
+
+    See :ref:`label-multiple-products-on-product-page`.
+
 
 .. _label-faq-order-confirmation:
 
