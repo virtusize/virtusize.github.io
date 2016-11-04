@@ -12,6 +12,7 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+- Cleanup: Removed section about Add to cart. (ab)
 - Feature: Added Find by fit section. (ab)
 - Feature: Updated snippet to 3.2.2. (ab)
 
