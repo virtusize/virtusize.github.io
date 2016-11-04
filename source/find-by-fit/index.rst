@@ -15,12 +15,12 @@ Quickstart
 
 Integrating Find by fit on your page is done in three simple steps:
 
-1. Provide a product feed URL - see :ref:`label-product-feed`.
+1. Provide a product feed URL - see :ref:`label-fbf-product-feed`.
 2. Add a new page with Find by fit integration - see :ref:`label-page-integration`.
 3. Update product page integration to support Find by fit - see :ref:`label-product-page`.
 
 
-.. _label-product-feed:
+.. _label-fbf-product-feed:
 
 Product feed
 ------------
@@ -61,6 +61,7 @@ Page integration
 ----------------
 
 The integration of the Find by fit app is very similar to other Virtusize integrations.
+Start by creating a new page on your website and create a link to it.
 
 .. note::
     All :ref:`label-global-settings` can be used with this integration.
