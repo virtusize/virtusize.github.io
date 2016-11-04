@@ -30,17 +30,44 @@ Multiple Products on Product Page
 ---------------------------------
 
 It is possible to have Virtusize Widgets for more than one product per page. This
-is needed for "Buy-this-outfit" kind of pages or AJAX-pages, like product preview.
+is suitable for "Buy-this-outfit" kind of pages or AJAX-pages, like product preview.
 
-The integration is the same as the one for single product pages. All you have to
-do is supply additional ``addWidget`` calls.
+.. note::
+    Try this if you see errors like ``a[b].push is not a function`` on your page,
+    caused by the integration.
 
-.. attention::
-    The snippet can only be loaded once per page, but you can have multiple
-    ``addWidget`` calls for each product.
+The integration is the same as the one for single product pages, with one difference:
+the first part of the code snippet should only load once per page. Move this section
+to the static part of the page:
 
-For pages loaded with AJAX, to avoid conflicts with already loaded widgets you can
-obtain a VirtusizeWidget object after it has been initialised from the global
+.. code-block:: html
+   :linenos:
+
+   <!-- Virtusize Integration -->
+   <script>
+   !(function(a,d,g,b){var c,h,e,f;a.Virtusize=b;a[b]=a[b]||[];a[b].env=null!=a.vsEnv?a.vsEnv:"production";a[b].url=null!=a.vsUrl?a.vsUrl:a.location.host;a.vsEnv=void 0;a.vsUrl=void 0;a[b].methods="setApiKey setRegion setLanguage setWidgetOverlayColor addWidget ready setMobile on setAvailableSizes setSizeAliases addOrder setUserId".split(" ");a[b].factory=function(c){return function(){var d;d=Array.prototype.slice.call(arguments);d.unshift(c);a[b].push(d);return a[b]}};f=a[b].methods;c=0;for(h=f.length;c<h;c++)e=f[c],a[b][e]=a[b].factory(e);a[b].snippetVersion="3.2.2";c=d.createElement(g);d=d.getElementsByTagName(g)[0];c.async=1;c.src={production:"https://cdn.api.virtusize.com/integration/v3.js",staging:"https://cdn.staging.virtusize.com/integration/v3.js",local:"//"+a[b].url+"/integration/v3.source.js"}[a[b].env];c.id="vs-integration";d.parentNode.insertBefore(c,d)})(window,document,"script","vs");
+
+   vs.setApiKey("API_KEY");
+   </script>
+   <!-- End Virtusize Integration -->
+
+Then call ``addWidget`` as usual in the dynamic part for each product:
+
+.. code-block:: html
+   :linenos:
+
+   <script>
+   vs.addWidget({
+      ...
+   });
+   </script>
+
+
+Avoiding product ID collision
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For pages loaded with AJAX, to avoid conflicts with already loaded widgets with same product ID,
+you can obtain a Virtusize widget object after it has been initialised from the global
 object like the following. To be sure that the integration has loaded you can
 wrap it in the ready function:
 
@@ -54,8 +81,9 @@ wrap it in the ready function:
     });
 
 .. note::
-    You can only integrate one product with the same id per page. If you want
-    multiple buttons to open the same widget, see: :ref:`label-multiple-buttons-on-product-page`
+    You can only integrate one product with the same ID per page, meaning don't make mutiple
+    ``addWidget`` calls with the same ``PRODUCT_ID`` on one page. If you want multiple
+    buttons to open the same widget, see :ref:`label-multiple-buttons-on-product-page`.
 
 
 .. _label-snippet-api:
@@ -251,14 +279,14 @@ setSizeAliases(sizeAliases)
 
 on(eventName, callback)
     **eventName** - String, valid event to bind a callback to. See
-    :ref:`label-events-and-callbacks-v3` for a list of valid event names.
+    :ref:`label-registering-callbacks` for a list of valid event names.
 
     **callback** - Function callable, function to call when an event occurs.
     Allows programmatic subscription to widget events such as: "user-opened-widget",
     "user-closed-widget". Inside the callback function ``this`` will be the
     instance of the VirtusizeWidget from which the event was triggered. On some
     events an additional data object is passed as a parameter to the function,
-    see :ref:`label-events-and-callbacks-v3`
+    see :ref:`label-registering-callbacks`
 
     **Example:**
 
