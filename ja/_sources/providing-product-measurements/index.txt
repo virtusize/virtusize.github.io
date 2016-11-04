@@ -169,7 +169,7 @@ the ``id`` as well as the ``version`` variables in the product data, lines 7 and
     vs.setApiKey("API_KEY");
     vs.addWidget({
         productId: "PRODUCT_ID",
-        buttonSelector "BUTTON_SELECTOR",
+        buttonSelector: "BUTTON_SELECTOR",
         productImageUrl: "PRODUCT_IMAGE_URL",
         productVersion: "PRODUCT_VERSION"
     });

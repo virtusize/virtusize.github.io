@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Find by fit &mdash; Virtusize Developer Docs 1.3.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/virtusize.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Virtusize Developer Docs 1.3.0 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Virtusize Developer Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical-background/index.html">Technical Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product-page-integration/index.html">Product Page Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../order-confirmation-page-integration/index.html">Order Confirmation Page Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../providing-product-measurements/index.html">Providing Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-tracking/index.html">Data tracking - Events and Callbacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../additional-integration-options/index.html">Additional Integration Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../product-types/index.html">Product Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Virtusize Developer Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Find by fit</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="find-by-fit">
+<span id="label-find-by-fit"></span><h1>Find by fit<a class="headerlink" href="#find-by-fit" title="Permalink to this headline">¶</a></h1>
+<p>Find by fit is the latest product by Virtusize, which lets users search for products
+by an item they already own. It can work as a standalone product, but is more effective
+when combined with the rest of Virtusize product line.</p>
+<div class="section" id="quickstart">
+<span id="label-quickstart"></span><h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
+<p>Integrating Find by fit on your page is done in three simple steps:</p>
+<ol class="arabic simple">
+<li>Provide a product feed URL - see <a class="reference internal" href="#label-fbf-product-feed"><span class="std std-ref">Product feed</span></a>.</li>
+<li>Add a new page with Find by fit integration - see <a class="reference internal" href="#label-page-integration"><span class="std std-ref">Page integration</span></a>.</li>
+<li>Update product page integration to support Find by fit - see <a class="reference internal" href="#label-product-page"><span class="std std-ref">Product page</span></a>.</li>
+</ol>
+</div>
+<div class="section" id="product-feed">
+<span id="label-fbf-product-feed"></span><h2>Product feed<a class="headerlink" href="#product-feed" title="Permalink to this headline">¶</a></h2>
+<p>The product feed is required to add additional product information to Virtusize, mainly
+information that might change regularly. This could be a feed you already have, such as an affiliate feed.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The product feed must be available online and in CSV, XLS or JSON format.
+The feed is frequently fetched multiple times every day, to ensure updated data.</p>
+</div>
+<p>The list below doesn&#8217;t have to be in specific order or have any special naming; it just needs to exist.
+The required data is:</p>
+<dl class="docutils">
+<dt>Product ID</dt>
+<dd>The product ID is used to connect the feed product with the one in Virtusize&#8217; database.
+See <a class="reference internal" href="../product-page-integration/index.html#label-setting-the-product-id"><span class="std std-ref">Setting the Product ID</span></a>.</dd>
+<dt>Brand</dt>
+<dd>Name of product brand.</dd>
+<dt>Product page URL</dt>
+<dd>Canonical URL to the specific product.</dd>
+<dt>Price</dt>
+<dd>Regular product price.</dd>
+<dt>Sale price</dt>
+<dd>Product price, only if there is a difference from regular price.</dd>
+<dt>Available sizes</dt>
+<dd>Information about which sizes the product is currently available in for purchase.</dd>
+</dl>
+</div>
+<div class="section" id="page-integration">
+<span id="label-page-integration"></span><h2>Page integration<a class="headerlink" href="#page-integration" title="Permalink to this headline">¶</a></h2>
+<p>The integration of the Find by fit app is very similar to other Virtusize integrations.
+Start by creating a new page on your website and create a link to it.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All <a class="reference internal" href="../additional-integration-options/index.html#label-global-settings"><span class="std std-ref">Global settings</span></a> can be used with this integration.</p>
+</div>
+<p>The simplest way to integrate is:</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c">&lt;!-- Virtusize Integration --&gt;</span>
+ <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+ <span class="o">!</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">d</span><span class="p">,</span><span class="nx">g</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span><span class="kd">var</span> <span class="nx">c</span><span class="p">,</span><span class="nx">h</span><span class="p">,</span><span class="nx">e</span><span class="p">,</span><span class="nx">f</span><span class="p">;</span><span class="nx">a</span><span class="p">.</span><span class="nx">Virtusize</span><span class="o">=</span><span class="nx">b</span><span class="p">;</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span><span class="o">||</span><span class="p">[];</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">env</span><span class="o">=</span><span class="kc">null</span><span class="o">!=</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsEnv</span><span class="o">?</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsEnv</span><span class="o">:</span><span class="s2">&quot;production&quot;</span><span class="p">;</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">url</span><span class="o">=</span><span class="kc">null</span><span class="o">!=</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsUrl</span><span class="o">?</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsUrl</span><span class="o">:</span><span class="nx">a</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="p">;</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsEnv</span><span class="o">=</span><span class="k">void</span> <span class="mi">0</span><span class="p">;</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsUrl</span><span class="o">=</span><span class="k">void</span> <span class="mi">0</span><span class="p">;</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">methods</span><span class="o">=</span><span class="s2">&quot;setApiKey setRegion setLanguage setWidgetOverlayColor addWidget ready setMobile on setAvailableSizes setSizeAliases addOrder addFindByFit setUserId&quot;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">);</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">factory</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">c</span><span class="p">){</span><span class="k">return</span> <span class="kd">function</span><span class="p">(){</span><span class="kd">var</span> <span class="nx">d</span><span class="p">;</span><span class="nx">d</span><span class="o">=</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span><span class="nx">d</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span><span class="k">return</span> <span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">]}};</span><span class="nx">f</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">methods</span><span class="p">;</span><span class="nx">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="k">for</span><span class="p">(</span><span class="nx">h</span><span class="o">=</span><span class="nx">f</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">c</span><span class="o">&lt;</span><span class="nx">h</span><span class="p">;</span><span class="nx">c</span><span class="o">++</span><span class="p">)</span><span class="nx">e</span><span class="o">=</span><span class="nx">f</span><span class="p">[</span><span class="nx">c</span><span class="p">],</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">][</span><span class="nx">e</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">factory</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">snippetVersion</span><span class="o">=</span><span class="s2">&quot;4.0.0&quot;</span><span class="p">;</span><span class="nx">c</span><span class="o">=</span><span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">g</span><span class="p">);</span><span class="nx">d</span><span class="o">=</span><span class="nx">d</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">g</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span><span class="nx">c</span><span class="p">.</span><span class="nx">async</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="nx">c</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">production</span><span class="o">:</span><span class="s2">&quot;https://cdn.api.virtusize.com/integration/v3.js&quot;</span><span class="p">,</span><span class="nx">staging</span><span class="o">:</span><span class="s2">&quot;https://cdn.staging.virtusize.com/integration/v3.js&quot;</span><span class="p">,</span><span class="nx">local</span><span class="o">:</span><span class="s2">&quot;//&quot;</span><span class="o">+</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">url</span><span class="o">+</span><span class="s2">&quot;/integration/v3.source.js&quot;</span><span class="p">}[</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">env</span><span class="p">];</span><span class="nx">c</span><span class="p">.</span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;vs-integration&quot;</span><span class="p">;</span><span class="nx">d</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span><span class="nx">d</span><span class="p">)})(</span><span class="nb">window</span><span class="p">,</span><span class="nb">document</span><span class="p">,</span><span class="s2">&quot;script&quot;</span><span class="p">,</span><span class="s2">&quot;vs&quot;</span><span class="p">);</span>
+
+ <span class="nx">vs</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;API_KEY&quot;</span><span class="p">);</span>
+ <span class="nx">vs</span><span class="p">.</span><span class="nx">addFindByFit</span><span class="p">({</span>
+     <span class="nx">containerSelector</span><span class="o">:</span> <span class="s2">&quot;CONTAINER_SELECTOR&quot;</span><span class="p">,</span>
+     <span class="nx">done</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;user-opened-widget&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+             <span class="c1">// Track interactions</span>
+         <span class="p">});</span>
+     <span class="p">}</span>
+ <span class="p">});</span>
+ <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+ <span class="c">&lt;!-- End Virtusize Integration --&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="product-page">
+<span id="label-product-page"></span><h2>Product page<a class="headerlink" href="#product-page" title="Permalink to this headline">¶</a></h2>
+<p>Update the existing <a class="reference internal" href="../product-page-integration/index.html#label-product-page-integration"><span class="std std-ref">Product Page Integration</span></a>. The integration provides features
+to automatically pre-populate the size selector and display additional information for the user.</p>
+<p>Add an empty container element with a custom ID. Then supply the ID as <code class="docutils literal"><span class="pre">FIND_BY_FIT_SELECTOR</span></code>
+in the code snippet below. The button will only be shown when the user comes from Find by fit.</p>
+<p>Update your existing product page integration by adding the lines 10 and 12 from the example:</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="c">&lt;!-- Virtusize Integration --&gt;</span>
+ <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+ <span class="o">!</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">d</span><span class="p">,</span><span class="nx">g</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span><span class="kd">var</span> <span class="nx">c</span><span class="p">,</span><span class="nx">h</span><span class="p">,</span><span class="nx">e</span><span class="p">,</span><span class="nx">f</span><span class="p">;</span><span class="nx">a</span><span class="p">.</span><span class="nx">Virtusize</span><span class="o">=</span><span class="nx">b</span><span class="p">;</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span><span class="o">||</span><span class="p">[];</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">env</span><span class="o">=</span><span class="kc">null</span><span class="o">!=</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsEnv</span><span class="o">?</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsEnv</span><span class="o">:</span><span class="s2">&quot;production&quot;</span><span class="p">;</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">url</span><span class="o">=</span><span class="kc">null</span><span class="o">!=</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsUrl</span><span class="o">?</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsUrl</span><span class="o">:</span><span class="nx">a</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="p">;</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsEnv</span><span class="o">=</span><span class="k">void</span> <span class="mi">0</span><span class="p">;</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsUrl</span><span class="o">=</span><span class="k">void</span> <span class="mi">0</span><span class="p">;</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">methods</span><span class="o">=</span><span class="s2">&quot;setApiKey setRegion setLanguage setWidgetOverlayColor addWidget ready setMobile on setAvailableSizes setSizeAliases addOrder addFindByFit setUserId&quot;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">);</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">factory</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">c</span><span class="p">){</span><span class="k">return</span> <span class="kd">function</span><span class="p">(){</span><span class="kd">var</span> <span class="nx">d</span><span class="p">;</span><span class="nx">d</span><span class="o">=</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span><span class="nx">d</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span><span class="k">return</span> <span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">]}};</span><span class="nx">f</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">methods</span><span class="p">;</span><span class="nx">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="k">for</span><span class="p">(</span><span class="nx">h</span><span class="o">=</span><span class="nx">f</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">c</span><span class="o">&lt;</span><span class="nx">h</span><span class="p">;</span><span class="nx">c</span><span class="o">++</span><span class="p">)</span><span class="nx">e</span><span class="o">=</span><span class="nx">f</span><span class="p">[</span><span class="nx">c</span><span class="p">],</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">][</span><span class="nx">e</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">factory</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">snippetVersion</span><span class="o">=</span><span class="s2">&quot;4.0.0&quot;</span><span class="p">;</span><span class="nx">c</span><span class="o">=</span><span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">g</span><span class="p">);</span><span class="nx">d</span><span class="o">=</span><span class="nx">d</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">g</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span><span class="nx">c</span><span class="p">.</span><span class="nx">async</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="nx">c</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">production</span><span class="o">:</span><span class="s2">&quot;https://cdn.api.virtusize.com/integration/v3.js&quot;</span><span class="p">,</span><span class="nx">staging</span><span class="o">:</span><span class="s2">&quot;https://cdn.staging.virtusize.com/integration/v3.js&quot;</span><span class="p">,</span><span class="nx">local</span><span class="o">:</span><span class="s2">&quot;//&quot;</span><span class="o">+</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">url</span><span class="o">+</span><span class="s2">&quot;/integration/v3.source.js&quot;</span><span class="p">}[</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">env</span><span class="p">];</span><span class="nx">c</span><span class="p">.</span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;vs-integration&quot;</span><span class="p">;</span><span class="nx">d</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span><span class="nx">d</span><span class="p">)})(</span><span class="nb">window</span><span class="p">,</span><span class="nb">document</span><span class="p">,</span><span class="s2">&quot;script&quot;</span><span class="p">,</span><span class="s2">&quot;vs&quot;</span><span class="p">);</span>
+
+ <span class="nx">vs</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;API_KEY&quot;</span><span class="p">);</span>
+ <span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
+     <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
+     <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>
+     <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_IMAGE_URL&quot;</span><span class="p">,</span>
+     <span class="nx">findByFitSelector</span><span class="o">:</span> <span class="s2">&quot;FIND_BY_FIT_SELECTOR&quot;</span><span class="p">,</span>
+     <span class="nx">done</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;find-by-fit-select-size&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+          <span class="c1">// Handle the event by selecting the appropriate size in the</span>
+          <span class="c1">// size selector.</span>
+          <span class="c1">//</span>
+          <span class="c1">// The additional data contains the size:</span>
+          <span class="c1">// data == {size: &quot;Small&quot;}</span>
+         <span class="p">});</span>
+     <span class="p">}</span>
+ <span class="p">});</span>
+ <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+ <span class="c">&lt;!-- End Virtusize Integration --&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<dl class="docutils">
+<dt>Line 10</dt>
+<dd>Specify a container for the Find by fit-button. The button will automatically be
+placed in this container.</dd>
+<dt>Line 12</dt>
+<dd>Add code to read size from the <code class="docutils literal"><span class="pre">data</span></code> value, being passed as a parameter, and
+pre-select the size in the size selector for the user.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can test these functions on your product page, by appending <code class="docutils literal"><span class="pre">?vs.cohort=findbyfit&amp;score=95&amp;size=Small</span></code>
+to a product page URL.</p>
+</div>
+</div>
+<div class="section" id="data-tracking-events">
+<span id="label-events"></span><h2>Data tracking - events<a class="headerlink" href="#data-tracking-events" title="Permalink to this headline">¶</a></h2>
+<p>Event tracking works the same way in all Virtusize integrations.
+Listed here, are event names specific for Find by fit.</p>
+<p>The following events are supported:</p>
+<dl class="docutils">
+<dt>user-opened-widget</dt>
+<dd>Triggered when the Find by fit widget was opened.</dd>
+<dt>user-opened-panel-select-product-type</dt>
+<dd>Triggered when the user opens the panel &#8220;select product type&#8221;.</dd>
+<dt>user-opened-panel-new-from-measurements</dt>
+<dd>Triggered when a user opened the panel &#8220;new from measurements&#8221;.</dd>
+<dt>user-added-product</dt>
+<dd>Triggered when a user successfully created a new item from
+measurements in the panel &#8220;new from measurements&#8221;.</dd>
+<dt>user-selected-product</dt>
+<dd>Triggered when the users selects an item for comparison.</dd>
+<dt>user-sorted-store-products</dt>
+<dd>Triggered when the user changes the result list sort order.</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Virtusize.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-globe"> Switch language</span>
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Languages</dt>
+            <dd>
+                <a href="http://developers.virtusize.com/">English</a>
+            </dd>
+            <!-- TODO: comment this in, as soon as Japanese is ready
+            <dd>
+                <a href="http://developers.virtusize.com/ja/">Japanese</a>
+            </dd>
+            -->
+        </dl>
+        <hr/>
+        Developer documentation by <a href="http://www.virtusize.com/">Virtusize</a>.
+    </div>
+</div>
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/js/virtusize.js"></script>
+      <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

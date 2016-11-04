@@ -18,7 +18,8 @@ responsive buttons, with different designs that would suit your page style.
 
 The element you create should not be visible when the page loads; it will
 automatically be shown when there is a valid product in the Virtusize database.
-Set the button style to ``visibility:hidden``, to ``display:none`` or both.
+Set the button style to ``visibility:hidden``, to ``display:none`` or both. Upon show,
+the button style will change to ``visibility:visible`` and ``display:block``.
 
 .. note::
     A responsive `sample button <http://codepen.io/virtusize/pen/xVNrZP/?editors=1100>`_

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Additional Integration Options &mdash; Virtusize Developer Docs 1.2 documentation</title>
+  <title>Additional Integration Options &mdash; Virtusize Developer Docs 1.3.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Virtusize Developer Docs 1.2 documentation" href="../index.html"/>
+    <link rel="top" title="Virtusize Developer Docs 1.3.0 documentation" href="../index.html"/>
         <link rel="next" title="Product Types" href="../product-types/index.html"/>
         <link rel="prev" title="Data tracking - Events and Callbacks" href="../data-tracking/index.html"/> 
 
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.2
+                1.3
               </div>
             
           
@@ -93,12 +93,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../providing-product-measurements/index.html">Providing Measurements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data-tracking/index.html">Data tracking - Events and Callbacks</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Additional Integration Options</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#add-to-cart">Add to cart</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#variant-selection-for-add-to-cart">Variant selection for add to cart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multiple-buttons-on-product-page">Multiple Buttons on Product Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multiple-products-on-product-page">Multiple Products on Product Page</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#avoiding-product-id-collision">Avoiding product ID collision</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#multiple-buttons-on-product-page">Multiple Buttons on Product Page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#multiple-products-on-product-page">Multiple Products on Product Page</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#snippet-api">Snippet API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#global-settings">Global settings</a></li>
 </ul>
@@ -152,81 +151,6 @@
             
   <div class="section" id="additional-integration-options">
 <span id="label-additional-integration-options"></span><h1>Additional Integration Options<a class="headerlink" href="#additional-integration-options" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="add-to-cart">
-<span id="label-add-to-cart"></span><h2>Add to cart<a class="headerlink" href="#add-to-cart" title="Permalink to this headline">¶</a></h2>
-<p>You can enable an add to cart button directly inside the Virtusize widget.</p>
-<p>We recommend that you provide Virtusize with a list of available sizes when you
-enable add to cart (see <a class="reference internal" href="#label-widget-settings"><span class="std std-ref">Widget settings</span></a> for how to set available sizes).
-If you do so, for items that are out of stock, the add to cart button will be
-disabled and a note will inform your customer that the item is not available.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Virtusize does not handle color or variant selection at the moment.
-See <a class="reference internal" href="#label-variant-selection-add-to-cart"><span class="std std-ref">Variant selection for add to cart</span></a></p>
-</div>
-<p>To activate the add to cart button, you have to register a callback for the event
-that is triggered when a user clicks the add to cart button. Like with all callbacks
-you can register for the event in two ways, on the global Virtusize object:</p>
-<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="nx">vs</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;user-added-item-to-cart&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-     <span class="c1">// Handle the event by added the appropriate item into the users</span>
-     <span class="c1">// shopping cart.</span>
-     <span class="c1">//</span>
-     <span class="c1">// The additional data contains the productId and the size:</span>
-     <span class="c1">// data == {productId: &quot;vs_shoe&quot;, size: &quot;42&quot;}</span>
- <span class="p">});</span>
-</pre></div>
-</td></tr></table></div>
-<p>or directly in the <code class="docutils literal"><span class="pre">addWidget</span></code> call:</p>
-<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
-     <span class="nx">productId</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_ID&quot;</span><span class="p">,</span>
-     <span class="nx">buttonSelector</span><span class="o">:</span> <span class="s2">&quot;BUTTON_SELECTOR&quot;</span><span class="p">,</span>
-     <span class="nx">productImageUrl</span><span class="o">:</span> <span class="s2">&quot;PRODUCT_IMAGE_URL&quot;</span><span class="p">,</span>
-     <span class="nx">availableSizes</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;small&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;large&quot;</span><span class="p">]</span>    <span class="c1">// Change this to the currently available sizes</span>
-     <span class="nx">done</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-         <span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;user-added-item-to-cart&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-             <span class="c1">// Handle the event by added the appropriate item into the users</span>
-             <span class="c1">// shopping cart.</span>
-             <span class="c1">//</span>
-             <span class="c1">// The additional data contains the productId and the size:</span>
-             <span class="c1">// data == {productId: &quot;vs_shoe&quot;, size: &quot;42&quot;}</span>
-         <span class="p">});</span>
-     <span class="p">}</span>
- <span class="p">});</span>
-</pre></div>
-</td></tr></table></div>
-<div class="section" id="variant-selection-for-add-to-cart">
-<span id="label-variant-selection-add-to-cart"></span><h3>Variant selection for add to cart<a class="headerlink" href="#variant-selection-for-add-to-cart" title="Permalink to this headline">¶</a></h3>
-<p>Having multiple variants of a product on a single product page complicates the
-integration of the add to cart functionality in two ways:</p>
-<ol class="arabic simple">
-<li>The callback you registered could get called before your customer selected the
-variant he is looking to buy.</li>
-<li>The selection of a variant could have an impact on the available sizes that
-you have in stock.</li>
-</ol>
-<p>Talk to your sales contact to get more information on possible solutions.</p>
-</div>
-</div>
 <div class="section" id="multiple-buttons-on-product-page">
 <span id="label-multiple-buttons-on-product-page"></span><h2>Multiple Buttons on Product Page<a class="headerlink" href="#multiple-buttons-on-product-page" title="Permalink to this headline">¶</a></h2>
 <p>If you want multiple buttons to open the Virtusize Widget, you can add a class to
@@ -248,16 +172,46 @@ all buttons (eg. <code class="docutils literal"><span class="pre">.virtusize-but
 <div class="section" id="multiple-products-on-product-page">
 <span id="label-multiple-products-on-product-page"></span><h2>Multiple Products on Product Page<a class="headerlink" href="#multiple-products-on-product-page" title="Permalink to this headline">¶</a></h2>
 <p>It is possible to have Virtusize Widgets for more than one product per page. This
-is needed for &#8220;Buy-this-outfit&#8221; kind of pages or AJAX-pages, like product preview.</p>
-<p>The integration is the same as the one for single product pages. All you have to
-do is supply additional <code class="docutils literal"><span class="pre">addWidget</span></code> calls.</p>
-<div class="admonition attention">
-<p class="first admonition-title">Attention</p>
-<p class="last">The snippet can only be loaded once per page, but you can have multiple
-<code class="docutils literal"><span class="pre">addWidget</span></code> calls for each product.</p>
+is suitable for &#8220;Buy-this-outfit&#8221; kind of pages or AJAX-pages, like product preview.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Try this if you see errors like <code class="docutils literal"><span class="pre">a[b].push</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">function</span></code> on your page,
+caused by the integration.</p>
 </div>
-<p>For pages loaded with AJAX, to avoid conflicts with already loaded widgets you can
-obtain a VirtusizeWidget object after it has been initialised from the global
+<p>The integration is the same as the one for single product pages, with one difference:
+the first part of the code snippet should only load once per page. Move this section
+to the static part of the page:</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Virtusize Integration --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="o">!</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">d</span><span class="p">,</span><span class="nx">g</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span><span class="kd">var</span> <span class="nx">c</span><span class="p">,</span><span class="nx">h</span><span class="p">,</span><span class="nx">e</span><span class="p">,</span><span class="nx">f</span><span class="p">;</span><span class="nx">a</span><span class="p">.</span><span class="nx">Virtusize</span><span class="o">=</span><span class="nx">b</span><span class="p">;</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span><span class="o">||</span><span class="p">[];</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">env</span><span class="o">=</span><span class="kc">null</span><span class="o">!=</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsEnv</span><span class="o">?</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsEnv</span><span class="o">:</span><span class="s2">&quot;production&quot;</span><span class="p">;</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">url</span><span class="o">=</span><span class="kc">null</span><span class="o">!=</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsUrl</span><span class="o">?</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsUrl</span><span class="o">:</span><span class="nx">a</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="p">;</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsEnv</span><span class="o">=</span><span class="k">void</span> <span class="mi">0</span><span class="p">;</span><span class="nx">a</span><span class="p">.</span><span class="nx">vsUrl</span><span class="o">=</span><span class="k">void</span> <span class="mi">0</span><span class="p">;</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">methods</span><span class="o">=</span><span class="s2">&quot;setApiKey setRegion setLanguage setWidgetOverlayColor addWidget ready setMobile on setAvailableSizes setSizeAliases addOrder setUserId&quot;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">);</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">factory</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">c</span><span class="p">){</span><span class="k">return</span> <span class="kd">function</span><span class="p">(){</span><span class="kd">var</span> <span class="nx">d</span><span class="p">;</span><span class="nx">d</span><span class="o">=</span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span><span class="nx">d</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span><span class="k">return</span> <span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">]}};</span><span class="nx">f</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">methods</span><span class="p">;</span><span class="nx">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="k">for</span><span class="p">(</span><span class="nx">h</span><span class="o">=</span><span class="nx">f</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">c</span><span class="o">&lt;</span><span class="nx">h</span><span class="p">;</span><span class="nx">c</span><span class="o">++</span><span class="p">)</span><span class="nx">e</span><span class="o">=</span><span class="nx">f</span><span class="p">[</span><span class="nx">c</span><span class="p">],</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">][</span><span class="nx">e</span><span class="p">]</span><span class="o">=</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">factory</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">snippetVersion</span><span class="o">=</span><span class="s2">&quot;3.2.2&quot;</span><span class="p">;</span><span class="nx">c</span><span class="o">=</span><span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">g</span><span class="p">);</span><span class="nx">d</span><span class="o">=</span><span class="nx">d</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">g</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span><span class="nx">c</span><span class="p">.</span><span class="nx">async</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="nx">c</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">production</span><span class="o">:</span><span class="s2">&quot;https://cdn.api.virtusize.com/integration/v3.js&quot;</span><span class="p">,</span><span class="nx">staging</span><span class="o">:</span><span class="s2">&quot;https://cdn.staging.virtusize.com/integration/v3.js&quot;</span><span class="p">,</span><span class="nx">local</span><span class="o">:</span><span class="s2">&quot;//&quot;</span><span class="o">+</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">url</span><span class="o">+</span><span class="s2">&quot;/integration/v3.source.js&quot;</span><span class="p">}[</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">].</span><span class="nx">env</span><span class="p">];</span><span class="nx">c</span><span class="p">.</span><span class="nx">id</span><span class="o">=</span><span class="s2">&quot;vs-integration&quot;</span><span class="p">;</span><span class="nx">d</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span><span class="nx">d</span><span class="p">)})(</span><span class="nb">window</span><span class="p">,</span><span class="nb">document</span><span class="p">,</span><span class="s2">&quot;script&quot;</span><span class="p">,</span><span class="s2">&quot;vs&quot;</span><span class="p">);</span>
+
+<span class="nx">vs</span><span class="p">.</span><span class="nx">setApiKey</span><span class="p">(</span><span class="s2">&quot;API_KEY&quot;</span><span class="p">);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- End Virtusize Integration --&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Then call <code class="docutils literal"><span class="pre">addWidget</span></code> as usual in the dynamic part for each product:</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="nx">vs</span><span class="p">.</span><span class="nx">addWidget</span><span class="p">({</span>
+   <span class="p">...</span>
+<span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="avoiding-product-id-collision">
+<h3>Avoiding product ID collision<a class="headerlink" href="#avoiding-product-id-collision" title="Permalink to this headline">¶</a></h3>
+<p>For pages loaded with AJAX, to avoid conflicts with already loaded widgets with same product ID,
+you can obtain a Virtusize widget object after it has been initialised from the global
 object like the following. To be sure that the integration has loaded you can
 wrap it in the ready function:</p>
 <div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -273,8 +227,10 @@ wrap it in the ready function:</p>
 </td></tr></table></div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You can only integrate one product with the same id per page. If you want
-multiple buttons to open the same widget, see: <a class="reference internal" href="#label-multiple-buttons-on-product-page"><span class="std std-ref">Multiple Buttons on Product Page</span></a></p>
+<p class="last">You can only integrate one product with the same ID per page, meaning don&#8217;t make mutiple
+<code class="docutils literal"><span class="pre">addWidget</span></code> calls with the same <code class="docutils literal"><span class="pre">PRODUCT_ID</span></code> on one page. If you want multiple
+buttons to open the same widget, see <a class="reference internal" href="#label-multiple-buttons-on-product-page"><span class="std std-ref">Multiple Buttons on Product Page</span></a>.</p>
+</div>
 </div>
 </div>
 <div class="section" id="snippet-api">
@@ -290,7 +246,7 @@ these methods will execute immediately.</p>
 a region. Other things can be specified on a widget to widget basis. Examples
 for this would be setting the product ids or available sizes.</p>
 <div class="section" id="global-settings">
-<h3>Global settings<a class="headerlink" href="#global-settings" title="Permalink to this headline">¶</a></h3>
+<span id="label-global-settings"></span><h3>Global settings<a class="headerlink" href="#global-settings" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt>setApiKey(key)</dt>
 <dd><p class="first"><strong>key</strong> - String</p>
@@ -437,13 +393,13 @@ this for regional size names.</p>
 </dd>
 <dt>on(eventName, callback)</dt>
 <dd><p class="first"><strong>eventName</strong> - String, valid event to bind a callback to. See
-<span class="xref std std-ref">label-events-and-callbacks-v3</span> for a list of valid event names.</p>
+<a class="reference internal" href="../data-tracking/index.html#label-registering-callbacks"><span class="std std-ref">Registering callbacks</span></a> for a list of valid event names.</p>
 <p><strong>callback</strong> - Function callable, function to call when an event occurs.
 Allows programmatic subscription to widget events such as: &#8220;user-opened-widget&#8221;,
 &#8220;user-closed-widget&#8221;. Inside the callback function <code class="docutils literal"><span class="pre">this</span></code> will be the
 instance of the VirtusizeWidget from which the event was triggered. On some
 events an additional data object is passed as a parameter to the function,
-see <span class="xref std std-ref">label-events-and-callbacks-v3</span></p>
+see <a class="reference internal" href="../data-tracking/index.html#label-registering-callbacks"><span class="std std-ref">Registering callbacks</span></a></p>
 <p><strong>Example:</strong></p>
 <div class="last highlight-javascript"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;user-opened-widget&quot;</span><span class="p">,</span>
     <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -524,7 +480,7 @@ name.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.2',
+            VERSION:'1.3.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
