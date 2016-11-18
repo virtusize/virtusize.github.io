@@ -12,6 +12,7 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+- Feature: Updated snippet to 3.2.3: integration v4. (ab)
 - Feature: Updated section about AJAX page integration. (ab)
 - Cleanup: Removed section about Add to cart. (ab)
 - Feature: Added Find by fit section. (ab)
