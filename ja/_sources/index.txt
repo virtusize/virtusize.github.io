@@ -43,4 +43,5 @@ Table of contents
    data-tracking/index
    additional-integration-options/index
    product-types/index
+   find-by-fit/index
    faq/index
