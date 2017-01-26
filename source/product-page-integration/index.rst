@@ -95,6 +95,8 @@ worldwide CDN.
 The ideal image dimensions are ``width: 360px; height: 500px`` with a safe area
 around the left and right edges to prevent cropping.
 
+The product image url must be a complete URL, including the protocol, eg. ``http:``.
+
 
 .. _label-setting-the-css-selector:
 
