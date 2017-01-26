@@ -27,12 +27,13 @@ Product feed
 
 The product feed is required to add additional product information to Virtusize, mainly
 information that might change regularly. This could be a feed you already have, such as an affiliate feed.
+Only include products that are available for purchase in the feed.
 
 .. note::
     The product feed must be available online and in CSV, XLS or JSON format.
-    The feed is frequently fetched multiple times every day, to ensure updated data.
+    It is frequently fetched multiple times every day, to ensure updated data.
 
-The list below doesn't have to be in specific order or have any special naming; it just needs to exist.
+The columns listed below don't have to be in specific order or have any special naming; they just need to exist.
 The required data is:
 
 Product ID
