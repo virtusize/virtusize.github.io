@@ -284,8 +284,6 @@ each product type.
 Feed validation
 ^^^^^^^^^^^^^^^
 
-.. highlight:: html
-
 To validate your feed, you can use our feed tester URL::
 
     GET https://api.virtusize.com/api/v2/feed/tester/json?apiKey=xxxxxxxxxxxxx&url=http://www.example.com/backend/virtusize/product-info?id=123456abc
