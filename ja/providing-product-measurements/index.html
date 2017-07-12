@@ -295,7 +295,7 @@ timestamp, as long as it changes when the product measurements change.</p>
 <h3>JSON format<a class="headerlink" href="#json-format" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>The feed must return data as valid
 <a class="reference external" href="http://en.wikipedia.org/wiki/JSON">JSON</a>.</p>
-<p><a class="reference external" href="https://api.virtusize.com/api/v2/feed/examples/json">Example feed</a></p>
+<p><a class="reference external" href="https://api.virtusize.com/rest-api/v1/feed/examples/json">Example feed</a></p>
 <p><strong>Example request</strong>:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GET</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">product</span><span class="o">/</span><span class="mi">123456</span><span class="n">abc</span><span class="o">/</span><span class="n">measurements</span>
 </pre></div>
@@ -377,7 +377,7 @@ each product type.</p>
 <div class="section" id="feed-validation">
 <h3>Feed validation<a class="headerlink" href="#feed-validation" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>To validate your feed, you can use our feed tester URL:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">GET</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//api.virtusize.com/api/v2/feed/tester/json?apiKey=xxxxxxxxxxxxx&amp;url=http://www.example.com/backend/virtusize/product-info?id=123456abc</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">GET</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//api.virtusize.com/rest-api/v1/feed/tester/json?apiKey=xxxxxxxxxxxxx&amp;url=http://www.example.com/backend/virtusize/product-info?id=123456abc</span>
 </pre></div>
 </div>
 <p>Or you can use the Feed tester GUI in our <a class="reference external" href="https://www.virtusize.com/admin/">admin</a>.</p>
