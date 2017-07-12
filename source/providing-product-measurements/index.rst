@@ -192,7 +192,7 @@ JSON format
 The feed must return data as valid
 `JSON <http://en.wikipedia.org/wiki/JSON>`_.
 
-`Example feed <https://api.virtusize.com/api/v2/feed/examples/json>`_
+`Example feed <https://api.virtusize.com/rest-api/v1/feed/examples/json>`_
 
 
 **Example request**::
@@ -286,7 +286,7 @@ Feed validation
 
 To validate your feed, you can use our feed tester URL::
 
-    GET https://api.virtusize.com/api/v2/feed/tester/json?apiKey=xxxxxxxxxxxxx&url=http://www.example.com/backend/virtusize/product-info?id=123456abc
+    GET https://api.virtusize.com/rest-api/v1/feed/tester/json?apiKey=xxxxxxxxxxxxx&url=http://www.example.com/backend/virtusize/product-info?id=123456abc
 
 
 Or you can use the Feed tester GUI in our `admin <https://www.virtusize.com/admin/>`_.

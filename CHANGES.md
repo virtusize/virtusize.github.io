@@ -12,6 +12,7 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+- Feature: Updated feed links. (ab)
 - Feature: Updated snippet to 4.0.0. (ab)
 - Feature: Added Find by fit to TOC. (ab)
 - Feature: Updated snippet to 3.2.3: integration v4. (ab)
