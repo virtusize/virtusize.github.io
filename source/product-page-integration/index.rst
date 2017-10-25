@@ -126,7 +126,7 @@ Purchase History Preview Tooltip
 This is a tooltip that shows a recent item from the user’s purchase history.
 It is inspired by the Bootstrap Tooltip.
 
-To enable this, add line 5 to your integration. Lines 7 and 8 are optional:
+To enable this, add line 5 to your integration. Lines 6 and 7 are optional:
 
 .. code-block:: javascript
    :linenos:
