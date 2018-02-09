@@ -12,6 +12,7 @@ Use list notation, and following prefixes:
 
 ### NEXT RELEASE
 
+- Feature: Added section about region selection. (ab)
 - Feature: Updated snippet to support multiple regions. (ab)
 
 ### 2.2.0
