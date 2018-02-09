@@ -87,7 +87,7 @@ wrap it in the ready function:
 
 
 Improving performance
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 By default, Virtusize is loaded from Ireland. There are two additional locations in Japan and
 South Korea. These can be utilized if your store or users are closer to one of those locations
