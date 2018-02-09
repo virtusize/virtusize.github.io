@@ -96,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#multiple-buttons-on-product-page">Multiple Buttons on Product Page</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#multiple-products-on-product-page">Multiple Products on Product Page</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#avoiding-product-id-collision">Avoiding product ID collision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#improving-performance">Improving performance</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#snippet-api">Snippet API</a><ul>
@@ -231,6 +232,20 @@ wrap it in the ready function:</p>
 <p class="last">You can only integrate one product with the same ID per page, meaning don&#8217;t make mutiple
 <code class="docutils literal"><span class="pre">addWidget</span></code> calls with the same <code class="docutils literal"><span class="pre">PRODUCT_ID</span></code> on one page. If you want multiple
 buttons to open the same widget, see <a class="reference internal" href="#label-multiple-buttons-on-product-page"><span class="std std-ref">Multiple Buttons on Product Page</span></a>.</p>
+</div>
+</div>
+<div class="section" id="improving-performance">
+<h3>Improving performance<a class="headerlink" href="#improving-performance" title="Permalink to this headline">¶</a></h3>
+<p>By default, Virtusize is loaded from Ireland. There are two additional locations in Japan and
+South Korea. These can be utilized if your store or users are closer to one of those locations
+instead of the default.</p>
+<p>To manually select a location, add this line <em>before</em> the integration:</p>
+<div class="highlight-javascript"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="nb">window</span><span class="p">.</span><span class="nx">vsEnv</span> <span class="o">=</span> <span class="s1">&#39;REGION&#39;</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal"><span class="pre">REGION</span></code> can be <code class="docutils literal"><span class="pre">korea</span></code> for South Korea or <code class="docutils literal"><span class="pre">japan</span></code> for Japan.</p>
 </div>
 </div>
 </div>
@@ -440,7 +455,7 @@ name.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Virtusize.
+        &copy; Copyright 2018, Virtusize.
 
     </p>
   </div> 

@@ -86,6 +86,24 @@ wrap it in the ready function:
     buttons to open the same widget, see :ref:`label-multiple-buttons-on-product-page`.
 
 
+Improving performance
+^^^^^^^^^^^^^^^^^^^^^
+
+By default, Virtusize is loaded from Ireland. There are two additional locations in Japan and
+South Korea. These can be utilized if your store or users are closer to one of those locations
+instead of the default.
+
+To manually select a location, add this line *before* the integration:
+
+.. code-block:: javascript
+   :linenos:
+
+    window.vsEnv = 'REGION';
+
+.. note::
+    ``REGION`` can be ``korea`` for South Korea or ``japan`` for Japan.
+
+
 .. _label-snippet-api:
 
 Snippet API
